@@ -1,0 +1,125 @@
+.topBar_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: sticky;
+    width: 100%;
+}
+
+.topBar {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    padding: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.topBar_data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+
+
+
+}
+.top_bar_btn{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    width: 20%;
+}
+
+.topBar_data .btn {
+    background-color: #247fe8;
+    font-size: 17px;
+    padding: 10px;
+    color: #ffffff;
+    width: 26%;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.sideBar {
+    margin-top: 40px;
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    padding-top: 50px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.sideBar .sideBar_data {
+    width: 100%;
+    color: black;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    outline: none;
+
+}
+
+.drawer_logo {
+    width: 30%;
+
+
+
+}
+.logo{
+    width: 100px;
+    height: 60px;
+    margin-left: 50px;
+}
+
+
+
+.menu-style {
+    width: 40%;
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.text {
+    font-size: 18px;
+    padding: 5px;
+    color: rgb(254, 253, 253);
+    text-align: center;
+    margin-left: 5px;
+}
+
+.text:hover {
+    color: rgb(168, 170, 170);
+    cursor: pointer;
+}
+
+.navitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 30%;
+}
+
+.line {
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
