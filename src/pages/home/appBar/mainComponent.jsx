@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -22,12 +22,14 @@ import { BrokerForm } from '../brokerForm/brokerForm.jsx';
 import { StockName } from '../stockName/stockName.jsx';
 import { ExtraCharges } from '../extraChargesForm/extraCharges.jsx';
 import CrudOperation from '../CrudSystem/crudOperation.jsx';
+import { DashboardView } from '../dashboardView/dashboardView.jsx';
+import logo from '../../../images/logo.png'
 
 const drawerWidth = 240;
 
 const ResponsiveDrawer = (props) => {
     const [count, setCount] = useState(0)
-    console.log(count)
+    console.log('count', count)
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [isClosing, setIsClosing] = React.useState(false);
@@ -46,59 +48,82 @@ const ResponsiveDrawer = (props) => {
             setMobileOpen(!mobileOpen);
         }
     };
+    // ------------------------------------------------------
+   
 
     const drawer = (
-        <div>
-            <Toolbar />
+        <div style={{ backgroundColor: '#fff', color: '#000', height: '100%' }}>
+            {/* <Toolbar /> */}
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center',padding:10}}>
+                <img src={logo} style={{ width: 100, height: 80 }} />
+            </div>
             <Divider />
+            {/* <ListItem disablePadding>
+                <ListItemButton >
+                    <ListItemIcon sx={{ color: '#000' }}>
+                        <InboxIcon />
+                    </ListItemIcon>
+                    <a href="https://react-dashboard-hk.netlify.app/" target="_blank" rel="noopener noreferrer">
+                       Dashboard
+                    </a>
+
+
+
+                </ListItemButton>
+
+            </ListItem> */}
             <List>
-                {['Buy Form', 'Sell Form', 'Broker Form', 'Stock Name', 'Extra Charges','Crud'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton onClick={() => setCount(index)} >
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text}  />
-                        </ListItemButton>
-                    </ListItem>
+                {['Dashboard','Buy Form', 'Sell Form', 'Broker Form', 'Stock Name', 'Extra Charges', 'Crud'].map((text, index) => (
+                    <div>
+                        <ListItem key={text} disablePadding>
+                            <ListItemButton onClick={() => setCount(index)} >
+                                <ListItemIcon sx={{ color: '#000' }}>
+                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+
+
+                            </ListItemButton>
+
+
+                        </ListItem>
+                    </div>
+
                 ))}
             </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text}  />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
+          
+           
         </div>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
     // --------------------------------------------------
+
     const renderForm = () => {
         switch (count) {
             case 0:
-                return <BuyForm />;
+                return <DashboardView />;
             case 1:
-                return <SellForm />;
+                return <BuyForm />;
             case 2:
-                return <BrokerForm />;
+                return <SellForm />;
             case 3:
-                return <StockName />;
+                return <BrokerForm />;
             case 4:
+                return <StockName />;
+            case 5:
                 return <ExtraCharges />;
-                case 5:
+            case 6:
                 return <CrudOperation />;
+
             default:
                 return null;
         }
     };
+
+
+
+
 
     return (
         <Box sx={{ display: 'flex' }}>

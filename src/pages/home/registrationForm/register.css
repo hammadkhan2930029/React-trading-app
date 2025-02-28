@@ -54,7 +54,7 @@
     width: 100%;
     margin: 10px;
 }
-.form .btn{
+.form .r_btn{
     width: 30%;
 }
 /* ------------------------- MEDIA QUERIES ------------------------- */
@@ -113,9 +113,9 @@
         margin: 0;
         margin-top: 10px;
     }
-    .form .btn{
-        margin-top: 10px;
+    .form .r_btn{
         width: 50%;
+        margin: 10px;
     }
     .register_form .h6{
         font-size: 22px;
