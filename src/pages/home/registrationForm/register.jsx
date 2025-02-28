@@ -105,7 +105,7 @@ export const Register = () => {
                                     type='password'
 
                                 />
-                                <Button variant="contained" disableElevation className='btn' onClick={handleSubmit}>
+                                <Button variant="contained" disableElevation className='r_btn' onClick={handleSubmit}>
                                     Register
                                 </Button>
                             </div>

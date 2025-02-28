@@ -100,11 +100,11 @@ export const  PrimarySearchAppBar=()=> {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={()=>{
+            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+            <MenuItem  onClick={()=>{
                 navigate('/login')
                 handleMenuClose()
-            }}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            }}>My account</MenuItem>
         </Menu>
     );
 
@@ -148,7 +148,7 @@ export const  PrimarySearchAppBar=()=> {
                 boxShadow: 'none'
             }} >
                 <Toolbar >
-                    <IconButton
+                    {/* <IconButton
                         size="large"
                         edge="start"
                         color="inherit"
@@ -156,7 +156,7 @@ export const  PrimarySearchAppBar=()=> {
                         sx={{ mr: 2 }}
                     >
                         <img src={logo} style={{ width: 60, height: 50 }} />
-                    </IconButton>
+                    </IconButton> */}
 
 
                     <Box sx={{ flexGrow: 1 }} />
