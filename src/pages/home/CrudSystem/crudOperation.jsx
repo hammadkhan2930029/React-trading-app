@@ -201,6 +201,13 @@ const CrudOperation = () => {
             transition={{ duration: .8 }}
             className="crud">
             <div className="crud_main">
+                <div className="top_btn">
+
+                    <button className="top_btn_buy">Buy Form</button>
+                    <button className="top_btn_buy" >Sell Form</button>
+
+                </div>
+
                 <table>
                     <thead className='t_head'>
                         <tr className='t_head_row'>

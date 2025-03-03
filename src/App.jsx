@@ -4,6 +4,7 @@ import { Home } from './pages/home/home';
 import { Register } from './pages/home/registrationForm/register';
 import { Login } from './pages/home/login/login';
 import { ForgotPassword } from './pages/home/forgotPassword/forgotPassword';
+import ProfilePage from './pages/home/profile/profile';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Route path="/register" element={<Register />} /> 
         <Route path="/login" element={<Login/>} /> 
         <Route path="/forgot" element={<ForgotPassword/>} />  
+        <Route path="/profile" element={<ProfilePage/>} />  
+
 
 
 

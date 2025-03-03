@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
     margin: 0;
     padding: 0;
@@ -11,3 +12,6 @@
 :root {
     --primaryColor: '#000'
 }
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+  }

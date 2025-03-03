@@ -99,7 +99,7 @@ export const BuyForm = () => {
 
                             <div >
                                 <Box component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 2, width: '40ch' } }}
+                                    sx={{ '& .MuiTextField-root': { m: 2, width: '38ch' } }}
                                     noValidate
                                     autoComplete="off"
                                     className='form'>
