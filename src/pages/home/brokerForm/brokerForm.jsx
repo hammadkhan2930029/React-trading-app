@@ -11,7 +11,7 @@ import { motion, useInView } from "framer-motion";
 
 
 export const BrokerForm = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
     const refOne = React.useRef(null);
   
 
@@ -37,16 +37,16 @@ export const BrokerForm = () => {
                 {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
                     <form onSubmit={handleSubmit}>
 
-                        <div className='form-main'>
+                        <div className='form-main-brokerForm'>
                             <div>
-                                <span className='heading'>Broker FORM</span>
+                                <span className='heading'>Broker</span>
                             </div>
 
 
 
                             <div >
                                 <Box component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '40ch': '60ch' } }}
+                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch': '60ch' } }}
                                     noValidate
                                     autoComplete="off"
                                     className='form'>

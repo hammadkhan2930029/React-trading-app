@@ -4,19 +4,15 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import logo from '../../../images/logo.png'
 import { useNavigate } from 'react-router-dom';
+import avatar from '../../../images/avatar.jpg';
+import { useDispatch } from "react-redux";
+import { setProfile, setEditeProfile } from "../Redux/profileSlice";
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -34,21 +30,12 @@ const Search = styled('div')(({ theme }) => ({
     },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
+
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
         padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
@@ -58,7 +45,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export const  PrimarySearchAppBar=()=> {
+export const PrimarySearchAppBar = () => {
+
+    const dispatch = useDispatch();
+    // --------------------------------------------
     const navigate = useNavigate()
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -100,11 +90,16 @@ export const  PrimarySearchAppBar=()=> {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem  onClick={()=>{
-                navigate('/login')
+            <MenuItem onClick={() => {
                 handleMenuClose()
-            }}>My account</MenuItem>
+                dispatch(setProfile())
+            }}>Profile</MenuItem>
+            <MenuItem onClick={() => {
+                handleMenuClose()
+                dispatch(setEditeProfile())
+            }}>Edit Profile</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Log out</MenuItem>
+
         </Menu>
     );
 
@@ -125,7 +120,7 @@ export const  PrimarySearchAppBar=()=> {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-           
+
             <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
                     size="large"
@@ -136,7 +131,7 @@ export const  PrimarySearchAppBar=()=> {
                 >
                     <AccountCircle />
                 </IconButton>
-                <p>Profile</p>
+                <p>Profile Setting</p>
             </MenuItem>
         </Menu>
     );
@@ -148,15 +143,7 @@ export const  PrimarySearchAppBar=()=> {
                 boxShadow: 'none'
             }} >
                 <Toolbar >
-                    {/* <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
-                        <img src={logo} style={{ width: 60, height: 50 }} />
-                    </IconButton> */}
+
 
 
                     <Box sx={{ flexGrow: 1 }} />
@@ -172,7 +159,7 @@ export const  PrimarySearchAppBar=()=> {
                             color="inherit"
 
                         >
-                            <AccountCircle />
+                            <img src={avatar} style={{ width: 50, height: 50, borderRadius: 25 }} />
                         </IconButton>
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

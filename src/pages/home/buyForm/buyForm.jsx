@@ -8,7 +8,10 @@ import Fab from '@mui/material/Fab';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { motion, useInView } from "framer-motion";
-import Grid from '@mui/material/Grid';
+import { useDispatch } from "react-redux";
+import { setSellForm } from "../Redux/formTypeSlice";
+
+
 const currencies = [
     {
         value: '1',
@@ -47,6 +50,7 @@ const stockName = [
 ];
 
 export const BuyForm = () => {
+    const dispatch = useDispatch()
     const refOne = React.useRef(null);
     const refTwo = React.useRef(null);
 
@@ -64,7 +68,10 @@ export const BuyForm = () => {
             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: .8 }}>
 
+            {/* <div className='switchBtn_div'>
 
+                <button className='switchBtn' onClick={() => dispatch(setSellForm())}>Sell Form</button>
+            </div> */}
 
 
             <Formik
@@ -88,23 +95,25 @@ export const BuyForm = () => {
 
             >
                 {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className='form_div'>
 
-                        <div className='form-main'>
+                        <div className='form-main-buy'>
                             <div>
-                                <span className='heading'>BUY FORM</span>
+                                <span className='heading'>BUY</span>
                             </div>
+                            <div className='switchBtn_div'>
 
-
+                                <button className='switchBtn' onClick={() => dispatch(setSellForm())}>Sell</button>
+                            </div>
 
                             <div >
                                 <Box component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 2, width: '40ch' } }}
+                                    sx={{ '& .MuiTextField-root': { m: 2, width: '38ch' } }}
                                     noValidate
                                     autoComplete="off"
-                                    className='form'>
-                                    <div>
-                                     
+                                >
+                                    <div className='form_buy'>
+
                                         <TextField
                                             id="outlined-select-currency"
                                             select
@@ -126,12 +135,12 @@ export const BuyForm = () => {
                                             onChange={(date) => handleChange({ target: { name: "trade_date", value: date } })} // Handle date change
                                             onBlur={handleBlur}
                                             type="date"
-                                             name="date"
-                                              InputLabelProps={{ shrink: true }}
-                                               required
+                                            name="date"
+                                            InputLabelProps={{ shrink: true }}
+                                            required
 
                                         />
-                                       
+
 
                                         <TextField
                                             type='date'
@@ -224,7 +233,7 @@ export const BuyForm = () => {
 
                             </div>
 
-                            <Box sx={{ '& > :not(style)': { m: 1 } }}>
+                            <Box sx={{ '& > :not(style)': { m: 1,ml:-10 } }}>
 
                                 <Fab variant="extended" color="primary" type="submit">
                                     <SendIcon sx={{ mr: 1.5 }} />

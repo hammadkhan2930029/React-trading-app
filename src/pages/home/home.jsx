@@ -1,16 +1,31 @@
-import React from 'react'
-import ResponsiveDrawer  from "./appBar/mainComponent.jsx";
+import React, { useEffect, useState } from 'react'
+import ResponsiveDrawer from "./appBar/mainComponent.jsx";
 import { Loader } from './loader/loader.jsx';
 
 
 
+
 export const Home = () => {
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+
+    }, 2000);
+
+  }, [])
   return (
     <div>
-     <ResponsiveDrawer/>
-     {/* <Loader/> */}
-    
-     
+      {loading ? (
+
+        <Loader />
+      ) : (
+
+        <ResponsiveDrawer />
+      )}
+
+
+
 
     </div>
   )

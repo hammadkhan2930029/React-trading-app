@@ -7,7 +7,9 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
-
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setBuyForm ,setSellForm} from "../Redux/formTypeSlice";
 const style = {
     position: 'absolute',
     top: '50%',
@@ -161,6 +163,10 @@ const selldata = [
 
 ];
 const CrudOperation = () => {
+        const navigate = useNavigate();
+
+        // --------------------Redux-------------------------------
+        const dispatch = useDispatch();
     // -----------modal--------------------------
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -201,6 +207,13 @@ const CrudOperation = () => {
             transition={{ duration: .8 }}
             className="crud">
             <div className="crud_main">
+                <div className="top_btn">
+
+                    <button className="top_btn_buy" onClick={()=> dispatch(setBuyForm())}>Buy </button>
+                    <button className="top_btn_buy" onClick={()=> dispatch(setSellForm())}>Sell</button>
+
+                </div>
+
                 <table>
                     <thead className='t_head'>
                         <tr className='t_head_row'>

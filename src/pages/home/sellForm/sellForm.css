@@ -1,9 +1,14 @@
-.form-main {
+/* .form_div_sell{
+    display: flex;
+    justify-content: center;
+} */
+.form-main-sell {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     margin-top: 100px;
+    width: 95%;
 
 }
 .heading{
@@ -13,7 +18,7 @@
     
 }
 
-.form {
+.form_sell {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -22,11 +27,30 @@
     align-self: center;
     flex-direction: row;
     background-color: #fff;
-    margin: 10px;
-    padding: 30px;
-    border-radius: 10px;
+    margin: 10px; 
+    padding: 30px; 
+     border-radius: 10px;
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
-}
+ } 
+ .switchBtn_div_sell{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+ }
+ .switchBtn_div_sell .switchBtn_sell{
+    background-color: #1976d2;
+    padding: 15px;
+    color: #fff;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px;
+ }
 
 
 
@@ -67,38 +91,32 @@
 
 
 @media screen and (max-width: 600px) {
-    .form {
+    .form-main-sell{
+        width: 100%;
+    }
+    .form_sell {
         width: 85%;
 
     }
 
-    .form-input {
-        width: 100%;
-
-    }
-
-    .input {
-        width: 100%;
-    }
+   
 
     .btn {
         width: 60%;
     }
+    .switchBtn_div_sell{
+        width: 75%;
+    }
+  
 }
 
-@media screen and (max-width: 412px) {
-    .form {
-        width: 95%;
+@media screen and (max-width: 430px) {
+    .form_sell {
+        width: 80%;
+        margin: 0;
     }
 
-    .form-input {
-        width: 100%;
-
-    }
-
-    .input {
-        width: 100%;
-    }
+    
 
     .btn {
         width: 60%;
@@ -106,20 +124,17 @@
 }
 
 @media screen and (max-width: 360px) {
-    .form {
-        width: 95%;
+  
+    .form_sell {
+        width: 80%;
     }
 
-    .form-input {
-        width: 100%;
-
-    }
-
-    .input {
-        width: 100%;
-    }
+  
 
     .btn {
+        width: 60%;
+    }
+    .switchBtn_div_sell{
         width: 60%;
     }
 }

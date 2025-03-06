@@ -58,7 +58,7 @@ export const DashboardView = () => {
 
                 </div>
                 {/* ------------------------------------------------------------- */}
-                <div className='avatar_div'>
+                {/* <div className='avatar_div'>
                     <React.Fragment>
                         <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                             <Tooltip title="Account settings">
@@ -74,9 +74,9 @@ export const DashboardView = () => {
                                         <img className='avatar' src={flag} />
                                     </Avatar>
                                 </IconButton>
-                            </Tooltip>
+                            </Tooltip> */}
                             {/* ---------------------------------------------------------------- */}
-                            <Tooltip title="Account settings">
+                            {/* <Tooltip title="Account settings">
                                 <IconButton
                                     onClick={handleClick}
                                     size="small"
@@ -87,10 +87,10 @@ export const DashboardView = () => {
                                 >
                                     <Avatar sx={{ width: 42, height: 42 }}>M</Avatar>
                                 </IconButton>
-                            </Tooltip>
+                            </Tooltip> */}
                             {/* ----------------------------------------------------------------------- */}
 
-                            <Tooltip title="Account settings">
+                            {/* <Tooltip title="Account settings">
                                 <IconButton
                                     onClick={handleClick}
                                     size="small"
@@ -170,7 +170,7 @@ export const DashboardView = () => {
                             </MenuItem>
                         </Menu>
                     </React.Fragment>
-                </div>
+                </div> */}
             </div>
             {/* ----------------------------small cards-------------------------------------- */}
             <div>
@@ -182,7 +182,7 @@ export const DashboardView = () => {
                                 <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
                             </div>
                             <div className='price'>
-                                <span className='h_6'>Earning</span>
+                                <span className='h_6'>Total Earning</span>
                                 <span className='h_1'>$350.5</span>
                             </div>
                         </div>
@@ -194,7 +194,7 @@ export const DashboardView = () => {
                                 <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
                             </div>
                             <div className='price'>
-                                <span className='h_6'>Earning</span>
+                                <span className='h_6'>Total Investment</span>
                                 <span className='h_1'>$350.5</span>
                             </div>
                         </div>
@@ -203,17 +203,17 @@ export const DashboardView = () => {
 
                     <div className="card">
                         <div className='card_data_3'>
-                            <span className="sale_text1">Sales</span>
+                            <span className="sale_text1">Profit / lose</span>
                             <span className="sale_text2">$3562.25</span>
-                            <span className="sale_text3">since last month</span>
+                            <span className="sale_text3">lose : $253</span>
                         </div>
                     </div>
                     {/* ----------------------------four------------------------------ */}
                     <div className="card">
                         <div className='card_4_data'>
                             <div className='card_4_text'>
-                                <span className="sale_text1">Sales</span>
-                                <span className="sale_text2">$3562.25</span>
+                                <span className="sale_text1">Holding</span>
+                                <span className="sale_text2">10</span>
 
                             </div>
                             <div>
@@ -264,7 +264,7 @@ export const DashboardView = () => {
                                 <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
                             </div>
                             <div className='price'>
-                                <span className='h_6'>Earning</span>
+                                <span className='h_6'>Dividend</span>
                                 <span className='h_1'>$350.5</span>
                             </div>
                         </div>
@@ -276,7 +276,7 @@ export const DashboardView = () => {
                                 <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
                             </div>
                             <div className='price'>
-                                <span className='h_6'>Earning</span>
+                                <span className='h_6'>Bonus</span>
                                 <span className='h_1'>$350.5</span>
                             </div>
                         </div>

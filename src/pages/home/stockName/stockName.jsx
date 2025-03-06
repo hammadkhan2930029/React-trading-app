@@ -37,7 +37,7 @@ export const StockName = () => {
                 {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
                     <form onSubmit={handleSubmit}>
 
-                        <div className='form-main'>
+                        <div className='form-main-stock'>
                             <div>
                                 <span className='heading'>Stock Name</span>
                             </div>
@@ -46,7 +46,7 @@ export const StockName = () => {
 
                             <div >
                                 <Box component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '40ch': '60ch' } }}
+                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch': '60ch' } }}
                                     noValidate
                                     autoComplete="off"
                                     className='form'>

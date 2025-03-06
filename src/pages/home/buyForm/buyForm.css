@@ -1,10 +1,14 @@
-.form-main {
+/* .form_div{
+    display: flex;
+    justify-content: center;
+} */
+.form-main-buy {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     margin-top: 100px;
-    width: 100%;
+    width: 95%;
 
 }
 .heading{
@@ -14,7 +18,7 @@
     
 }
 
-.form {
+.form_buy {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -26,15 +30,34 @@
     margin: 10px; 
     padding: 30px; 
      border-radius: 10px;
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
  } 
+ .switchBtn_div{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+ }
+ .switchBtn_div .switchBtn{
+    background-color: #1976d2;
+    padding: 15px;
+    color: #fff;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px;
+ }
 
 
 
 
 
 .btn {
-    background-color: blue;
+    background-color: #1976d2;
     width: 20%;
     padding: 5px;
     text-align: center;
@@ -63,66 +86,54 @@
     width: 90%;
 
 }
-.error{
-    color: red;
-    font-size: 16px;
-}
 
 
 @media screen and (max-width: 600px) {
-    .form {
+    .form-main-buy{
+        width: 100%;
+    }
+    .form_buy {
         width: 85%;
 
     }
 
-    .form-input {
-        width: 100%;
-
-    }
-
-    .input {
-        width: 100%;
-    }
+   
 
     .btn {
         width: 60%;
     }
 }
 
-@media screen and (max-width: 412px) {
-    .form {
-        width: 95%;
+@media screen and (max-width: 430px) {
+    .form_buy {
+        width: 80%;
+        margin: 0;
     }
 
-    .form-input {
-        width: 100%;
+   
 
-    }
-
-    .input {
-        width: 100%;
-    }
+   
 
     .btn {
         width: 60%;
+    }
+    .switchBtn_div{
+        width: 70%;
     }
 }
 
 @media screen and (max-width: 360px) {
-    .form {
-        width: 95%;
+    .form_buy {
+        width: 80%;
     }
-
-    .form-input {
-        width: 100%;
-
-    }
-
-    .input {
-        width: 100%;
-    }
-
     .btn {
         width: 60%;
+    }
+    .switchBtn_div{
+        width: 60%;
+    }
+    .heading{
+       margin-left: -90px;
+        
     }
 }

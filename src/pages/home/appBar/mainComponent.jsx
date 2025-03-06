@@ -24,12 +24,56 @@ import { ExtraCharges } from '../extraChargesForm/extraCharges.jsx';
 import CrudOperation from '../CrudSystem/crudOperation.jsx';
 import { DashboardView } from '../dashboardView/dashboardView.jsx';
 import logo from '../../../images/logo.png'
+import ProfilePage from '../profile/profile.jsx';
+import SettingsIcon from '@mui/icons-material/Settings';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useSelector } from "react-redux";
+import { EditeProfile } from '../editeProfile/editeProfile.jsx';
 
 const drawerWidth = 240;
 
 const ResponsiveDrawer = (props) => {
-    const [count, setCount] = useState(0)
-    console.log('count', count)
+    const formType = useSelector((state) => state.formType.formType);
+    const profileFormType = useSelector((state) => state.profile.formType);
+    console.log('redux data', profileFormType)
+    // ------------------------------------------------------
+    const [selectedIndex, setSelectedIndex] = useState(1);
+    const [count, setCount] = useState(1)
+
+    // ----------------------------------------------------------------
+    const [dropdownOpen, setDropDownOpen] = useState(false);
+    // ----------------------------------------------------------
+    const [selectedIndex_2, setSelectedIndex_2] = useState(1);
+    const [count_2, setCount_2] = useState(1)
+    // --------------------------------------------------------------
+    useEffect(() => {
+        if (formType !== null) {
+            setSelectedIndex(formType);
+            setCount(formType);
+            // ---------------------
+            setCount_2(null)
+            setSelectedIndex_2(null)
+
+        }
+    }, [formType]);
+    useEffect(() => {
+        if (profileFormType !== null) {
+            setCount(null)
+            setSelectedIndex(null)
+            // -----------------------
+            setSelectedIndex_2(profileFormType);
+            setCount_2(profileFormType);
+        }
+    }, [profileFormType]);
+
+
+
+
+
+
+    // -----------------------------------------------------------
+
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [isClosing, setIsClosing] = React.useState(false);
@@ -49,76 +93,148 @@ const ResponsiveDrawer = (props) => {
         }
     };
     // ------------------------------------------------------
-   
+    const menuItems_one = [
+        { value: 1, name: 'Dashboard' },
+        { value: 2, name: 'Buy' },
+        { value: 3, name: 'Sell' },
+        { value: 4, name: 'List' },
+
+    ];
+    // -------------------------------------------------
+    const menuItems_two = [
+        { value: 5, name: 'Broker ' },
+        { value: 6, name: 'Stock Name' },
+        { value: 7, name: 'Extra Charges' },
+        { value: 8, name: 'Profile' },
+        { value: 9, name: 'Edit Profile' }
+
+    ];
 
     const drawer = (
-        <div style={{ backgroundColor: '#fff', color: '#000', height: '100%' }}>
+        <div style={{ backgroundColor: '#FAF9F6', color: '#000', height: '100%' }}>
             {/* <Toolbar /> */}
-            <div style={{display:'flex',justifyContent:'center',alignItems:'center',padding:10}}>
-                <img src={logo} style={{ width: 100, height: 80 }} />
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
+                <img src={logo} style={{ width: 100, height: 100 }} />
             </div>
             <Divider />
-            {/* <ListItem disablePadding>
-                <ListItemButton >
-                    <ListItemIcon sx={{ color: '#000' }}>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <a href="https://react-dashboard-hk.netlify.app/" target="_blank" rel="noopener noreferrer">
-                       Dashboard
-                    </a>
-
-
-
-                </ListItemButton>
-
-            </ListItem> */}
+            {/* -------------------------------------------------------------------------------------- */}
             <List>
-                {['Dashboard','Buy Form', 'Sell Form', 'Broker Form', 'Stock Name', 'Extra Charges', 'Crud'].map((text, index) => (
-                    <div>
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton onClick={() => setCount(index)} >
-                                <ListItemIcon sx={{ color: '#000' }}>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-
-
-                            </ListItemButton>
-
-
-                        </ListItem>
-                    </div>
-
+                {menuItems_one.map((item) => (
+                    <ListItem key={item.value} disablePadding>
+                        <ListItemButton
+                            onClick={() => {
+                                setSelectedIndex(item.value);
+                                setCount(item.value);
+                                setCount_2(null)
+                                setSelectedIndex_2(null)
+                            }}
+                            sx={{
+                                backgroundColor: selectedIndex === item.value ? '#1976d2' : 'transparent',
+                                '&:hover': { backgroundColor: '#B9D9EB' }
+                            }}
+                        >
+                            <ListItemIcon sx={{ color: selectedIndex === item.value ? '#fff' : '#000', }}>
+                                {item.value % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                            </ListItemIcon>
+                            <ListItemText primary={item.name} sx={{ color: selectedIndex === item.value ? '#fff' : '#000', }} />
+                        </ListItemButton>
+                    </ListItem>
                 ))}
             </List>
-          
-           
+            {/* -----------------------------------setting------------------------------------------------- */}
+            <List>
+
+                <div>
+                    <ListItem disablePadding>
+                        <ListItemButton
+                            onClick={() => setDropDownOpen(prev => !prev)}
+
+                        >
+                            <ListItemIcon sx={{ color: '#000' }}>
+                                <SettingsIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Setting"} />
+                            <ListItemIcon sx={{ color: '#000' }}>
+                                {dropdownOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                            </ListItemIcon>
+
+
+                        </ListItemButton>
+
+
+                    </ListItem>
+                </div>
+
+
+            </List>
+            {/* ----------------------------------Drop Down---------------------------------------------- */}
+            {dropdownOpen && (
+                <List>
+
+                    {menuItems_two.map((item) => (
+                        <div>
+                            <ListItem key={item.value} disablePadding>
+                                <ListItemButton onClick={() => {
+                                    setSelectedIndex_2(item.value)
+                                    setCount_2(item.value)
+                                    setCount(null)
+                                    setSelectedIndex(null)
+                                }}
+                                    sx={{
+                                        backgroundColor: selectedIndex_2 === item.value ? '#1976d2' : 'transparent',
+                                        '&:hover': { backgroundColor: '#B9D9EB' }
+                                    }} >
+                                    <ListItemIcon sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }}>
+                                        {item.value % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={item.name} sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }} />
+
+
+                                </ListItemButton>
+
+
+                            </ListItem>
+                        </div>
+
+                    ))}
+                </List>
+            )}
+
+
         </div>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
     // --------------------------------------------------
 
-    const renderForm = () => {
-        switch (count) {
-            case 0:
-                return <DashboardView />;
-            case 1:
-                return <BuyForm />;
-            case 2:
-                return <SellForm />;
-            case 3:
-                return <BrokerForm />;
-            case 4:
-                return <StockName />;
-            case 5:
-                return <ExtraCharges />;
-            case 6:
-                return <CrudOperation />;
 
-            default:
-                return null;
+
+    const renderForm = () => {
+        console.log("Current Count:", count);
+        console.log("Current Count_2:", count_2);
+
+        if (count !== null && count !== undefined) {
+            switch (count) {
+                case 1: return <DashboardView />;
+                case 2: return <BuyForm />;
+                case 3: return <SellForm />;
+                case 4: return <CrudOperation />;
+                default: return null;
+            }
         }
+
+        if (count_2 !== null && count_2 !== undefined) {
+            switch (count_2) {
+                case 5: return <BrokerForm />;
+                case 6: return <StockName />;
+                case 7: return <ExtraCharges />;
+                case 8: return <ProfilePage />;
+                case 9: return <EditeProfile />;
+                default: return null;
+            }
+        }
+
+        return null;
     };
 
 
@@ -126,7 +242,7 @@ const ResponsiveDrawer = (props) => {
 
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', backgroundColor: '#FAF9F6', width: '100%', overflow: 'hidden' }}>
             <CssBaseline />
             <AppBar
                 position="fixed"
@@ -183,9 +299,12 @@ const ResponsiveDrawer = (props) => {
             </Box>
             <Box
                 component="main"
-                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+                sx={{ flexGrow: 1, p: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+
             >
                 {renderForm()}
+
+
 
             </Box>
         </Box>
@@ -193,10 +312,7 @@ const ResponsiveDrawer = (props) => {
 }
 
 ResponsiveDrawer.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * Remove this when copying and pasting into your project.
-     */
+
     window: PropTypes.func,
 };
 

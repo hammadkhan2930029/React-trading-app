@@ -8,6 +8,8 @@ import Fab from '@mui/material/Fab';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { motion, useInView } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { setBuyForm} from "../Redux/formTypeSlice";
 
 const currencies = [
     {
@@ -47,6 +49,7 @@ const stockName = [
 ];
 
 export const SellForm = () => {
+    const dispatch = useDispatch()
     const refOne = React.useRef(null);
     const refTwo = React.useRef(null);
 
@@ -88,22 +91,25 @@ export const SellForm = () => {
 
             >
                 {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className='form_div_sell'>
 
-                        <div className='form-main'>
+                        <div className='form-main-sell'>
                             <div>
                                 <span className='heading'>SELL FORM</span>
                             </div>
 
+                            <div className='switchBtn_div_sell'>
 
+                                <button className='switchBtn_sell' onClick={()=> dispatch(setBuyForm())}>Buy </button>
+                            </div>
 
                             <div >
                                 <Box component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 2, width: '40ch' } }}
+                                    sx={{ '& .MuiTextField-root': { m: 2, width: '38ch' } }}
                                     noValidate
                                     autoComplete="off"
-                                    className='form'>
-                                    <div>
+                                >
+                                    <div className='form_sell'>
 
                                         <TextField
                                             id="outlined-select-currency"
@@ -224,7 +230,7 @@ export const SellForm = () => {
 
                             </div>
 
-                            <Box sx={{ '& > :not(style)': { m: 1 } }}>
+                            <Box sx={{ '& > :not(style)': { m: 1,ml:-10 } }}>
 
                                 <Fab variant="extended" color="primary" type="submit">
                                     <SendIcon sx={{ mr: 1.5 }} />

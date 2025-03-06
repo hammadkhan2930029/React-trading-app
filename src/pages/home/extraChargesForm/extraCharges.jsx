@@ -12,6 +12,8 @@ import { motion, useInView } from "framer-motion";
 
 
 export const ExtraCharges = () => {
+        const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
+    
     const refOne = React.useRef(null);
     const refTwo = React.useRef(null);
 
@@ -51,7 +53,7 @@ export const ExtraCharges = () => {
                 {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
                     <form onSubmit={handleSubmit}>
 
-                        <div className='form-main'>
+                        <div className='form-main-ExtraCharges'>
                             <div>
                                 <span className='heading'>Extra Charges</span>
                             </div>
@@ -60,7 +62,7 @@ export const ExtraCharges = () => {
 
                             <div >
                                 <Box component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 2, width: '40ch' } }}
+                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch': '40ch'  } }}
                                     noValidate
                                     autoComplete="off"
                                     className='form'>
