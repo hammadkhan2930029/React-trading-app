@@ -68,10 +68,7 @@ export const BuyForm = () => {
             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: .8 }}>
 
-            {/* <div className='switchBtn_div'>
-
-                <button className='switchBtn' onClick={() => dispatch(setSellForm())}>Sell Form</button>
-            </div> */}
+           
 
 
             <Formik

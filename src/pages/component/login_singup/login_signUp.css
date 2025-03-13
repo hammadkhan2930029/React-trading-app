@@ -1,0 +1,110 @@
+.login_signup_main {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.view{
+    width: 90%;
+
+}
+
+.loginBtnPage {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginBtn {
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-bottom-right-radius: 31px;
+    background-color: #1976d2;
+    color: #fff;
+    width: 90%;
+    height: 66px;
+    font-size: 16px;
+    border-top-right-radius: 10;
+    font-weight: 700;
+    
+}
+
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {
+
+}
+
+/* 991px to 768px */
+@media (max-width: 991px) {
+   
+}
+
+/* 767px to 576px */
+@media (max-width: 767px) {
+    .login_signup_main {
+        flex-direction: column;
+        /* justify-content: space-between; */
+    }
+    .view{
+        width: 100%;
+    
+    }
+    
+.loginBtnPage {
+    width: 100%;
+    flex-direction: row;
+
+}
+.loginBtn {
+    width: 20%;
+    height: 50px;
+  
+    
+}
+   
+}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+    .login_signup_main {
+      height: 850px;
+    }
+   
+   
+    
+   
+  
+
+
+}
+
+@media (max-width: 440px) {
+    .login_signup_main {
+        height: auto;
+      }
+    .loginBtn{
+        font-size: 14px;
+        width: 25%;
+    }
+  
+   
+
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {
+   
+    .loginBtn{
+        font-size: 12px;
+    }
+  
+
+
+
+}

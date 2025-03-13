@@ -21,6 +21,7 @@
     "@mui/styled-engine-sc": "^6.3.0",
     "@reduxjs/toolkit": "^2.6.0",
     "apexcharts": "^4.3.0",
+    "axios": "^1.8.3",
     "bootstrap": "^5.3.3",
     "firebase": "^11.1.0",
     "formik": "^2.4.6",
@@ -35,6 +36,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.2",
+    "react-slideshow-image": "^4.3.2",
     "recharts": "^2.15.0",
     "styled-components": "^6.1.14",
     "yup": "^1.6.1"

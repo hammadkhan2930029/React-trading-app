@@ -14,8 +14,14 @@ const profileSlice = createSlice({
     setEditeProfile: (state) => {
       state.formType = 9;
     },
+    setDividen: (state) => {
+      state.formType = 17;
+    },
+    setDividen_list: (state) => {
+      state.formType = 18;
+    },
   },
 });
 
-export const { setProfile, setEditeProfile } = profileSlice.actions;
+export const { setProfile, setEditeProfile,setDividen,setDividen_list } = profileSlice.actions;
 export default profileSlice.reducer;

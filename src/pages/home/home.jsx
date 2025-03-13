@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ResponsiveDrawer from "./appBar/mainComponent.jsx";
 import { Loader } from './loader/loader.jsx';
+import LandingPage from '../component/landingPage.jsx';
 
 
 
@@ -23,6 +24,7 @@ export const Home = () => {
 
         <ResponsiveDrawer />
       )}
+      {/* <LandingPage/> */}
 
 
 

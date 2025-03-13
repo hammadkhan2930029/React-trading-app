@@ -30,6 +30,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useSelector } from "react-redux";
 import { EditeProfile } from '../editeProfile/editeProfile.jsx';
+import { Dividen } from '../Dividen/dividen.jsx';
+import DividenList from '../dividenList/dividenList.jsx';
 
 const drawerWidth = 240;
 
@@ -105,6 +107,9 @@ const ResponsiveDrawer = (props) => {
         { value: 5, name: 'Broker ' },
         { value: 6, name: 'Stock Name' },
         { value: 7, name: 'Extra Charges' },
+        { value: 17, name: 'Dividen' },
+        { value: 18, name: 'Dividen List' },
+
         { value: 8, name: 'Profile' },
         { value: 9, name: 'Edit Profile' }
 
@@ -228,6 +233,8 @@ const ResponsiveDrawer = (props) => {
                 case 5: return <BrokerForm />;
                 case 6: return <StockName />;
                 case 7: return <ExtraCharges />;
+                case 17: return <Dividen />;
+                case 18: return <DividenList />;
                 case 8: return <ProfilePage />;
                 case 9: return <EditeProfile />;
                 default: return null;
