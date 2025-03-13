@@ -107,8 +107,8 @@ const ResponsiveDrawer = (props) => {
         { value: 5, name: 'Broker ' },
         { value: 6, name: 'Stock Name' },
         { value: 7, name: 'Extra Charges' },
-        { value: 17, name: 'Dividen' },
-        { value: 18, name: 'Dividen List' },
+        { value: 17, name: 'Dividend' },
+        { value: 18, name: 'Dividend List' },
 
         { value: 8, name: 'Profile' },
         { value: 9, name: 'Edit Profile' }

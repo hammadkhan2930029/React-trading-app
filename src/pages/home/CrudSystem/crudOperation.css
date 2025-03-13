@@ -216,7 +216,7 @@ tbody.t_body tr {
 /* Buttons */
 .editebtn, .top_btn_buy {
     background-color: #1976d2;
-    padding: 10px 15px;
+    padding: 15px 25px;
     color: #fff;
     border-radius: 5px;
     outline: none;
@@ -232,12 +232,17 @@ tbody.t_body tr {
 
 .top_btn {
     margin: 5px;
-    width: 10%;
+    width: 15%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
+.top_input_fields{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1024px) {
     table {

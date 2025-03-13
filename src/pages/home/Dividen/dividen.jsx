@@ -81,13 +81,13 @@ export const Dividen = () => {
 
                         <div className='form-main-dividen'>
                             <div>
-                                <span className='heading_dividen'>Dividen</span>
+                                <span className='heading_dividen'>Dividend</span>
                             </div>
 
 
                             <div className='switchBtn_div'>
 
-                                <button className='switchBtn' onClick={() => dispatch(setDividen_list())}>Dividen List</button>
+                                <button className='switchBtn' onClick={() => dispatch(setDividen_list())}>Dividend List</button>
                             </div>
                             <div >
                                 <Box component="form"
