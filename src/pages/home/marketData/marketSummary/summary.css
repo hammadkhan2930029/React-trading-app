@@ -1,22 +1,21 @@
-.form-main-dividen {
+
+.form_summary {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     margin-top: 100px;
-    width: 100%;
-    height: 100vh;
-
+    width: 95%;
 
 }
-.heading_dividen{
+.summary_heading_2{
     color: #000;
     font-size: 24px;
     font-weight: bold;
     
 }
 
-.dividen_form {
+.summary_form_main {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -25,20 +24,20 @@
     align-self: center;
     flex-direction: row;
     background-color: #fff;
-    margin: 10px;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin: 10px; 
+    padding: 30px; 
+     border-radius: 10px;
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
-
-}
+ } 
+ 
 
 
 
 
 
 .btn {
-    background-color: blue;
+    background-color: #1976d2;
     width: 20%;
     padding: 5px;
     text-align: center;
@@ -69,10 +68,12 @@
 }
 
 
-
 @media screen and (max-width: 600px) {
-    .dividen_form {
-        width: 90%;
+    .form_summary{
+        width: 100%;
+    }
+    .summary_form_main {
+        width: 85%;
 
     }
 
@@ -83,27 +84,36 @@
     }
 }
 
-@media screen and (max-width: 412px) {
-    .dividen_form {
-        width: 70%;
+@media screen and (max-width: 430px) {
+    .summary_form_main {
+        width: 80%;
+        margin: 0;
     }
 
-    
+   
+
+   
 
     .btn {
         width: 60%;
+    }
+    .switchBtn_div{
+        width: 70%;
     }
 }
 
 @media screen and (max-width: 360px) {
-    .dividen_form {
-        width: 90%;
-        padding: 5px;
+    .summary_form_main {
+        width: 80%;
     }
-
-   
-
     .btn {
         width: 60%;
+    }
+    .switchBtn_div{
+        width: 60%;
+    }
+    .summary_heading{
+       margin-left: -90px;
+        
     }
 }

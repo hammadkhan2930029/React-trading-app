@@ -1,5 +1,5 @@
 import React from 'react';
-import './summary.css';
+import './overviewList.css';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 
 const marketData = [
@@ -14,7 +14,7 @@ const marketData = [
     { label: "Value", value: "542,653" }
 ];
 
-export const Summary = () => {
+export const OverviewList = () => {
     return (
         <div className='summary_main'>
             <div className='heading_div'>

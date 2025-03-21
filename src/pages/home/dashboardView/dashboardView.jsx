@@ -27,7 +27,7 @@ import { Card_1 } from './card_1/card_1';
 import { Card_2 } from './card_2/card_2';
 import Card_3 from './card_3/card_3';
 import Card_4 from './card_4/card_4';
-import { Summary } from './summary/summary';
+import { OverviewList } from './overviewDataList/overviewList';
 
 
 export const DashboardView = () => {
@@ -289,7 +289,7 @@ export const DashboardView = () => {
             {/* ------------------------------------------Larg card----------------------------------------------- */}
             <div className="larg_cards">
                 <div className="larg_cards_data">
-                    <Summary />
+                    <OverviewList />
 
                 </div>
                 <div className="larg_cards_data">

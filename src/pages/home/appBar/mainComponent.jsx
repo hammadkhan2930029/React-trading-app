@@ -34,7 +34,10 @@ import { Dividen } from '../Dividen/dividen.jsx';
 import DividenList from '../dividenList/dividenList.jsx';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import { Developers } from '../developersPage/developer.jsx';
-import { HighLights } from '../marketSummary/highLights/highlights.jsx';
+import { OverView } from '../marketData/marketOverview/overview.jsx';
+import { Summary } from '../marketData/marketSummary/summary.jsx';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+
 const drawerWidth = 240;
 
 const ResponsiveDrawer = (props) => {
@@ -122,8 +125,8 @@ const ResponsiveDrawer = (props) => {
     ];
     // ------------------------------------------------
     const menuItems_three = [
-        { value: 11, name: 'Highlights ' },
-        { value: 12, name: 'other' },
+        { value: 11, name: 'Overview ' },
+        { value: 12, name: 'Summary' },
 
 
     ];
@@ -179,9 +182,9 @@ const ResponsiveDrawer = (props) => {
                                 '&:hover': { backgroundColor: '#C0C0C0' }
                             }} >
                             <ListItemIcon sx={{ color: dropdownOpen_three ? '#fff' : '#000', }}>
-                                <SettingsIcon />
+                                <ShowChartIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Market Summary"} sx={{ color: dropdownOpen_three? '#fff' : '#000', }} />
+                            <ListItemText primary={"Market Data"} sx={{ color: dropdownOpen_three? '#fff' : '#000', }} />
                             <ListItemIcon  sx={{ color: dropdownOpen_three ? '#fff' : '#000', }}>
                                 {dropdownOpen_three ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                             </ListItemIcon>
@@ -260,6 +263,8 @@ const ResponsiveDrawer = (props) => {
                                             setCount_2(item.value)
                                             setCount(null)
                                             setSelectedIndex(null)
+                                            setCount_3(null)
+                                            setSelectedIndex_3(null)
                                         }}
                                             sx={{
                                                 backgroundColor: selectedIndex_2 === item.value ? '#1976d2' : 'transparent',
@@ -290,6 +295,8 @@ const ResponsiveDrawer = (props) => {
                             setCount_2(10)
                             setCount(null)
                             setSelectedIndex(null)
+                            setCount_3(null)
+                            setSelectedIndex_3(null)
                         }}
                             sx={{
                                 backgroundColor: selectedIndex_2 === 10 ? '#1976d2' : 'transparent',
@@ -346,7 +353,6 @@ const ResponsiveDrawer = (props) => {
                 case 8: return <ProfilePage />;
                 case 9: return <EditeProfile />;
                 case 10: return <Developers />;
-                case 11: return <HighLights />;
 
                 default: return null;
             }
@@ -354,7 +360,9 @@ const ResponsiveDrawer = (props) => {
         if (count_3 !== null && count_3 !== undefined) {
             switch (count_3) {
 
-                case 11: return <HighLights />;
+                case 11: return <OverView />;
+                case 12: return <Summary />;
+
 
                 default: return null;
             }

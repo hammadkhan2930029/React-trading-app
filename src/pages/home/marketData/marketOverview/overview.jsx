@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Formik, ErrorMessage } from 'formik';
-import "./highlights.css"
+import "./overview.css"
 import "react-datepicker/dist/react-datepicker.css";
 import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
@@ -8,12 +8,11 @@ import Fab from '@mui/material/Fab';
 import TextField from '@mui/material/TextField';
 import { motion, useInView } from "framer-motion";
 import { useDispatch } from "react-redux";
-// import { setSellForm } from "../Redux/formTypeSlice";
 
 
 
 
-export const HighLights = () => {
+export const OverView = () => {
     const dispatch = useDispatch()
     const refOne = React.useRef(null);
     const refTwo = React.useRef(null);
@@ -46,6 +45,7 @@ export const HighLights = () => {
                     volume: '',
                     previousClose: '',
                     value: '',
+                    date:''
 
 
                 }}
@@ -60,12 +60,9 @@ export const HighLights = () => {
 
                         <div className='form_highlights'>
                             <div>
-                                <span className='highlights_heading'>Highlights</span>
+                                <span className='highlights_heading'>Market Overview</span>
                             </div>
-                            {/* <div className='switchBtn_div'>
-
-                                <button className='switchBtn' onClick={() => dispatch(setSellForm())}>Sell</button>
-                            </div> */}
+                          
 
                             <div >
                                 <Box component="form"
@@ -74,6 +71,19 @@ export const HighLights = () => {
                                     autoComplete="off"
                                 >
                                     <div className='highlights_form_main'>
+
+                                        <TextField
+                                            id="outlined-required"
+                                            label="Date"
+                                            selected={values.date}
+                                            onChange={(date) => handleChange({ target: { name: "trade_date", value: date } })} // Handle date change
+                                            onBlur={handleBlur}
+                                            type="date"
+                                            name="date"
+                                            InputLabelProps={{ shrink: true }}
+                                            required
+
+                                        />
 
                                         <TextField
                                             id="outlined-required"
@@ -151,9 +161,9 @@ export const HighLights = () => {
                                             value={values.volume}
                                             type="number"
 
-                                           
+
                                         />
-                                          <TextField
+                                        <TextField
                                             id="outlined-required"
                                             label="Previous Close"
                                             placeholder="previous close..."
@@ -163,9 +173,9 @@ export const HighLights = () => {
                                             value={values.previousClose}
                                             type="number"
 
-                                           
+
                                         />
-                                          <TextField
+                                        <TextField
                                             id="outlined-required"
                                             label="value"
                                             placeholder="value..."
@@ -175,7 +185,7 @@ export const HighLights = () => {
                                             value={values.value}
                                             type="number"
 
-                                           
+
                                         />
                                     </div>
 
