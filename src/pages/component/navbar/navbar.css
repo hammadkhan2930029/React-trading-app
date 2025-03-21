@@ -96,7 +96,7 @@
 }
 
 .h1 {
-    font-size: 72px;
+    font-size: 64px;
 }
 
 .h4 {
@@ -106,20 +106,26 @@
     padding-bottom: 20px;
 }
 
-.btn {
-    margin-top: 80px;
+.textside .btn {
+    margin-top: 20px;
+    width: 90%;
 }
 
-.imgDiv {
-    
+.container .imgDiv {
     width: 50%;
+    display: flex;
+    justify-content: center;
+
    
 
 }
 
-.img {
-    width: 80%;
+.imgDiv .img {
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
+   
 }
 
 /* ------------------------- MEDIA QUERIES ------------------------- */
@@ -188,6 +194,10 @@
     .container{
         flex-direction: column;
     }
+    .container .imgDiv{
+        width: 100%;
+        margin-top: 20px;
+    }
   
 
 
@@ -204,9 +214,10 @@
         font-size: 42px;
     }
 
-    .img {
-        width: 100%;
+    .imgDiv .img {
+        width: 80%;
         padding: 10px;
+        box-shadow: none;
     }
    
 

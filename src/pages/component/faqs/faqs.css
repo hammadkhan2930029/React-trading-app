@@ -1,5 +1,4 @@
-
-.faqs{
+.faqs {
     width: 100%;
     padding: 20px;
     display: flex;
@@ -8,7 +7,8 @@
     flex-direction: row;
 
 }
-.faqs_main{
+
+.faqs_main {
     width: 95%;
     display: flex;
     justify-content: center;
@@ -18,11 +18,13 @@
 
 
 }
-.faqs_left{
+
+.faqs_left {
     width: 50%;
 
 }
-.faqs_head{
+
+.faqs_head {
     text-transform: uppercase;
     font-size: 15px;
     color: #1976D2;
@@ -35,13 +37,15 @@
     width: 80px;
     text-align: center;
 }
-.faqs_h2{
+
+.faqs_h2 {
     font-size: 38px;
     font-weight: 700;
     color: #000;
 
 }
-.drop{
+
+.drop {
     width: 90%;
     display: flex;
     justify-content: center;
@@ -49,7 +53,8 @@
     flex-direction: column;
     margin-top: 10px;
 }
-.drop_style{
+
+.drop_style {
     width: 100%;
     display: flex;
     align-items: center;
@@ -62,16 +67,19 @@
 
 
 }
-.drop_style:hover{
+
+.drop_style:hover {
     background-color: #1976D2;
     transition: background-color 0.3s ease;
 
 
 }
-.drop_style:hover .drop_text .text{
+
+.drop_style:hover .drop_text .text {
     color: #FFF;
 }
-.drop_icon{
+
+.drop_icon {
     background-color: #1976D2;
     width: 20%;
     padding: 10px;
@@ -82,7 +90,8 @@
     border-bottom-right-radius: 30px;
 
 }
-.drop_icon .icon{
+
+.drop_icon .icon {
     font-size: 26px;
     text-align: center;
     color: #fff;
@@ -90,16 +99,17 @@
 
 }
 
-.drop_text .text{
+.drop_text .text {
     padding-left: 5px;
     padding: 10px;
     font-size: 18px;
     color: #000;
     font-weight: 500;
-   
+
 
 }
-.para_text{
+
+.para_text {
     font-size: 18px;
     padding: 10px;
     color: #000;
@@ -108,19 +118,22 @@
 
 
 /* ----------------------------------------------------------- */
-.faqs_right{
+.faqs_right {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
-.Faqs_headphone2{
-    width: 80%;
+
+.Faqs_headphone2 {
+    width: 100%;
     border-radius: 12px;
+    margin-left: 25px;
 
 }
-.line{
+
+.line {
     width: 40%;
     border: 2px solid #1976D2;
     margin-top: 10px;
@@ -129,140 +142,155 @@
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */
 @media (max-width: 1180px) {
-   .drop{
-    width: 100%;
-   }
-   
+    .drop {
+        width: 100%;
+    }
+
 
 }
 
 /* 991px to 768px */
 @media (max-width: 991px) {
-   .faqs_main{
-    flex-direction: column;
-   }
-   .faqs_left{
-    width: 100%;
-}
-.faqs_right{
-    width: 100%;
-}
-.Faqs_headphone2{
-    width: 100%;
+    .faqs_main {
+        flex-direction: column;
+    }
 
-}
+    .faqs_left {
+        width: 100%;
+    }
 
-    
-   
+    .faqs_right {
+        width: 100%;
+    }
+
+    .Faqs_headphone2 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+
+
 }
 
 /* 767px to 576px */
 @media (max-width: 767px) {
-    .faqs_left{
+    .faqs_left {
         width: 100%;
     }
-    .faqs_right{
+
+    .faqs_right {
         width: 100%;
     }
-    .drop_text .text{
+
+    .drop_text .text {
         padding-left: 2px;
         padding: 17px;
         font-size: 16px;
-       
-       
-    
+
+
+
     }
-    .drop_icon{
+
+    .drop_icon {
         padding: 15px;
     }
-  
-  
+
+
 }
 
 /* 575px to 360px */
 @media (max-width: 575px) {
-    .faqs_h2{
+    .faqs_h2 {
         font-size: 26px;
-      
-    
+
+
     }
-    .drop_icon{
+
+    .drop_icon {
         width: 20%;
     }
-    .drop_text .text{
-    
+
+    .drop_text .text {
+
         font-size: 18px;
     }
-    .faqs_right{
+
+    .faqs_right {
         height: auto;
     }
-    .drop_text .text{
+
+    .drop_text .text {
         padding: 10px;
         font-size: 14px;
-       
-       
-    
+
+
+
     }
-    .drop_icon{
+
+    .drop_icon {
         padding: 17px;
     }
-    
-   
-   
- 
+
+
+
+
 
 }
 
 @media (max-width: 440px) {
-    .faqs{
+    .faqs {
         padding: 5px;
     }
-   .faqs_h2{
-    font-size: 24px;
-   }
-   .drop_text .text{
-    padding-left: 2px;
-    font-size: 18px;
-}
-   .para_text{
-    font-size: 14px;
-   }
-   
-   .drop_icon{
-    padding: 20px;
-}
-.drop_text .text{
-    padding: 10px;
-    font-size: 16px;
-   
-   
 
-}
-    
-   
-    
+    .faqs_h2 {
+        font-size: 24px;
+    }
+
+    .drop_text .text {
+        padding-left: 2px;
+        font-size: 18px;
+    }
+
+    .para_text {
+        font-size: 14px;
+    }
+
+    .drop_icon {
+        padding: 20px;
+    }
+
+    .drop_text .text {
+        padding: 10px;
+        font-size: 16px;
+
+
+
+    }
+
+
+
 }
 
 /* Below 360px */
 @media (max-width: 360px) {
-    .faqs_main{
+    .faqs_main {
         width: 100%;
         padding: 5px;
     }
-    .drop_icon{
+
+    .drop_icon {
         padding: 20px;
     }
-    .drop_text .text{
+
+    .drop_text .text {
         padding: 10px;
         font-size: 16px;
-       
-       
-    
+
+
+
     }
-    
-  
-   
-    
+
+
+
+
 }
-
-

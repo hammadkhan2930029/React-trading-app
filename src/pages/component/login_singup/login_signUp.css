@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    background-color: #F8F8FF;
 }
 .view{
-    width: 90%;
+    width: 100%;
 
 }
 
@@ -90,6 +91,7 @@
     .loginBtn{
         font-size: 14px;
         width: 25%;
+        border-radius: 10px;
     }
   
    
@@ -103,7 +105,10 @@
     .loginBtn{
         font-size: 12px;
     }
-  
+    .loginBtnPage {
+       margin-top: 80px;
+    
+    }
 
 
 

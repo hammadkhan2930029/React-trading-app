@@ -5,7 +5,8 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import WorkIcon from '@mui/icons-material/Work';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-import purs from '../../assets/purs.png';
+// import purs from '../../assets/purs.png';
+import stock7 from '../../assets/stock-7.jpg'
 
 export const Cards = () => {
     const cardVariants = {
@@ -20,7 +21,7 @@ export const Cards = () => {
 
     return (
         <div className='mainCards'>
-            <motion.div
+            {/* <motion.div
                 className='section_1'
                 initial="hidden"
                 whileInView="visible"
@@ -59,7 +60,7 @@ export const Cards = () => {
                         </motion.div>
                     ))}
                 </div>
-            </motion.div>
+            </motion.div> */}
 
             <div className='section_2'>
                 <motion.div className='h_phone_div'
@@ -72,7 +73,7 @@ export const Cards = () => {
                         transition={{ duration: 1.5, repeat: Infinity }}
 
                     >
-                        <img className='headphone2' src={purs} alt="Headphone" />
+                        <img className='headphone2' src={stock7} alt="Headphone" />
                     </motion.div>
                 </motion.div>
 
@@ -86,12 +87,13 @@ export const Cards = () => {
                 >
                 
                     <span className='sec2_text2'>
-                    The Perfect Fashion Essential to Elevate Your Style
+                    Manage Your Portfolio With Ease
                     </span>
                     <div className='line'></div>
 
                     <span className='sec2_text'>
-                    Designed for elegance and practicality, this fashion essential complements your look while keeping your essentials organized. Elevate your style effortlessly with a perfect blend of luxury and functionality.
+                    Elevate your investment experience with our Portfolio Management Portal – your ultimate companion for tracking and optimizing investments in the Pakistani stock market.
+                    Monitor your portfolio, analyze trends with charts, and make informed decisions.  🚀📈
                     </span>
                    
                 </motion.div>

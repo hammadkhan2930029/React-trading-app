@@ -1,10 +1,11 @@
-.R_main{
+.R_main {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     height: 100vh;
 }
-.register_login{
+
+.register_login_2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,22 +17,26 @@
     border-radius: 70px;
 
 }
-.image_div{
+
+.image_div_forgot {
     width: 50%;
     height: 570px;
 
 }
-.image_login{
+
+.image_forgot {
     width: 100%;
     height: 570px;
     border-bottom-right-radius: 70px;
     border-top-right-radius: 70px
 }
-.register_form{
+
+.register_form {
     width: 50%;
     padding: 20px;
 }
-.register_form .h6{
+
+.register_form .h6 {
     font-size: 32px;
     font-weight: 700;
     color: #000;
@@ -40,7 +45,8 @@
     background-color: transparent;
 
 }
-.register_form .form{
+
+.register_form .form {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -49,20 +55,24 @@
     background-color: transparent;
     box-shadow: none;
 }
-.form .r_input{
+
+.form .r_input {
     width: 100%;
     margin: 10px;
 }
-.form .btn{
+
+.form .btn {
     width: 30%;
 }
-.f_div{
+
+.f_div {
     width: 100%;
     display: flex;
     justify-content: end;
     padding: 10px;
 }
-.f_div .forgot{
+
+.f_div .forgot {
     color: blue;
     font-size: 16px;
     cursor: pointer;
@@ -70,13 +80,15 @@
     border: none;
 
 }
-.create_div{
+
+.create_div {
     width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 20px;
 }
-.create_div .create{
+
+.create_div .create {
     color: blue;
     font-size: 16px;
     cursor: pointer;
@@ -84,87 +96,99 @@
     border: none;
 
 }
+
+.backbtn {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */
-@media (max-width: 1180px) {
-
-}
+@media (max-width: 1180px) {}
 
 /* 991px to 768px */
-@media (max-width: 991px) {
-   
-}
+@media (max-width: 991px) {}
 
 /* 767px to 576px */
 @media (max-width: 767px) {
-    .register_login{
+    .register_login_2 {
         width: 100%;
         margin: 5px;
     }
-  .form{
-    padding: 10px;
-  }
-  .register_form .h6{
-    margin-bottom: 20px;
-  }
+
+    .form {
+        padding: 10px;
+    }
+
+    .register_form .h6 {
+        margin-bottom: 20px;
+    }
 }
 
 /* 575px to 360px */
 @media (max-width: 575px) {
-    .register_login{
+    .register_login_2 {
         flex-direction: column;
-        height: 665px;
+        height: 640px;
 
     }
-    .image_div{
+
+    .image_div_forgot {
         width: 100%;
-        height: 270px;
+        height: 320px;
 
     }
-    .image_login{
+
+    .image_forgot {
         border-bottom-right-radius: 0px;
         border-top-right-radius: 0px;
-        height: 270px;
+        height: 320px;
         border-top-right-radius: 70px;
         border-top-left-radius: 70px;
 
     }
-    .register_form{
+
+    .register_form {
         width: 100%;
         padding-left: 20px;
         padding-right: 40px;
     }
-    .form .r_input{
+
+    .form .r_input {
         width: 100%;
         margin: 0;
         margin-top: 10px;
     }
-    .form .btn{
+
+    .form .btn {
         margin-top: 10px;
     }
-   
-    
-   
-  
+    .backbtn{
+        margin-top: 50px;
+    }
+
+
+
+
 
 
 }
 
 @media (max-width: 440px) {
-    .register_login{
+    .register_login {
         height: 572px;
     }
-  
-   
+
+
 
 
 }
 
 /* Below 360px */
 @media (max-width: 360px) {
-   
-
-
-
-
+    .backbtn{
+        margin-top: 25px;
+    }
 }

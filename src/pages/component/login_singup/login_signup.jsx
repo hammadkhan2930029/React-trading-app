@@ -1,17 +1,24 @@
-import React,{ useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Login } from '../login/login';
 import { Register } from '../registrationForm/register';
 import { ForgotPassword } from '../forgotPassword/forgotPassword';
 import './login_signup.css'
 import { motion, useInView } from "framer-motion";
+import { useSelector } from "react-redux";
 
 function LoginPage() {
-    const [view, setView] = useState('login'); // Default 'login'
+    const loginSignUp = useSelector((state) => state.login.formType);
+    console.log('redux', loginSignUp)
+
+    const [view, setView] = useState(1);
+    useEffect(() => {
+        if (loginSignUp) {
+            setView(loginSignUp);
+        }
+    }, [loginSignUp]);
     const refOne = React.useRef(null);
-    const refTwo = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
-    const inViewTwo = useInView(refTwo, { triggerOnce: true });
 
     return (
         <motion.div className='login_signup_main'>
@@ -19,20 +26,13 @@ function LoginPage() {
                 initial={{ opacity: 0, x: -100 }}
                 animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: .8 }}>
-                {view === 'login' && <Login />}
-                {view === 'register' && <Register />}
-                {view === 'forgot' && <ForgotPassword />}
+                {view == 1 && <Login />}
+                {view == 2 && <Register />}
+                {view == 3 && <ForgotPassword />}
             </motion.div>
 
 
-            <motion.div className='loginBtnPage' ref={refTwo}
-                initial={{ opacity: 0, x: 100 }}
-                animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: .8 }}>
-                <button onClick={() => setView('login')} className='loginBtn'>Login</button>
-                <button onClick={() => setView('register')} className='loginBtn'>Register</button>
-                <button onClick={() => setView('forgot')} className='loginBtn'>Forgot Password</button>
-            </motion.div>
+          
         </motion.div>
     );
 }

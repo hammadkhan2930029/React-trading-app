@@ -243,6 +243,24 @@ tbody.t_body tr {
     align-items: center;
     flex-direction: row;
 }
+/* ------------------------------------- */
+.search_div{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #848181;
+    border-radius: 5px;
+}
+.search_input{
+    outline: none;
+    border: none;
+    padding: 18px;
+    width: 90%;
+    font-size: 16px;
+    background-color: transparent;
+}
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1024px) {
     table {
@@ -319,6 +337,12 @@ tbody.t_body tr {
 
     .t_head_row th, .t_body_row td {
         padding: 6px 8px;
+    }
+    .top_input_fields{
+        flex-direction: column;
+    }
+    .search_div{
+        width: 100%;
     }
 }
 

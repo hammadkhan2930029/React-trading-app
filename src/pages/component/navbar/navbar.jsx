@@ -2,12 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './navbar.css';
 import logo_t from '../../assets/logo-t.png'
 import { DrawerBar } from '../drawer/drawer';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import purs1 from '../../assets/purs1.png';
 import { motion } from "framer-motion";
-
-
+import stockreport from '../../assets/stockReport.jpg'
 export const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 990);
   const [isSticky, setIsSticky] = useState(false);
@@ -71,21 +67,21 @@ export const Navbar = () => {
         <div className='container'>
 
           <div className='textside'>
-            <h1 className='h1'>Chic & Smart Bags</h1>
-            <h4 className='h4'>Style meets technology – carry smart, stay elegant!</h4>
-            <Stack spacing={2} direction="row">
-              <Button className='btn' variant="contained">Buy Product</Button>
-            </Stack>
+            <h1 className='h1'>Track your PSX portfolio comprehensively as a pro!</h1>
+            <h4 className='h4'>The actual financial information source you need for your portfolio.</h4>
+          
           </div>
-          <div className="imgDiv">
             <motion.div
               animate={{ y: [0, 20, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
+              className="imgDiv"
             >
-              <img className='img' src={purs1} />
+    
+
+              <img className='img' src={stockreport} />
+              
 
             </motion.div>
-          </div>
         </div>
       </div>
 

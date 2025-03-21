@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import { setBuyForm, setSellForm } from "../Redux/formTypeSlice";
 import TablePagination from "@mui/material/TablePagination";
 import MenuItem from '@mui/material/MenuItem';
+import SearchIcon from '@mui/icons-material/Search';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -216,7 +217,7 @@ const filter = [
 
 const CrudOperation = () => {
     const navigate = useNavigate();
-
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
     // --------------------Redux-------------------------------
     const dispatch = useDispatch();
     // -----------modal--------------------------
@@ -297,20 +298,12 @@ const CrudOperation = () => {
 
                     </div>
                     <div className="search_div">
-                        <Box sx={{ '& .MuiTextField-root': { m: 2, width: '50ch' } }}>
 
-                            <TextField
-                                id="outlined-required"
-                                label="Search Stock name"
-                                type="text"
-                                placeholder="Search Stock name..."
-                                name='Search Stock name'
-
-                            />
-                        </Box>
+                        <input placeholder="Search Stock Name" className="search_input" />
+                        <SearchIcon />
                     </div>
                     <div className="filter_div">
-                        <Box sx={{ '& .MuiTextField-root': { m: 2, width: '30ch' } }}>
+                        <Box sx={{ '& .MuiTextField-root': { m: 1, width: isMobile ? '35ch' : '25ch' } }}>
 
                             <TextField
                                 id="outlined-select-currency"

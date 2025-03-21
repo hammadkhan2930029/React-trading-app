@@ -24,6 +24,7 @@ export const Footer = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}>
+                    
                 <motion.div className='footer_main'>
 
                     <motion.div className='footer_logo' ref={refOne}
@@ -33,13 +34,7 @@ export const Footer = () => {
                         <img src={logo_f} className='logo' />
 
                     </motion.div>
-                    <motion.span className='copy'
-                        ref={refOne}
-                        initial={{ opacity: 0, y: 100 }}
-                        animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: .8 }}>
-                        Copyright © Cogent dev 2025.
-                    </motion.span>
+                   
 
                     <motion.div
                         className='footer_icons'
@@ -89,6 +84,13 @@ export const Footer = () => {
                         </div>
 
                     </motion.div>
+                    <motion.span className='copy'
+                        ref={refOne}
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: .8 }}>
+                       Designed & Developed by Cogent Devs © 2025
+                    </motion.span>
                 </motion.div>
 
             </motion.div>

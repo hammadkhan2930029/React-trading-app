@@ -32,7 +32,9 @@ import { useSelector } from "react-redux";
 import { EditeProfile } from '../editeProfile/editeProfile.jsx';
 import { Dividen } from '../Dividen/dividen.jsx';
 import DividenList from '../dividenList/dividenList.jsx';
-
+import ContactPageIcon from '@mui/icons-material/ContactPage';
+import { Developers } from '../developersPage/developer.jsx';
+import { HighLights } from '../marketSummary/highLights/highlights.jsx';
 const drawerWidth = 240;
 
 const ResponsiveDrawer = (props) => {
@@ -45,6 +47,10 @@ const ResponsiveDrawer = (props) => {
 
     // ----------------------------------------------------------------
     const [dropdownOpen, setDropDownOpen] = useState(false);
+    // -----------------------------------------------------------------
+    const [dropdownOpen_three, setDropDownOpen_three] = useState(false);
+    const [selectedIndex_3, setSelectedIndex_3] = useState(1);
+    const [count_3, setCount_3] = useState(1)
     // ----------------------------------------------------------
     const [selectedIndex_2, setSelectedIndex_2] = useState(1);
     const [count_2, setCount_2] = useState(1)
@@ -114,6 +120,13 @@ const ResponsiveDrawer = (props) => {
         { value: 9, name: 'Edit Profile' }
 
     ];
+    // ------------------------------------------------
+    const menuItems_three = [
+        { value: 11, name: 'Highlights ' },
+        { value: 12, name: 'other' },
+
+
+    ];
 
     const drawer = (
         <div style={{ backgroundColor: '#FAF9F6', color: '#000', height: '100%' }}>
@@ -130,8 +143,12 @@ const ResponsiveDrawer = (props) => {
                             onClick={() => {
                                 setSelectedIndex(item.value);
                                 setCount(item.value);
-                                setCount_2(null)
+                                setCount_3(null)
+                                setSelectedIndex_3(null)
                                 setSelectedIndex_2(null)
+                                setCount_2(null)
+                                setDropDownOpen(null)
+                                setDropDownOpen_three(null)
                             }}
                             sx={{
                                 backgroundColor: selectedIndex === item.value ? '#1976d2' : 'transparent',
@@ -146,22 +163,143 @@ const ResponsiveDrawer = (props) => {
                     </ListItem>
                 ))}
             </List>
-            {/* -----------------------------------setting------------------------------------------------- */}
+            {/* -----------------------------------section two------------------------------------------------- */}
             <List>
 
                 <div>
+                    {/* -----------------------market summery----------------------------------- */}
                     <ListItem disablePadding>
                         <ListItemButton
-                            onClick={() => setDropDownOpen(prev => !prev)}
-
-                        >
-                            <ListItemIcon sx={{ color: '#000' }}>
+                            onClick={() => {
+                                setDropDownOpen_three(prev => !prev)
+                                setDropDownOpen(false)
+                            }}
+                            sx={{
+                                backgroundColor: dropdownOpen_three ? '#36454F' : 'transparent',
+                                '&:hover': { backgroundColor: '#C0C0C0' }
+                            }} >
+                            <ListItemIcon sx={{ color: dropdownOpen_three ? '#fff' : '#000', }}>
                                 <SettingsIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Setting"} />
-                            <ListItemIcon sx={{ color: '#000' }}>
+                            <ListItemText primary={"Market Summary"} sx={{ color: dropdownOpen_three? '#fff' : '#000', }} />
+                            <ListItemIcon  sx={{ color: dropdownOpen_three ? '#fff' : '#000', }}>
+                                {dropdownOpen_three ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                            </ListItemIcon>
+
+
+                        </ListItemButton>
+
+
+                    </ListItem>
+                    {dropdownOpen_three && (
+                        <List sx={{backgroundColor:'#E5E4E2'}}>
+
+                            {menuItems_three.map((item) => (
+                                <div >
+                                    <ListItem key={item.value} disablePadding>
+                                        <ListItemButton onClick={() => {
+                                            setCount_3(item.value)
+                                            setSelectedIndex_3(item.value)
+                                            setSelectedIndex_2(null)
+                                            setCount_2(null)
+                                            setCount(null)
+                                            setSelectedIndex(null)
+                                        }}
+                                            sx={{
+                                                backgroundColor: selectedIndex_3 === item.value ? '#1976d2' : 'transparent',
+                                                '&:hover': { backgroundColor: '#B9D9EB' }
+                                            }} >
+                                            <ListItemIcon sx={{ color: selectedIndex_3 === item.value ? '#fff' : '#000', }}>
+                                                {item.value % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                            </ListItemIcon>
+                                            <ListItemText primary={item.name} sx={{ color: selectedIndex_3 === item.value ? '#fff' : '#000', }} />
+
+
+                                        </ListItemButton>
+
+
+                                    </ListItem>
+                                </div>
+
+                            ))}
+                        </List>
+                    )}
+                    {/* --------------------------------------setting----------------------------------------------- */}
+                    <ListItem disablePadding>
+                        <ListItemButton
+                            onClick={() => {
+                                setDropDownOpen(prev => !prev)
+                                setDropDownOpen_three(false)
+
+                            }}
+                            sx={{
+                                backgroundColor: dropdownOpen ? '#36454F' : 'transparent',
+                                '&:hover': { backgroundColor: '#C0C0C0' }
+                            }}>
+                            <ListItemIcon sx={{ color: dropdownOpen ? '#fff' : '#000', }}>
+                                <SettingsIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={"Setting"} sx={{ color: dropdownOpen ? '#fff' : '#000', }}/>
+                            <ListItemIcon sx={{ color: dropdownOpen ? '#fff' : '#000', }}>
                                 {dropdownOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                             </ListItemIcon>
+
+
+                        </ListItemButton>
+
+
+                    </ListItem>
+                    {dropdownOpen && (
+                        <List sx={{backgroundColor:'#E5E4E2'}}>
+
+                            {menuItems_two.map((item) => (
+                                <div>
+                                    <ListItem key={item.value} disablePadding>
+                                        <ListItemButton onClick={() => {
+                                            setSelectedIndex_2(item.value)
+                                            setCount_2(item.value)
+                                            setCount(null)
+                                            setSelectedIndex(null)
+                                        }}
+                                            sx={{
+                                                backgroundColor: selectedIndex_2 === item.value ? '#1976d2' : 'transparent',
+                                                '&:hover': { backgroundColor: '#B9D9EB' }
+                                            }} >
+                                            <ListItemIcon sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }}>
+                                                {item.value % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                            </ListItemIcon>
+                                            <ListItemText primary={item.name} sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }} />
+
+
+                                        </ListItemButton>
+
+
+                                    </ListItem>
+                                </div>
+
+                            ))}
+                        </List>
+                    )}
+
+
+
+                    {/* ------------------------------Developer page------------------------------------- */}
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => {
+                            setSelectedIndex_2(10)
+                            setCount_2(10)
+                            setCount(null)
+                            setSelectedIndex(null)
+                        }}
+                            sx={{
+                                backgroundColor: selectedIndex_2 === 10 ? '#1976d2' : 'transparent',
+                                '&:hover': { backgroundColor: '#B9D9EB' }
+                            }} >
+                            <ListItemIcon sx={{ color: selectedIndex_2 === 10 ? '#fff' : '#000', }}>
+                                <ContactPageIcon />
+                            </ListItemIcon >
+                            <ListItemText primary={"Developer"} sx={{ color: selectedIndex_2 === 10 ? '#fff' : '#000', }} />
+
 
 
                         </ListItemButton>
@@ -172,38 +310,6 @@ const ResponsiveDrawer = (props) => {
 
 
             </List>
-            {/* ----------------------------------Drop Down---------------------------------------------- */}
-            {dropdownOpen && (
-                <List>
-
-                    {menuItems_two.map((item) => (
-                        <div>
-                            <ListItem key={item.value} disablePadding>
-                                <ListItemButton onClick={() => {
-                                    setSelectedIndex_2(item.value)
-                                    setCount_2(item.value)
-                                    setCount(null)
-                                    setSelectedIndex(null)
-                                }}
-                                    sx={{
-                                        backgroundColor: selectedIndex_2 === item.value ? '#1976d2' : 'transparent',
-                                        '&:hover': { backgroundColor: '#B9D9EB' }
-                                    }} >
-                                    <ListItemIcon sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }}>
-                                        {item.value % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={item.name} sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }} />
-
-
-                                </ListItemButton>
-
-
-                            </ListItem>
-                        </div>
-
-                    ))}
-                </List>
-            )}
 
 
         </div>
@@ -217,6 +323,8 @@ const ResponsiveDrawer = (props) => {
     const renderForm = () => {
         console.log("Current Count:", count);
         console.log("Current Count_2:", count_2);
+        console.log("Current Count_3:", count_3);
+
 
         if (count !== null && count !== undefined) {
             switch (count) {
@@ -237,6 +345,17 @@ const ResponsiveDrawer = (props) => {
                 case 18: return <DividenList />;
                 case 8: return <ProfilePage />;
                 case 9: return <EditeProfile />;
+                case 10: return <Developers />;
+                case 11: return <HighLights />;
+
+                default: return null;
+            }
+        }
+        if (count_3 !== null && count_3 !== undefined) {
+            switch (count_3) {
+
+                case 11: return <HighLights />;
+
                 default: return null;
             }
         }

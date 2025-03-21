@@ -1,10 +1,11 @@
-.R_main{
+.registration_main{
     display: flex;
     justify-content: center;
     align-items:center;
     height: 100vh;
+    margin-top: 50px;
 }
-.register_main{
+.register_main_main{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,16 +33,7 @@
     width: 50%;
     padding: 20px;
 }
-.register_form .h6{
-    font-size: 32px;
-    font-weight: 700;
-    color: #000;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    text-align: center;
-    background-color: transparent;
 
-}
 .register_form .form{
     width: 100%;
     display: flex;
@@ -51,12 +43,28 @@
     background-color: transparent;
     box-shadow: none;
 }
+.form .h6{
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    text-align: center;
+    background-color: transparent;
+
+}
 .form .r_input{
     width: 100%;
     margin: 10px;
 }
 .form .r_btn{
     width: 30%;
+}
+.arrowBack{
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+
 }
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */
@@ -66,26 +74,31 @@
 
 /* 991px to 768px */
 @media (max-width: 991px) {
+    .form .h6{
+        font-size: 26px;
+      
+    
+    }
    
 }
 
 /* 767px to 576px */
 @media (max-width: 767px) {
-    .register_main{
+    .register_main_main{
         width: 100%;
         margin: 5px;
     }
   .form{
     padding: 10px;
   }
-  .register_form .h6{
+  .form .h6{
     margin-bottom: 20px;
   }
 }
 
 /* 575px to 360px */
 @media (max-width: 575px) {
-    .register_main{
+    .register_main_main{
         flex-direction: column;
         height: auto;
 
@@ -118,25 +131,21 @@
         width: 50%;
         margin: 10px;
     }
-    .register_form .h6{
+    .form .h6{
         font-size: 22px;
      
     
     }
   
-    
-   
-  
-
-
 }
 
 @media (max-width: 440px) {
-    .register_main{
-        height: 770px;
+    .register_main_main{
+        height: 800px;
         padding-bottom: 20px;
+        margin: 100px;
     }
-    .register_form .h6{
+    .form .h6{
         font-size: 16px;
      
     
@@ -145,16 +154,14 @@
         height: auto;
     }
   
-   
-
-
 }
 
 /* Below 360px */
 @media (max-width: 360px) {
    
-
-
-
-
+    .form .h6{
+        font-size: 16px;
+     
+    
+    }
 }

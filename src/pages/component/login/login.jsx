@@ -1,14 +1,17 @@
 import React from 'react'
 import { motion, useInView } from "framer-motion";
-import one from '../../assets/onetrade.jpg'
 import './login.css'
 import TextField from '@mui/material/TextField';
 import { Formik } from 'formik';
 import Button from '@mui/material/Button';
+import stock8 from '../../assets/stock-8.jpg';
+import { useDispatch } from "react-redux";
+import { setForget, setRegister } from "../../home/Redux/loginSlice";
 import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const refOne = React.useRef(null);
     const refTwo = React.useRef(null);
 
@@ -29,8 +32,8 @@ export const Login = () => {
             const data = await response.json();
             if (response.ok) {
                 alert("Login Successful!");
-                // Agar login successful ho gaya to user ko kisi page par redirect kar sakte ho
-                navigate('/dashboard');  // Change this to your dashboard or home page
+               
+                navigate('/responsiveDrawer');  
             } else {
                 alert(data.error || "Login Failed. Please check your credentials.");
             }
@@ -45,12 +48,12 @@ export const Login = () => {
         <motion.div className='R_main'>
             <motion.div className='register_login'>
                 <motion.div
-                    className='image_div'
+                    className='image_div_login'
                     ref={refOne}
                     initial={{ opacity: 0, x: 100 }}
                     animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: .8 }}>
-                    <img src={one} className='image_login' alt="Login" />
+                    <img src={stock8} className='image_login' alt="Login" />
                 </motion.div>
                 <motion.div
                     className='register_form'
@@ -58,7 +61,7 @@ export const Login = () => {
                     initial={{ opacity: 0, x: -100 }}
                     animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: .8 }}>
-                    
+
                     <Formik
                         initialValues={{ email: '', password: '' }}
                         onSubmit={handleLogin}
@@ -94,9 +97,9 @@ export const Login = () => {
                                         required
                                     />
 
-                                    {/* <div className='f_div'>
-                                        <button className='forgot' onClick={() => navigate('/forgot')}>Forgot Password</button>
-                                    </div> */}
+                                    <div className='f_div'>
+                                        <button className='forgot' onClick={() => dispatch(setForget())}>Forgot Password</button>
+                                    </div>
 
                                     <Button
                                         variant="contained"
@@ -108,9 +111,12 @@ export const Login = () => {
                                         {isSubmitting ? "Logging in..." : "Login"}
                                     </Button>
 
-                                    {/* <div className='create_div' onClick={() => navigate('/register')}>
-                                        <button className='create'>Create account</button>
-                                    </div> */}
+                                  
+                                    <p style={{color:'#000',padding:8}} onClick={() => dispatch(setRegister())}>
+                                        Don't have an account?
+                                        <span style={{ color: "blue", cursor: 'pointer' }}> Sign up now!</span>
+                                    </p>
+
                                 </div>
                             </form>
                         )}

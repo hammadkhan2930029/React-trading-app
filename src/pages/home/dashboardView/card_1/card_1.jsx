@@ -45,7 +45,7 @@ export const Card_1 = () => {
           <input className='input' type='date' />
         </div>
         <div>
-          <img className='img' src={logo} />
+          <img className='card_1_img' src={logo} />
         </div>
       </div>
       {/* ---------------------line chart---------------------------------- */}

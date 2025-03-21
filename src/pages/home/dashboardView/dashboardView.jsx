@@ -27,6 +27,7 @@ import { Card_1 } from './card_1/card_1';
 import { Card_2 } from './card_2/card_2';
 import Card_3 from './card_3/card_3';
 import Card_4 from './card_4/card_4';
+import { Summary } from './summary/summary';
 
 
 export const DashboardView = () => {
@@ -75,8 +76,8 @@ export const DashboardView = () => {
                                     </Avatar>
                                 </IconButton>
                             </Tooltip> */}
-                            {/* ---------------------------------------------------------------- */}
-                            {/* <Tooltip title="Account settings">
+                {/* ---------------------------------------------------------------- */}
+                {/* <Tooltip title="Account settings">
                                 <IconButton
                                     onClick={handleClick}
                                     size="small"
@@ -88,9 +89,9 @@ export const DashboardView = () => {
                                     <Avatar sx={{ width: 42, height: 42 }}>M</Avatar>
                                 </IconButton>
                             </Tooltip> */}
-                            {/* ----------------------------------------------------------------------- */}
+                {/* ----------------------------------------------------------------------- */}
 
-                            {/* <Tooltip title="Account settings">
+                {/* <Tooltip title="Account settings">
                                 <IconButton
                                     onClick={handleClick}
                                     size="small"
@@ -257,6 +258,7 @@ export const DashboardView = () => {
                             </div>
                         </div>
                     </div>
+
                     {/* ------------------------------five---------------------------- */}
                     <div className="card">
                         <div className='card_1_data'>
@@ -283,8 +285,13 @@ export const DashboardView = () => {
                     </div>
                 </div>
             </div>
+
             {/* ------------------------------------------Larg card----------------------------------------------- */}
             <div className="larg_cards">
+                <div className="larg_cards_data">
+                    <Summary />
+
+                </div>
                 <div className="larg_cards_data">
                     <Card_1 />
                 </div>
@@ -293,13 +300,14 @@ export const DashboardView = () => {
 
                 </div>
                 <div className="larg_cards_data">
-                <Card_3/>
+                    <Card_3 />
 
                 </div>
                 <div className="larg_cards_data">
-                <Card_4/>
+                    <Card_4 />
 
                 </div>
+
             </div>
         </div>
     )

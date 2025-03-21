@@ -2,40 +2,45 @@ import React, { useEffect, useState, useRef } from 'react'
 import { motion, useInView } from "framer-motion";
 import './chooseUs.css';
 import 'react-slideshow-image/dist/styles.css'
-import one from '../../assets/one.png';
-import two from '../../assets/two.png';
-import three from '../../assets/three.png';
+// import one from '../../assets/one.png';
+// import two from '../../assets/two.png';
+// import three from '../../assets/three.png';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import BrushIcon from '@mui/icons-material/Brush';
 import WindowIcon from '@mui/icons-material/Window';
+import stock3 from '../../assets/stock-3.jpg';
+import stock4 from '../../assets/stock-4.jpg'
+
+import stock5 from '../../assets/stock-5.jpg'
+
 
 
 
 const data = [
   {
-    url: one,
+    url: stock3,
     icon: <WorkspacePremiumIcon className="icon" />,
-    heading: 'Premium Craftsmanship',
-    data1: 'Made from high-quality materials with exquisite detailing to ensure durability and elegance.',
+    heading: 'Premium Market Analysis',
+    data1: 'Backed by expert research, our stock market insights help you make informed investment decisions with confidence.',
 
 
 
 
   },
   {
-    url: two,
+    url: stock4,
     icon: <BrushIcon className="icon" />,
-    heading: 'Stylish & Versatile Designs',
-    data1: 'Trendy yet functional styles that complement every occasion, from casual outings to formal events.',
+    heading: ' Smart & Versatile Trading Strategies',
+    data1: 'Whether youre a day trader, swing trader, or long-term investor, our strategies adapt to market trends for maximum returns.',
 
 
 
   },
   {
-    url: three,
+    url: stock5,
     icon: <WindowIcon className="icon" />,
-    heading: 'Spacious & Organized Interior',
-    data1: 'Thoughtfully designed compartments to keep your essentials neatly arranged and easily accessible.',
+    heading: 'Well-Structured Portfolio Management',
+    data1: 'Stay organized and optimize your stock investments with a balanced portfolio designed for growth and risk management Trade smarter, invest better, and stay ahead in the market! 🚀📊',
 
 
 
@@ -43,7 +48,7 @@ const data = [
 
 ];
 export const ChooseUs = () => {
-  const [currentImage, setCurrentImage] = useState(one);
+  const [currentImage, setCurrentImage] = useState(stock3);
   const refOne = React.useRef(null);
   const refTwo = React.useRef(null);
 
@@ -58,7 +63,7 @@ export const ChooseUs = () => {
         animate={inViewOne ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: .8 }}>
 
-        <span className='h1'>We are providing best and high quality products.</span>
+        <span className='h1'>We Provide the Best & Most Reliable Stock Market Insights</span>
         <div className='line'></div>
         {data.map((item, index) => (
           <div key={index} className="card-container" onMouseEnter={() => setCurrentImage(item.url)}>

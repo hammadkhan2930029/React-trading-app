@@ -1,12 +1,13 @@
 
 .footer_bg {
-    background-image: url('../../assets/footer_2.jpg');
+    background-image: url('../../assets/cover3.jpg');
     background-size: cover;
     width: 100%;
     height: 50vh;
     border-top-right-radius: 500px;
     border-top-left-radius: 100px;
 }
+
 
 .f_main {
     background-color: #f8f8ff;
@@ -28,6 +29,7 @@
     justify-content: center;
     padding: 10px;
     border-bottom: 2px solid #fff;
+    margin: 15px;
 }
 
 .footer_logo .logo {
@@ -38,8 +40,10 @@
 .copy {
     text-align: center;
     font-size: 20px;
-    padding: 10px;
+    padding: 20px;
     color: #fff;
+    margin: 15px;
+
 }
 
 .footer_icons {
@@ -176,7 +180,26 @@
         width: 90%;
         padding: 10px;
     }
+    .f_shap_one{
+        width: 50px;
+        height: 50px;
+    }
+    .f_shap_two{
+        width: 40px;
+        height: 40px;
+    }
 
+    .f_shap_three{
+        width: 30px;
+        height: 30px;
+    }
+    .footer_logo{
+        margin: 0;
+    }
+    .copy{
+        margin: 5px;
+        font-size: 14px;
+    }
 
 
 }

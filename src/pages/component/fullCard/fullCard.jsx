@@ -40,9 +40,9 @@ export const FullCard = () => {
                         </motion.div>
 
                     </motion.div>
-                    <span className='h1'>Best Product For You. Check The Demo Video.</span>
+                    <span className='h1'>Check the Demo Video!</span>
                     <div className='full_card_line'></div>
-                    <span className='h4'>Experience style and convenience in one—watch the demo now!</span>
+                    <span className='h4'>Maximize your investment potential with a smart, data-driven approach. 📈🚀</span>
                 </motion.div>
             </motion.div>
         </motion.div>
