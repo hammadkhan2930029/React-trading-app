@@ -24,7 +24,7 @@
 
 
 }
-.summary_heading{
+.summary_heading_dashboard{
     font-size: 32px;
     color: #fff;
     padding: 10px;
@@ -47,15 +47,15 @@
 }
 
 @media screen and (max-width: 412px) {
-    .summary_heading{
+    .summary_heading_dashboard{
         font-size: 28px;
     }
    
 }
 
 @media screen and (max-width: 360px) {
-    .summary_heading{
-        font-size: 26px;
+    .summary_heading_dashboard{
+        font-size: 22px;
     }
   
 }

@@ -19,7 +19,7 @@ export const OverviewList = () => {
         <div className='summary_main'>
             <div className='heading_div'>
                 <ShowChartIcon fontSize='large' className='chartIcon'/>
-                <span className='summary_heading'>Market Activity</span>
+                <span className='summary_heading_dashboard'>Market Activity</span>
             </div>
             <div className="market-info">
                 {marketData.map((item, index) => (

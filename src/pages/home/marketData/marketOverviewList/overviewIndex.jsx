@@ -1,6 +1,7 @@
 import React from 'react';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import './overviewIndex.css';
+import { motion, useInView } from "framer-motion";
 
 const marketIndex = [
     {
@@ -102,8 +103,15 @@ const marketIndex = [
 ];
 
 export const OverviewIndex = () => {
+    const refOne = React.useRef(null);
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
     return (
-        <div className='overview_index_page'>
+        <motion.div className='overview_index_page'
+            ref={refOne}
+            initial={{ opacity: 0, y: -100 }}
+            animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: .8 }}>
             <div className='overview_heading_index_div'>
                 <ShowChartIcon className='chart_icon' />
                 <span className='overview_heading'>Market Overview Index</span>
@@ -142,6 +150,6 @@ export const OverviewIndex = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </motion.div>
     );
 };
