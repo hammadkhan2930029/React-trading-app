@@ -6,9 +6,17 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import { motion, useInView } from "framer-motion";
+
 export const Developers = () => {
+    const refOne = React.useRef(null);
+    const inViewOne = useInView(refOne, { triggerOnce: true });
     return (
-        <div className='developers_page'>
+        <motion.div className='developers_page'
+            ref={refOne}
+            initial={{ opacity: 0, y: -100 }}
+            animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: .8 }}>
             <div className='first_div'>
                 <div className='logo_div'>
                     <img src={logo} className='company_logo' />
@@ -32,18 +40,18 @@ export const Developers = () => {
             </div>
             <div className="third_div">
                 <div className="socialIcons">
-                    <FacebookIcon sx={{ width: 40, height: 40 }}/>
+                    <FacebookIcon sx={{ width: 40, height: 40 }} />
                 </div>
                 <div className="socialIcons">
                     <LinkedInIcon sx={{ width: 40, height: 40 }} />
 
                 </div>
                 <div className="socialIcons">
-                    <YouTubeIcon sx={{ width: 40, height: 40 }}/>
+                    <YouTubeIcon sx={{ width: 40, height: 40 }} />
 
                 </div>
             </div>
 
-        </div>
+        </motion.div>
     )
 }

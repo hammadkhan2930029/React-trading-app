@@ -55,9 +55,17 @@ const DividenList = () => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
+    // ------------------------------------------
+    const refOne = React.useRef(null);
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
 
     return (
-        <motion.div className="dividen_crud">
+        <motion.div className="dividen_crud"
+            ref={refOne}
+            initial={{ opacity: 0, y: -100 }}
+            animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: .8 }}>
             <div className="dividen_crud_main">
                 <div className="top_btn">
                     <button className="top_btn_buy" onClick={() => dispatch(setDividen())}>Dividend</button>

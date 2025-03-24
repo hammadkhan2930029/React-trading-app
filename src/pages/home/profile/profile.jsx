@@ -3,15 +3,26 @@ import "./profile.css";
 import avatar from '../../../images/avatar.jpg';
 import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch } from "react-redux";
-import {  setEditeProfile } from "../Redux/profileSlice";
+import { setEditeProfile } from "../Redux/profileSlice";
+import { motion, useInView } from "framer-motion";
+
 const ProfilePage = () => {
   const dispatch = useDispatch()
-  return (
-    <div className="profile-container">
+  const refOne = React.useRef(null);
+  const refTwo = React.useRef(null);
 
-      <div className="profile-card">
-        <div className="edite_icon_div" onClick={()=> dispatch(setEditeProfile())}>
-          <EditIcon style={{fontSize:32}} />
+  const inViewOne = useInView(refOne, { triggerOnce: true });
+  const inViewTwo = useInView(refTwo, { triggerOnce: true });
+  return (
+    <motion.div className="profile-container">
+
+      <motion.div className="profile-card"
+        ref={refOne}
+        initial={{ opacity: 0, y: -100 }}
+        animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: .8 }}>
+        <div className="edite_icon_div" onClick={() => dispatch(setEditeProfile())}>
+          <EditIcon style={{ fontSize: 32 }} />
         </div>
         <img
           src={avatar}
@@ -22,8 +33,12 @@ const ProfilePage = () => {
         <p className="profile-role">Full Stack Developer</p>
         <p className="profile-location">San Francisco, CA</p>
 
-      </div>
-      <div className="profile-details">
+      </motion.div>
+      <motion.div className="profile-details"
+        ref={refOne}
+        initial={{ opacity: 0, y: 100 }}
+        animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: .8 }}>
         <h3>Personal Information</h3>
         <ul>
           <li><strong>Email:</strong> john.doe@example.com</li>
@@ -36,8 +51,8 @@ const ProfilePage = () => {
           <li><a href="#">Twitter</a></li>
           <li><a href="#">LinkedIn</a></li>
         </ul>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

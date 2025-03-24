@@ -168,7 +168,8 @@ export const PrimarySearchAppBar = () => {
                             aria-label="show more"
                             aria-controls={mobileMenuId}
                             aria-haspopup="true"
-                            onClick={handleMobileMenuOpen}
+                            onClick={handleProfileMenuOpen}
+
                             color="inherit"
                         >
                             <MoreIcon />

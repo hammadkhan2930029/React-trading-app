@@ -37,6 +37,8 @@ import { Developers } from '../developersPage/developer.jsx';
 import { OverView } from '../marketData/marketOverview/overview.jsx';
 import { Summary } from '../marketData/marketSummary/summary.jsx';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
+import { OverviewIndex } from '../marketData/marketOverviewList/overviewIndex.jsx';
+import {SummaryIndex} from '../marketData/marketSummaryIndex/summaryIndex.jsx';
 
 const drawerWidth = 240;
 
@@ -127,6 +129,10 @@ const ResponsiveDrawer = (props) => {
     const menuItems_three = [
         { value: 11, name: 'Overview ' },
         { value: 12, name: 'Summary' },
+        { value: 13, name: 'Overview Index' },
+        { value: 14, name: 'Summary Index' },
+
+
 
 
     ];
@@ -362,6 +368,10 @@ const ResponsiveDrawer = (props) => {
 
                 case 11: return <OverView />;
                 case 12: return <Summary />;
+                case 13: return <OverviewIndex />;
+                case 14: return <SummaryIndex />;
+
+
 
 
                 default: return null;
