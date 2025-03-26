@@ -29,13 +29,11 @@
     margin-left: 10px;
 }
 
-/* Table container to enable scrolling */
 .market_table_container_overview {
     width: 100%;
-    overflow-x: auto; /* Horizontal scrolling on small screens */
+    overflow-x: auto; 
 }
 
-/* Table styling */
 .market_table {
     width: 100%;
     border-collapse: collapse;
@@ -47,14 +45,13 @@
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    white-space: nowrap; /* Prevents text from wrapping */
+    white-space: nowrap;
 }
 
 .market_table th {
     background: #1976d2;
     color: #ffffff;
     font-weight: bold;
-    /* padding: 20px; */
     word-wrap: break-word;
 }
 
@@ -66,7 +63,6 @@
     background: #ddd;
 }
 
-/* Mobile View Enhancements */
 @media screen and (max-width: 768px) {
     .market_table_container_overview {
         width: 100%;

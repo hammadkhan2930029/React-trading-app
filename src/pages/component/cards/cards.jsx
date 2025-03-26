@@ -1,11 +1,6 @@
 import React from 'react';
 import './cards.css';
 import { motion, useInView } from "framer-motion";
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import WorkIcon from '@mui/icons-material/Work';
-import LocalMallIcon from '@mui/icons-material/LocalMall';
-// import purs from '../../assets/purs.png';
 import stock7 from '../../assets/stock-7.jpg'
 
 export const Cards = () => {

@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 import './card_3.css'
 
 const Card_3 = () => {
-  // Bar Chart (Daily Traffic)
+  
   const barChartOptions = {
     chart: {
       type: "bar",
@@ -42,7 +42,7 @@ const Card_3 = () => {
 
   return (
     <div className="L_card_3">
-      {/* Bar Chart */}
+     
       <div className="L_card_3_data">
         <h4>Daily Traffic</h4>
         <p>

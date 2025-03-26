@@ -5,7 +5,7 @@
     padding: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
-    overflow-x: auto; /* Ensure horizontal scrolling */
+    overflow-x: auto;
 }
 
 table {
@@ -16,7 +16,7 @@ table {
     background-color: #908b8b;
     border-radius: 8px;
     overflow: hidden;
-    table-layout: fixed; /* Ensure better responsiveness */
+    table-layout: fixed; 
     word-wrap: break-word;
 }
 
@@ -63,7 +63,6 @@ tbody.t_body tr {
     word-wrap: break-word;
 }
 
-/* Buttons */
 .editebtn, .top_btn_buy {
     background-color: #1976d2;
     padding: 15px 25px;
@@ -111,7 +110,7 @@ tbody.t_body tr {
     font-size: 16px;
     background-color: transparent;
 }
-/* Responsive Design for Smaller Screens */
+
 @media (max-width: 1024px) {
     table {
         font-size: 14px;
@@ -154,7 +153,6 @@ tbody.t_body tr {
 
 @media (max-width: 480px) {
     .crud_main {
-        /* padding: 10px; */
         width: 43%;
     }
 
@@ -174,7 +172,7 @@ tbody.t_body tr {
         font-size: 12px;
         display: block;
         overflow-x: auto;
-        white-space: nowrap; /* Prevents breaking on small screens */
+        white-space: nowrap;
     }
 
     .t_head_row th {

@@ -139,7 +139,6 @@ const ResponsiveDrawer = (props) => {
 
     const drawer = (
         <div style={{ backgroundColor: '#FAF9F6', color: '#000', height: '100%' }}>
-            {/* <Toolbar /> */}
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
                 <img src={logo} style={{ width: 100, height: 100 }} />
             </div>

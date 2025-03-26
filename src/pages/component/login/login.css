@@ -12,7 +12,7 @@
     flex-direction: row-reverse;
     width: 85%;
     height: 570px;
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     border-radius: 70px;
 
@@ -21,7 +21,6 @@
 .image_div_login {
     width: 50%;
     height: 570px;
-
 }
 
 .image_login {
@@ -81,7 +80,12 @@
 
 }
 
-
+.text1{
+    font-size: 18px;
+}
+.text2{
+    font-size: 18px;
+}
 
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */
@@ -154,16 +158,20 @@
 
 @media (max-width: 440px) {
     .register_login {
-        height: auto;
-        height: 610px;
+        height: 700px;
     }
 
     .R_main {
-        height: auto;
+        height: 120vh;
         padding: 10px;
     }
 
-
+    .text1{
+        font-size: 14px;
+    }
+    .text2{
+        font-size: 14px;
+    }
 
 
 }

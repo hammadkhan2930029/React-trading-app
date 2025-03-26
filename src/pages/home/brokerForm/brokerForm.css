@@ -8,11 +8,12 @@
     height: 100vh;
 
 }
-.heading{
+
+.heading {
     color: #000;
     font-size: 24px;
     font-weight: bold;
-    
+
 }
 
 .form {
@@ -24,17 +25,11 @@
     align-self: center;
     flex-direction: row;
     background-color: #fff;
-    margin: 10px; 
-    padding: 10px; 
-     border-radius: 10px;
-     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-
-
- } 
-
-
-
-
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
 
 .btn {
     background-color: blue;
@@ -66,7 +61,8 @@
     width: 90%;
 
 }
-.error{
+
+.error {
     color: red;
     font-size: 16px;
 }
@@ -78,7 +74,7 @@
 
     }
 
-  
+
 
     .btn {
         width: 60%;
@@ -90,7 +86,7 @@
         width: 90%;
     }
 
-   
+
     .btn {
         width: 60%;
     }

@@ -12,7 +12,7 @@
     transition: all .5s ease;
 }
 
-.sticky-navbar {
+.sticky-navbar-main {
     position: fixed;
     top: 0;
     width: 100%;
@@ -26,13 +26,18 @@
     width: 60%
 }
 
-.navData {
+.navdata_main {
     font-size: 18px;
     padding-left: 10px;
     padding: 10px;
     color: #fff;
     font-weight: 500;
     cursor: pointer;
+}
+.navdata_main:hover{
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 

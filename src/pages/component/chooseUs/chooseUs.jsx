@@ -2,9 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { motion, useInView } from "framer-motion";
 import './chooseUs.css';
 import 'react-slideshow-image/dist/styles.css'
-// import one from '../../assets/one.png';
-// import two from '../../assets/two.png';
-// import three from '../../assets/three.png';
+
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import BrushIcon from '@mui/icons-material/Brush';
 import WindowIcon from '@mui/icons-material/Window';

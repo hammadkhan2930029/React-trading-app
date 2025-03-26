@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Navbar } from '../component/navbar/navbar'
-import { Cards } from '../component/cards/cards'
-import { FullCard } from '../component/fullCard/fullCard'
-import { ChooseUs } from '../component/chooseUs/chooseUs'
-import { Faqs } from '../component/faqs/faqs'
-import { NewsLetter } from '../component/newsletter/newsletter'
-import { Footer } from '../component/footer/footer'
-import { Loader } from '../component/loader/loader'
-import LoginPage from '../component/login_singup/login_signup'
+import { Cards } from './cards/cards';
+import { FullCard } from './fullCard/fullCard';
+import { ChooseUs } from './chooseUs/chooseUs';
+import { Faqs } from './faqs/faqs';
+import LoginPage from './login_singup/login_signup';
+import { BlogsCard } from './blogs/blogsCard';
+import { NewsLetter } from './newsletter/newsletter';
+import { Footer } from './footer/footer';
+import { Loader_f } from './loader/loader';
+
 
 function LandingPage() {
   const [count, setCount] = useState(true)
@@ -22,19 +24,23 @@ function LandingPage() {
   return (
     <>
       {count ? (
-        <Loader />
+        <Loader_f />
       ) : (
         <div style={{ overflow: 'hidden' }}>
           <Navbar />
           <Cards />
           <FullCard />
           <ChooseUs />
-          <Faqs />
-          <LoginPage />
-          <NewsLetter />
-          <Footer />
+          <Faqs/>
+          <LoginPage/>
+          <BlogsCard/>
+          <NewsLetter/>
+          <Footer/>
+
+      
         </div>
       )}
+
     </>
   )
 }

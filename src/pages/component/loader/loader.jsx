@@ -2,7 +2,7 @@
 import React from 'react'
 import { Circles } from 'react-loader-spinner';
 import "./loader.css"
-export const Loader = () => {
+export const Loader_f = () => {
     return (
         <div className='loader'>
             <div>

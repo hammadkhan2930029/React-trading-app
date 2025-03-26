@@ -112,9 +112,9 @@ export const Login = () => {
                                     </Button>
 
                                   
-                                    <p style={{color:'#000',padding:8}} onClick={() => dispatch(setRegister())}>
+                                    <p style={{color:'#000',padding:8}} className='text1' onClick={() => dispatch(setRegister())}>
                                         Don't have an account?
-                                        <span style={{ color: "blue", cursor: 'pointer' }}> Sign up now!</span>
+                                        <span style={{ color: "blue", cursor: 'pointer' }} className='text2'> Sign up now!</span>
                                     </p>
 
                                 </div>
