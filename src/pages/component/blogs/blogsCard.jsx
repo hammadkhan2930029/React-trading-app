@@ -12,6 +12,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { motion, useInView } from "framer-motion";
 import stock7 from '../../assets/stock-7.jpg'
 import './blogsCard.css'
+import { useNavigate } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -38,20 +39,25 @@ const ExpandMore = styled((props) => {
 }));
 
 export const BlogsCard = () => {
-    const [expanded, setExpanded] = React.useState(false);
+    const navigate = useNavigate()
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+    const refOne = React.useRef(null);
+
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
 
     return (
-        <motion.div className='blogsMian'>
+        <motion.div className='blogsMian'
+            ref={refOne}
+            initial={{ opacity: 0, y: -100 }}
+            animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: .8 }}>
             <div className='blogs_h1_div'>
                 <span className='blogs_h1'>Blogs</span>
             </div>
 
             <motion.div className='blogsCards' >
-                <Card className='CardsBlogs' sx={{borderRadius:6}}>
+                <Card className='CardsBlogs' sx={{ borderRadius: 6 }}>
                     <CardHeader
 
                         title="Shrimp and Chorizo Paella"
@@ -72,21 +78,25 @@ export const BlogsCard = () => {
                     <CardActions disableSpacing>
 
                         <ExpandMore
-                            // expand={expanded}
-                            // onClick={handleExpandClick}
-                            // aria-expanded={expanded}
+                            onClick={() => navigate("/blogsMultiCards")}
+
+
                             aria-label="show more"
                         >
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <span style={{ fontSize: 16,color:'blue' }}>Read More</span>
-                                <ExpandMoreIcon  style={{color:'blue'}}/>
-                            </div>
+                            <IconButton aria-label="show more">
+
+                                <div className='readMoreBtn' >
+                                    <span className='btnText'>Read More</span>
+                                    {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
+                                </div>
+                            </IconButton>
+
                         </ExpandMore>
                     </CardActions>
 
                 </Card>
                 {/* ------------------------------------------------------------------------------------ */}
-                <Card className='CardsBlogs' sx={{borderRadius:6}}>
+                <Card className='CardsBlogs' sx={{ borderRadius: 6 }}>
                     <CardHeader
 
                         title="Shrimp and Chorizo Paella"
@@ -106,22 +116,26 @@ export const BlogsCard = () => {
                     </CardContent>
                     <CardActions disableSpacing>
 
-                        <ExpandMore
-                            //    expand={expanded}
-                            //    onClick={handleExpandClick}
-                            //    aria-expanded={expanded}
+                    <ExpandMore
+                            onClick={() => navigate("/blogsMultiCards")}
+
+
                             aria-label="show more"
                         >
-                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <span style={{ fontSize: 16,color:'blue' }}>Read More</span>
-                                <ExpandMoreIcon  style={{color:'blue'}}/>
-                            </div>
+                            <IconButton aria-label="show more">
+
+                                <div className='readMoreBtn' >
+                                    <span className='btnText'>Read More</span>
+                                    {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
+                                </div>
+                            </IconButton>
+
                         </ExpandMore>
                     </CardActions>
 
                 </Card>
                 {/* --------------------------------------------------------------------------------------- */}
-                <Card className='CardsBlogs' sx={{borderRadius:6}}>
+                <Card className='CardsBlogs' sx={{ borderRadius: 6 }}>
                     <CardHeader
 
                         title="Shrimp and Chorizo Paella"
@@ -141,16 +155,20 @@ export const BlogsCard = () => {
                     </CardContent>
                     <CardActions disableSpacing>
 
-                        <ExpandMore
-                            //    expand={expanded}
-                            //    onClick={handleExpandClick}
-                            //    aria-expanded={expanded}
+                    <ExpandMore
+                            onClick={() => navigate("/blogsMultiCards")}
+
+
                             aria-label="show more"
                         >
-                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <span style={{ fontSize: 16,color:'blue' }}>Read More</span>
-                                <ExpandMoreIcon  style={{color:'blue'}}/>
-                            </div>
+                            <IconButton aria-label="show more">
+
+                                <div className='readMoreBtn' >
+                                    <span className='btnText'>Read More</span>
+                                    {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
+                                </div>
+                            </IconButton>
+
                         </ExpandMore>
                     </CardActions>
 

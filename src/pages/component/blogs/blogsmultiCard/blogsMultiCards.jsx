@@ -1,8 +1,6 @@
 import { Footer } from '../../footer/footer'
-import React, { useState, useEffect } from 'react';
-import logo_t from '../../../assets/logo-t.png'
+import React, { useState } from 'react';
 
-import { DrawerBar } from '../../drawer/drawer';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -11,13 +9,12 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { motion, useInView } from "framer-motion";
 import stock7 from '../../../assets/stock-7.jpg'
 import '../blogsCard.css'
 import './blogsmultiCards.css'
 import { useNavigate } from 'react-router-dom';
+import { Nav } from '../../nav/nav';
 
 // -----------------------------------------------------------
 
@@ -50,19 +47,21 @@ const blogData = [
         id: 1,
         title: "Shrimp and Chorizo Paella",
         image: stock7,
-        description: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
+        description: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like",
+        description2: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like"
+
     },
     {
         id: 2,
         title: "Delicious Pasta Recipe",
         image: stock7,
-        description: "Enjoy this simple and delicious pasta recipe that brings a mix of flavors and a healthy choice for your dinner."
+        description: "The contest is based on a points system: the more points you earn, the higher your chances of winning weekly ($5,000 for 1st place), monthly ($10,000), or annual super prizes ($50,000). Besides, referral activity not only boosts your points but also presents a chance to earn commissions of up to 70% through LiteFinance's affiliate program. Let's figure out how it works in practice."
     },
     {
         id: 3,
         title: "Healthy Smoothie Guide",
         image: stock7,
-        description: "A refreshing and healthy smoothie guide to start your day with energy. Try out different fruit combinations!"
+        description: "The contest is based on a points system: the more points you earn, the higher your chances of winning weekly ($5,000 for 1st place), monthly ($10,000), or annual super prizes ($50,000). Besides, referral activity not only boosts your points but also presents a chance to earn commissions of up to 70% through LiteFinance's affiliate program. Let's figure out how it works in practice."
     },
     {
         id: 4,
@@ -159,30 +158,9 @@ const blogData = [
 // ----------------------------------------------------------------------
 export const BlogsMultiCards = () => {
     const navigate = useNavigate();
-    const [expanded, setExpanded] = React.useState(false);
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
-    // -----------------------------------------------
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 990);
-    const [isSticky, setIsSticky] = useState(false);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 990);
-        };
-        const handleScroll = () => {
-            setIsSticky(window.scrollY > 0);
-        };
 
-        window.addEventListener('resize', handleResize);
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
     // -----------------------------------------------------------
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 6;
@@ -204,40 +182,34 @@ export const BlogsMultiCards = () => {
             setCurrentPage(currentPage - 1);
         }
     };
+    // ----------------------------------------------------------
+    const refOne = React.useRef(null);
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
     return (
-        <div>
-            <div className={`navbar ${isSticky ? 'sticky-navbar' : ''}`}>
-                <div className="left">
-                    <img className='logo' src={logo_t} />
-                </div>
-                <div className="right">
-                    {isMobile ? (
-                        <div>
+        <motion.div>
+            <motion.div
+                ref={refOne}
 
-                            <DrawerBar />
-                        </div>
-                    ) : (
+                initial={{ opacity: 0, y: -100 }}
+                animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: .8 }}>
 
+                <Nav />
+            </motion.div>
 
-                        <div>
-
-                            <span className={`navData ${isSticky ? 'changeColor' : ''}`} onClick={()=> navigate('/landingPage')}>Home</span>
-                            <span className={`navData ${isSticky ? 'changeColor' : ''}`}>About</span>
-                            <span className={`navData ${isSticky ? 'changeColor' : ''}`}>Blogs</span>
-                            <span className={`navData ${isSticky ? 'changeColor' : ''}`}>Contact</span>
-                            <span className={`navData ${isSticky ? 'changeColor' : ''}`}>Help</span>
-                        </div>
-                    )}
-
-
-
-                </div>
-
-            </div>
-            <div className='banner'>
+            <motion.div className='banner'
+                ref={refOne}
+                initial={{ opacity: 0, y: -100 }}
+                animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: .8 }}>
                 <span className='banner_text'>Blogs</span>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+                ref={refOne}
+                initial={{ opacity: 0, y: 100 }}
+                animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: .8 }}>
                 <motion.div className='blogsMian_multi'>
                     <motion.div className='blogsCards_multi'>
                         {currentPosts.map((item, index) => (
@@ -246,19 +218,21 @@ export const BlogsMultiCards = () => {
                                 <CardMedia component="img" height="194" image={item.image} alt={item.title} />
                                 <CardContent>
                                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                        {item.description}
+                                        {item.description.length > 100 ? `${item.description.substring(0, 100)}...` : item.description}
                                     </Typography>
                                 </CardContent>
                                 <CardActions disableSpacing>
                                     <ExpandMore
-                                      
+                                        onClick={() => navigate("/blogsDetails", { state: { title: item.title, image: item.image, description: item.description, id: item.id , description2: item.description2,} })}
+
+
                                         aria-label="show more"
                                     >
                                         <IconButton aria-label="show more">
 
-                                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                <span style={{ fontSize: 16, color: 'blue' }}>Read More</span>
-                                                <ExpandMoreIcon style={{ color: 'blue' }} />
+                                            <div className='readMoreBtn' >
+                                                <span className='btnText'>Read More</span>
+                                                {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
                                             </div>
                                         </IconButton>
 
@@ -275,11 +249,11 @@ export const BlogsMultiCards = () => {
                     <span> Page {currentPage} of {Math.ceil(blogData.length / postsPerPage)} </span>
                     <button onClick={nextPage} disabled={currentPage === Math.ceil(blogData.length / postsPerPage)}>Next</button>
                 </div>
-            </div>
+            </motion.div>
             <div>
 
                 <Footer />
             </div>
-        </div>
+        </motion.div>
     )
 }

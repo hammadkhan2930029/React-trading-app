@@ -28,6 +28,23 @@
     width: 30%;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
+.readMoreBtn {
+    background-color: blue;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+
+}
+.btnText{
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+}
 
 /* ------------------------- MEDIA QUERIES ------------------------- */
 @media (max-width: 1180px) {

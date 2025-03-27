@@ -9,6 +9,7 @@ import LandingPage from './pages/component/landingPage';
 import ResponsiveDrawer from './pages/home/appBar/mainComponent';
 import { BlogsMultiCards } from './pages/component/blogs/blogsmultiCard/blogsMultiCards';
 import { Navbar } from './pages/component/navbar/navbar';
+import { BlogsDetails } from './pages/component/blogs/blogsDetail/blogsDetails';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/landingPage" element={<LandingPage/>} /> 
         <Route path="/responsiveDrawer" element={<ResponsiveDrawer/>} /> 
         <Route path="/blogsMultiCards" element={<BlogsMultiCards/>} /> 
+        <Route path="/blogsDetails" element={<BlogsDetails/>} /> 
+
 
 
       </Routes>
