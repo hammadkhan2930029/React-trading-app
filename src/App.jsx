@@ -10,6 +10,7 @@ import ResponsiveDrawer from './pages/home/appBar/mainComponent';
 import { BlogsMultiCards } from './pages/component/blogs/blogsmultiCard/blogsMultiCards';
 import { Navbar } from './pages/component/navbar/navbar';
 import { BlogsDetails } from './pages/component/blogs/blogsDetail/blogsDetails';
+import { FaqMainPage } from './pages/component/faqs/FaqMian/faqMainPage';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path="/responsiveDrawer" element={<ResponsiveDrawer/>} /> 
         <Route path="/blogsMultiCards" element={<BlogsMultiCards/>} /> 
         <Route path="/blogsDetails" element={<BlogsDetails/>} /> 
+        <Route path="/faqMainPage" element={<FaqMainPage/>} /> 
+
 
 
 

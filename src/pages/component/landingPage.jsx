@@ -31,9 +31,10 @@ function LandingPage() {
           <Cards />
           <FullCard />
           <ChooseUs />
-          <Faqs/>
           <LoginPage/>
           <BlogsCard/>
+          <Faqs/>
+
           <NewsLetter/>
           <Footer/>
 
