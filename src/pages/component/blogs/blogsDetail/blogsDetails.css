@@ -43,3 +43,33 @@
     font-size: 18px;
     padding: 10px;
 }
+/* ------------------------- MEDIA QUERIES ------------------------- */
+/* 1180px to 992px */
+@media (max-width: 1180px) {
+  
+
+}
+
+/* 991px to 768px */
+@media (max-width: 991px) {}
+
+/* 767px to 576px */
+@media (max-width: 767px) {}
+
+/* 575px to 360px */
+@media (max-width: 575px) {
+
+   .blogImg_div{
+    width: 100%;
+   }
+
+
+}
+
+@media (max-width: 440px) {
+    
+
+}
+
+/* Below 360px */
+@media (max-width: 360px) {}

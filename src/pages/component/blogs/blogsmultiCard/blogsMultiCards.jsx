@@ -55,7 +55,9 @@ const blogData = [
         id: 2,
         title: "Delicious Pasta Recipe",
         image: stock7,
-        description: "The contest is based on a points system: the more points you earn, the higher your chances of winning weekly ($5,000 for 1st place), monthly ($10,000), or annual super prizes ($50,000). Besides, referral activity not only boosts your points but also presents a chance to earn commissions of up to 70% through LiteFinance's affiliate program. Let's figure out how it works in practice."
+        description: "The contest is based on a points system: the more points you earn, the higher your chances of winning weekly ($5,000 for 1st place), monthly ($10,000), or annual super prizes ($50,000). Besides, referral activity not only boosts your points but also presents a chance to earn commissions of up to 70% through LiteFinance's affiliate program. Let's figure out how it works in practice.",
+        description2: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like"
+
     },
     {
         id: 3,
