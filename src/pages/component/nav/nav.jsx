@@ -86,10 +86,16 @@ export const Nav = () => {
                                     navigate('/faqMainPage')
                                 }}>Faqs</span>
 
+                            <span className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`} >Help</span>
+
                             <span
+                                style={{ color: location.pathname === '/responsiveDrawer' ? 'blue' : '#000' }}
 
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
-                            >Help</span>
+                                onClick={() => {
+
+                                    navigate('/responsiveDrawer')
+                                }}>Admin</span>
                         </div>
                     )}
 

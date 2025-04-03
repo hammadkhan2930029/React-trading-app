@@ -5,6 +5,7 @@ import './blogsDetails.css'
 import { motion, useInView } from "framer-motion";
 import { Nav } from '../../nav/nav';
 import { Footer } from '../../footer/footer';
+import { PopularBlogs } from '../popularBlogs/popularBlogs';
 
 
 export const BlogsDetails = () => {
@@ -45,6 +46,7 @@ export const BlogsDetails = () => {
 
 
             </motion.div>
+            <PopularBlogs/>
             <div>
                 <Footer/>
             </div>

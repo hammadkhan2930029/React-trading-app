@@ -11,8 +11,21 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useNavigate } from 'react-router-dom';
+
+
+const menuItems = [
+  { id: 1, name: "Home", path: "/landingPage" },
+  { id: 2, name: "About", path: "/about" },
+  { id: 3, name: "Blogs", path: "/blogsMultiCards" },
+  { id: 4, name: "Contact", path: "/contact" },
+  { id: 5, name: "Faqs", path: "/faqMainPage" },
+  { id: 6, name: "Help", path: "/help" },
+  { id: 7, name: "Admin", path: "/responsiveDrawer" }
+];
 
 export const DrawerBar = () => {
+  const navigate = useNavigate()
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -36,30 +49,26 @@ export const DrawerBar = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
+        {menuItems.map((item, index) => (
+          <div >
+            <ListItem key={index} disablePadding>
+              <ListItemButton onClick={() => navigate(item.path)}>
+                <ListItemIcon sx={{color:'#000'}}>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText sx={{color:'#000'}}>
+                  {item.name}
+                </ListItemText>
+
+              </ListItemButton>
+            </ListItem>
+            <Divider />
+          </div>
+
         ))}
       </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+
+
     </Box>
   );
 
@@ -68,8 +77,8 @@ export const DrawerBar = () => {
       {['top'].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
-            <MenuIcon sx={{color:"#000" ,fontSize:35}}/>
-            </Button>
+            <MenuIcon sx={{ color: "#000", fontSize: 35 }} />
+          </Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}

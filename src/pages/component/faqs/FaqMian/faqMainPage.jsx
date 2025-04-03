@@ -140,16 +140,16 @@ export const FaqMainPage = () => {
 
                 <span className='h_main_main_page'>FAQ</span>
             </motion.div>
-            <motion.div className='faqs_main_page'>
+            <motion.div className='faqs_main_page'   ref={refTwo}
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: .8 }}>
 
 
                 <motion.div className='faqs_main_main_page'>
 
                     <motion.div className='faqs_left_main_page'
-                        ref={refTwo}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: .8 }}>
+                      >
 
                         {stockMarketQA.map((item, index) => (
                             <motion.div key={index} className='drop_main_page' onClick={() => setSelect_drop(item.id)}
@@ -184,10 +184,7 @@ export const FaqMainPage = () => {
 
                     {/* -------------------------------------------------------------RIGHT----------------------------------------------- */}
                     <motion.div className='faqs_right_main_page'
-                        ref={refTwo}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: .8 }}>
+                      >
                         {stockMarketQA2.map((item, index) => (
                             <motion.div className='drop_main_page' onClick={() => setSelect_drop_2(item.id)}>
                                 <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop_2 == item.id ? "#1976D2" : null }}>
@@ -215,86 +212,10 @@ export const FaqMainPage = () => {
 
                         ))}
 
-                        {/* <motion.div className='drop_main_page' onClick={() => setSelect_drop_2(4)}>
-                            <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop_2 == 4 ? "#1976D2" : null }}>
-                                <motion.div className='drop_icon_main_page'>
-                                    {select_drop_2 == 4 ? (
-                                        <RemoveCircleIcon className='icon_main_page' />
-                                    ) : (
-
-                                        <AddCircleIcon className='icon_main_page' />
-                                    )}
-                                </motion.div>
-                                <motion.div className='drop_text_main_page'>
-                                    <p className='text_main_page' style={{ color: select_drop_2 == 4 ? '#fff' : null }}>Explore Market Opportunities </p>
-                                </motion.div>
-
-                            </motion.div>
-                            {select_drop_2 == 4 ? (
-                                <motion.div >
-                                    <p className='para_text_main_page'>Analyze the latest stock trends and find potential investment opportunities.</p>
-                                </motion.div>
-                            ) : null}
-
-
-                        </motion.div>
-
-                        <motion.div className='drop_main_page' onClick={() => setSelect_drop_2(5)}>
-                            <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop_2 == 5 ? "#1976D2" : null }}>
-                                <motion.div className='drop_icon_main_page'>
-                                    {select_drop_2 == 5 ? (
-                                        <RemoveCircleIcon className='icon_main_page' />
-                                    ) : (
-
-                                        <AddCircleIcon className='icon_main_page' />
-                                    )}
-                                </motion.div>
-                                <motion.div className='drop_text_main_page'>
-                                    <p className='text_main_page' style={{ color: select_drop_2 == 5 ? '#fff' : null }}> Select the Right Stocks</p>
-                                </motion.div>
-
-                            </motion.div>
-                            {select_drop_2 == 5 ? (
-                                <motion.div >
-                                    <p className='para_text_main_page'>Choose stocks that align with your financial goals and risk appetite.</p>
-                                </motion.div>
-                            ) : null}
-
-
-                        </motion.div>
-
-                        <motion.div className='drop_main_page' onClick={() => setSelect_drop_2(6)}>
-                            <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop_2 == 6 ? "#1976D2" : null }}>
-                                <motion.div className='drop_icon_main_page'>
-                                    {select_drop_2 == 6 ? (
-                                        <RemoveCircleIcon className='icon_main_page' />
-                                    ) : (
-
-                                        <AddCircleIcon className='icon_main_page' />
-                                    )}
-                                </motion.div>
-                                <motion.div className='drop_text_main_page'>
-                                    <p className='text_main_page' style={{ color: select_drop_2 == 6 ? '#fff' : null }}> Invest Securely </p>
-                                </motion.div>
-
-                            </motion.div>
-                            {select_drop_2 == 6 ? (
-                                <motion.div >
-                                    <p className='para_text_main_page'>Execute trades with just a few clicks through a trusted brokerage platform.
-
-                                        Start building your wealth today! 📈🚀.</p>
-                                </motion.div>
-                            ) : null}
-
-
-                        </motion.div> */}
                     </motion.div>
                 </motion.div>
             </motion.div>
-            {/* <motion.div className='read_more_div_main_page' onClick={()=> navigate('/faqMainPage')}>
-
-                <span className='read_main_page'>Read More</span>
-            </motion.div> */}
+          
             <Footer />
         </motion.div>
 

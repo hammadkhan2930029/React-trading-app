@@ -11,6 +11,7 @@ import { BlogsMultiCards } from './pages/component/blogs/blogsmultiCard/blogsMul
 import { Navbar } from './pages/component/navbar/navbar';
 import { BlogsDetails } from './pages/component/blogs/blogsDetail/blogsDetails';
 import { FaqMainPage } from './pages/component/faqs/FaqMian/faqMainPage';
+import { DrawerBar } from './pages/component/drawer/drawer';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
         <Route path="/blogsMultiCards" element={<BlogsMultiCards/>} /> 
         <Route path="/blogsDetails" element={<BlogsDetails/>} /> 
         <Route path="/faqMainPage" element={<FaqMainPage/>} /> 
+        <Route path="/drawerBar" element={<DrawerBar/>} /> 
+
 
 
 

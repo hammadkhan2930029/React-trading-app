@@ -126,7 +126,7 @@ export const Faqs = () => {
 
                         <motion.div className='drop' onClick={() => setSelect_drop_2(4)}
                             ref={refOne}
-                            initial={{ opacity: 0, x: -100 }}
+                            initial={{ opacity: 0, x: 100 }}
                             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: .8 }}>
                             <motion.div className='drop_style' style={{ backgroundColor: select_drop_2 == 4 ? "#1976D2" : null }}>
