@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState ,forwardRef} from 'react';
 import './faqs.css'
 
 import { motion, useInView } from "framer-motion";
@@ -8,7 +8,7 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 
 import { useNavigate } from 'react-router-dom';
 
-export const Faqs = () => {
+export const Faqs =forwardRef((props,ref) => {
     const navigate = useNavigate()
     const [select_drop, setSelect_drop] = useState(1)
     const [select_drop_2, setSelect_drop_2] = useState(4)
@@ -19,7 +19,7 @@ export const Faqs = () => {
     const inViewOne = useInView(refOne, { triggerOnce: true });
     const inViewTwo = useInView(refTwo, { triggerOnce: true });
     return (
-        <motion.div className='faqs_first_div'>
+        <motion.div className='faqs_first_div' ref={ref}>
             <motion.div className='faqs_heading_div'>
 
                 <span className='h_main'>FAQ</span>
@@ -211,4 +211,4 @@ export const Faqs = () => {
         </motion.div>
 
     )
-}
+})

@@ -65,11 +65,13 @@ export const Nav = () => {
                             </span>
 
                             <span
-                                style={{ color: location.pathname === '/blogsMultiCards' ? 'blue' : '#000' }}
+                                style={{ color: color == 2 || location.pathname === '/blogsMultiCards' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() =>{
-                                    setColor(null)
-                                     navigate('/blogsMultiCards')}}
+                                    setColor(2)
+                                    dispatch(setScrollToSection('blogs'));
+
+                                    }}
                             >
                                 Blogs
                             </span>
@@ -85,22 +87,24 @@ export const Nav = () => {
                             </span>
 
                             <span
-                                style={{ color: location.pathname === '/faqMainPage' ? 'blue' : '#000' }}
+                                style={{ color: color == 3 || location.pathname === '/faqMainPage' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
-                                    setColor(null)
-                                    navigate('/faqMainPage')}}
+                                    setColor(3)
+                                    dispatch(setScrollToSection('faqs'));
+
+                                }}
                             >
                                 Faqs
                             </span>
 
                             <span
-                             style={{ color: color == 2 ? 'blue' : '#000' }}
+                             style={{ color: color == 4 ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
                                     
                                     dispatch(setScrollToSection('login'));
-                                    setColor(2)
+                                    setColor(4)
 
                                 }}
                             >

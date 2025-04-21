@@ -25,6 +25,8 @@ function LandingPage() {
   }, [])
   const chooseUsRef = useRef(null);
   const loginRef = useRef(null);
+  const blogsRef = useRef(null)
+  const faqRef = useRef(null)
 
   const scrollToSection = useSelector((state) => state.scroll.scrollToSection);
   const dispatch = useDispatch();
@@ -37,6 +39,15 @@ function LandingPage() {
   
     if (scrollToSection === 'login' && loginRef.current) {
       loginRef.current.scrollIntoView({ behavior: 'smooth' });
+      dispatch(setScrollToSection(null));
+    }
+
+    if (scrollToSection === 'blogs' && blogsRef.current) {
+      blogsRef.current.scrollIntoView({ behavior: 'smooth' });
+      dispatch(setScrollToSection(null));
+    }
+    if (scrollToSection === 'faqs' && faqRef.current) {
+      faqRef.current.scrollIntoView({ behavior: 'smooth' });
       dispatch(setScrollToSection(null));
     }
   }, [scrollToSection, dispatch]);
@@ -56,8 +67,8 @@ function LandingPage() {
           <FullCard />
           <ChooseUs  ref={chooseUsRef}/>
           <LoginPage  ref={loginRef}/>
-          <BlogsCard/>
-          <Faqs/>
+          <BlogsCard ref={blogsRef}/>
+          <Faqs ref={faqRef}/>
 
           <NewsLetter/>
           <Footer/>

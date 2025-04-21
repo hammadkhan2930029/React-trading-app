@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{forwardRef} from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -38,7 +38,7 @@ const ExpandMore = styled((props) => {
     ],
 }));
 
-export const BlogsCard = () => {
+export const BlogsCard = forwardRef((props,ref) => {
     const navigate = useNavigate()
 
     const refOne = React.useRef(null);
@@ -47,6 +47,8 @@ export const BlogsCard = () => {
     const inViewOne = useInView(refOne, { triggerOnce: true });
 
     return (
+        <div ref={ref}>
+
         <motion.div className='blogsMian'
             ref={refOne}
             initial={{ opacity: 0, y: -100 }}
@@ -175,6 +177,7 @@ export const BlogsCard = () => {
                 </Card>
             </motion.div>
         </motion.div>
+        </div>
 
     );
-}
+})
