@@ -3,16 +3,16 @@ import './nav.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DrawerBar } from '../drawer/drawer';
 import logo_t from '../../assets/logo-t.png';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setScrollToSection } from '../Redux/scrollSlice';
 
-export const Nav = ({ chooseUsref }) => {
+export const Nav = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const dispatch = useDispatch();
-    const scrollToSection = useSelector((state) => state.scroll.scrollToSection);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 990);
     const [isSticky, setIsSticky] = useState(false);
+    const [color,setColor]=useState(null)
 
     useEffect(() => {
         const handleResize = () => {
@@ -53,10 +53,12 @@ export const Nav = ({ chooseUsref }) => {
                             </span>
 
                             <span
+                             style={{ color: color == 1 ? 'blue' : '#000' }}
 
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
-                                    dispatch(setScrollToSection('chooseUs'));
+                                    dispatch(setScrollToSection('chooseUs'))
+                                    setColor(1)
                                 }}
                             >
                                 About
@@ -65,7 +67,9 @@ export const Nav = ({ chooseUsref }) => {
                             <span
                                 style={{ color: location.pathname === '/blogsMultiCards' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
-                                onClick={() => navigate('/blogsMultiCards')}
+                                onClick={() =>{
+                                    setColor(null)
+                                     navigate('/blogsMultiCards')}}
                             >
                                 Blogs
                             </span>
@@ -73,7 +77,9 @@ export const Nav = ({ chooseUsref }) => {
                             <span
                                 style={{ color: location.pathname === '/contactUs' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
-                                onClick={() => navigate('/contactUs')}
+                                onClick={() =>{ 
+                                    setColor(null)
+                                    navigate('/contactUs')}}
                             >
                                 Contact
                             </span>
@@ -81,21 +87,25 @@ export const Nav = ({ chooseUsref }) => {
                             <span
                                 style={{ color: location.pathname === '/faqMainPage' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
-                                onClick={() => navigate('/faqMainPage')}
+                                onClick={() => {
+                                    setColor(null)
+                                    navigate('/faqMainPage')}}
                             >
                                 Faqs
                             </span>
 
                             <span
+                             style={{ color: color == 2 ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
+                                    
                                     dispatch(setScrollToSection('login'));
+                                    setColor(2)
+
                                 }}
                             >
                                 Login
                             </span>
-                          
-
                         </div>
                     )}
                 </div>
@@ -103,4 +113,3 @@ export const Nav = ({ chooseUsref }) => {
         </div>
     );
 };
-
