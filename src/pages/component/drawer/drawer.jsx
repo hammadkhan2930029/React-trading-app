@@ -18,10 +18,9 @@ const menuItems = [
   { id: 1, name: "Home", path: "/landingPage" },
   { id: 2, name: "About", path: "/about" },
   { id: 3, name: "Blogs", path: "/blogsMultiCards" },
-  { id: 4, name: "Contact", path: "/contact" },
+  { id: 4, name: "Contact", path: "/contactUs" },
   { id: 5, name: "Faqs", path: "/faqMainPage" },
-  { id: 6, name: "Help", path: "/help" },
-  { id: 7, name: "Admin", path: "/responsiveDrawer" }
+  { id: 7, name: "login", path: "/login" }
 ];
 
 export const DrawerBar = () => {

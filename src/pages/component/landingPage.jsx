@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Navbar } from '../component/navbar/navbar'
 import { Cards } from './cards/cards';
 import { FullCard } from './fullCard/fullCard';
 import { ChooseUs } from './chooseUs/chooseUs';
 import { Faqs } from './faqs/faqs';
-import LoginPage from './login_singup/login_signup';
 import { BlogsCard } from './blogs/blogsCard';
 import { NewsLetter } from './newsletter/newsletter';
 import { Footer } from './footer/footer';
 import { Loader_f } from './loader/loader';
+import { Nav } from './nav/nav';
+import {LoginPage} from './login_singup/login_signup'
+import { useSelector, useDispatch } from 'react-redux';
+import {  setScrollToSection } from '../component/Redux/scrollSlice';
 
 
 function LandingPage() {
@@ -20,6 +23,26 @@ function LandingPage() {
     }, 2000);
 
   }, [])
+  const chooseUsRef = useRef(null);
+  const loginRef = useRef(null);
+
+  const scrollToSection = useSelector((state) => state.scroll.scrollToSection);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (scrollToSection === 'chooseUs' && chooseUsRef.current) {
+      chooseUsRef.current.scrollIntoView({ behavior: 'smooth' });
+      dispatch(setScrollToSection(null));
+    }
+  
+    if (scrollToSection === 'login' && loginRef.current) {
+      loginRef.current.scrollIntoView({ behavior: 'smooth' });
+      dispatch(setScrollToSection(null));
+    }
+  }, [scrollToSection, dispatch]);
+  
+
+
 
   return (
     <>
@@ -27,11 +50,12 @@ function LandingPage() {
         <Loader_f />
       ) : (
         <div style={{ overflow: 'hidden' }}>
+          <Nav chooseUsRef={chooseUsRef}/>
           <Navbar />
           <Cards />
           <FullCard />
-          <ChooseUs />
-          <LoginPage/>
+          <ChooseUs  ref={chooseUsRef}/>
+          <LoginPage  ref={loginRef}/>
           <BlogsCard/>
           <Faqs/>
 

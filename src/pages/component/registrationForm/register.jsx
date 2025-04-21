@@ -21,12 +21,12 @@ export const Register = () => {
         <motion.div className='registration_main'>
             <motion.div className='register_main_main'>
                 <motion.div
-                    className='image_div'
+                    className='image_div_register'
                     ref={refOne}
                     initial={{ opacity: 0, x: -100 }}
                     animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: .7 }}>
-                    <img src={stock8} className='image' alt="Register Illustration" />
+                    <img src={stock8} className='register_image' alt="Register Illustration" />
                 </motion.div>
 
                 <motion.div

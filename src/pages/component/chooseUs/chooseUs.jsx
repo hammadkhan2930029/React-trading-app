@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef ,forwardRef} from 'react'
 import { motion, useInView } from "framer-motion";
 import './chooseUs.css';
 import 'react-slideshow-image/dist/styles.css'
@@ -45,7 +45,9 @@ const data = [
   },
 
 ];
-export const ChooseUs = () => {
+export const ChooseUs = forwardRef((props,ref) => {
+
+
   const [currentImage, setCurrentImage] = useState(stock3);
   const refOne = React.useRef(null);
   const refTwo = React.useRef(null);
@@ -53,7 +55,7 @@ export const ChooseUs = () => {
   const inViewOne = useInView(refOne, { triggerOnce: true });
   const inViewTwo = useInView(refTwo, { triggerOnce: true });
   return (
-    <motion.div className='chooseUs'>
+    <motion.div className='chooseUs' ref={ref}>
       <motion.div
         className="choseOne"
         ref={refOne}
@@ -113,5 +115,5 @@ export const ChooseUs = () => {
 
     </motion.div>
   )
-}
+})
 
