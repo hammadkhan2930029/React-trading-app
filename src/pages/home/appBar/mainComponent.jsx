@@ -20,7 +20,6 @@ import { BuyForm } from '../buyForm/buyForm.jsx';
 import { SellForm } from '../sellForm/sellForm.jsx';
 import { BrokerForm } from '../brokerForm/brokerForm.jsx';
 import { StockName } from '../stockName/stockName.jsx';
-import { ExtraCharges } from '../extraChargesForm/extraCharges.jsx';
 import CrudOperation from '../CrudSystem/crudOperation.jsx';
 import { DashboardView } from '../dashboardView/dashboardView.jsx';
 import logo from '../../../images/logo.png'
@@ -38,8 +37,10 @@ import { OverView } from '../marketData/marketOverview/overview.jsx';
 import { Summary } from '../marketData/marketSummary/summary.jsx';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import { OverviewIndex } from '../marketData/marketOverviewList/overviewIndex.jsx';
-import {SummaryIndex} from '../marketData/marketSummaryIndex/summaryIndex.jsx';
-
+import { SummaryIndex } from '../marketData/marketSummaryIndex/summaryIndex.jsx';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { OneTime } from '../extraChargesForm/oneTime/oneTime.jsx';
+import { Monthly } from '../extraChargesForm/monthly/monthly.jsx';
 const drawerWidth = 240;
 
 const ResponsiveDrawer = (props) => {
@@ -60,6 +61,12 @@ const ResponsiveDrawer = (props) => {
     const [selectedIndex_2, setSelectedIndex_2] = useState(1);
     const [count_2, setCount_2] = useState(1)
     // --------------------------------------------------------------
+    const [extraCharges, setExtraCharges] = useState(false)
+    const [count_4, setCount_4] = useState(null)
+    const [selectedIndex_4, setSelectedIndex_4] = useState(1);
+
+
+    // ----------------------------------------------------------------
     useEffect(() => {
         if (formType !== null) {
             setSelectedIndex(formType);
@@ -117,7 +124,7 @@ const ResponsiveDrawer = (props) => {
     const menuItems_two = [
         { value: 5, name: 'Broker ' },
         { value: 6, name: 'Stock Name' },
-        { value: 7, name: 'Extra Charges' },
+        // { value: 7, name: 'Extra Charges' },
         { value: 17, name: 'Dividend' },
         { value: 18, name: 'Dividend List' },
 
@@ -136,6 +143,31 @@ const ResponsiveDrawer = (props) => {
 
 
     ];
+    // ---------------------------------------------------------
+    const plans = [
+        { id: 7, label: 'One Time' },
+        { id: 77, label: 'Monthly' }
+    ];
+
+    const [hovered, setHovered] = useState(null);
+
+    // const baseStyle = {
+    //     backgroundColor: selectedIndex_4 'transparent',
+    //     width: '100%',
+    //     padding: 8,
+    //     textAlign: 'center',
+    //     cursor: 'pointer',
+    //     display: 'flex',
+    //     justifyContent: 'space-between',
+
+    // };
+
+    const hoverStyle = {
+        backgroundColor: '#B9D9EB'
+    };
+    console.log("Rendering Form with count_4:", count_4);
+
+    // ------------------------------------------------------
 
     const drawer = (
         <div style={{ backgroundColor: '#FAF9F6', color: '#000', height: '100%' }}>
@@ -157,6 +189,9 @@ const ResponsiveDrawer = (props) => {
                                 setCount_2(null)
                                 setDropDownOpen(null)
                                 setDropDownOpen_three(null)
+                                // ------------
+                                setIsClosing(false)
+                                setMobileOpen(false)
                             }}
                             sx={{
                                 backgroundColor: selectedIndex === item.value ? '#1976d2' : 'transparent',
@@ -189,8 +224,8 @@ const ResponsiveDrawer = (props) => {
                             <ListItemIcon sx={{ color: dropdownOpen_three ? '#fff' : '#000', }}>
                                 <ShowChartIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Market Data"} sx={{ color: dropdownOpen_three? '#fff' : '#000', }} />
-                            <ListItemIcon  sx={{ color: dropdownOpen_three ? '#fff' : '#000', }}>
+                            <ListItemText primary={"Market Data"} sx={{ color: dropdownOpen_three ? '#fff' : '#000', }} />
+                            <ListItemIcon sx={{ color: dropdownOpen_three ? '#fff' : '#000', }}>
                                 {dropdownOpen_three ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                             </ListItemIcon>
 
@@ -200,7 +235,7 @@ const ResponsiveDrawer = (props) => {
 
                     </ListItem>
                     {dropdownOpen_three && (
-                        <List sx={{backgroundColor:'#E5E4E2'}}>
+                        <List sx={{ backgroundColor: '#E5E4E2' }}>
 
                             {menuItems_three.map((item) => (
                                 <div >
@@ -212,6 +247,11 @@ const ResponsiveDrawer = (props) => {
                                             setCount_2(null)
                                             setCount(null)
                                             setSelectedIndex(null)
+                                            setCount_4(null)
+                                            // ------------
+                                            setIsClosing(false)
+                                            setMobileOpen(false)
+                                            setExtraCharges(false)
                                         }}
                                             sx={{
                                                 backgroundColor: selectedIndex_3 === item.value ? '#1976d2' : 'transparent',
@@ -247,7 +287,7 @@ const ResponsiveDrawer = (props) => {
                             <ListItemIcon sx={{ color: dropdownOpen ? '#fff' : '#000', }}>
                                 <SettingsIcon />
                             </ListItemIcon>
-                            <ListItemText primary={"Setting"} sx={{ color: dropdownOpen ? '#fff' : '#000', }}/>
+                            <ListItemText primary={"Setting"} sx={{ color: dropdownOpen ? '#fff' : '#000', }} />
                             <ListItemIcon sx={{ color: dropdownOpen ? '#fff' : '#000', }}>
                                 {dropdownOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                             </ListItemIcon>
@@ -258,7 +298,63 @@ const ResponsiveDrawer = (props) => {
 
                     </ListItem>
                     {dropdownOpen && (
-                        <List sx={{backgroundColor:'#E5E4E2'}}>
+                        <List sx={{ backgroundColor: '#E5E4E2' }}>
+                            {/* --------------extra charges-------------------------- */}
+                            <ListItemButton
+                                onClick={() => {
+                                    setExtraCharges(!extraCharges)
+
+                                }}
+                                sx={{
+                                    backgroundColor: 'transparent',
+                                    '&:hover': { backgroundColor: '#B9D9EB' }
+                                }}
+                            >
+                                <ListItemIcon sx={{ color: '#000' }} >
+                                    <InboxIcon />
+                                </ListItemIcon>
+                                <ListItemText primary='Extra charges' sx={{ color: '#000' }} />
+                                {extraCharges ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}
+
+                            </ListItemButton>
+
+                            {extraCharges &&
+                                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                    <div style={{  display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 5, width: '90%', borderRadius: 10 }}>
+                                        {plans.map((plan, idx) => (
+                                            <span
+                                                key={plan.id}
+                                                style={{
+                                                    backgroundColor: selectedIndex_4 === plan.id ? "lightgray" : '#f9f9f9',
+                                                    width: '100%',
+                                                    padding: 8,
+                                                    textAlign: 'center',
+                                                    cursor: 'pointer',
+                                                    marginTop:5,
+                                                    borderRadius:5,
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between',
+                                                     ...(hovered === idx ? hoverStyle : {})
+                                                }}
+                                                onMouseEnter={() => setHovered(idx)}
+                                                onMouseLeave={() => setHovered(null)}
+                                                onClick={() => {
+                                                    setCount(null);
+                                                    setCount_2(null);
+                                                    setCount_3(null);
+                                                    setCount_4(plan.id);
+                                                    setSelectedIndex_4(plan.id)
+                                                }}
+                                            >
+                                                {plan.label}
+                                                <KeyboardArrowRightIcon />
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            }
+
+                            {/* -------------------------------------------------------------- */}
 
                             {menuItems_two.map((item) => (
                                 <div>
@@ -268,8 +364,13 @@ const ResponsiveDrawer = (props) => {
                                             setCount_2(item.value)
                                             setCount(null)
                                             setSelectedIndex(null)
+                                            setCount_4(null)
                                             setCount_3(null)
                                             setSelectedIndex_3(null)
+                                            // ------------
+                                            setIsClosing(false)
+                                            setMobileOpen(false)
+                                            setExtraCharges(false)
                                         }}
                                             sx={{
                                                 backgroundColor: selectedIndex_2 === item.value ? '#1976d2' : 'transparent',
@@ -284,10 +385,13 @@ const ResponsiveDrawer = (props) => {
                                         </ListItemButton>
 
 
+
                                     </ListItem>
+
                                 </div>
 
                             ))}
+
                         </List>
                     )}
 
@@ -333,9 +437,11 @@ const ResponsiveDrawer = (props) => {
 
 
     const renderForm = () => {
-        console.log("Current Count:", count);
-        console.log("Current Count_2:", count_2);
-        console.log("Current Count_3:", count_3);
+        // console.log("Current Count:", count);
+        // console.log("Current Count_2:", count_2);
+        // console.log("Current Count_3:", count_3);
+
+        // console.log("Current Count_4:", count_4);
 
 
         if (count !== null && count !== undefined) {
@@ -352,7 +458,6 @@ const ResponsiveDrawer = (props) => {
             switch (count_2) {
                 case 5: return <BrokerForm />;
                 case 6: return <StockName />;
-                case 7: return <ExtraCharges />;
                 case 17: return <Dividen />;
                 case 18: return <DividenList />;
                 case 8: return <ProfilePage />;
@@ -372,6 +477,15 @@ const ResponsiveDrawer = (props) => {
 
 
 
+
+                default: return null;
+            }
+        }
+        if (count_4 !== null && count_4 !== undefined) {
+            switch (count_4) {
+
+                case 7: return <OneTime />;
+                case 77: return <Monthly />;
 
                 default: return null;
             }

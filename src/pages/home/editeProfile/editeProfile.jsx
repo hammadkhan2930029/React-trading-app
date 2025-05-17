@@ -7,8 +7,20 @@ import TextField from '@mui/material/TextField';
 import { Formik } from 'formik';
 import Button from '@mui/material/Button';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 
 export const EditeProfile = () => {
+    const [age, setAge] = React.useState('');
+
+    const handleChange_filer = (event) => {
+        setAge(event.target.value);
+    };
+    // -----------------------------
     const refOne = React.useRef(null);
     const refTwo = React.useRef(null);
 
@@ -65,7 +77,7 @@ export const EditeProfile = () => {
                                     initial={{ opacity: 0, x: -100 }}
                                     animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                                     transition={{ duration: .7 }}
-                                   >
+                                >
                                     <img
                                         src={avatar_picker || avatar}
                                         className="profile_image_view"
@@ -83,7 +95,7 @@ export const EditeProfile = () => {
                                     {/* Add Icon Click to Open File Picker */}
                                     <AddCircleIcon
                                         className="addIcon"
-                                        style={{ cursor: "pointer" ,color:'#000'}}
+                                        style={{ cursor: "pointer", color: '#000' }}
                                         onClick={() => fileInputRef.current.click()}
                                     />
                                     <span className='userName'>User Name</span>
@@ -116,6 +128,21 @@ export const EditeProfile = () => {
                                     type='number'
 
                                 />
+                                <Box className='e_input'>
+                                    <FormControl fullWidth>
+                                        <InputLabel id="demo-simple-select-label">Filer or Non-filer</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={age}
+                                            label="Filer or Non-filer"
+                                            onChange={handleChange_filer}
+                                        >
+                                            <MenuItem value={1}>Filer</MenuItem>
+                                            <MenuItem value={2}>Non Filer</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </Box>
                                 <TextField
                                     placeholder='password'
                                     name='password'

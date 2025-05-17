@@ -27,14 +27,17 @@ export const BrokerForm = () => {
         transition={{ duration: .8 }}>
             <Formik
                 initialValues={{
-                    name: '',
-                    charges: ''
+                    brokerName: '',
+                    charges_1: '',
+                    charges_2: '',
+                    charges_3: '',
+
                 }}
                 onSubmit={(values, { resetForm }) => {
                     addData(values)
                     resetForm();
                 }}>
-                {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
+                {({ handleBlur, handleChange, handleSubmit, values, errors, }) => (
                     <form onSubmit={handleSubmit}>
 
                         <div className='form-main-brokerForm'>
@@ -56,22 +59,42 @@ export const BrokerForm = () => {
                                             label="Broker Name"
                                             type="text"
                                             placeholder="Broker Name..."
-                                            name='name'
+                                            name='brokerName'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            value={values.name}
+                                            value={values.brokerName}
                                         />
 
 
                                         <TextField
                                             id="outlined-required"
-                                            label="Charges per share"
+                                            label="First Rang 0.0000 to 4.99"
                                             type="text"
                                             placeholder="Charges..."
-                                            name='charges'
+                                            name='charges_1'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            value={values.charges}
+                                            value={values.charges_1}
+                                        />
+                                         <TextField
+                                            id="outlined-required"
+                                            label="Second rang 5.0000 to 32.99"
+                                            type="text"
+                                            placeholder="Charges..."
+                                            name='charges_2'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.charges_2}
+                                        />
+                                         <TextField
+                                            id="outlined-required"
+                                            label="Third rang 33.0000 to 99999.99"
+                                            type="text"
+                                            placeholder="Charges..."
+                                            name='charges_3'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.charges_3}
                                         />
                                     </div>
 

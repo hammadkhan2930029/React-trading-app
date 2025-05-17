@@ -9,6 +9,8 @@ import LandingPage from "../component/landingPage";
 import ResponsiveDrawer from "../home/appBar/mainComponent";
 import { BuyForm } from "../home/buyForm/buyForm";
 import CrudOperation from "../home/CrudSystem/crudOperation";
+import { Monthly } from "../home/extraChargesForm/monthly/monthly";
+import { OneTime } from "../home/extraChargesForm/oneTime/oneTime";
 import { Home } from "../home/home";
 import ProfilePage from "../home/profile/profile";
 import { SellForm } from "../home/sellForm/sellForm";
@@ -29,6 +31,11 @@ export const routes = [
   { path: '/blogsCard', element: <BlogsCard /> },
   { path: '/chooseUs', element: <ChooseUs /> },
   { path: '/contactUs', element: <ContactUs /> },
+  { path: '/onetime', element: <OneTime /> },
+  { path: '/monthly', element: <Monthly /> },
+
+
+
 
 
 

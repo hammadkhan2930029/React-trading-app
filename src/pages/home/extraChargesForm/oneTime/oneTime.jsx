@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Formik, ErrorMessage } from 'formik';
-import "./extraCharges.css"
+import "./oneTime.css"
 import "react-datepicker/dist/react-datepicker.css";
 import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
@@ -11,7 +11,7 @@ import { motion, useInView } from "framer-motion";
 
 
 
-export const ExtraCharges = () => {
+export const OneTime = () => {
         const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
     
     const refOne = React.useRef(null);
@@ -38,8 +38,6 @@ export const ExtraCharges = () => {
                 initialValues={{
                     registrationCharges: '',
                     nccplCharges: '',
-                    cgtCharges: '',
-                    custodyCharges: '',
                    
 
 
@@ -53,9 +51,9 @@ export const ExtraCharges = () => {
                 {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
                     <form onSubmit={handleSubmit}>
 
-                        <div className='form-main-ExtraCharges'>
+                        <div className='form-main-oneTime'>
                             <div>
-                                <span className='heading'>Extra Charges</span>
+                                <span className='heading-oneTime'>One Time Charges</span>
                             </div>
 
 
@@ -65,7 +63,7 @@ export const ExtraCharges = () => {
                                     sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch': '40ch'  } }}
                                     noValidate
                                     autoComplete="off"
-                                    className='form'>
+                                    className='form-oneTime'>
                                     <div>
                                         <TextField
                                             id="outlined-required"
@@ -95,28 +93,8 @@ export const ExtraCharges = () => {
                                      
                                       
 
-                                        <TextField
-                                            id="outlined-required"
-                                            label="CGT Charges"
-                                            type="number"
-                                            placeholder="CGT Charges..."
-                                            name='cgtCharges'
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.cgtCharges}
-
-                                        />
-                                        <TextField
-                                         type="number"
-                                            id="outlined-required"
-                                            label="Custody Charges"
-                                            placeholder="Custody Charges..."
-                                            name='custodyCharges'
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.custodyCharges}
-
-                                        />
+                                      
+                                      
                                     </div>
 
                                 </Box>

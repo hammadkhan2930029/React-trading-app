@@ -19,14 +19,14 @@ export const Home = () => {
   return (
     <div>
       
-      {/* {loading ? (
+      {loading ? (
 
         <Loader_f />
       ) : (
 
         <ResponsiveDrawer />
-      )} */}
-      <LandingPage/>
+      )}
+      {/* <LandingPage/> */}
 
 
 

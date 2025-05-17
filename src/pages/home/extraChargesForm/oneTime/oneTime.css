@@ -1,0 +1,63 @@
+.form-main-oneTime{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 100px;
+    width: 100%;
+    height: 100vh;
+
+}
+.heading-oneTime{
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+.form-oneTime{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+    flex-direction: row;
+    background-color: #fff;
+    margin: 10px; 
+    padding: 30px; 
+     border-radius: 10px;
+
+ } 
+
+
+
+@media screen and (max-width: 600px) {
+    .form-oneTime {
+        width: 85%;
+
+    }
+
+  
+
+   
+}
+
+@media screen and (max-width: 430px) {
+    .form-oneTime {
+        width: 90%;
+    }
+
+   
+   
+}
+
+@media screen and (max-width: 360px) {
+    .form-oneTime {
+        width: 90%;
+    }
+
+
+
+   
+}

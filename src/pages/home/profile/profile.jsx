@@ -43,6 +43,8 @@ const ProfilePage = () => {
         <ul>
           <li><strong>Email:</strong> john.doe@example.com</li>
           <li><strong>Phone:</strong> (123) 456-7890</li>
+          <li><strong>Filer Or Non-filer:</strong> Yes</li>
+
           <li><strong>Address:</strong> San Francisco, CA</li>
         </ul>
         <h3>Social Links</h3>
