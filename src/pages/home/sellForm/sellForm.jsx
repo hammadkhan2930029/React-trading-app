@@ -9,8 +9,8 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { motion, useInView } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { setBuyForm} from "../Redux/formTypeSlice";
-
+import { setBuyForm, setBuy_sell_list } from "../Redux/formTypeSlice";
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 const currencies = [
     {
         value: '1',
@@ -94,13 +94,20 @@ export const SellForm = () => {
                     <form onSubmit={handleSubmit} className='form_div_sell'>
 
                         <div className='form-main-sell'>
+
                             <div>
                                 <span className='heading'>SELL FORM</span>
                             </div>
+                            <div className='btn_div'>
 
-                            <div className='switchBtn_div_sell'>
+                                <div className='switchBtn_div_sell'>
 
-                                <button className='switchBtn_sell' onClick={()=> dispatch(setBuyForm())}>Buy </button>
+                                    <button className='switchBtn_sell' onClick={() => dispatch(setBuy_sell_list())}> <NavigateBeforeIcon/> Back </button>
+                                </div>
+                                <div className='switchBtn_div_sell'>
+
+                                    <button className='switchBtn_sell' onClick={() => dispatch(setBuyForm())}>Buy </button>
+                                </div>
                             </div>
 
                             <div >
@@ -230,7 +237,7 @@ export const SellForm = () => {
 
                             </div>
 
-                            <Box sx={{ '& > :not(style)': { m: 1,ml:-10 } }}>
+                            <Box sx={{ '& > :not(style)': { m: 1, ml: -10 } }}>
 
                                 <Fab variant="extended" color="primary" type="submit">
                                     <SendIcon sx={{ mr: 1.5 }} />

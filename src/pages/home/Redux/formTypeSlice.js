@@ -14,9 +14,12 @@ const formTypeSlice = createSlice({
     setSellForm: (state) => {
       state.formType = 3; // Sell Form ke liye 1 save karna
     },
+      setBuy_sell_list: (state) => {
+      state.formType = 4; // Sell Form ke liye 1 save karna
+    },
     
   },
 });
 
-export const { setBuyForm, setSellForm } = formTypeSlice.actions;
+export const { setBuyForm, setSellForm ,setBuy_sell_list} = formTypeSlice.actions;
 export default formTypeSlice.reducer;

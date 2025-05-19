@@ -41,12 +41,15 @@ import { SummaryIndex } from '../marketData/marketSummaryIndex/summaryIndex.jsx'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { OneTime } from '../extraChargesForm/oneTime/oneTime.jsx';
 import { Monthly } from '../extraChargesForm/monthly/monthly.jsx';
+import BrokerList from '../brokerForm/brokerList/brokerList.jsx';
 const drawerWidth = 240;
 
 const ResponsiveDrawer = (props) => {
     const formType = useSelector((state) => state.formType.formType);
     const profileFormType = useSelector((state) => state.profile.formType);
-    console.log('redux data', profileFormType)
+    console.log('redux data profile', profileFormType)
+    console.log('formtype', formType)
+
     // ------------------------------------------------------
     const [selectedIndex, setSelectedIndex] = useState(1);
     const [count, setCount] = useState(1)
@@ -115,14 +118,14 @@ const ResponsiveDrawer = (props) => {
     // ------------------------------------------------------
     const menuItems_one = [
         { value: 1, name: 'Dashboard' },
-        { value: 2, name: 'Buy' },
-        { value: 3, name: 'Sell' },
-        { value: 4, name: 'List' },
+        // { value: 2, name: 'Buy' },
+        // { value: 3, name: 'Sell' },
+        { value: 4, name: 'Buy / Sell' },
 
     ];
     // -------------------------------------------------
     const menuItems_two = [
-        { value: 5, name: 'Broker ' },
+        { value: 5, name: 'Broker' },
         { value: 6, name: 'Stock Name' },
         // { value: 7, name: 'Extra Charges' },
         { value: 17, name: 'Dividend' },
@@ -151,16 +154,7 @@ const ResponsiveDrawer = (props) => {
 
     const [hovered, setHovered] = useState(null);
 
-    // const baseStyle = {
-    //     backgroundColor: selectedIndex_4 'transparent',
-    //     width: '100%',
-    //     padding: 8,
-    //     textAlign: 'center',
-    //     cursor: 'pointer',
-    //     display: 'flex',
-    //     justifyContent: 'space-between',
-
-    // };
+  
 
     const hoverStyle = {
         backgroundColor: '#B9D9EB'
@@ -437,11 +431,7 @@ const ResponsiveDrawer = (props) => {
 
 
     const renderForm = () => {
-        // console.log("Current Count:", count);
-        // console.log("Current Count_2:", count_2);
-        // console.log("Current Count_3:", count_3);
-
-        // console.log("Current Count_4:", count_4);
+      
 
 
         if (count !== null && count !== undefined) {
@@ -456,7 +446,8 @@ const ResponsiveDrawer = (props) => {
 
         if (count_2 !== null && count_2 !== undefined) {
             switch (count_2) {
-                case 5: return <BrokerForm />;
+                case 55: return <BrokerForm />;
+                case 5: return <BrokerList/>;
                 case 6: return <StockName />;
                 case 17: return <Dividen />;
                 case 18: return <DividenList />;

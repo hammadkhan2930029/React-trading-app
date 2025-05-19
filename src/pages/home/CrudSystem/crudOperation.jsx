@@ -14,6 +14,8 @@ import { setBuyForm, setSellForm } from "../Redux/formTypeSlice";
 import TablePagination from "@mui/material/TablePagination";
 import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
+import EditIcon from '@mui/icons-material/Edit';
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -350,7 +352,7 @@ const CrudOperation = () => {
                                 <td>{item.sell_broker_amount || item.buy_broker_amount}</td>
                                 <td>{item.sell_fed_amount || item.buy_fed_amount}</td>
                                 <td>
-                                    <button className="editebtn" onClick={handleOpen}>Edit</button>
+                                    <button className="crud_editebtn" onClick={handleOpen}> <EditIcon style={{fontSize:'16px'}}/> Edit</button>
                                     <div>
                                         <Modal open={open} onClose={handleClose}>
                                             <Box sx={style}>
@@ -384,7 +386,8 @@ const CrudOperation = () => {
                                                         </Grid>
                                                     </Grid>
                                                     <Box mt={2} display="flex" justifyContent="space-between">
-                                                        <Button type="submit" variant="contained" color="primary">Submit</Button>                                                        <Button variant="outlined" color="secondary" onClick={handleClose}>Cancel</Button>
+                                                        <Button type="submit" variant="contained" color="primary">Submit</Button>
+                                                        <Button variant="outlined" color="secondary" onClick={handleClose}>Cancel</Button>
                                                     </Box>
                                                 </form>
                                             </Box>

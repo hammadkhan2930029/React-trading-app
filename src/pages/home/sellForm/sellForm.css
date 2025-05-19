@@ -33,23 +33,34 @@
      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
  } 
- .switchBtn_div_sell{
+ .btn_div{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+ }
+ .switchBtn_div_sell{
     display: flex;
     justify-content: end;
  }
  .switchBtn_div_sell .switchBtn_sell{
     background-color: #1976d2;
-    padding: 15px;
+    padding: 10px 15px;
     color: #fff;
     border-radius: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+  
     outline: none;
     border: none;
     font-weight: bold;
     font-size: 14px;
     margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 40px;
+    
  }
 
 
@@ -104,9 +115,12 @@
     .btn {
         width: 60%;
     }
-    .switchBtn_div_sell{
+    /* .switchBtn_div_sell{
         width: 75%;
-    }
+    } */
+     .btn_div{
+        justify-content: space-around;
+     }
   
 }
 
@@ -134,7 +148,7 @@
     .btn {
         width: 60%;
     }
-    .switchBtn_div_sell{
+    /* .switchBtn_div_sell{
         width: 60%;
-    }
+    } */
 }

@@ -9,7 +9,8 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { motion, useInView } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { setSellForm } from "../Redux/formTypeSlice";
+import { setSellForm, setBuy_sell_list } from "../Redux/formTypeSlice";
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 
 const currencies = [
@@ -68,7 +69,7 @@ export const BuyForm = () => {
             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: .8 }}>
 
-           
+
 
 
             <Formik
@@ -98,10 +99,18 @@ export const BuyForm = () => {
                             <div>
                                 <span className='heading'>BUY</span>
                             </div>
-                            <div className='switchBtn_div'>
+                            <div className='btn_div_buy'>
 
-                                <button className='switchBtn' onClick={() => dispatch(setSellForm())}>Sell</button>
+                                <div className='switchBtn_div_buy'>
+
+                                    <button className='switchBtn_buy' onClick={() => dispatch(setBuy_sell_list())}> <NavigateBeforeIcon/> back</button>
+                                </div>
+                                <div className='switchBtn_div_buy'>
+
+                                    <button className='switchBtn_buy' onClick={() => dispatch(setSellForm())}>Sell</button>
+                                </div>
                             </div>
+
 
                             <div >
                                 <Box component="form"
@@ -230,7 +239,7 @@ export const BuyForm = () => {
 
                             </div>
 
-                            <Box sx={{ '& > :not(style)': { m: 1,ml:-10 } }}>
+                            <Box sx={{ '& > :not(style)': { m: 1, ml: -10 } }}>
 
                                 <Fab variant="extended" color="primary" type="submit">
                                     <SendIcon sx={{ mr: 1.5 }} />

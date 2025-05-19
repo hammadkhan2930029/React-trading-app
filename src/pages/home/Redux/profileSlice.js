@@ -20,8 +20,14 @@ const profileSlice = createSlice({
     setDividen_list: (state) => {
       state.formType = 18;
     },
+     setBroker_list: (state) => {
+      state.formType = 5;
+    },
+     setBrokerForm: (state) => {
+      state.formType = 55;
+    },
   },
 });
 
-export const { setProfile, setEditeProfile,setDividen,setDividen_list } = profileSlice.actions;
+export const { setProfile, setEditeProfile,setDividen,setDividen_list,setBrokerForm,setBroker_list } = profileSlice.actions;
 export default profileSlice.reducer;

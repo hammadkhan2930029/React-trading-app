@@ -1,5 +1,4 @@
-
-.crud_main {
+.dividen_crud_main_Blist {
     width: 100%;
     margin-top: 80px;
     padding: 20px;
@@ -8,7 +7,7 @@
     overflow-x: auto;
 }
 
-table {
+table_Blist {
     width: 100%;
     border-collapse: collapse;
     font-size: 16px;
@@ -16,16 +15,16 @@ table {
     background-color: #908b8b;
     border-radius: 8px;
     overflow: hidden;
-    table-layout: fixed; 
+    table-layout: fixed;
     word-wrap: break-word;
 }
 
-thead.t_head {
+thead.t_head_Blist {
     color: #fff;
     text-transform: uppercase;
 }
 
-.t_head_row {
+.t_head_row_Blist {
     width: 100%;
     top: 0;
     position: sticky;
@@ -34,43 +33,36 @@ thead.t_head {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.t_head_row th {
+.t_head_row_Blist th {
     padding: 13px;
     text-align: center;
 }
 
-tbody.t_body tr {
+tbody.t_body_Blist tr {
     border-bottom: 1px solid #ddd;
 }
 
-.t_body_row:nth-child(even) {
+.t_body_row_Blist:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.t_body_row:nth-child(odd) {
+.t_body_row_Blist:nth-child(odd) {
     background-color: #ffffff;
 }
 
-.t_body_row:hover {
+.t_body_row_Blist:hover {
     background-color: #e6ffe6;
     cursor: pointer;
 }
 
-.t_body_row td {
+.t_body_row_Blist td {
     color: #333;
     text-align: center;
     padding: 10px;
     word-wrap: break-word;
 }
-.top_input_fields .top_btn {
-    margin: 5px;
-    width: 13%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
 
-.crud_editebtn{
+.editebtn_Blist{
     background-color: #1976d2;
     padding: 10px 15px;
     color: #fff;
@@ -81,9 +73,9 @@ tbody.t_body tr {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.top_btn .top_btn_buy {
+.top_btn_buy_Blist {
     background-color: #1976d2;
-    padding: 15px 25px;
+    padding: 10px 15px;
     color: #fff;
     border-radius: 5px;
     outline: none;
@@ -91,78 +83,51 @@ tbody.t_body tr {
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    margin: 10px;
+    display: flex;
+    align-items: center;
 }
 
-.editebtn:hover, .top_btn_buy:hover {
+.editebtn_Blist:hover, .top_btn_buy_Blist:hover {
     background-color: #145ca6;
 }
 
 
-.top_input_fields{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-}
-/* ------------------------------------- */
-.search_div{
-    width: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border: 1px solid #848181;
-    border-radius: 5px;
-}
-.search_input{
-    outline: none;
-    border: none;
-    padding: 18px;
-    width: 90%;
-    font-size: 16px;
-    background-color: transparent;
-}
 
 @media (max-width: 1024px) {
-    table {
+    table_Blist {
         font-size: 14px;
     }
 
-    .t_head_row th, .t_body_row td {
+    .t_head_row_Blist th, .t_body_row_Blist td {
         padding: 10px 12px;
     }
-    .top_input_fields .top_btn {
+
+    .top_btn_Blist {
         width: 20%;
-       
-    }
-}
-@media (max-width: 991px) {
-    .top_input_fields .top_btn {
-        width: 25%;
-       
     }
 }
 
 @media (max-width: 768px) {
-    .crud_main {
+    .dividen_crud_main_Blist {
         padding: 15px;
     }
 
-    table {
+    table_Blist {
         font-size: 14px;
     }
 
-    .t_head_row th, .t_body_row td {
+    .t_head_row_Blist th, .t_body_row_Blist td {
         padding: 8px 10px;
     }
 
-    .top_input_fields .top_btn {
+    .top_btn_Blist {
         width: 100%;
         justify-content: center;
         gap: 10px;
     }
 
-    .top_btn_buy {
+    .top_btn_buy_Blist {
         width: auto;
         padding: 10px 12px;
         font-size: 14px;
@@ -170,45 +135,38 @@ tbody.t_body tr {
 }
 
 @media (max-width: 480px) {
-    .crud_main {
-        width: 43%;
+    .dividen_crud_main_Blist {
+        width: 67%;
     }
 
-    .top_btn {
+    .top_btn_Blist {
         flex-direction: column;
         align-items: center;
     }
 
-    .top_btn_buy {
+    .top_btn_buy_Blist {
         width: 100%;
         text-align: center;
         padding: 12px;
         font-size: 14px;
     }
 
-    table {
+    table_Blist {
         font-size: 12px;
         display: block;
         overflow-x: auto;
         white-space: nowrap;
     }
 
-    .t_head_row th {
+    .t_head_row_Blist th {
         font-size: 12px;
     }
 
-    .t_body_row {
+    .t_body_row_Blist {
         font-size: 10px;
     }
 
-    .t_head_row th, .t_body_row td {
+    .t_head_row_Blist th, .t_body_row_Blist td {
         padding: 6px 8px;
     }
-    .top_input_fields{
-        flex-direction: column;
-    }
-    .search_div{
-        width: 100%;
-    }
 }
-
