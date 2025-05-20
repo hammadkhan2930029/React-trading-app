@@ -6,12 +6,13 @@ import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import { motion, useInView } from "framer-motion";
-
-
+import { useDispatch } from 'react-redux';
+import { setChargesList } from '../../Redux/extrachargesSlice';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 export const Monthly = () => {
+    const dispatch = useDispatch()
     const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
 
     const refOne = React.useRef(null);
@@ -38,6 +39,7 @@ export const Monthly = () => {
                 initialValues={{
 
                     custodyCharges: '',
+                    date:''
 
 
 
@@ -48,15 +50,19 @@ export const Monthly = () => {
                 }}
 
             >
+
                 {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
                     <form onSubmit={handleSubmit}>
 
                         <div className='form-main-monthly'>
-                            <div>
-                                <span className='heading-monthly'>One Time Charges</span>
+                            <div >
+
+                                <span className='heading-monthly'>Monthly Charges</span>
                             </div>
 
-
+                            <div style={{ width: '100%' }}>
+                                <button className='list_btn' type="button" onClick={() => dispatch(setChargesList())}> <NavigateBeforeIcon />Back</button>
+                            </div>
 
                             <div >
                                 <Box component="form"
@@ -65,6 +71,16 @@ export const Monthly = () => {
                                     autoComplete="off"
                                     className='form-monthly'>
                                     <div>
+                                        <TextField
+                                            type='date'
+                                            id="outlined-required"
+                                            label="Date"
+                                            selected={values.date}
+                                            onChange={(date) => handleChange({ target: { name: "date", value: date } })} // Handle date change
+                                            onBlur={handleBlur}
+                                            InputLabelProps={{ shrink: true }}
+
+                                        />
                                         <TextField
                                             type="number"
                                             id="outlined-required"
@@ -95,6 +111,7 @@ export const Monthly = () => {
                 )}
 
             </Formik>
+
         </motion.div>
 
     )

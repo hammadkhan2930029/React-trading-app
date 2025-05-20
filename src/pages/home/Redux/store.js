@@ -3,13 +3,16 @@ import formTypeReducer from './formTypeSlice';
 import profileReducer from "./profileSlice";
 import loginReducer from './loginSlice';
 import scrollReducer from '../../component/Redux/scrollSlice'; // Add this line
+import extrachargesReducer from '../Redux/extrachargesSlice'
 
 const store = configureStore({
   reducer: {
     formType: formTypeReducer,
     profile: profileReducer,
     login: loginReducer,
-    scroll: scrollReducer, // Add this here too
+    scroll: scrollReducer,
+    extraCharges : extrachargesReducer,
+     // Add this here too
   },
 });
 

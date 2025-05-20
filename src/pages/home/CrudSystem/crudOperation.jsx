@@ -217,7 +217,12 @@ const filter = [
 
 ];
 
+
+
+
 const CrudOperation = () => {
+
+
     const navigate = useNavigate();
     const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
     // --------------------Redux-------------------------------
@@ -399,7 +404,7 @@ const CrudOperation = () => {
                     </tbody>
                 </table>
 
-                {/* Pagination */}
+                {/*-------- Pagination---------- */}
                 <TablePagination
                     component="div"
                     count={mergedData.length}

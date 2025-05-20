@@ -6,14 +6,17 @@ import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import { motion, useInView } from "framer-motion";
+import { useDispatch } from 'react-redux';
+import { setChargesList } from '../../Redux/extrachargesSlice';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 
 
 export const OneTime = () => {
-        const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
-    
+    const dispatch = useDispatch()
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
+
     const refOne = React.useRef(null);
     const refTwo = React.useRef(null);
 
@@ -25,11 +28,11 @@ export const OneTime = () => {
 
     return (
 
-        <motion.div 
-        ref={refOne}
-        initial={{ opacity: 0, y: 100 }}
-        animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: .8 }}>
+        <motion.div
+            ref={refOne}
+            initial={{ opacity: 0, y: 100 }}
+            animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: .8 }}>
 
 
 
@@ -38,7 +41,8 @@ export const OneTime = () => {
                 initialValues={{
                     registrationCharges: '',
                     nccplCharges: '',
-                   
+                    date:'',
+
 
 
                 }}
@@ -55,16 +59,29 @@ export const OneTime = () => {
                             <div>
                                 <span className='heading-oneTime'>One Time Charges</span>
                             </div>
+                            <div style={{ width: '100%' }}>
+                                <button className='list_btn' type='button' onClick={() => dispatch(setChargesList())}><NavigateBeforeIcon />Back</button>
+                            </div>
 
 
 
                             <div >
                                 <Box component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch': '40ch'  } }}
+                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch' : '40ch' } }}
                                     noValidate
                                     autoComplete="off"
                                     className='form-oneTime'>
                                     <div>
+                                        <TextField
+                                            type='date'
+                                            id="outlined-required"
+                                            label="Date"
+                                            selected={values.date}
+                                            onChange={(date) => handleChange({ target: { name: "date", value: date } })} // Handle date change
+                                            onBlur={handleBlur}
+                                            InputLabelProps={{ shrink: true }}
+
+                                        />
                                         <TextField
                                             id="outlined-required"
                                             label="Registration Charges"
@@ -76,13 +93,13 @@ export const OneTime = () => {
                                             value={values.registrationCharges}
 
                                         />
-                                         
+
 
 
                                         <TextField
                                             id="outlined-required"
                                             label="NCCPL Charges"
-                                           type="number"
+                                            type="number"
                                             placeholder="NCCLP Charges..."
                                             name='nccplCharges'
                                             onChange={handleChange}
@@ -90,11 +107,11 @@ export const OneTime = () => {
                                             value={values.nccplCharges}
 
                                         />
-                                     
-                                      
 
-                                      
-                                      
+
+
+
+
                                     </div>
 
                                 </Box>

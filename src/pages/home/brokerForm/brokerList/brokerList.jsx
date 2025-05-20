@@ -141,7 +141,7 @@ const BrokerList = () => {
 
                 <Modal open={open} onClose={handleClose}>
                     <Box sx={style}>
-                        <Typography variant="h6">Enter Broker Details</Typography>
+                        <Typography variant="h6">Edit Broker Details</Typography>
                         <form onSubmit={handleSubmit}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>

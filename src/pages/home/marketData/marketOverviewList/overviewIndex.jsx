@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import './overviewIndex.css';
 import { motion, useInView } from "framer-motion";
+import { Box, Button, Typography, Modal, TextField, Grid, TablePagination } from '@mui/material';
 
 const marketIndex = [
     {
@@ -103,6 +104,19 @@ const marketIndex = [
 ];
 
 export const OverviewIndex = () => {
+
+    const [page, setpage] = useState(0)
+    const [rowPerPage, setRowperPage] = useState(5)
+    const handleChangePage = (event, newPage) => {
+        setpage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event) => {
+        setRowperPage(parseInt(event.target.value, 10));
+        setpage(0);
+    };
+    // ------------------------------
+
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
@@ -133,7 +147,7 @@ export const OverviewIndex = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {marketIndex.map((item, index) => (
+                        {marketIndex.slice(page * rowPerPage, (page + 1) * rowPerPage).map((item, index) => (
                             <tr key={index}>
                                 <td>{item.date}</td>
                                 <td>{item.marketStatus}</td>
@@ -149,6 +163,15 @@ export const OverviewIndex = () => {
                         ))}
                     </tbody>
                 </table>
+                <TablePagination
+                    component="div"
+                    count={marketIndex.length}
+                    page={page}
+                    rowsPerPage={rowPerPage}
+                    onPageChange={handleChangePage}
+                    rowsPerPageOptions={[5, 10, 20]}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                />
             </div>
         </motion.div>
     );

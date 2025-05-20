@@ -42,13 +42,16 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { OneTime } from '../extraChargesForm/oneTime/oneTime.jsx';
 import { Monthly } from '../extraChargesForm/monthly/monthly.jsx';
 import BrokerList from '../brokerForm/brokerList/brokerList.jsx';
+import ExtraChargesList from '../extraChargesForm/extraChargesList/extraChargesList.jsx';
 const drawerWidth = 240;
 
 const ResponsiveDrawer = (props) => {
     const formType = useSelector((state) => state.formType.formType);
     const profileFormType = useSelector((state) => state.profile.formType);
+    const extra_Charges = useSelector((state)=> state.extraCharges.formType)
     console.log('redux data profile', profileFormType)
     console.log('formtype', formType)
+    console.log('extra charges ', extra_Charges)
 
     // ------------------------------------------------------
     const [selectedIndex, setSelectedIndex] = useState(1);
@@ -89,8 +92,18 @@ const ResponsiveDrawer = (props) => {
             setCount_2(profileFormType);
         }
     }, [profileFormType]);
-
-
+// --------------------------------------
+  useEffect(() => {
+        if (extra_Charges !== null) {
+            setCount(null)
+            setSelectedIndex(null)
+               setCount_2(null)
+            setSelectedIndex_2(null)
+            // -----------------------
+            setSelectedIndex_4(extra_Charges);
+            setCount_4(extra_Charges);
+        }
+    }, [extra_Charges]);
 
 
 
@@ -149,7 +162,9 @@ const ResponsiveDrawer = (props) => {
     // ---------------------------------------------------------
     const plans = [
         { id: 7, label: 'One Time' },
-        { id: 77, label: 'Monthly' }
+        { id: 77, label: 'Monthly' },
+        { id: 78, label: 'Charges List' }
+
     ];
 
     const [hovered, setHovered] = useState(null);
@@ -477,6 +492,7 @@ const ResponsiveDrawer = (props) => {
 
                 case 7: return <OneTime />;
                 case 77: return <Monthly />;
+                case 78 : return <ExtraChargesList/>
 
                 default: return null;
             }
