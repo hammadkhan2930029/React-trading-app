@@ -18,6 +18,9 @@ table {
     overflow: hidden;
     table-layout: fixed; 
     word-wrap: break-word;
+    
+  
+
 }
 
 thead.t_head {
@@ -37,10 +40,12 @@ thead.t_head {
 .t_head_row th {
     padding: 13px;
     text-align: center;
+    border: 1px solid #ebebeb;
 }
 
 tbody.t_body tr {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eaeaea;
+
 }
 
 .t_body_row:nth-child(even) {
@@ -61,6 +66,8 @@ tbody.t_body tr {
     text-align: center;
     padding: 10px;
     word-wrap: break-word;
+    border: 1px solid #ebebeb;
+
 }
 .top_input_fields .top_btn {
     margin: 5px;
@@ -72,7 +79,7 @@ tbody.t_body tr {
 
 .crud_editebtn{
     background-color: #1976d2;
-    padding: 10px 15px;
+    padding: 10px 10px;
     color: #fff;
     border-radius: 5px;
     outline: none;
@@ -121,6 +128,13 @@ tbody.t_body tr {
     width: 90%;
     font-size: 16px;
     background-color: transparent;
+}
+@media (max-width: 1285px) {
+   
+    .top_input_fields .top_btn {
+        width: 20%;
+       
+    }
 }
 
 @media (max-width: 1024px) {

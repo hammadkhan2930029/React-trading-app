@@ -46,7 +46,7 @@ export const Login = () => {
 
     return (
         <motion.div className='R_main'>
-            <motion.div className='register_login'>
+            <motion.div className='register_login_1'>
                 <motion.div
                     className='image_div_login'
                     ref={refOne}

@@ -64,6 +64,10 @@
 .form .btn {
     width: 30%;
 }
+.form .btn:hover{
+     background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(27,2,82,1) 52%, rgba(0,147,176,1) 100%);
+}
 
 .f_div {
     width: 100%;

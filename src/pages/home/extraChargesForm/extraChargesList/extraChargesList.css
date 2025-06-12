@@ -36,6 +36,8 @@
 .ex_charges_t_head_row th {
     padding: 13px;
     text-align: center;
+    border: 1px solid #ebebeb;
+
 }
 
 .ex_charges_t_body tr {
@@ -60,6 +62,8 @@
     text-align: center;
     padding: 10px;
     word-wrap: break-word;
+    border: 1px solid #ebebeb;
+
 }
 .ex_charges_top_btn{
     /* background-color: #908b8b; */
@@ -132,6 +136,7 @@
     .ex_charges_t_head_row th,
     .ex_charges_t_body_row td {
         padding: 8px 10px;
+
     }
 
     .ex_charges_top_btn {

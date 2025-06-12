@@ -64,7 +64,19 @@ tbody.t_body tr {
 }
 
 /* Buttons */
-.editebtn, .top_btn_buy {
+.editebtn {
+    background-color: #1976d2;
+    padding: 10px 10px;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+   
+}
+ .top_btn_buy {
     background-color: #1976d2;
     padding: 10px 15px;
     color: #fff;
@@ -74,6 +86,8 @@ tbody.t_body tr {
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
 }
 
 .editebtn:hover, .top_btn_buy:hover {
@@ -82,7 +96,6 @@ tbody.t_body tr {
 
 .top_btn {
     margin: 5px;
-    width: 10%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

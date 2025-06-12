@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Formik, ErrorMessage } from 'formik';
-import "./monthly.css"
+import "./totalinvestment.css"
 import "react-datepicker/dist/react-datepicker.css";
 import SendIcon from '@mui/icons-material/Send';
 import Fab from '@mui/material/Fab';
@@ -11,6 +11,7 @@ import { setChargesList } from '../../Redux/extrachargesSlice';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import EditIcon from '@mui/icons-material/Edit';
 import { Box, Button, Typography, Modal, Grid, TablePagination } from '@mui/material';
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -22,22 +23,20 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-export const Monthly = () => {
+export const TotalInvestment = () => {
     const dispatch = useDispatch()
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 430);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 430);
 
     const refOne = React.useRef(null);
-    const refTwo = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
-    const inViewTwo = useInView(refTwo, { triggerOnce: true });
     const [value, setValue] = React.useState(null);
     const [selectedDate, setSelectedDate] = useState(null);
     // -----------------------------------------------------------
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
         date: '',
-        custodyCharges: '',
+        total_investment: '',
     },);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -49,8 +48,8 @@ export const Monthly = () => {
 
         setFormData({
             date: formattedDate,
-            custodyCharges: item.custodyCharges,
-            
+            total_investment: item.total_investment,
+
         });
         setOpen(true);
     };
@@ -76,69 +75,64 @@ export const Monthly = () => {
     };
 
     // -------------------------------------------------------------
-    const extraChargesMonthlyList = [
+    const TotalInvestmentList = [
         {
             id: 1,
             date: '20/05/2025',
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
         {
             id: 2,
             date: '10/01/2025',
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
         {
             id: 3,
             date: '05/03/2024',
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
         {
             id: 1,
             date: '20/05/2025',
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
         {
             id: 2,
             date: '10/01/2025',
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
         {
             id: 3,
             date: '05/03/2024',
-
-
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
         {
             id: 1,
             date: '20/05/2025',
-
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
         {
             id: 2,
             date: '10/01/2025',
-
-
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
         {
             id: 3,
             date: '05/03/2024',
-
-            custodyCharges: '1100',
+            total_investment: '1200',
 
         },
 
     ];
+
 
     return (
 
@@ -146,16 +140,16 @@ export const Monthly = () => {
             ref={refOne}
             initial={{ opacity: 0, y: 100 }}
             animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: .8 }}>
+            transition={{ duration: .8 }}
+            className='investment_main'>
 
 
 
 
             <Formik
                 initialValues={{
-
-                    custodyCharges: '',
-                    date: ''
+                    total_investment: '',
+                    date: '',
 
 
 
@@ -166,26 +160,23 @@ export const Monthly = () => {
                 }}
 
             >
-
                 {({ handleBlur, handleChange, handleSubmit, values, errors, isValid, touched, setFieldValue }) => (
                     <form onSubmit={handleSubmit}>
 
-                        <div className='form-main-monthly'>
-                            <div >
-
-                                <span className='heading-monthly'>Monthly Charges</span>
+                        <div className='form-main-oneTime'>
+                            <div>
+                                <span className='heading-oneTime'>Total Investment</span>
                             </div>
+                         
 
-                            <div style={{ width: '100%' }}>
-                                <button className='list_btn' type="button" onClick={() => dispatch(setChargesList())}> <NavigateBeforeIcon />Back</button>
-                            </div>
+
 
                             <div >
                                 <Box component="form"
                                     sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch' : '40ch' } }}
                                     noValidate
                                     autoComplete="off"
-                                    className='form-monthly'>
+                                    className='form-oneTime'>
                                     <div>
                                         <TextField
                                             type='date'
@@ -198,16 +189,17 @@ export const Monthly = () => {
 
                                         />
                                         <TextField
-                                            type="number"
                                             id="outlined-required"
-                                            label="Custody Charges"
-                                            placeholder="Custody Charges..."
-                                            name='custodyCharges'
+                                            label="Total Investment"
+                                            type="number"
+                                            placeholder="Total Investment..."
+                                            name='total_investment'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            value={values.custodyCharges}
+                                            value={values.total_investment}
 
                                         />
+
                                     </div>
 
                                 </Box>
@@ -227,32 +219,35 @@ export const Monthly = () => {
                 )}
 
             </Formik>
-            {/* ============================================================================================== */}
-            <motion.div className="ex_charges_crud_onetime"
+
+          
+            {/* ==== TABLE SECTION START ==== */}
+            <motion.div className="investment_crud_onetime"
                 ref={refOne}
                 initial={{ opacity: 0, y: -100 }}
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}>
-                <div className="ex_charges_crud_main_onetime">
 
+                <div className="investment_crud_main_onetime">
 
-                    <table className="ex_charges_table_onetime">
-                        <thead className='ex_charges_t_head_onetime'>
-                            <tr className='ex_charges_t_head_row_onetime'>
+                    <table className="investment_table_onetime">
+                        <thead className='investment_t_head_onetime'>
+                            <tr className='investment_t_head_row_onetime'>
                                 <th>Date</th>
-                                <th>Custody Charges</th>
-
+                                <th>Total Investment</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody className='ex_charges_t_body_onetime'>
-                            {extraChargesMonthlyList.slice(page * rowsPerPage, (page + 1) * rowsPerPage).map((item, index) => (
-                                <tr key={index} className='ex_charges_t_body_row_onetime'>
+                        <tbody className='investment_t_body_onetime'>
+                            {TotalInvestmentList.slice(page * rowsPerPage, (page + 1) * rowsPerPage).map((item, index) => (
+                                <tr key={index} className='investment_t_body_row_onetime'>
                                     <td>{item.date}</td>
-                                    <td>{item.custodyCharges} </td>
-
+                                    <td>{Number(item.total_investment).toLocaleString()}</td>
                                     <td>
-                                        <button className="ex_charges_editebtn_onetime" onClick={() => handleOpen(item)}>
+                                        <button
+                                            className="investment_editbtn_onetime"
+                                            onClick={() => handleOpen(item)}
+                                        >
                                             <EditIcon style={{ fontSize: '16px' }} /> Edit
                                         </button>
                                     </td>
@@ -263,7 +258,7 @@ export const Monthly = () => {
 
                     <TablePagination
                         component="div"
-                        count={extraChargesMonthlyList.length}
+                        count={TotalInvestmentList.length}
                         page={page}
                         rowsPerPage={rowsPerPage}
                         onPageChange={handleChangePage}
@@ -271,6 +266,7 @@ export const Monthly = () => {
                         onRowsPerPageChange={handleChangeRowsPerPage}
                     />
 
+                    {/* EDIT MODAL */}
                     <Modal open={open} onClose={handleClose}>
                         <Box sx={style}>
                             <Typography variant="h6">Edit</Typography>
@@ -287,13 +283,18 @@ export const Monthly = () => {
                                             required
                                             InputLabelProps={{ shrink: true }}
                                         />
-
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <TextField fullWidth type="number" label="Custody Charges" name="custodyCharges" value={formData.custodyCharges} onChange={handleChange} required />
+                                        <TextField
+                                            fullWidth
+                                            type="number"
+                                            label="Total Investment"
+                                            name="registrationCharges"
+                                            value={formData.total_investment}
+                                            onChange={handleChange}
+                                            required
+                                        />
                                     </Grid>
-                                   
-
                                 </Grid>
                                 <Box mt={2} display="flex" justifyContent="space-between">
                                     <Button type="submit" variant="contained" color="primary">Submit</Button>

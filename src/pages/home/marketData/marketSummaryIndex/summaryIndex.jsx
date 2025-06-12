@@ -94,7 +94,7 @@ const marketSummaryData = [
         date: "2025-03-21"
     },
     {
-        scrip: "LMN",
+        scrip: "Cogent dev software solution Cogent dev software solution",
         ldcp: "300.30",
         open: "290.00",
         high: "310.00",

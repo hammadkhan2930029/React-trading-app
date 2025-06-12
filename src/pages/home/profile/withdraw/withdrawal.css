@@ -1,21 +1,28 @@
-.form-main-monthly{
+.withdrawal_main{
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.withdrawal_form-main-oneTime {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: start;
     margin-top: 100px;
     width: 100%;
-    height: 100vh;
-
 }
-.heading-monthly{
+
+.withdrawal_heading-oneTime {
     color: #000;
     font-size: 24px;
     font-weight: bold;
-    
 }
 
-.form-monthly{
+.withdrawal_form-oneTime {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -24,13 +31,13 @@
     align-self: center;
     flex-direction: row;
     background-color: #fff;
-    margin: 10px; 
-    padding: 30px; 
-     border-radius: 10px;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+}
 
- } 
- .list_btn{
-     background-color: #1976d2;
+.withdrawal_list_btn {
+    background-color: #1976d2;
     padding: 10px 15px;
     color: #fff;
     border-radius: 5px;
@@ -42,10 +49,11 @@
     margin: 10px;
     display: flex;
     align-items: center;
- }
- /* ---------------------------------------------- */
-  /* -------------------------------------------------------- */
- .ex_charges_crud_main_onetime {
+}
+
+/* ========================== Table Styles =========================== */
+
+.withdrawal_crud_main_onetime {
     width: 100%;
     margin-top: 80px;
     padding: 20px;
@@ -54,7 +62,7 @@
     overflow-x: auto;
 }
 
-.ex_charges_table_onetime {
+.withdrawal_table_onetime {
     width: 100%;
     border-collapse: collapse;
     font-size: 16px;
@@ -66,12 +74,12 @@
     word-wrap: break-word;
 }
 
-.ex_charges_t_head_onetime {
+.withdrawal_t_head_onetime {
     color: #fff;
     text-transform: uppercase;
 }
 
-.ex_charges_t_head_row_onetime {
+.withdrawal_t_head_row_onetime {
     width: 100%;
     top: 0;
     position: sticky;
@@ -80,44 +88,42 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.ex_charges_t_head_row_onetime th {
+.withdrawal_t_head_row_onetime th {
     padding: 13px;
     text-align: center;
     border: 1px solid #ebebeb;
-
 }
 
-.ex_charges_t_body_onetime tr {
+.withdrawal_t_body_onetime tr {
     border-bottom: 1px solid #ddd;
 }
 
-.ex_charges_t_body_row_onetime:nth-child(even) {
+.withdrawal_t_body_row_onetime:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.ex_charges_t_body_row_onetime:nth-child(odd) {
+.withdrawal_t_body_row_onetime:nth-child(odd) {
     background-color: #ffffff;
 }
 
-.ex_charges_t_body_row_onetime:hover {
+.withdrawal_t_body_row_onetime:hover {
     background-color: #e6ffe6;
     cursor: pointer;
 }
 
-.ex_charges_t_body_row_onetime td {
+.withdrawal_t_body_row_onetime td {
     color: #333;
     text-align: center;
     padding: 10px;
     word-wrap: break-word;
     border: 1px solid #ebebeb;
-
 }
-.ex_charges_top_btn_onetime{
-    /* background-color: #908b8b; */
+
+.withdrawal_top_btn_onetime {
     display: flex;
 }
 
-.ex_charges_editebtn_onetime {
+.withdrawal_editbtn_onetime {
     background-color: #1976d2;
     padding: 10px 15px;
     color: #fff;
@@ -129,7 +135,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-.ex_charges_top_btn_buy_onetime {
+.withdrawal_top_btn_buy_onetime {
     background-color: #1976d2;
     padding: 10px 15px;
     color: #fff;
@@ -144,123 +150,112 @@
     align-items: center;
 }
 
-.ex_charges_editebtn_onetime:hover,
-.ex_charges_top_btn_buy_onetime:hover {
+.withdrawal_editbtn_onetime:hover,
+.withdrawal_top_btn_buy_onetime:hover {
     background-color: #145ca6;
 }
+
+/* ========================== Responsive =========================== */
+
 @media (max-width: 1024px) {
-    .ex_charges_table_onetime {
+    .withdrawal_table_onetime {
         font-size: 14px;
     }
 
-    .ex_charges_t_head_row_onetime th,
-    .ex_charges_t_body_row_onetime td {
+    .withdrawal_t_head_row_onetime th,
+    .withdrawal_t_body_row_onetime td {
         padding: 10px 12px;
     }
 
-    .ex_charges_top_btn_onetime {
+    .withdrawal_top_btn_onetime {
         width: 20%;
     }
 }
-@media (max-width: 991px) {
-   
 
-    .ex_charges_top_btn_onetime {
+@media (max-width: 991px) {
+    .withdrawal_top_btn_onetime {
         width: 50%;
     }
 }
 
 @media (max-width: 768px) {
-    .ex_charges_crud_main_onetime {
+    .withdrawal_crud_main_onetime {
         padding: 15px;
     }
 
-    .ex_charges_table_onetime {
+    .withdrawal_table_onetime {
         font-size: 14px;
     }
 
-    .ex_charges_t_head_row_onetime th,
-    .ex_charges_t_body_row_onetime td {
+    .withdrawal_t_head_row_onetime th,
+    .withdrawal_t_body_row_onetime td {
         padding: 8px 10px;
-
     }
 
-    .ex_charges_top_btn_onetime {
+    .withdrawal_top_btn_onetime {
         width: 100%;
         justify-content: center;
         gap: 10px;
     }
 
-    .ex_charges_top_btn_buy_onetime {
+    .withdrawal_top_btn_buy_onetime {
         width: auto;
         padding: 10px 12px;
         font-size: 14px;
     }
 }
 
-
-
-
-@media screen and (max-width: 600px) {
-    .form-monthly{
-        width: 85%;
-
+@media (max-width: 480px) {
+    .withdrawal_crud_main_onetime {
+        width: 95%;
     }
 
-  
-
-   
-}
-
-@media screen and (max-width: 480px) {
-    .form-monthly {
-        width: 90%;
-    }
-     .ex_charges_crud_main_onetime {
-        width: 70%;
-    }
-
-    .ex_charges_top_btn_onetime {
+    .withdrawal_top_btn_onetime {
         align-items: center;
     }
 
-    .ex_charges_top_btn_buy_onetime {
+    .withdrawal_top_btn_buy_onetime {
         width: 100%;
         text-align: center;
         padding: 12px;
         font-size: 14px;
     }
 
-    .ex_charges_table_onetime {
+    .withdrawal_table_onetime {
         font-size: 12px;
         display: block;
         overflow-x: auto;
         white-space: nowrap;
     }
 
-    .ex_charges_t_head_row_onetime th {
+    .withdrawal_t_head_row_onetime th {
         font-size: 12px;
     }
 
-    .ex_charges_t_body_row {
+    .withdrawal_t_body_row {
         font-size: 10px;
     }
 
-    .ex_charges_t_head_row_onetime th,
-    .ex_charges_t_body_row_onetime td {
+    .withdrawal_t_head_row_onetime th,
+    .withdrawal_t_body_row_onetime td {
         padding: 6px 8px;
     }
+}
 
-   
-   
+@media screen and (max-width: 600px) {
+    .withdrawal_form-oneTime {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .withdrawal_form-oneTime {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 360px) {
-    .form-monthly{
+    .withdrawal_form-oneTime {
         width: 90%;
     }
-
-
-
-   
 }

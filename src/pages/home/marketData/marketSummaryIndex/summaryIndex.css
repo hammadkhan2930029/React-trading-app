@@ -44,17 +44,25 @@
 .market_table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
     word-wrap: break-word;
     white-space: normal;
     max-width: 150px;
     overflow-wrap: break-word;
+    font-size: 14px;
+
+  
 }
 
 .market_table th {
     background: #1976d2;
     color: #ffffff;
     font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    text-transform: uppercase;
+
 }
 
 .market_table tr:nth-child(even) {

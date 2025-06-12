@@ -4,18 +4,11 @@ import './dividenList.css';
 import { Box, Button, Typography, Modal, TextField, Grid, TablePagination } from '@mui/material';
 import { useDispatch } from "react-redux";
 import { setDividen } from "../Redux/profileSlice";
+import EditIcon from '@mui/icons-material/Edit';
+import AddIcon from '@mui/icons-material/Add';
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
+
+
 
 const dividenData = [
     { value: '1', stockName: 'Stock A', date: '26/02/2025', perShare: 24, tax: 10.25, total: 2530 },
@@ -28,13 +21,44 @@ const dividenData = [
 ];
 
 const DividenList = () => {
+
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+    };
+    // --------------------------------------
     const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({ stockName: '', date: '', dividenPerShare: '', tax: '', total: '' });
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
-    const handleOpen = () => setOpen(true);
+    const handleOpen = (item) => {
+        console.log('item', item)
+        const [day, month, year] = item.date.split('/')
+        const formatedDate = `${year}-${month}-${day}`
+
+        setFormData(
+            {
+                stockName: item.stockName,
+                date: formatedDate,
+                dividenPerShare: item.perShare,
+                tax: item.tax,
+                total: item.total
+            })
+
+
+        setOpen(true);
+    }
+
     const handleClose = () => setOpen(false);
 
     const handleChange = (e) => {
@@ -68,7 +92,7 @@ const DividenList = () => {
             transition={{ duration: .8 }}>
             <div className="dividen_crud_main">
                 <div className="top_btn">
-                    <button className="top_btn_buy" onClick={() => dispatch(setDividen())}>Dividend</button>
+                    <button className="top_btn_buy" onClick={() => dispatch(setDividen())}> <AddIcon /> Add </button>
                 </div>
 
                 <table>
@@ -91,7 +115,7 @@ const DividenList = () => {
                                 <td>{item.tax}</td>
                                 <td>{item.total}</td>
                                 <td>
-                                    <button className="editebtn" onClick={handleOpen}>Edit</button>
+                                    <button className="editebtn" onClick={() => handleOpen(item)}> <EditIcon style={{ fontSize: '15px' }} /> Edit</button>
                                 </td>
                             </tr>
                         ))}
@@ -117,7 +141,16 @@ const DividenList = () => {
                                     <TextField fullWidth label="Stock Name" name="stockName" value={formData.stockName} onChange={handleChange} required />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <TextField fullWidth type="date" label="Date" name="date" value={formData.date} onChange={handleChange} InputLabelProps={{ shrink: true }} required />
+                                    <TextField
+                                        fullWidth
+                                        label="Date"
+                                        name="date"
+                                        type="date"
+                                        value={formData.date}
+                                        onChange={handleChange}
+                                        required
+                                        InputLabelProps={{ shrink: true }}
+                                    />
                                 </Grid>
                                 <Grid item xs={6}>
                                     <TextField fullWidth label="Dividend per share" name="dividenPerShare" type="number" value={formData.dividenPerShare} onChange={handleChange} required />

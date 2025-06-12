@@ -1,5 +1,4 @@
-
-.newsletter_bg{
+.newsletter_bg {
     background-image: url('../../assets/map.png');
     width: 100%;
     height: 500px;
@@ -10,14 +9,16 @@
 
 
 }
-.newsLetter_main{
+
+.newsLetter_main {
     width: 80%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
 }
-.newsLetter{
+
+.newsLetter {
     text-transform: uppercase;
     font-size: 15px;
     color: #1976D2;
@@ -30,13 +31,15 @@
     width: 170px;
     text-align: center;
 }
-.newsLetter_h2{
+
+.newsLetter_h2 {
     font-size: 42px;
     text-align: center;
     color: #000;
     padding: 10px;
 }
-.input_div{
+
+.input_div {
     width: 60%;
     background-color: #fff;
     display: flex;
@@ -44,12 +47,13 @@
     justify-content: space-between;
     flex-direction: row;
     padding: 10px;
-padding-left: 15px;
+    padding-left: 15px;
     border-radius: 50px;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.newsletter_input{
+
+.newsletter_input {
     width: 65%;
     outline: none;
     border: none;
@@ -58,7 +62,8 @@ padding-left: 15px;
     font-size: 18px;
     background-color: transparent;
 }
-.newsLetter_btn{
+
+.newsLetter_btn {
     border-radius: 50px;
     background-color: #1976D2;
     width: 25%;
@@ -69,95 +74,105 @@ padding-left: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
-.newsLetter_btn:hover{
-    font-weight: bold;
+
+.newsLetter_btn:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(27, 2, 82, 1) 52%, rgba(0, 147, 176, 1) 100%);
 }
-.input_div .email_icon{
-    font-size: 32px;
+
+.input_div .email_icon {
+    font-size: 42px;
     color: #1976D2;
 }
-.newsLetter_line{
+
+.newsLetter_line {
     width: 20%;
     border: 2px solid #1976D2;
     margin-top: 10px;
 }
+
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */
 @media (max-width: 1180px) {
-    .newsLetter_main{
+    .newsLetter_main {
         width: 100%;
     }
-   .input_div{
-    width: 75%;
-   }
+
+    .input_div {
+        width: 75%;
+    }
 
 }
 
 /* 991px to 768px */
-@media (max-width: 991px) {
-   
-}
+@media (max-width: 991px) {}
 
 /* 767px to 576px */
 @media (max-width: 767px) {
-    .input_div{
+    .input_div {
         width: 90%;
     }
-    
+
 }
 
 /* 575px to 360px */
 @media (max-width: 575px) {
-    .newsLetter{
+    .newsLetter {
         width: 130px;
     }
-    .newsLetter_h2{
+
+    .newsLetter_h2 {
         font-size: 26px;
     }
-    .newsLetter_btn{
+
+    .newsLetter_btn {
         width: 40%;
         padding: 15px;
     }
-    .input_div{
+
+    .input_div {
         padding: 5px;
     }
-   
- 
+
+
 
 }
 
 @media (max-width: 440px) {
-    .newsletter_bg{
-        height: 50vh;
+    .newsletter_bg {
+        height: 30vh;
     }
-    .newsLetter_main{
+
+    .newsLetter_main {
         padding: 10px;
-        height: 40vh;
+        height: 30vh;
     }
-    .newsLetter_h2{
+
+    .newsLetter_h2 {
         font-size: 24px;
     }
-    .newsLetter_btn{
+
+    .newsLetter_btn {
         font-size: 12px;
         padding: 10px;
     }
-    .newsletter_input{
+
+    .newsletter_input {
         font-size: 14px;
         padding: 10px;
     }
-    .input_div .email_icon{
+
+    .input_div .email_icon {
         font-size: 22px;
     }
-    .newsLetter{
+
+    .newsLetter {
         font-size: 14px;
         width: 115px;
         padding: 5px;
     }
-    
+
 }
 
 /* Below 360px */
-@media (max-width: 360px) {
-   
-   
-}
+@media (max-width: 360px) {}

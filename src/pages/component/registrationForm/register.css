@@ -60,6 +60,10 @@
 .form .r_btn{
     width: 30%;
 }
+.form .r_btn:hover{
+     background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(27,2,82,1) 52%, rgba(0,147,176,1) 100%);
+}
 .arrowBack{
     width: 100%;
     display: flex;

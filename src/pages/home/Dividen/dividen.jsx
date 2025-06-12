@@ -11,7 +11,7 @@ import { Autocomplete } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 import { setDividen_list } from "../Redux/profileSlice";
 import { useDispatch } from "react-redux";
-
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 const stockName = [
     {
         value: '1',
@@ -87,7 +87,7 @@ export const Dividen = () => {
 
                             <div className='switchBtn_div'>
 
-                                <button className='switchBtn' onClick={() => dispatch(setDividen_list())}>Dividend List</button>
+                                <button className='switchBtn_list' onClick={() => dispatch(setDividen_list())}><FormatListBulletedIcon/> List</button>
                             </div>
                             <div >
                                 <Box component="form"

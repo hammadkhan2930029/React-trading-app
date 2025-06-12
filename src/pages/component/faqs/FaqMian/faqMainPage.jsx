@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './faqMainPage.css'
 import { motion, useInView } from "framer-motion";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -121,6 +121,9 @@ const stockMarketQA2 = [
 
 
 export const FaqMainPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     const navigate = useNavigate()
     const [select_drop, setSelect_drop] = useState(1)
     const [select_drop_2, setSelect_drop_2] = useState(1)
@@ -140,16 +143,16 @@ export const FaqMainPage = () => {
 
                 <span className='h_main_main_page'>FAQ</span>
             </motion.div>
-            <motion.div className='faqs_main_page'   ref={refTwo}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: .8 }}>
+            <motion.div className='faqs_main_page' ref={refTwo}
+                initial={{ opacity: 0, x: -100 }}
+                animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: .8 }}>
 
 
                 <motion.div className='faqs_main_main_page'>
 
                     <motion.div className='faqs_left_main_page'
-                      >
+                    >
 
                         {stockMarketQA.map((item, index) => (
                             <motion.div key={index} className='drop_main_page' onClick={() => setSelect_drop(item.id)}
@@ -184,7 +187,7 @@ export const FaqMainPage = () => {
 
                     {/* -------------------------------------------------------------RIGHT----------------------------------------------- */}
                     <motion.div className='faqs_right_main_page'
-                      >
+                    >
                         {stockMarketQA2.map((item, index) => (
                             <motion.div className='drop_main_page' onClick={() => setSelect_drop_2(item.id)}>
                                 <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop_2 == item.id ? "#1976D2" : null }}>
@@ -215,7 +218,7 @@ export const FaqMainPage = () => {
                     </motion.div>
                 </motion.div>
             </motion.div>
-          
+
             <Footer />
         </motion.div>
 

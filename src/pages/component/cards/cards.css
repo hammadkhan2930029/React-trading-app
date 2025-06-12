@@ -219,9 +219,15 @@
     }
     .textSection{
         width: 100%;
+        padding-top: 50px;
     }
     .h_phone_div{
         width: 100%;
+    }
+    .mainCards {
+        margin-top: 70%;
+    
+    
     }
     
  
@@ -230,7 +236,7 @@
 
 @media (max-width: 440px) {
     .mainCards {
-        margin-top: 70%;
+        margin-top: 85%;
     
         padding: 5px;
     

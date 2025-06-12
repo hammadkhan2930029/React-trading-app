@@ -33,8 +33,8 @@ export const Navbar = () => {
 
           </div>
           <motion.div
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+            // animate={{ y: [0, 20, 0] }}
+            // transition={{ duration: 1.5, repeat: Infinity }}
             className="imgDiv"
           >
 

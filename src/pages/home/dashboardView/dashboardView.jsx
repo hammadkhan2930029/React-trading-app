@@ -48,6 +48,10 @@ export const DashboardView = () => {
     const handleClose2 = () => {
         setAnchorEl2(null);
     };
+    // --------------------------------------
+    React.useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div className='dashboard_main'>
             {/* --------------------------top bar------------------------------------ */}
@@ -58,7 +62,7 @@ export const DashboardView = () => {
                     <SearchIcon />
 
                 </div>
-              
+
             </div>
             {/* ----------------------------small cards-------------------------------------- */}
             <div>

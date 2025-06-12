@@ -11,13 +11,16 @@ import { PopularBlogs } from '../popularBlogs/popularBlogs';
 export const BlogsDetails = () => {
 
     const location = useLocation();
-    const { title, image, description ,description2} = location.state || {};
+    const { title, image, description, description2 } = location.state || {};
     console.log('blog details page', title)
 
     // ----------------------------------------------------------
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div>
             <motion.div initial={{ opacity: 0, y: -100 }}
@@ -46,9 +49,9 @@ export const BlogsDetails = () => {
 
 
             </motion.div>
-            <PopularBlogs/>
+            <PopularBlogs />
             <div>
-                <Footer/>
+                <Footer />
             </div>
         </div>
     )

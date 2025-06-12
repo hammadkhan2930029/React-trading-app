@@ -153,7 +153,7 @@
     border-radius: 10px ;
     cursor: pointer;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-   font-weight: 700;
+   font-weight: 500;
 
 }
 .read_more_div .read:hover{

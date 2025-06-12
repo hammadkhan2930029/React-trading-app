@@ -3,9 +3,9 @@ import { motion, useInView } from "framer-motion";
 import './extraChargesList.css';
 import { Box, Button, Typography, Modal, TextField, Grid, TablePagination } from '@mui/material';
 import { useDispatch } from "react-redux";
-
 import AddIcon from '@mui/icons-material/Add';
 import { setOneTime, setmonthly } from "../../Redux/extrachargesSlice";
+import EditIcon from '@mui/icons-material/Edit';
 
 
 const style = {
@@ -13,7 +13,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 600,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -21,158 +21,20 @@ const style = {
 };
 
 const extraChargesList = [
-    {
-        id: 1,
-        date:'20/05/2025',
-        custodyCharges: '150',
-        registrationCharges: '1200',
-        nccplCharges: '800',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-    {
-        id: 2,
-        date:'10/01/2025',
+    { id: 1, date: '20/05/2025', custodyCharges: '150' },
+    { id: 2, date: '10/01/2025', custodyCharges: '200' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175' },
 
-        custodyCharges: '200',
-        registrationCharges: '1000',
-        nccplCharges: '900',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-    {
-        id: 3,
-        date:'05/03/2024',
-
-        custodyCharges: '175',
-        registrationCharges: '1100',
-        nccplCharges: '950',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-     {
-        id: 1,
-        date:'20/05/2025',
-        custodyCharges: '150',
-        registrationCharges: '1200',
-        nccplCharges: '800',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-    {
-        id: 2,
-        date:'10/01/2025',
-
-        custodyCharges: '200',
-        registrationCharges: '1000',
-        nccplCharges: '900',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-    {
-        id: 3,
-        date:'05/03/2024',
-
-        custodyCharges: '175',
-        registrationCharges: '1100',
-        nccplCharges: '950',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-     {
-        id: 1,
-        date:'20/05/2025',
-        custodyCharges: '150',
-        registrationCharges: '1200',
-        nccplCharges: '800',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-    {
-        id: 2,
-        date:'10/01/2025',
-
-        custodyCharges: '200',
-        registrationCharges: '1000',
-        nccplCharges: '900',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-    {
-        id: 3,
-        date:'05/03/2024',
-
-        custodyCharges: '175',
-        registrationCharges: '1100',
-        nccplCharges: '950',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-     {
-        id: 1,
-        date:'20/05/2025',
-        custodyCharges: '150',
-        registrationCharges: '1200',
-        nccplCharges: '800',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-    {
-        id: 2,
-        date:'10/01/2025',
-
-        custodyCharges: '200',
-        registrationCharges: '1000',
-        nccplCharges: '900',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    },
-    {
-        id: 3,
-        date:'05/03/2024',
-
-        custodyCharges: '175',
-        registrationCharges: '1100',
-        nccplCharges: '950',
-        type: {
-            custodyCharges: 'monthly',
-            registrationCharges: 'yearly',
-            nccplCharges: 'yearly'
-        }
-    }
 ];
 
 
@@ -180,15 +42,25 @@ const ExtraChargesList = () => {
     const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
-        brokerName: '',
-        range1: '',
-        range2: '',
-        range3: '',
+        date: '',
+        custodyCharges: '',
+
     },);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
 
-    const handleOpen = () => setOpen(true);
+    // const handleOpen = () => setOpen(true);
+    const handleOpen = (item) => {
+        const [day, month, year] = item.date.split('/');
+        const formattedDate = `${year}-${month}-${day}`; // convert dd/mm/yyyy to yyyy-mm-dd
+
+        setFormData({
+            date: formattedDate,
+            custodyCharges: item.custodyCharges
+        });
+        setOpen(true);
+    };
+
     const handleClose = () => setOpen(false);
 
     const handleChange = (e) => {
@@ -225,7 +97,7 @@ const ExtraChargesList = () => {
                     <button className="ex_charges_top_btn_buy" onClick={() => dispatch(setOneTime())}>
                         <AddIcon /> One Time
                     </button>
-                     <button className="ex_charges_top_btn_buy" onClick={() => dispatch(setmonthly())}>
+                    <button className="ex_charges_top_btn_buy" onClick={() => dispatch(setmonthly())}>
                         <AddIcon /> Monthly
                     </button>
                 </div>
@@ -234,10 +106,10 @@ const ExtraChargesList = () => {
                     <thead className='ex_charges_t_head'>
                         <tr className='ex_charges_t_head_row'>
                             <th>Date</th>
-                            <th>Custody Charges (Monthly)</th>
-                            <th>Registration Charges (Yearly)</th>
-                            <th>NCCPL Charges(Yearly)</th>
-                            {/* <th>Actions</th> */}
+                            <th>Custody Charges </th>
+                            {/* <th>Registration Charges (Yearly)</th>
+                            <th>NCCPL Charges(Yearly)</th> */}
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody className='ex_charges_t_body'>
@@ -245,14 +117,14 @@ const ExtraChargesList = () => {
                             <tr key={index} className='ex_charges_t_body_row'>
                                 <td>{item.date}</td>
                                 <td>{item.custodyCharges}</td>
-                                <td>{item.registrationCharges} </td>
-                                <td>{item.nccplCharges} </td>
+                                {/* <td>{item.registrationCharges} </td>
+                                <td>{item.nccplCharges} </td> */}
 
-                                {/* <td>
+                                <td>
                                     <button className="ex_charges_editebtn" onClick={() => handleOpen(item)}>
                                         <EditIcon style={{ fontSize: '16px' }} /> Edit
                                     </button>
-                                </td> */}
+                                </td>
                             </tr>
                         ))}
                     </tbody>
@@ -268,23 +140,27 @@ const ExtraChargesList = () => {
                     onRowsPerPageChange={handleChangeRowsPerPage}
                 />
 
-                {/* <Modal open={open} onClose={handleClose}>
+                <Modal open={open} onClose={handleClose}>
                     <Box sx={style}>
-                        <Typography variant="h6">Edit Broker Details</Typography>
+                        <Typography variant="h6">Edit</Typography>
                         <form onSubmit={handleSubmit}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
-                                    <TextField fullWidth label="Broker Name" name="stockName" value={formData.brokerName} onChange={handleChange} required />
+                                    <TextField
+                                        fullWidth
+                                        label="Date"
+                                        name="date"
+                                        type="date"
+                                        value={formData.date}
+                                        onChange={handleChange}
+                                        required
+                                        InputLabelProps={{ shrink: true }}
+                                    />
                                 </Grid>
-                                <Grid item xs={6}>
-                                    <TextField fullWidth type="number" label="1st range" name="range1" value={formData.range1} onChange={handleChange} required />
+                                <Grid item xs={12}>
+                                    <TextField fullWidth type="number" label="Custody Charges" name="custodyCharges" value={formData.custodyCharges} onChange={handleChange} required />
                                 </Grid>
-                                <Grid item xs={6}>
-                                    <TextField fullWidth label="2nd range" name="range2" type="number" value={formData.range2} onChange={handleChange} required />
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <TextField fullWidth label="3rd range" name="range3" type="number" value={formData.range3} onChange={handleChange} required />
-                                </Grid>
+
                             </Grid>
                             <Box mt={2} display="flex" justifyContent="space-between">
                                 <Button type="submit" variant="contained" color="primary">Submit</Button>
@@ -292,7 +168,7 @@ const ExtraChargesList = () => {
                             </Box>
                         </form>
                     </Box>
-                </Modal> */}
+                </Modal>
             </div>
         </motion.div>
     );

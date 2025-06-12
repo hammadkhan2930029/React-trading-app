@@ -29,7 +29,8 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .readMoreBtn {
-    background-color: blue;
+     background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(27,2,82,1) 52%, rgba(0,147,176,1) 100%);
     width: 100%;
     display: flex;
     align-items: center;

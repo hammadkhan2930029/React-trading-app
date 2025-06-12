@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef ,forwardRef} from 'react'
+import React, { useEffect, useState, useRef, forwardRef } from 'react'
 import { motion, useInView } from "framer-motion";
 import './chooseUs.css';
 import 'react-slideshow-image/dist/styles.css'
@@ -45,7 +45,7 @@ const data = [
   },
 
 ];
-export const ChooseUs = forwardRef((props,ref) => {
+export const ChooseUs = forwardRef((props, ref) => {
 
 
   const [currentImage, setCurrentImage] = useState(stock3);
@@ -101,8 +101,9 @@ export const ChooseUs = forwardRef((props,ref) => {
         animate={inViewTwo ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: .8 }}>
         <motion.div className="image-display"
-         animate={{ y: [0, 20, 0] }}
-         transition={{ duration: 1.5, repeat: Infinity }}>
+          // animate={{ y: [0, 20, 0] }}
+          // transition={{ duration: 1.5, repeat: Infinity }}
+          >
           <img
             src={`${currentImage}`}
             alt="Display"

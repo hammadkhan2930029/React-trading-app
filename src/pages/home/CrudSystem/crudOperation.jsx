@@ -30,175 +30,175 @@ const style = {
 
 const buydata = [
 
-    {
-        value: '1',
-        stockName: 'Artictic denim mills ADM',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        buy_QTY: '10',
-        buy_rate: '100',
-        buy_amount: '1000',
-        buy_broker_amount: '5',
-        buy_fed_amount: '10',
-    },
-    {
-        value: '2',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        buy_QTY: '10',
-        buy_rate: '100',
-        buy_amount: '1000',
-        buy_broker_amount: '5',
-        buy_fed_amount: '10',
-    },
-    {
-        value: '3',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        buy_QTY: '10',
-        buy_rate: '100',
-        buy_amount: '1000',
-        buy_broker_amount: '5',
-        buy_fed_amount: '10',
-    },
-    {
-        value: '4',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        buy_QTY: '10',
-        buy_rate: '100',
-        buy_amount: '1000',
-        buy_broker_amount: '5',
-        buy_fed_amount: '10',
-    },
-    {
-        value: '5',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        buy_QTY: '10',
-        buy_rate: '100',
-        buy_amount: '1000',
-        buy_broker_amount: '5',
-        buy_fed_amount: '10',
-    },
-    {
-        value: '6',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        buy_QTY: '10',
-        buy_rate: '100',
-        buy_amount: '1000',
-        buy_broker_amount: '5',
-        buy_fed_amount: '10',
-    },
+  {
+    value: '1',
+    stockName: 'Artistic Denim Mills ADM',
+    sett_date: '26/02/2025',
+    trade_date: '25/02/2025',
+    buy_QTY: '100',
+    buy_rate: '10',
+    buy_amount: '1000',
+    buy_broker_amount: '15',
+    buy_fed_amount: '20',
+  },
+  {
+    value: '2',
+    stockName: 'Pak Elektron PEL',
+    sett_date: '27/02/2025',
+    trade_date: '26/02/2025',
+    buy_QTY: '150',
+    buy_rate: '12',
+    buy_amount: '1800',
+    buy_broker_amount: '18',
+    buy_fed_amount: '25',
+  },
+  {
+    value: '3',
+    stockName: 'Lucky Cement LUCK',
+    sett_date: '28/02/2025',
+    trade_date: '27/02/2025',
+    buy_QTY: '200',
+    buy_rate: '50',
+    buy_amount: '10000',
+    buy_broker_amount: '30',
+    buy_fed_amount: '40',
+  },
+  {
+    value: '4',
+    stockName: 'Engro Corporation ENGRO',
+    sett_date: '01/03/2025',
+    trade_date: '28/02/2025',
+    buy_QTY: '250',
+    buy_rate: '40',
+    buy_amount: '10000',
+    buy_broker_amount: '25',
+    buy_fed_amount: '35',
+  },
+  {
+    value: '5',
+    stockName: 'United Bank UBL',
+    sett_date: '02/03/2025',
+    trade_date: '01/03/2025',
+    buy_QTY: '300',
+    buy_rate: '30',
+    buy_amount: '9000',
+    buy_broker_amount: '27',
+    buy_fed_amount: '33',
+  },
+  {
+    value: '6',
+    stockName: 'Habib Bank HBL',
+    sett_date: '03/03/2025',
+    trade_date: '02/03/2025',
+    buy_QTY: '350',
+    buy_rate: '20',
+    buy_amount: '7000',
+    buy_broker_amount: '21',
+    buy_fed_amount: '28',
+  },
 
 ];
 const selldata = [
 
     {
-        value: '1',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
-    {
-        value: '2',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
-    {
-        value: '3',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
-    {
-        value: '4',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
-    {
-        value: '5',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
-    {
-        value: '6',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
-    {
-        value: '7',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
-    {
-        value: '8',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
-    {
-        value: '9',
-        stockName: 'stock one',
-        sett_date: '26/02/2025',
-        trade_date: '26/02/2025',
-        sell_QTY: '10',
-        sell_rate: '100',
-        sell_amount: '1000',
-        sell_broker_amount: '5',
-        sell_fed_amount: '10',
-    },
+    value: '1',
+    stockName: 'Engro Fertilizers EFERT',
+    sett_date: '26/02/2025',
+    trade_date: '25/02/2025',
+    sell_QTY: '100',
+    sell_rate: '25',
+    sell_amount: '2500',
+    sell_broker_amount: '8',
+    sell_fed_amount: '12',
+  },
+  {
+    value: '2',
+    stockName: 'MCB Bank MCB',
+    sett_date: '27/02/2025',
+    trade_date: '26/02/2025',
+    sell_QTY: '80',
+    sell_rate: '30',
+    sell_amount: '2400',
+    sell_broker_amount: '7',
+    sell_fed_amount: '10',
+  },
+  {
+    value: '3',
+    stockName: 'Fauji Cement FCCL',
+    sett_date: '28/02/2025',
+    trade_date: '27/02/2025',
+    sell_QTY: '120',
+    sell_rate: '20',
+    sell_amount: '2400',
+    sell_broker_amount: '9',
+    sell_fed_amount: '11',
+  },
+  {
+    value: '4',
+    stockName: 'Oil & Gas OGDC',
+    sett_date: '01/03/2025',
+    trade_date: '28/02/2025',
+    sell_QTY: '90',
+    sell_rate: '35',
+    sell_amount: '3150',
+    sell_broker_amount: '10',
+    sell_fed_amount: '14',
+  },
+  {
+    value: '5',
+    stockName: 'Bank Alfalah BAFL',
+    sett_date: '02/03/2025',
+    trade_date: '01/03/2025',
+    sell_QTY: '110',
+    sell_rate: '28',
+    sell_amount: '3080',
+    sell_broker_amount: '11',
+    sell_fed_amount: '13',
+  },
+  {
+    value: '6',
+    stockName: 'TRG Pakistan TRG',
+    sett_date: '03/03/2025',
+    trade_date: '02/03/2025',
+    sell_QTY: '130',
+    sell_rate: '22',
+    sell_amount: '2860',
+    sell_broker_amount: '12',
+    sell_fed_amount: '15',
+  },
+  {
+    value: '7',
+    stockName: 'Hub Power HUBC',
+    sett_date: '04/03/2025',
+    trade_date: '03/03/2025',
+    sell_QTY: '140',
+    sell_rate: '26',
+    sell_amount: '3640',
+    sell_broker_amount: '13',
+    sell_fed_amount: '16',
+  },
+  {
+    value: '8',
+    stockName: 'Mari Petroleum MARI',
+    sett_date: '05/03/2025',
+    trade_date: '04/03/2025',
+    sell_QTY: '70',
+    sell_rate: '55',
+    sell_amount: '3850',
+    sell_broker_amount: '14',
+    sell_fed_amount: '17',
+  },
+  {
+    value: '9',
+    stockName: 'Systems Ltd SYS',
+    sett_date: '06/03/2025',
+    trade_date: '05/03/2025',
+    sell_QTY: '95',
+    sell_rate: '60',
+    sell_amount: '5700',
+    sell_broker_amount: '15',
+    sell_fed_amount: '18',
+  },
 
 ];
 const filter = [
@@ -229,7 +229,28 @@ const CrudOperation = () => {
     const dispatch = useDispatch();
     // -----------modal--------------------------
     const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
+
+    const handleOpen = (item) => {
+        const [d1, m1, y1] = item.sett_date.split('/');
+        const [d2, m2, y2] = item.trade_date.split('/');
+
+        const formattedSettle = `${y1}-${m1}-${d1}`;
+        const formattedTrade = `${y2}-${m2}-${d2}`;
+
+        setFormData({
+            stockName: item.stockName,
+            sett_date: formattedSettle,
+            trade_date: formattedTrade,
+            buy_QTY: item.buy_QTY || item.sell_QTY,
+            buy_rate: item.buy_rate || item.sell_rate,
+            buy_amount: item.buy_amount || item.sell_amount,
+            buy_broker_amount: item.buy_broker_amount || item.sell_broker_amount,
+            buy_fed_amount: item.buy_fed_amount || item.sell_fed_amount,
+        });
+
+        setOpen(true);
+    };
+
     const handleClose = () => setOpen(false);
 
     const [formData, setFormData] = useState({
@@ -312,18 +333,22 @@ const CrudOperation = () => {
                     <div className="filter_div">
                         <Box sx={{ '& .MuiTextField-root': { m: 1, width: isMobile ? '35ch' : '25ch' } }}>
 
+                           
                             <TextField
                                 id="outlined-select-currency"
                                 select
                                 label="Type"
-                                placeholder='Broker Name'
+                                placeholder="Broker Name"
+                                value={selectType}
+                                onChange={(e) => setSelectedType(e.target.value)}
                             >
                                 {filter.map((option) => (
-                                    <MenuItem key={option.value} value={option.value} onClick={() => setSelectedType(option.value)}>
+                                    <MenuItem key={option.value} value={option.value}>
                                         {option.label}
                                     </MenuItem>
                                 ))}
                             </TextField>
+
                         </Box>
 
                     </div>
@@ -357,51 +382,53 @@ const CrudOperation = () => {
                                 <td>{item.sell_broker_amount || item.buy_broker_amount}</td>
                                 <td>{item.sell_fed_amount || item.buy_fed_amount}</td>
                                 <td>
-                                    <button className="crud_editebtn" onClick={handleOpen}> <EditIcon style={{fontSize:'16px'}}/> Edit</button>
-                                    <div>
-                                        <Modal open={open} onClose={handleClose}>
-                                            <Box sx={style}>
-                                                <Typography variant="h6" component="h2" gutterBottom>
-                                                    Enter Stock Details
-                                                </Typography>
-                                                <form onSubmit={handleSubmit}>
-                                                    <Grid container spacing={2}>
-                                                        <Grid item xs={12}>
-                                                            <TextField fullWidth label="Stock Name" name="stockName" value={formData.stockName} onChange={handleChange} required />
-                                                        </Grid>
-                                                        <Grid item xs={6}>
-                                                            <TextField fullWidth type="date" label="Settlement Date" name="sett_date" value={formData.sett_date} onChange={handleChange} InputLabelProps={{ shrink: true }} required />
-                                                        </Grid>                                                         <Grid item xs={6}>
-                                                            <TextField fullWidth type="date" label="Trade Date" name="trade_date" value={formData.trade_date} onChange={handleChange} InputLabelProps={{ shrink: true }} required />
-                                                        </Grid>
-                                                        <Grid item xs={6}>
-                                                            <TextField fullWidth label="Buy Quantity" name="buy_QTY" type="number" value={formData.buy_QTY} onChange={handleChange} required />
-                                                        </Grid>
-                                                        <Grid item xs={6}>
-                                                            <TextField fullWidth label="Buy Rate" name="buy_rate" type="number" value={formData.buy_rate} onChange={handleChange} required />
-                                                        </Grid>
-                                                        <Grid item xs={6}>
-                                                            <TextField fullWidth label="Buy Amount" name="buy_amount" type="number" value={formData.buy_amount} onChange={handleChange} required />
-                                                        </Grid>
-                                                        <Grid item xs={6}>
-                                                            <TextField fullWidth label="Buy Broker Amount" name="buy_broker_amount" type="number" value={formData.buy_broker_amount} onChange={handleChange} required />
-                                                        </Grid>
-                                                        <Grid item xs={6}>
-                                                            <TextField fullWidth label="Buy FED Amount" name="buy_fed_amount" type="number" value={formData.buy_fed_amount} onChange={handleChange} required />
-                                                        </Grid>
-                                                    </Grid>
-                                                    <Box mt={2} display="flex" justifyContent="space-between">
-                                                        <Button type="submit" variant="contained" color="primary">Submit</Button>
-                                                        <Button variant="outlined" color="secondary" onClick={handleClose}>Cancel</Button>
-                                                    </Box>
-                                                </form>
-                                            </Box>
-                                        </Modal>
-                                    </div>
+                                    <button className="crud_editebtn" onClick={() => handleOpen(item)}>
+                                        <EditIcon style={{ fontSize: '15px' }} /> Edit</button>
+
                                 </td>
                             </tr>
                         ))}
                     </tbody>
+                    <div>
+                        <Modal open={open} onClose={handleClose}>
+                            <Box sx={style}>
+                                <Typography variant="h6" component="h2" gutterBottom>
+                                    Enter Stock Details
+                                </Typography>
+                                <form onSubmit={handleSubmit}>
+                                    <Grid container spacing={2}>
+                                        <Grid item xs={12}>
+                                            <TextField fullWidth label="Stock Name" name="stockName" value={formData.stockName} onChange={handleChange} required />
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <TextField fullWidth type="date" label="Settlement Date" name="sett_date" value={formData.sett_date} onChange={handleChange} InputLabelProps={{ shrink: true }} required />
+                                        </Grid>                                                         <Grid item xs={6}>
+                                            <TextField fullWidth type="date" label="Trade Date" name="trade_date" value={formData.trade_date} onChange={handleChange} InputLabelProps={{ shrink: true }} required />
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <TextField fullWidth label="Buy Quantity" name="buy_QTY" type="number" value={formData.buy_QTY} onChange={handleChange} required />
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <TextField fullWidth label="Buy Rate" name="buy_rate" type="number" value={formData.buy_rate} onChange={handleChange} required />
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <TextField fullWidth label="Buy Amount" name="buy_amount" type="number" value={formData.buy_amount} onChange={handleChange} required />
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <TextField fullWidth label="Buy Broker Amount" name="buy_broker_amount" type="number" value={formData.buy_broker_amount} onChange={handleChange} required />
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <TextField fullWidth label="Buy FED Amount" name="buy_fed_amount" type="number" value={formData.buy_fed_amount} onChange={handleChange} required />
+                                        </Grid>
+                                    </Grid>
+                                    <Box mt={2} display="flex" justifyContent="space-between">
+                                        <Button type="submit" variant="contained" color="primary">Submit</Button>
+                                        <Button variant="outlined" color="secondary" onClick={handleClose}>Cancel</Button>
+                                    </Box>
+                                </form>
+                            </Box>
+                        </Modal>
+                    </div>
                 </table>
 
                 {/*-------- Pagination---------- */}

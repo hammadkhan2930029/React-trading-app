@@ -27,6 +27,7 @@
     font-size: 20px;
     font-weight: bold;
     margin-left: 10px;
+    color: #fff;
 }
 
 .market_table_container_overview {
@@ -44,8 +45,8 @@
 .market_table th, .market_table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
     white-space: nowrap;
+    text-align: center;
 }
 
 .market_table th {
@@ -53,6 +54,7 @@
     color: #ffffff;
     font-weight: bold;
     word-wrap: break-word;
+    text-align: center;
 }
 
 .market_table tr:nth-child(even) {

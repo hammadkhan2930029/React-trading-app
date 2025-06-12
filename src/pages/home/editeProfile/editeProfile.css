@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .edite {
@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 95%;
+    width: 100%;
     height: 700px;
 
     background-color: #fff;
@@ -127,7 +127,7 @@
     }
 
     .edite_profile {
-        margin-top: 150px;
+        margin-top: 0px;
     }
 
 }

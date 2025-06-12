@@ -27,7 +27,9 @@ import ProfilePage from '../profile/profile.jsx';
 import SettingsIcon from '@mui/icons-material/Settings';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setOneTime, setmonthly,setChargesList } from "../Redux/extrachargesSlice.js";
+
 import { EditeProfile } from '../editeProfile/editeProfile.jsx';
 import { Dividen } from '../Dividen/dividen.jsx';
 import DividenList from '../dividenList/dividenList.jsx';
@@ -44,11 +46,20 @@ import { Monthly } from '../extraChargesForm/monthly/monthly.jsx';
 import BrokerList from '../brokerForm/brokerList/brokerList.jsx';
 import ExtraChargesList from '../extraChargesForm/extraChargesList/extraChargesList.jsx';
 const drawerWidth = 240;
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import EditIcon from '@mui/icons-material/Edit';
+
+
+
 
 const ResponsiveDrawer = (props) => {
+    const dispatch = useDispatch()
+
+    // --------------------------------------------
     const formType = useSelector((state) => state.formType.formType);
     const profileFormType = useSelector((state) => state.profile.formType);
-    const extra_Charges = useSelector((state)=> state.extraCharges.formType)
+    const extra_Charges = useSelector((state) => state.extraCharges.formType)
     console.log('redux data profile', profileFormType)
     console.log('formtype', formType)
     console.log('extra charges ', extra_Charges)
@@ -68,8 +79,8 @@ const ResponsiveDrawer = (props) => {
     const [count_2, setCount_2] = useState(1)
     // --------------------------------------------------------------
     const [extraCharges, setExtraCharges] = useState(false)
-    const [count_4, setCount_4] = useState(null)
-    const [selectedIndex_4, setSelectedIndex_4] = useState(1);
+    const [count_4, setCount_4] = useState()
+    const [selectedIndex_4, setSelectedIndex_4] = useState();
 
 
     // ----------------------------------------------------------------
@@ -92,12 +103,12 @@ const ResponsiveDrawer = (props) => {
             setCount_2(profileFormType);
         }
     }, [profileFormType]);
-// --------------------------------------
-  useEffect(() => {
+    // --------------------------------------
+    useEffect(() => {
         if (extra_Charges !== null) {
             setCount(null)
             setSelectedIndex(null)
-               setCount_2(null)
+            setCount_2(null)
             setSelectedIndex_2(null)
             // -----------------------
             setSelectedIndex_4(extra_Charges);
@@ -138,14 +149,14 @@ const ResponsiveDrawer = (props) => {
     ];
     // -------------------------------------------------
     const menuItems_two = [
+        // { value: 78, name: 'Extra Charges' },
         { value: 5, name: 'Broker' },
-        { value: 6, name: 'Stock Name' },
-        // { value: 7, name: 'Extra Charges' },
-        { value: 17, name: 'Dividend' },
-        { value: 18, name: 'Dividend List' },
+        // { value: 6, name: 'Stock Name' },
+        // { value: 17, name: 'Dividend' },
+        { value: 18, name: 'Dividend' },
 
         { value: 8, name: 'Profile' },
-        { value: 9, name: 'Edit Profile' }
+        // { value: 9, name: 'Edit Profile' }
 
     ];
     // ------------------------------------------------
@@ -169,7 +180,7 @@ const ResponsiveDrawer = (props) => {
 
     const [hovered, setHovered] = useState(null);
 
-  
+
 
     const hoverStyle = {
         backgroundColor: '#B9D9EB'
@@ -208,7 +219,8 @@ const ResponsiveDrawer = (props) => {
                             }}
                         >
                             <ListItemIcon sx={{ color: selectedIndex === item.value ? '#fff' : '#000', }}>
-                                {item.value % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                {item.value === 4 ? <FormatListBulletedIcon /> : <MailIcon />}
+
                             </ListItemIcon>
                             <ListItemText primary={item.name} sx={{ color: selectedIndex === item.value ? '#fff' : '#000', }} />
                         </ListItemButton>
@@ -256,18 +268,20 @@ const ResponsiveDrawer = (props) => {
                                             setCount_2(null)
                                             setCount(null)
                                             setSelectedIndex(null)
-                                            setCount_4(null)
+                                            setCount_4()
+                                            setSelectedIndex_4()
                                             // ------------
                                             setIsClosing(false)
                                             setMobileOpen(false)
-                                            setExtraCharges(false)
+                                            // setExtraCharges(false)
                                         }}
                                             sx={{
                                                 backgroundColor: selectedIndex_3 === item.value ? '#1976d2' : 'transparent',
                                                 '&:hover': { backgroundColor: '#B9D9EB' }
                                             }} >
                                             <ListItemIcon sx={{ color: selectedIndex_3 === item.value ? '#fff' : '#000', }}>
-                                                {item.value % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+
+                                                {(item.value === 13) || (item.value === 14) ? <FormatListBulletedIcon /> : <MailIcon />}
                                             </ListItemIcon>
                                             <ListItemText primary={item.name} sx={{ color: selectedIndex_3 === item.value ? '#fff' : '#000', }} />
 
@@ -313,21 +327,31 @@ const ResponsiveDrawer = (props) => {
                                 onClick={() => {
                                     setExtraCharges(!extraCharges)
 
+                                    setCount(null);
+                                    setCount_2(null);
+                                    setCount_3(null);
+                                    setCount_4(78);
+                                    setSelectedIndex_4(78)
+
+                                    setSelectedIndex_2(null)
+                                    setSelectedIndex_3(null)
+                                    setSelectedIndex(null)
+
                                 }}
                                 sx={{
-                                    backgroundColor: 'transparent',
+                                    backgroundColor: extraCharges ? '#1976d2': 'transparent',
                                     '&:hover': { backgroundColor: '#B9D9EB' }
                                 }}
                             >
-                                <ListItemIcon sx={{ color: '#000' }} >
+                                <ListItemIcon sx={{ color: extraCharges ? '#fff' : '#000', }} >
                                     <InboxIcon />
                                 </ListItemIcon>
-                                <ListItemText primary='Extra charges' sx={{ color: '#000' }} />
-                                {extraCharges ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}
+                                <ListItemText primary='Extra charges' sx={{ color: extraCharges ? '#fff' : '#000', }}  />
+                                {/* {extraCharges ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />} */}
 
                             </ListItemButton>
 
-                            {extraCharges &&
+                            {/* {extraCharges &&
                                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                                     <div style={{  display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 5, width: '90%', borderRadius: 10 }}>
                                         {plans.map((plan, idx) => (
@@ -361,7 +385,7 @@ const ResponsiveDrawer = (props) => {
                                         ))}
                                     </div>
                                 </div>
-                            }
+                            } */}
 
                             {/* -------------------------------------------------------------- */}
 
@@ -371,9 +395,10 @@ const ResponsiveDrawer = (props) => {
                                         <ListItemButton onClick={() => {
                                             setSelectedIndex_2(item.value)
                                             setCount_2(item.value)
+                                            setSelectedIndex_4(null)
                                             setCount(null)
                                             setSelectedIndex(null)
-                                            setCount_4(null)
+                                            setCount_4()
                                             setCount_3(null)
                                             setSelectedIndex_3(null)
                                             // ------------
@@ -386,7 +411,8 @@ const ResponsiveDrawer = (props) => {
                                                 '&:hover': { backgroundColor: '#B9D9EB' }
                                             }} >
                                             <ListItemIcon sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }}>
-                                                {item.value % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                               
+                                                {item.value === 18 ? <FormatListBulletedIcon /> : item.value === 8 ? <AccountBoxIcon /> : item.value === 9 ? <EditIcon /> : <InboxIcon />}
                                             </ListItemIcon>
                                             <ListItemText primary={item.name} sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }} />
 
@@ -446,7 +472,7 @@ const ResponsiveDrawer = (props) => {
 
 
     const renderForm = () => {
-      
+        console.log('count 4 ', count_4)
 
 
         if (count !== null && count !== undefined) {
@@ -462,7 +488,7 @@ const ResponsiveDrawer = (props) => {
         if (count_2 !== null && count_2 !== undefined) {
             switch (count_2) {
                 case 55: return <BrokerForm />;
-                case 5: return <BrokerList/>;
+                case 5: return <BrokerList />;
                 case 6: return <StockName />;
                 case 17: return <Dividen />;
                 case 18: return <DividenList />;
@@ -492,7 +518,7 @@ const ResponsiveDrawer = (props) => {
 
                 case 7: return <OneTime />;
                 case 77: return <Monthly />;
-                case 78 : return <ExtraChargesList/>
+                case 78: return <ExtraChargesList />
 
                 default: return null;
             }
