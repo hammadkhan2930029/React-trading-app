@@ -28,7 +28,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useDispatch, useSelector } from "react-redux";
-import { setOneTime, setmonthly,setChargesList } from "../Redux/extrachargesSlice.js";
+import { setOneTime, setmonthly, setChargesList } from "../Redux/extrachargesSlice.js";
 
 import { EditeProfile } from '../editeProfile/editeProfile.jsx';
 import { Dividen } from '../Dividen/dividen.jsx';
@@ -49,6 +49,7 @@ const drawerWidth = 240;
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import EditIcon from '@mui/icons-material/Edit';
+import { resetProfile, setProfile } from '../Redux/profileSlice.js';
 
 
 
@@ -155,7 +156,7 @@ const ResponsiveDrawer = (props) => {
         // { value: 17, name: 'Dividend' },
         { value: 18, name: 'Dividend' },
 
-        { value: 8, name: 'Profile' },
+        // { value: 8, name: 'Profile' },
         // { value: 9, name: 'Edit Profile' }
 
     ];
@@ -207,6 +208,8 @@ const ResponsiveDrawer = (props) => {
                                 setSelectedIndex_3(null)
                                 setSelectedIndex_2(null)
                                 setCount_2(null)
+                                dispatch(resetProfile())
+
                                 setDropDownOpen(null)
                                 setDropDownOpen_three(null)
                                 // ------------
@@ -266,6 +269,8 @@ const ResponsiveDrawer = (props) => {
                                             setSelectedIndex_3(item.value)
                                             setSelectedIndex_2(null)
                                             setCount_2(null)
+                                dispatch(resetProfile())
+
                                             setCount(null)
                                             setSelectedIndex(null)
                                             setCount_4()
@@ -329,6 +334,8 @@ const ResponsiveDrawer = (props) => {
 
                                     setCount(null);
                                     setCount_2(null);
+                                dispatch(resetProfile())
+
                                     setCount_3(null);
                                     setCount_4(78);
                                     setSelectedIndex_4(78)
@@ -339,55 +346,20 @@ const ResponsiveDrawer = (props) => {
 
                                 }}
                                 sx={{
-                                    backgroundColor: extraCharges ? '#1976d2': 'transparent',
+                                    backgroundColor: extraCharges ? '#1976d2' : 'transparent',
                                     '&:hover': { backgroundColor: '#B9D9EB' }
                                 }}
                             >
                                 <ListItemIcon sx={{ color: extraCharges ? '#fff' : '#000', }} >
                                     <InboxIcon />
                                 </ListItemIcon>
-                                <ListItemText primary='Extra charges' sx={{ color: extraCharges ? '#fff' : '#000', }}  />
-                                {/* {extraCharges ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />} */}
+                                <ListItemText primary='Extra charges' sx={{ color: extraCharges ? '#fff' : '#000', }} />
 
                             </ListItemButton>
 
-                            {/* {extraCharges &&
-                                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                    <div style={{  display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 5, width: '90%', borderRadius: 10 }}>
-                                        {plans.map((plan, idx) => (
-                                            <span
-                                                key={plan.id}
-                                                style={{
-                                                    backgroundColor: selectedIndex_4 === plan.id ? "lightgray" : '#f9f9f9',
-                                                    width: '100%',
-                                                    padding: 8,
-                                                    textAlign: 'center',
-                                                    cursor: 'pointer',
-                                                    marginTop:5,
-                                                    borderRadius:5,
-                                                    display: 'flex',
-                                                    justifyContent: 'space-between',
-                                                     ...(hovered === idx ? hoverStyle : {})
-                                                }}
-                                                onMouseEnter={() => setHovered(idx)}
-                                                onMouseLeave={() => setHovered(null)}
-                                                onClick={() => {
-                                                    setCount(null);
-                                                    setCount_2(null);
-                                                    setCount_3(null);
-                                                    setCount_4(plan.id);
-                                                    setSelectedIndex_4(plan.id)
-                                                }}
-                                            >
-                                                {plan.label}
-                                                <KeyboardArrowRightIcon />
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            } */}
 
-                            {/* -------------------------------------------------------------- */}
+
+                            {/* --------------------------------menuitems tow------------------------------ */}
 
                             {menuItems_two.map((item) => (
                                 <div>
@@ -396,6 +368,8 @@ const ResponsiveDrawer = (props) => {
                                             setSelectedIndex_2(item.value)
                                             setCount_2(item.value)
                                             setSelectedIndex_4(null)
+                                dispatch(resetProfile())
+
                                             setCount(null)
                                             setSelectedIndex(null)
                                             setCount_4()
@@ -411,7 +385,7 @@ const ResponsiveDrawer = (props) => {
                                                 '&:hover': { backgroundColor: '#B9D9EB' }
                                             }} >
                                             <ListItemIcon sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }}>
-                                               
+
                                                 {item.value === 18 ? <FormatListBulletedIcon /> : item.value === 8 ? <AccountBoxIcon /> : item.value === 9 ? <EditIcon /> : <InboxIcon />}
                                             </ListItemIcon>
                                             <ListItemText primary={item.name} sx={{ color: selectedIndex_2 === item.value ? '#fff' : '#000', }} />
@@ -438,6 +412,8 @@ const ResponsiveDrawer = (props) => {
                             setSelectedIndex_2(10)
                             setCount_2(10)
                             setCount(null)
+                                dispatch(resetProfile())
+
                             setSelectedIndex(null)
                             setCount_3(null)
                             setSelectedIndex_3(null)
@@ -473,6 +449,11 @@ const ResponsiveDrawer = (props) => {
 
     const renderForm = () => {
         console.log('count 4 ', count_4)
+        console.log('count 2 ', count_2)
+        console.log('profile form type ', profileFormType)
+
+
+
 
 
         if (count !== null && count !== undefined) {
@@ -523,6 +504,7 @@ const ResponsiveDrawer = (props) => {
                 default: return null;
             }
         }
+
 
         return null;
     };

@@ -36,10 +36,10 @@ const ProfilePage = () => {
 
           </motion.div>
           <div className="profile_menu">
-            <span className="menu_items" style={{ backgroundColor: profileComponents === 1 && '#007bff', color: profileComponents === 1 && '#fff' }} onClick={() => setProfileComponents(1)}>Profile Details</span>
-            <span className="menu_items" style={{ backgroundColor: profileComponents === 2 && '#007bff', color: profileComponents === 2 && '#fff' }} onClick={() => setProfileComponents(2)}>Edite Profile</span>
-            <span className="menu_items" style={{ backgroundColor: profileComponents === 3 && '#007bff', color: profileComponents === 3 && '#fff' }} onClick={() => setProfileComponents(3)}>Total investemnt</span>
-            <span className="menu_items" style={{ backgroundColor: profileComponents === 4 && '#007bff', color: profileComponents === 4 && '#fff' }} onClick={() => setProfileComponents(4)}>Withdrawal</span>
+            <span className="menu_items" style={{ backgroundColor: profileComponents === 1 && '#1976d2', color: profileComponents === 1 && '#fff' }} onClick={() => setProfileComponents(1)}>Profile Details</span>
+            <span className="menu_items" style={{ backgroundColor: profileComponents === 2 && '#1976d2', color: profileComponents === 2 && '#fff' }} onClick={() => setProfileComponents(2)}>Edit Profile</span>
+            <span className="menu_items" style={{ backgroundColor: profileComponents === 3 && '#1976d2', color: profileComponents === 3 && '#fff' }} onClick={() => setProfileComponents(3)}>Total investemnt</span>
+            <span className="menu_items" style={{ backgroundColor: profileComponents === 4 && '#1976d2', color: profileComponents === 4 && '#fff' }} onClick={() => setProfileComponents(4)}>Withdrawal</span>
 
 
 

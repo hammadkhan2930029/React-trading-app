@@ -159,9 +159,7 @@ const blogData = [
 
 // ----------------------------------------------------------------------
 export const BlogsMultiCards = () => {
-      useEffect(() => {
-            window.scrollTo(0, 0)
-        }, [])
+
     const navigate = useNavigate();
 
 
@@ -191,6 +189,10 @@ export const BlogsMultiCards = () => {
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
+    // ------------------------------------------------
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    },[])
     return (
         <motion.div>
             <motion.div
@@ -228,7 +230,7 @@ export const BlogsMultiCards = () => {
                                 </CardContent>
                                 <CardActions disableSpacing>
                                     <ExpandMore
-                                        onClick={() => navigate("/blogsDetails", { state: { title: item.title, image: item.image, description: item.description, id: item.id , description2: item.description2,} })}
+                                        onClick={() => navigate("/blogsDetails", { state: { title: item.title, image: item.image, description: item.description, id: item.id, description2: item.description2, } })}
 
 
                                         aria-label="show more"

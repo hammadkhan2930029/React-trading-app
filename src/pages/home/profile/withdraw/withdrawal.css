@@ -14,6 +14,8 @@
     justify-content: start;
     margin-top: 100px;
     width: 100%;
+
+
 }
 
 .withdrawal_heading-oneTime {
@@ -31,9 +33,10 @@
     align-self: center;
     flex-direction: row;
     background-color: #fff;
-    margin: 10px;
     padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+
 }
 
 .withdrawal_list_btn {

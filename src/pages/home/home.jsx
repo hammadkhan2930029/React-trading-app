@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ResponsiveDrawer from "./appBar/mainComponent.jsx";
 import { Loader } from './loader/loader.jsx';
-import LandingPage from '../component/landingPage.jsx';
 import { Loader_f } from '../component/loader/loader.jsx';
+import FrontPage from '../component/frontPage.jsx';
 
 
 
@@ -18,7 +18,7 @@ export const Home = () => {
   }, [])
   return (
     <div>
-      
+
       {loading ? (
 
         <Loader_f />
@@ -26,8 +26,7 @@ export const Home = () => {
 
         <ResponsiveDrawer />
       )}
-      {/* <LandingPage/> */}
-
+      {/* <FrontPage /> */}
 
 
 

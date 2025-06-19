@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Navbar } from '../component/navbar/navbar'
+import { Navbar } from './navbar/navbar'
 import { Cards } from './cards/cards';
 import { FullCard } from './fullCard/fullCard';
 import { ChooseUs } from './chooseUs/chooseUs';
@@ -11,10 +11,10 @@ import { Loader_f } from './loader/loader';
 import { Nav } from './nav/nav';
 import {LoginPage} from './login_singup/login_signup'
 import { useSelector, useDispatch } from 'react-redux';
-import {  setScrollToSection } from '../component/Redux/scrollSlice';
+import {  setScrollToSection } from './Redux/scrollSlice';
 
 
-function LandingPage() {
+function FrontPage() {
   const [count, setCount] = useState(true)
   useEffect(() => {
     setTimeout(() => {
@@ -81,4 +81,4 @@ function LandingPage() {
   )
 }
 
-export default LandingPage;
+export default FrontPage;

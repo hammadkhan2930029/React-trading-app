@@ -34,7 +34,7 @@
 
  } 
  .btn_div{
-    width: 100%;
+     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -101,7 +101,7 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .form-main-sell{
         width: 100%;
     }
@@ -109,22 +109,20 @@
         width: 85%;
 
     }
+    .btn_div{
+        justify-content: start;
+    }
 
    
 
     .btn {
         width: 60%;
     }
-    /* .switchBtn_div_sell{
-        width: 75%;
-    } */
-     .btn_div{
-        justify-content: space-around;
-     }
+  
   
 }
 
-@media screen and (max-width: 430px) {
+@media  (max-width: 430px) {
     .form_sell {
         width: 80%;
         margin: 0;
@@ -137,7 +135,7 @@
     }
 }
 
-@media screen and (max-width: 360px) {
+@media  (max-width: 360px) {
   
     .form_sell {
         width: 80%;

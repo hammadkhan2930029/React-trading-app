@@ -42,20 +42,23 @@
   
 }
 
-@media screen and (max-width: 600px) {
-   
-}
-
-@media screen and (max-width: 412px) {
+@media (max-width: 1024px) {
     .summary_heading_dashboard{
-        font-size: 28px;
+        font-size: 26px;
     }
    
 }
 
-@media screen and (max-width: 360px) {
+@media (max-width: 440px) {
     .summary_heading_dashboard{
         font-size: 22px;
+    }
+   
+}
+
+@media  (max-width: 360px) {
+    .summary_heading_dashboard{
+        font-size: 20px;
     }
   
 }

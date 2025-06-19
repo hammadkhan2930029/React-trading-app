@@ -70,7 +70,8 @@ export const Dividen = () => {
                 initialValues={{
                     dividenPerShare: '',
                     date: '',
-                    total_amount: ''
+                    total_amount: '',
+                    tax:''
                 }}
                 onSubmit={(values, { resetForm }) => {
                     addData(values)
@@ -137,7 +138,17 @@ export const Dividen = () => {
                                             onBlur={handleBlur}
                                             value={values.fullStockName}
                                         />
-                                        <TextField
+                                          <TextField
+                                            id="outlined-required"
+                                            label="Tax"
+                                            type="text"
+                                            placeholder="Tax..."
+                                            name='tax'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.tax}
+                                        />
+                                        {/* <TextField
                                             id="outlined-select-currency"
                                             select
                                             label="Tax"
@@ -148,7 +159,7 @@ export const Dividen = () => {
                                                     {option.label}
                                                 </MenuItem>
                                             ))}
-                                        </TextField>
+                                        </TextField> */}
                                         <TextField
                                             id="outlined-required"
                                             label="Total Amount"

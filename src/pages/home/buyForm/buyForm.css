@@ -96,13 +96,16 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .form-main-buy{
         width: 100%;
     }
     .form_buy {
-        width: 85%;
+        width: 87%;
 
+    }
+    .btn_div_buy{
+        justify-content: start;
     }
 
    
@@ -112,7 +115,7 @@
     }
 }
 
-@media screen and (max-width: 430px) {
+@media  (max-width: 430px) {
     .form_buy {
         width: 80%;
         margin: 0;
@@ -130,7 +133,7 @@
     }
 }
 
-@media screen and (max-width: 360px) {
+@media  (max-width: 360px) {
     .form_buy {
         width: 80%;
     }

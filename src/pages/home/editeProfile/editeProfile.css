@@ -20,21 +20,21 @@
 
 }
 
-.edite_image_div {
+/* .edite_image_div {
     width: 50%;
-    /* height: 570px; */
+    height: 570px;
 
-}
+} */
 
-.edite_image {
+/* .edite_image {
     width: 100%;
     height: 700px;
     border-bottom-left-radius: 70px;
     border-top-left-radius: 70px
-}
+} */
 
 .edite_profile_form {
-    width: 50%;
+    width: 100%;
     padding: 25px;
 }
 
@@ -59,8 +59,17 @@
     box-shadow: none;
 }
 
-.e_form .e_input {
+.form_main {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.e_form .e_input {
+    width: 45%;
     margin: 5px;
 }
 
@@ -159,6 +168,9 @@
         margin-bottom: 0;
     }
 
+    .e_form .e_input {
+        width: 46%;
+    }
 
 
 
@@ -170,11 +182,15 @@
     .edite_profile_form {
         padding: 10px;
     }
+
     .view_profile .userName {
         font-size: 18px;
 
     }
 
+    .e_form .e_input {
+        width: 100%;
+    }
 
 
 

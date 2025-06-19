@@ -47,23 +47,23 @@ export const BrokerForm = () => {
                         <div className='form-main-brokerForm'>
 
                             <div>
-                               
+
                                 <span className='heading'>Broker</span>
 
                             </div>
-                             <div className='back_btn_div'>
-                                    <button className='b_form_backbtn' onClick={() => dispatch(setBroker_list())}> <NavigateBeforeIcon/> Back</button>
-                                </div>
+                            <div className='back_btn_div'>
+                                <button className='b_form_backbtn' onClick={() => dispatch(setBroker_list())}> <NavigateBeforeIcon /> Back</button>
+                            </div>
 
 
 
-                            <div >
+                            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                 <Box component="form"
                                     sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch' : '60ch' } }}
                                     noValidate
                                     autoComplete="off"
-                                    className='form'>
-                                    <div>
+                                >
+                                    <div className='form_broker'>
                                         <TextField
                                             id="outlined-required"
                                             label="Broker Name"

@@ -93,11 +93,10 @@ export const PrimarySearchAppBar = () => {
             <MenuItem onClick={() => {
                 handleMenuClose()
                 dispatch(setProfile())
+               
+
             }}>Profile</MenuItem>
-            {/* <MenuItem onClick={() => {
-                handleMenuClose()
-                dispatch(setEditeProfile())
-            }}>Edit Profile</MenuItem> */}
+
             <MenuItem onClick={handleMenuClose}>Log out</MenuItem>
 
         </Menu>

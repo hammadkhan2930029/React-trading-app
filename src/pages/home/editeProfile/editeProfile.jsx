@@ -40,16 +40,15 @@ export const EditeProfile = () => {
     };
     return (
         <motion.div className='edite_profile'>
-            <motion.div
-                className='edite' >
-                <motion.div
+            <motion.div className='edite' >
+                {/* <motion.div
                     className='edite_image_div'
                     ref={refOne}
                     initial={{ opacity: 0, x: -100 }}
                     animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: .7 }}>
                     <img src={one} className='edite_image' />
-                </motion.div>
+                </motion.div> */}
                 <motion.div
                     className='edite_profile_form'
                     ref={refTwo}
@@ -102,74 +101,78 @@ export const EditeProfile = () => {
 
 
                                 </motion.div>
+                                <div className='form_main' >
 
 
-                                <TextField
-                                    placeholder='email'
-                                    name='email'
-                                    id="outlined-required"
-                                    label="Email"
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    value={values.email}
-                                    className='e_input'
-                                    type='text'
+                                    <TextField
+                                        placeholder='email'
+                                        name='email'
+                                        id="outlined-required"
+                                        label="Email"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.email}
+                                        className='e_input'
+                                        type='text'
 
-                                />
-                                <TextField
-                                    placeholder='Number'
-                                    name='number'
-                                    id="outlined-required"
-                                    label="Conatct"
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    value={values.number}
-                                    className='e_input'
-                                    type='number'
+                                    />
+                                    <TextField
+                                        placeholder='Number'
+                                        name='number'
+                                        id="outlined-required"
+                                        label="Contact"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.number}
+                                        className='e_input'
+                                        type='tel'
 
-                                />
-                                <Box className='e_input'>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Filer or Non-filer</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={age}
-                                            label="Filer or Non-filer"
-                                            onChange={handleChange_filer}
-                                        >
-                                            <MenuItem value={1}>Filer</MenuItem>
-                                            <MenuItem value={2}>Non Filer</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </Box>
-                                <TextField
-                                    placeholder='password'
-                                    name='password'
-                                    id="outlined-required"
-                                    label="password"
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    value={values.password}
-                                    className='e_input'
-                                    type='password'
+                                    />
+                                    <Box className='e_input'>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="demo-simple-select-label">Filer or Non-filer</InputLabel>
+                                            <Select
+                                                labelId="demo-simple-select-label"
+                                                id="demo-simple-select"
+                                                value={age}
+                                                label="Filer or Non-filer"
+                                                onChange={handleChange_filer}
+                                            >
+                                                <MenuItem value={1}>Filer</MenuItem>
+                                                <MenuItem value={2}>Non Filer</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </Box>
+                                    <TextField
+                                        placeholder='password'
+                                        name='password'
+                                        id="outlined-required"
+                                        label="password"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.password}
+                                        className='e_input'
+                                        type='password'
 
-                                />
-                                <TextField
-                                    placeholder='confirm password'
-                                    name='confirmPassword'
-                                    id="outlined-required"
-                                    label="Confirm password"
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    value={values.confirmPassword}
-                                    className='e_input'
-                                    type='password'
+                                    />
+                                    <TextField
+                                        placeholder='confirm password'
+                                        name='confirmPassword'
+                                        id="outlined-required"
+                                        label="Confirm password"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.confirmPassword}
+                                        className='e_input'
+                                        type='password'
 
-                                />
-                                <Button variant="contained" disableElevation className='e_btn' onClick={handleSubmit}>
-                                    Register
-                                </Button>
+                                    />
+                                </div>
+
+                                    <Button variant="contained" disableElevation className='e_btn' onClick={handleSubmit}>
+                                     edit
+                                    </Button>
+
                             </div>
                         )}
 

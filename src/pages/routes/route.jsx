@@ -5,7 +5,7 @@ import { ChooseUs } from "../component/chooseUs/chooseUs";
 import { ContactUs } from "../component/contactUs/contactUs";
 import { DrawerBar } from "../component/drawer/drawer";
 import { FaqMainPage } from "../component/faqs/FaqMian/faqMainPage";
-import LandingPage from "../component/landingPage";
+import FrontPage from "../component/frontPage";
 import ResponsiveDrawer from "../home/appBar/mainComponent";
 import { BuyForm } from "../home/buyForm/buyForm";
 import CrudOperation from "../home/CrudSystem/crudOperation";
@@ -22,7 +22,7 @@ export const routes = [
   { path: '/buyForm', element: <BuyForm /> },
   { path: '/sellForm', element: <SellForm /> },
   { path: '/crudOperation', element: <CrudOperation /> },
-  { path: '/landingPage', element: <LandingPage /> },
+  { path: '/landingPage', element: <FrontPage /> },
   { path: '/responsiveDrawer', element: <ResponsiveDrawer /> },
   { path: '/blogsMultiCards', element: <BlogsMultiCards /> },
   { path: '/blogsDetails', element: <BlogsDetails /> },

@@ -163,7 +163,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    margin: 12px;
+    /* margin: 12px; */
     flex-wrap: wrap;
     width: 100%;
 
@@ -226,15 +226,18 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .search_bar {
         width: 80%;
+    }
+     .dashboard_main{
+        width: 100%;
     }
 
     /* ----------------------smal cards----------------------------- */
 
     .card {
-        width: 95%;
+        width: 100%;
     }
 
     .larg_cards_data {

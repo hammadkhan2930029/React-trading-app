@@ -32,17 +32,13 @@ export const Navbar = () => {
             <h4 className='h4'>The actual financial information source you need for your portfolio.</h4>
 
           </div>
-          <motion.div
-            // animate={{ y: [0, 20, 0] }}
-            // transition={{ duration: 1.5, repeat: Infinity }}
-            className="imgDiv"
-          >
+          {/* <motion.div className="imgDiv" >
 
 
             <img className='img' src={stockreport} />
 
 
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     

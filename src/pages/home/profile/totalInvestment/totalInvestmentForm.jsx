@@ -176,8 +176,8 @@ export const TotalInvestment = () => {
                                     sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch' : '40ch' } }}
                                     noValidate
                                     autoComplete="off"
-                                    className='form-oneTime'>
-                                    <div>
+                                    >
+                                    <div className='form-oneTime '>
                                         <TextField
                                             type='date'
                                             id="outlined-required"

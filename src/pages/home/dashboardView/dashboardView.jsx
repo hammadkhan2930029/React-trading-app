@@ -65,113 +65,111 @@ export const DashboardView = () => {
 
             </div>
             {/* ----------------------------small cards-------------------------------------- */}
-            <div>
-                <div className='main_card_view'>
-                    {/* -------------------one----------------------- ---------------*/}
-                    <div className="card">
-                        <div className='card_1_data'>
-                            <div className='card_icon'>
-                                <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
-                            </div>
-                            <div className='price'>
-                                <span className='h_6'>Total Earning</span>
-                                <span className='h_1'>$350.5</span>
-                            </div>
+            <div className='main_card_view'>
+                {/* -------------------one----------------------- ---------------*/}
+                <div className="card">
+                    <div className='card_1_data'>
+                        <div className='card_icon'>
+                            <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                        </div>
+                        <div className='price'>
+                            <span className='h_6'>Total Earning</span>
+                            <span className='h_1'>$350.5</span>
                         </div>
                     </div>
-                    {/* ---------------------two------------------------------------ */}
-                    <div className="card">
-                        <div className='card_1_data'>
-                            <div className='card_icon'>
-                                <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
-                            </div>
-                            <div className='price'>
-                                <span className='h_6'>Total Investment</span>
-                                <span className='h_1'>$350.5</span>
-                            </div>
+                </div>
+                {/* ---------------------two------------------------------------ */}
+                <div className="card">
+                    <div className='card_1_data'>
+                        <div className='card_icon'>
+                            <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                        </div>
+                        <div className='price'>
+                            <span className='h_6'>Total Investment</span>
+                            <span className='h_1'>$350.5</span>
                         </div>
                     </div>
-                    {/* ---------------------------three------------------------------ */}
+                </div>
+                {/* ---------------------------three------------------------------ */}
 
-                    <div className="card">
-                        <div className='card_data_3'>
-                            <span className="sale_text1">Profit / lose</span>
-                            <span className="sale_text2">$3562.25</span>
-                            <span className="sale_text3">lose : $253</span>
+                <div className="card">
+                    <div className='card_data_3'>
+                        <span className="sale_text1">Profit / lose</span>
+                        <span className="sale_text2">$3562.25</span>
+                        <span className="sale_text3">lose : $253</span>
+                    </div>
+                </div>
+                {/* ----------------------------four------------------------------ */}
+                <div className="card">
+                    <div className='card_4_data'>
+                        <div className='card_4_text'>
+                            <span className="sale_text1">Holding</span>
+                            <span className="sale_text2">10</span>
+
+                        </div>
+                        <div>
+                            <Button
+                                id="basic-button"
+                                aria-controls={open2 ? 'basic-menu' : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open2 ? 'true' : undefined}
+                                onClick={handleClick2}
+                            >
+                                <img className='flag' src={flag} />
+                            </Button>
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorEl2}
+                                open={open2}
+                                onClose={handleClose2}
+                                MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                }}
+                            >
+                                <MenuItem onClick={handleClose2}>
+                                    <div className='menu_item'>
+                                        <img className='menu_icon' src={flag} />
+                                        <span className='menu_text'>Pakistan</span>
+                                    </div>
+                                </MenuItem>
+                                <MenuItem onClick={handleClose2}>
+                                    <div className='menu_item'>
+                                        <img className='menu_icon' src={india} />
+                                        <span className='menu_text'>India</span>
+                                    </div></MenuItem>
+                                <MenuItem onClick={handleClose2}>
+                                    <div className='menu_item'>
+                                        <img className='menu_icon' src={england} />
+                                        <span className='menu_text'>England</span>
+                                    </div></MenuItem>
+                            </Menu>
+
+
                         </div>
                     </div>
-                    {/* ----------------------------four------------------------------ */}
-                    <div className="card">
-                        <div className='card_4_data'>
-                            <div className='card_4_text'>
-                                <span className="sale_text1">Holding</span>
-                                <span className="sale_text2">10</span>
+                </div>
 
-                            </div>
-                            <div>
-                                <Button
-                                    id="basic-button"
-                                    aria-controls={open2 ? 'basic-menu' : undefined}
-                                    aria-haspopup="true"
-                                    aria-expanded={open2 ? 'true' : undefined}
-                                    onClick={handleClick2}
-                                >
-                                    <img className='flag' src={flag} />
-                                </Button>
-                                <Menu
-                                    id="basic-menu"
-                                    anchorEl={anchorEl2}
-                                    open={open2}
-                                    onClose={handleClose2}
-                                    MenuListProps={{
-                                        'aria-labelledby': 'basic-button',
-                                    }}
-                                >
-                                    <MenuItem onClick={handleClose2}>
-                                        <div className='menu_item'>
-                                            <img className='menu_icon' src={flag} />
-                                            <span className='menu_text'>Pakistan</span>
-                                        </div>
-                                    </MenuItem>
-                                    <MenuItem onClick={handleClose2}>
-                                        <div className='menu_item'>
-                                            <img className='menu_icon' src={india} />
-                                            <span className='menu_text'>India</span>
-                                        </div></MenuItem>
-                                    <MenuItem onClick={handleClose2}>
-                                        <div className='menu_item'>
-                                            <img className='menu_icon' src={england} />
-                                            <span className='menu_text'>England</span>
-                                        </div></MenuItem>
-                                </Menu>
-
-
-                            </div>
+                {/* ------------------------------five---------------------------- */}
+                <div className="card">
+                    <div className='card_1_data'>
+                        <div className='card_icon'>
+                            <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                        </div>
+                        <div className='price'>
+                            <span className='h_6'>Dividend</span>
+                            <span className='h_1'>$350.5</span>
                         </div>
                     </div>
-
-                    {/* ------------------------------five---------------------------- */}
-                    <div className="card">
-                        <div className='card_1_data'>
-                            <div className='card_icon'>
-                                <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
-                            </div>
-                            <div className='price'>
-                                <span className='h_6'>Dividend</span>
-                                <span className='h_1'>$350.5</span>
-                            </div>
+                </div>
+                {/* ---------------------------------six-------------------------- */}
+                <div className="card">
+                    <div className='card_1_data'>
+                        <div className='card_icon'>
+                            <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
                         </div>
-                    </div>
-                    {/* ---------------------------------six-------------------------- */}
-                    <div className="card">
-                        <div className='card_1_data'>
-                            <div className='card_icon'>
-                                <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
-                            </div>
-                            <div className='price'>
-                                <span className='h_6'>Bonus</span>
-                                <span className='h_1'>$350.5</span>
-                            </div>
+                        <div className='price'>
+                            <span className='h_6'>Bonus</span>
+                            <span className='h_1'>$350.5</span>
                         </div>
                     </div>
                 </div>
