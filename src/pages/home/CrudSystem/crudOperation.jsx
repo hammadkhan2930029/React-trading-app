@@ -40,6 +40,7 @@ const buydata = [
     buy_amount: '1000',
     buy_broker_amount: '15',
     buy_fed_amount: '20',
+    avg_buying:'12'
   },
   {
     value: '2',
@@ -51,6 +52,8 @@ const buydata = [
     buy_amount: '1800',
     buy_broker_amount: '18',
     buy_fed_amount: '25',
+    avg_buying:'12'
+
   },
   {
     value: '3',
@@ -62,6 +65,8 @@ const buydata = [
     buy_amount: '10000',
     buy_broker_amount: '30',
     buy_fed_amount: '40',
+    avg_buying:'12'
+
   },
   {
     value: '4',
@@ -73,6 +78,8 @@ const buydata = [
     buy_amount: '10000',
     buy_broker_amount: '25',
     buy_fed_amount: '35',
+    avg_buying:'12'
+
   },
   {
     value: '5',
@@ -84,6 +91,8 @@ const buydata = [
     buy_amount: '9000',
     buy_broker_amount: '27',
     buy_fed_amount: '33',
+    avg_buying:'12'
+
   },
   {
     value: '6',
@@ -95,6 +104,8 @@ const buydata = [
     buy_amount: '7000',
     buy_broker_amount: '21',
     buy_fed_amount: '28',
+    avg_buying:'12'
+
   },
 
 ];
@@ -359,12 +370,14 @@ const CrudOperation = () => {
                             <th>Type</th>
                             <th>Stock Name</th>
                             <th>Trade Date</th>
-                            <th>Sett Date</th>
+                            {/* <th>Sett Date</th> */}
                             <th>QTY</th>
                             <th>Rate</th>
                             <th>Amount</th>
                             <th>Broker Amount</th>
                             <th>FED Amount</th>
+                            <th>Avg Buying</th>
+
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -375,12 +388,14 @@ const CrudOperation = () => {
                                 <td>{item.sell_QTY ? "Sell" : "Buy"}</td>
                                 <td>{item.stockName}</td>
                                 <td>{item.trade_date}</td>
-                                <td>{item.sett_date}</td>
+                                {/* <td>{item.sett_date}</td> */}
                                 <td>{item.sell_QTY || item.buy_QTY}</td>
                                 <td>{item.sell_rate || item.buy_rate}</td>
                                 <td>{item.sell_amount || item.buy_amount}</td>
                                 <td>{item.sell_broker_amount || item.buy_broker_amount}</td>
                                 <td>{item.sell_fed_amount || item.buy_fed_amount}</td>
+                                <td>{item.avg_buying}</td>
+
                                 <td>
                                     <button className="crud_editebtn" onClick={() => handleOpen(item)}>
                                         <EditIcon style={{ fontSize: '15px' }} /> Edit</button>

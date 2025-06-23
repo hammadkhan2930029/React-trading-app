@@ -57,6 +57,7 @@ export const EditeProfile = () => {
                     transition={{ duration: .7 }}>
                     <Formik
                         initialValues={{
+                            name:'',
                             email: '',
                             contact: '',
                             number: '',
@@ -102,7 +103,18 @@ export const EditeProfile = () => {
 
                                 </motion.div>
                                 <div className='form_main' >
+                                    <TextField
+                                        placeholder='Name'
+                                        name='name'
+                                        id="outlined-required"
+                                        label="Name"
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.email}
+                                        className='e_input'
+                                        type='text'
 
+                                    />
 
                                     <TextField
                                         placeholder='email'
@@ -169,9 +181,9 @@ export const EditeProfile = () => {
                                     />
                                 </div>
 
-                                    <Button variant="contained" disableElevation className='e_btn' onClick={handleSubmit}>
-                                     edit
-                                    </Button>
+                                <Button variant="contained" disableElevation className='e_btn' onClick={handleSubmit}>
+                                    edit
+                                </Button>
 
                             </div>
                         )}

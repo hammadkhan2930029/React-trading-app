@@ -170,7 +170,7 @@ export const SellForm = () => {
                                         <TextField
                                             id="outlined-required"
                                             label="Rate"
-                                            placeholder="buy rate..."
+                                            placeholder="Sell Rate..."
                                             name='sell_rate'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -180,7 +180,7 @@ export const SellForm = () => {
                                             required
                                             id="outlined-required"
                                             label="Amount"
-                                            placeholder="buy amount..."
+                                            placeholder="Sell Amount..."
                                             name='sell_amount'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -211,7 +211,7 @@ export const SellForm = () => {
                                         <TextField
                                             id="outlined-required"
                                             label="FED Amount"
-                                            placeholder="Fed amount ..."
+                                            placeholder="Fed Amount ..."
                                             name='sell_fed_amount'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -220,7 +220,7 @@ export const SellForm = () => {
                                         <TextField
                                             id="outlined-required"
                                             label="Net Amount"
-                                            placeholder="net amount..."
+                                            placeholder="Net Amount..."
                                             name='net_amount'
                                             onChange={handleChange}
                                             onBlur={handleBlur}

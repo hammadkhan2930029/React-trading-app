@@ -269,7 +269,7 @@ const ResponsiveDrawer = (props) => {
                                             setSelectedIndex_3(item.value)
                                             setSelectedIndex_2(null)
                                             setCount_2(null)
-                                dispatch(resetProfile())
+                                            dispatch(resetProfile())
 
                                             setCount(null)
                                             setSelectedIndex(null)
@@ -334,7 +334,7 @@ const ResponsiveDrawer = (props) => {
 
                                     setCount(null);
                                     setCount_2(null);
-                                dispatch(resetProfile())
+                                    dispatch(resetProfile())
 
                                     setCount_3(null);
                                     setCount_4(78);
@@ -368,7 +368,7 @@ const ResponsiveDrawer = (props) => {
                                             setSelectedIndex_2(item.value)
                                             setCount_2(item.value)
                                             setSelectedIndex_4(null)
-                                dispatch(resetProfile())
+                                            dispatch(resetProfile())
 
                                             setCount(null)
                                             setSelectedIndex(null)
@@ -412,7 +412,7 @@ const ResponsiveDrawer = (props) => {
                             setSelectedIndex_2(10)
                             setCount_2(10)
                             setCount(null)
-                                dispatch(resetProfile())
+                            dispatch(resetProfile())
 
                             setSelectedIndex(null)
                             setCount_3(null)

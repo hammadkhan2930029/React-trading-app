@@ -55,7 +55,7 @@ export const DashboardView = () => {
     return (
         <div className='dashboard_main'>
             {/* --------------------------top bar------------------------------------ */}
-            <div className='top_bar'>
+            {/* <div className='top_bar'>
 
                 <div className='search_bar'>
                     <input placeholder='Search' className='input' />
@@ -63,7 +63,7 @@ export const DashboardView = () => {
 
                 </div>
 
-            </div>
+            </div> */}
             {/* ----------------------------small cards-------------------------------------- */}
             <div className='main_card_view'>
                 {/* -------------------one----------------------- ---------------*/}

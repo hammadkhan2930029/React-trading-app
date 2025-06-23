@@ -83,6 +83,7 @@ export const BuyForm = () => {
                     buy_amount: '',
                     buy_broker_amount: '',
                     buy_fed_amount: '',
+                    avg_buying:'',
 
 
                 }}
@@ -163,7 +164,7 @@ export const BuyForm = () => {
                                             id="outlined-required"
                                             label="QTY"
                                             type="number"
-                                            placeholder="buy QTY..."
+                                            placeholder="Buy QTY..."
                                             name='buy_QTY'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -172,7 +173,7 @@ export const BuyForm = () => {
                                         <TextField
                                             id="outlined-required"
                                             label="Rate"
-                                            placeholder="buy rate..."
+                                            placeholder="Buy Rate..."
                                             name='buy_rate'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -182,7 +183,7 @@ export const BuyForm = () => {
                                             required
                                             id="outlined-required"
                                             label="Amount"
-                                            placeholder="buy amount..."
+                                            placeholder="Buy Amount..."
                                             name='buy_amount'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -213,7 +214,7 @@ export const BuyForm = () => {
                                         <TextField
                                             id="outlined-required"
                                             label="FED Amount"
-                                            placeholder="Fed amount ..."
+                                            placeholder="Fed Amount ..."
                                             name='buy_fed_amount'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -222,11 +223,25 @@ export const BuyForm = () => {
                                         <TextField
                                             id="outlined-required"
                                             label="Net Amount"
-                                            placeholder="net amount..."
+                                            placeholder="Net Amount..."
                                             name='net_amount'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
                                             value={values.net_amount}
+                                            slotProps={{
+                                                input: {
+                                                    readOnly: true,
+                                                },
+                                            }}
+                                        />
+                                          <TextField
+                                            id="outlined-required"
+                                            label="Avg Buying"
+                                            placeholder="Avg Buying..."
+                                            name='avg_buying'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.avg_buying}
                                             slotProps={{
                                                 input: {
                                                     readOnly: true,
