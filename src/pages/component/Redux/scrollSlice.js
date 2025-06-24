@@ -13,6 +13,7 @@ const scrollSlice = createSlice({
     clearScrollToSection: (state) => {
       state.scrollToSection = null;
     },
+   
   },
 });
 

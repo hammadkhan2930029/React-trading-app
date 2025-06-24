@@ -3,6 +3,7 @@ import ResponsiveDrawer from "./appBar/mainComponent.jsx";
 import { Loader } from './loader/loader.jsx';
 import { Loader_f } from '../component/loader/loader.jsx';
 import FrontPage from '../component/frontPage.jsx';
+import { Holdings } from './Holdings/holdings.jsx';
 
 
 
@@ -19,14 +20,14 @@ export const Home = () => {
   return (
     <div>
 
-      {loading ? (
+      {/* {loading ? (
 
         <Loader_f />
       ) : (
 
         <ResponsiveDrawer />
-      )}
-      {/* <FrontPage /> */}
+      )} */}
+      <FrontPage />
 
 
 

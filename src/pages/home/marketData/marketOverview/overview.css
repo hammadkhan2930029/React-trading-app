@@ -1,3 +1,6 @@
+.highlights_form_div {
+    width: 100%;
+}
 
 .form_highlights {
     display: flex;
@@ -5,14 +8,15 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 100px;
-    width: 95%;
+    width: 96%;
 
 }
-.highlights_heading{
+
+.highlights_heading {
     color: #000;
     font-size: 24px;
     font-weight: bold;
-    
+
 }
 
 .highlights_form_main {
@@ -24,18 +28,20 @@
     align-self: center;
     flex-direction: row;
     background-color: #fff;
-    margin: 10px; 
-    padding: 30px; 
-     border-radius: 10px;
-     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
- } 
- .switchBtn_div{
+}
+
+.switchBtn_div {
     width: 100%;
     display: flex;
     justify-content: end;
- }
- .switchBtn_div .switchBtn{
+}
+
+.switchBtn_div .switchBtn {
     background-color: #1976d2;
     padding: 15px;
     color: #fff;
@@ -47,7 +53,7 @@
     font-weight: bold;
     font-size: 14px;
     margin: 5px;
- }
+}
 
 
 
@@ -83,18 +89,23 @@
     width: 90%;
 
 }
+.index{
 
+    width: 100%;
+    padding: 10px;
+}
 
 @media screen and (max-width: 600px) {
-    .form_highlights{
-        width: 100%;
+    .form_highlights {
+        width: 50%;
     }
+
     .highlights_form_main {
         width: 85%;
 
     }
 
-   
+
 
     .btn {
         width: 60%;
@@ -102,19 +113,24 @@
 }
 
 @media screen and (max-width: 430px) {
+    .highlights_form_div {
+        width: 50%;
+    }
+
     .highlights_form_main {
-        width: 80%;
+        width: 85%;
         margin: 0;
     }
 
-   
 
-   
+
+
 
     .btn {
         width: 60%;
     }
-    .switchBtn_div{
+
+    .switchBtn_div {
         width: 70%;
     }
 }
@@ -123,14 +139,17 @@
     .highlights_form_main {
         width: 80%;
     }
+
     .btn {
         width: 60%;
     }
-    .switchBtn_div{
+
+    .switchBtn_div {
         width: 60%;
     }
-    .highlights_heading{
-       margin-left: -90px;
-        
+
+    .highlights_heading {
+        margin-left: -90px;
+
     }
 }

@@ -28,9 +28,12 @@ import { Card_2 } from './card_2/card_2';
 import Card_3 from './card_3/card_3';
 import Card_4 from './card_4/card_4';
 import { OverviewList } from './overviewDataList/overviewList';
-
+import { useDispatch } from 'react-redux';
+import { holdings_details } from '../Redux/formTypeSlice';
 
 export const DashboardView = () => {
+
+    const dispatch = useDispatch();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -100,10 +103,10 @@ export const DashboardView = () => {
                     </div>
                 </div>
                 {/* ----------------------------four------------------------------ */}
-                <div className="card">
+                <div className="card" onClick={() => dispatch(holdings_details())}>
                     <div className='card_4_data'>
-                        <div className='card_4_text'>
-                            <span className="sale_text1">Holding</span>
+                        <div className='card_4_text' >
+                            <span className="sale_text1">Holdings</span>
                             <span className="sale_text2">10</span>
 
                         </div>

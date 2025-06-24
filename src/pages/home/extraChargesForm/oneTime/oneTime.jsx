@@ -199,7 +199,7 @@ export const OneTime = () => {
 
                             <div >
                                 <Box component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch' : '40ch' } }}
+                                    sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '28ch' : '40ch' } }}
                                     noValidate
                                     autoComplete="off"
                                     className='form-oneTime'>

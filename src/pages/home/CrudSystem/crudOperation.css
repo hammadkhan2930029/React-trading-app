@@ -193,11 +193,13 @@ tbody.t_body tr {
         align-items: center;
     }
 
-    .top_btn_buy {
+    .top_btn .top_btn_buy {
         width: 100%;
         text-align: center;
         padding: 12px;
         font-size: 14px;
+        display: flex;
+        justify-content: center;
     }
 
     table {

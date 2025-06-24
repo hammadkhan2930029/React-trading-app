@@ -15,6 +15,7 @@ import '../blogsCard.css'
 import './blogsmultiCards.css'
 import { useNavigate } from 'react-router-dom';
 import { Nav } from '../../nav/nav';
+import { Navbar2 } from '../../nav/navebar2';
 
 // -----------------------------------------------------------
 
@@ -202,7 +203,7 @@ export const BlogsMultiCards = () => {
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}>
 
-                <Nav />
+                <Navbar2 />
             </motion.div>
 
             <motion.div className='banner'

@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import { motion, useInView } from "framer-motion";
 import { useDispatch } from "react-redux";
 import MenuItem from '@mui/material/MenuItem';
+import { SummaryIndex } from '../marketSummaryIndex/summaryIndex';
 
 
 
@@ -56,7 +57,7 @@ export const Summary = () => {
                     current: '',
                     change: '',
                     volume: '',
-                 
+
                     date: ''
 
 
@@ -67,11 +68,11 @@ export const Summary = () => {
                 }}
 
             >
-                {({ handleBlur, handleChange, handleSubmit, values,  }) => (
+                {({ handleBlur, handleChange, handleSubmit, values, }) => (
                     <form onSubmit={handleSubmit} className='summary_form_div'>
 
                         <div className='form_summary'>
-                            <div>
+                            <div className='summary_heading_div'>
                                 <span className='summary_heading_2'>Market Summary</span>
                             </div>
 
@@ -199,26 +200,34 @@ export const Summary = () => {
 
 
                                         />
-                                       
+
                                     </div>
 
                                 </Box>
 
                             </div>
+                            <div className='submit_btn_div'>
 
-                            <Box sx={{ '& > :not(style)': { m: 1, ml: -10 } }}>
+                                <Box sx={{ '& > :not(style)': { m: 1, ml: -10 } }}>
 
-                                <Fab variant="extended" color="primary" type="submit">
-                                    <SendIcon sx={{ mr: 1.5 }} />
-                                    Submit
-                                </Fab>
-                            </Box>
+                                    <Fab variant="extended" color="primary" type="submit">
+                                        <SendIcon sx={{ mr: 1.5 }} />
+                                        Submit
+                                    </Fab>
+                                </Box>
+                            </div>
+
 
                         </div>
                     </form>
                 )}
 
             </Formik>
+
+            <div className='summary-index'>
+
+                <SummaryIndex />
+            </div>
         </motion.div>
 
     )

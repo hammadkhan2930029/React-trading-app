@@ -9,10 +9,10 @@ import { NewsLetter } from './newsletter/newsletter';
 import { Footer } from './footer/footer';
 import { Loader_f } from './loader/loader';
 import { Nav } from './nav/nav';
-import {LoginPage} from './login_singup/login_signup'
+import { LoginPage } from './login_singup/login_signup'
 import { useSelector, useDispatch } from 'react-redux';
-import {  setScrollToSection } from './Redux/scrollSlice';
-
+import { setScrollToSection } from './Redux/scrollSlice';
+import { clearScrollToSection } from './Redux/scrollSlice';
 
 function FrontPage() {
   const [count, setCount] = useState(true)
@@ -36,7 +36,7 @@ function FrontPage() {
       chooseUsRef.current.scrollIntoView({ behavior: 'smooth' });
       dispatch(setScrollToSection(null));
     }
-  
+
     if (scrollToSection === 'login' && loginRef.current) {
       loginRef.current.scrollIntoView({ behavior: 'smooth' });
       dispatch(setScrollToSection(null));
@@ -51,7 +51,11 @@ function FrontPage() {
       dispatch(setScrollToSection(null));
     }
   }, [scrollToSection, dispatch]);
-  
+
+  // -------------------------------------------------------------------
+
+
+
 
 
 
@@ -61,19 +65,20 @@ function FrontPage() {
         <Loader_f />
       ) : (
         <div style={{ overflow: 'hidden' }}>
-          <Nav chooseUsRef={chooseUsRef}/>
+          <Nav chooseUsRef={chooseUsRef} />
           <Navbar />
           <Cards />
           <FullCard />
-          <ChooseUs  ref={chooseUsRef}/>
-          <LoginPage  ref={loginRef}/>
-          <BlogsCard ref={blogsRef}/>
-          <Faqs ref={faqRef}/>
 
-          <NewsLetter/>
-          <Footer/>
+            <ChooseUs ref={chooseUsRef} />
+          <LoginPage ref={loginRef} />
+          <BlogsCard ref={blogsRef} />
+          <Faqs ref={faqRef} />
 
-      
+          <NewsLetter />
+          <Footer />
+
+
         </div>
       )}
 
@@ -82,3 +87,4 @@ function FrontPage() {
 }
 
 export default FrontPage;
+

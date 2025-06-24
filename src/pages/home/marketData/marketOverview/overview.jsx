@@ -8,6 +8,7 @@ import Fab from '@mui/material/Fab';
 import TextField from '@mui/material/TextField';
 import { motion, useInView } from "framer-motion";
 import { useDispatch } from "react-redux";
+import { OverviewIndex } from '../marketOverviewList/overviewIndex';
 
 
 
@@ -24,6 +25,8 @@ export const OverView = () => {
 
 
     return (
+        <div>
+
 
         <motion.div
             ref={refOne}
@@ -45,7 +48,7 @@ export const OverView = () => {
                     volume: '',
                     previousClose: '',
                     value: '',
-                    date:''
+                    date: ''
 
 
                 }}
@@ -62,7 +65,7 @@ export const OverView = () => {
                             <div>
                                 <span className='highlights_heading'>Market Overview</span>
                             </div>
-                          
+
 
                             <div >
                                 <Box component="form"
@@ -192,21 +195,31 @@ export const OverView = () => {
                                 </Box>
 
                             </div>
+                            <div>
 
-                            <Box sx={{ '& > :not(style)': { m: 1, ml: -10 } }}>
+                                <Box sx={{ '& > :not(style)': { m: 1, ml: -10 } }}>
 
-                                <Fab variant="extended" color="primary" type="submit">
-                                    <SendIcon sx={{ mr: 1.5 }} />
-                                    Submit
-                                </Fab>
-                            </Box>
+                                    <Fab variant="extended" color="primary" type="submit">
+                                        <SendIcon sx={{ mr: 1.5 }} />
+                                        Submit
+                                    </Fab>
+                                </Box>
+                            </div>
+
 
                         </div>
                     </form>
                 )}
 
+
             </Formik>
+            <div className='index'>
+                <OverviewIndex/>
+
+            </div>
         </motion.div>
+        </div>
+
 
     )
 }

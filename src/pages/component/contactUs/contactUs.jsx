@@ -11,6 +11,7 @@ import { Autocomplete } from "@mui/material";
 import { motion, useInView } from "framer-motion";
 import { Nav } from '../nav/nav';
 import { Subject } from '@mui/icons-material';
+import { Navbar2 } from '../nav/navebar2';
 // import { setDividen_list } from "../Redux/profileSlice";
 // import { useDispatch } from "react-redux";
 
@@ -69,8 +70,7 @@ export const ContactUs = () => {
                 initial={{ opacity: 0, y: -100 }}
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}>
-
-                <Nav />
+                <Navbar2 />
             </motion.div>
 
             <motion.div
@@ -108,7 +108,7 @@ export const ContactUs = () => {
                                         autoComplete="off"
                                     >
                                         <div className='contact_form'>
-                                            
+
                                             <TextField
                                                 type='text'
                                                 id="outlined-required"
@@ -171,7 +171,7 @@ export const ContactUs = () => {
 
 
                                         </div>
-                                       
+
 
                                     </Box>
 

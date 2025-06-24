@@ -145,7 +145,7 @@ tbody.t_body tr {
 @media (max-width: 480px) {
     .dividen_crud_main {
         /* padding: 10px; */
-        width: 67%;
+        width: 80%;
     }
 
     .top_btn {
@@ -154,7 +154,7 @@ tbody.t_body tr {
     }
 
     .top_btn_buy {
-        width: 100%;
+        width: 94%;
         text-align: center;
         padding: 12px;
         font-size: 14px;

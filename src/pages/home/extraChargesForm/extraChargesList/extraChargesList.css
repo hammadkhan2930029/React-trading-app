@@ -154,7 +154,7 @@
 
 @media (max-width: 480px) {
     .ex_charges_crud_main {
-        width: 60%;
+        width: 100%;
     }
 
     .ex_charges_top_btn {
@@ -185,6 +185,6 @@
 
     .ex_charges_t_head_row th,
     .ex_charges_t_body_row td {
-        padding: 6px 8px;
+        padding: 8px 24px;
     }
 }

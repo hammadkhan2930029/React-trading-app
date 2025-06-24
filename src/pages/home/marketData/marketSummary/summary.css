@@ -66,11 +66,25 @@
     width: 90%;
 
 }
+.summary-index{
+    width: 100%;
+    padding: 10px;
 
+}
+.summary_heading_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.submit_btn_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 @media screen and (max-width: 600px) {
     .form_summary{
-        width: 100%;
+        width: 50%;
     }
     .summary_form_main {
         width: 85%;
@@ -100,6 +114,10 @@
     .switchBtn_div{
         width: 70%;
     }
+      .summary_heading_2{
+       margin-left: -46px;
+        
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -113,7 +131,7 @@
         width: 60%;
     }
     .summary_heading_2{
-       margin-left: -90px;
+       margin-left: -80px;
         
     }
 }

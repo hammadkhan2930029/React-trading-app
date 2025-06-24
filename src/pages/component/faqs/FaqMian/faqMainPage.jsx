@@ -7,6 +7,7 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import { useNavigate } from 'react-router-dom';
 import { Nav } from '../../nav/nav';
 import { Footer } from '../../footer/footer';
+import { Navbar2 } from '../../nav/navebar2';
 
 
 
@@ -137,7 +138,7 @@ export const FaqMainPage = () => {
         <motion.div className='faqs_first_div_main_page'>
             <motion.div >
 
-                <Nav />
+                <Navbar2 />
             </motion.div>
             <motion.div className='faqs_heading_div_main_page'>
 

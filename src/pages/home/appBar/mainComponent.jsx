@@ -50,6 +50,8 @@ import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import EditIcon from '@mui/icons-material/Edit';
 import { resetProfile, setProfile } from '../Redux/profileSlice.js';
+import { Holdings } from '../Holdings/holdings.jsx';
+import { reset } from '../Redux/formTypeSlice.js';
 
 
 
@@ -143,9 +145,12 @@ const ResponsiveDrawer = (props) => {
     // ------------------------------------------------------
     const menuItems_one = [
         { value: 1, name: 'Dashboard' },
+        { value: 99, name: 'Holdings' },
+
+        { value: 4, name: 'Buy / Sell' },
         // { value: 2, name: 'Buy' },
         // { value: 3, name: 'Sell' },
-        { value: 4, name: 'Buy / Sell' },
+
 
     ];
     // -------------------------------------------------
@@ -164,8 +169,8 @@ const ResponsiveDrawer = (props) => {
     const menuItems_three = [
         { value: 11, name: 'Overview ' },
         { value: 12, name: 'Summary' },
-        { value: 13, name: 'Overview Index' },
-        { value: 14, name: 'Summary Index' },
+        // { value: 13, name: 'Overview Index' },
+        // { value: 14, name: 'Summary Index' },
 
 
 
@@ -209,6 +214,7 @@ const ResponsiveDrawer = (props) => {
                                 setSelectedIndex_2(null)
                                 setCount_2(null)
                                 dispatch(resetProfile())
+                                dispatch(reset())
 
                                 setDropDownOpen(null)
                                 setDropDownOpen_three(null)
@@ -270,6 +276,7 @@ const ResponsiveDrawer = (props) => {
                                             setSelectedIndex_2(null)
                                             setCount_2(null)
                                             dispatch(resetProfile())
+                                            dispatch(reset())
 
                                             setCount(null)
                                             setSelectedIndex(null)
@@ -335,7 +342,8 @@ const ResponsiveDrawer = (props) => {
                                     setCount(null);
                                     setCount_2(null);
                                     dispatch(resetProfile())
-
+                                    dispatch(reset())
+                                    
                                     setCount_3(null);
                                     setCount_4(78);
                                     setSelectedIndex_4(78)
@@ -343,6 +351,7 @@ const ResponsiveDrawer = (props) => {
                                     setSelectedIndex_2(null)
                                     setSelectedIndex_3(null)
                                     setSelectedIndex(null)
+                                      setMobileOpen(false);
 
                                 }}
                                 sx={{
@@ -369,6 +378,7 @@ const ResponsiveDrawer = (props) => {
                                             setCount_2(item.value)
                                             setSelectedIndex_4(null)
                                             dispatch(resetProfile())
+                                            dispatch(reset())
 
                                             setCount(null)
                                             setSelectedIndex(null)
@@ -409,14 +419,16 @@ const ResponsiveDrawer = (props) => {
                     {/* ------------------------------Developer page------------------------------------- */}
                     <ListItem disablePadding>
                         <ListItemButton onClick={() => {
-                            setSelectedIndex_2(10)
+                            setSelectedIndex_2(null)
                             setCount_2(10)
                             setCount(null)
                             dispatch(resetProfile())
+                            dispatch(reset())
 
                             setSelectedIndex(null)
                             setCount_3(null)
                             setSelectedIndex_3(null)
+                              setMobileOpen(false);
                         }}
                             sx={{
                                 backgroundColor: selectedIndex_2 === 10 ? '#1976d2' : 'transparent',
@@ -462,6 +474,7 @@ const ResponsiveDrawer = (props) => {
                 case 2: return <BuyForm />;
                 case 3: return <SellForm />;
                 case 4: return <CrudOperation />;
+                case 99: return <Holdings />
                 default: return null;
             }
         }

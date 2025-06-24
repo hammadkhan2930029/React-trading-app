@@ -136,7 +136,7 @@ tbody.t_body_Blist tr {
 
 @media (max-width: 480px) {
     .dividen_crud_main_Blist {
-        width: 67%;
+        width: 86%;
     }
 
     .top_btn_Blist {
@@ -145,7 +145,7 @@ tbody.t_body_Blist tr {
     }
 
     .top_btn_buy_Blist {
-        width: 100%;
+        width: 94%;
         text-align: center;
         padding: 12px;
         font-size: 14px;
