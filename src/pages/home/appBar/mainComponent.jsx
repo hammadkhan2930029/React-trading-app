@@ -52,6 +52,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import { resetProfile, setProfile } from '../Redux/profileSlice.js';
 import { Holdings } from '../Holdings/holdings.jsx';
 import { reset } from '../Redux/formTypeSlice.js';
+import { resetSummary } from '../Redux/summarySlice.js';
+import { SummaryDetailPage } from '../marketData/marketSummaryIndex/summaryDetails/summaryDetailsPage.jsx';
 
 
 
@@ -63,9 +65,10 @@ const ResponsiveDrawer = (props) => {
     const formType = useSelector((state) => state.formType.formType);
     const profileFormType = useSelector((state) => state.profile.formType);
     const extra_Charges = useSelector((state) => state.extraCharges.formType)
-    console.log('redux data profile', profileFormType)
-    console.log('formtype', formType)
-    console.log('extra charges ', extra_Charges)
+    const summary = useSelector((state) => state.summary.formType)
+    console.log('summary', summary)
+
+
 
     // ------------------------------------------------------
     const [selectedIndex, setSelectedIndex] = useState(1);
@@ -94,6 +97,8 @@ const ResponsiveDrawer = (props) => {
             // ---------------------
             setCount_2(null)
             setSelectedIndex_2(null)
+            setSelectedIndex_3(null)
+            setCount_3(null)
 
         }
     }, [formType]);
@@ -101,6 +106,8 @@ const ResponsiveDrawer = (props) => {
         if (profileFormType !== null) {
             setCount(null)
             setSelectedIndex(null)
+            setSelectedIndex_3(null)
+            setCount_3(null)
             // -----------------------
             setSelectedIndex_2(profileFormType);
             setCount_2(profileFormType);
@@ -113,11 +120,27 @@ const ResponsiveDrawer = (props) => {
             setSelectedIndex(null)
             setCount_2(null)
             setSelectedIndex_2(null)
+            setSelectedIndex_3(null)
+            setCount_3(null)
             // -----------------------
             setSelectedIndex_4(extra_Charges);
             setCount_4(extra_Charges);
         }
     }, [extra_Charges]);
+    // ----------------------------------------------
+    useEffect(() => {
+        if (summary !== null) {
+            setCount(null)
+            setSelectedIndex(null)
+            setCount_2(null)
+            setSelectedIndex_2(null)
+            setSelectedIndex_4(null)
+            setCount_4(null)
+            // -----------------------
+            setSelectedIndex_3(summary);
+            setCount_3(summary);
+        }
+    }, [summary]);
 
 
 
@@ -184,14 +207,7 @@ const ResponsiveDrawer = (props) => {
 
     ];
 
-    const [hovered, setHovered] = useState(null);
 
-
-
-    const hoverStyle = {
-        backgroundColor: '#B9D9EB'
-    };
-    console.log("Rendering Form with count_4:", count_4);
 
     // ------------------------------------------------------
 
@@ -215,6 +231,7 @@ const ResponsiveDrawer = (props) => {
                                 setCount_2(null)
                                 dispatch(resetProfile())
                                 dispatch(reset())
+                                dispatch(resetSummary())
 
                                 setDropDownOpen(null)
                                 setDropDownOpen_three(null)
@@ -277,6 +294,7 @@ const ResponsiveDrawer = (props) => {
                                             setCount_2(null)
                                             dispatch(resetProfile())
                                             dispatch(reset())
+                                            dispatch(resetSummary())
 
                                             setCount(null)
                                             setSelectedIndex(null)
@@ -285,7 +303,7 @@ const ResponsiveDrawer = (props) => {
                                             // ------------
                                             setIsClosing(false)
                                             setMobileOpen(false)
-                                            // setExtraCharges(false)
+                                            
                                         }}
                                             sx={{
                                                 backgroundColor: selectedIndex_3 === item.value ? '#1976d2' : 'transparent',
@@ -343,15 +361,16 @@ const ResponsiveDrawer = (props) => {
                                     setCount_2(null);
                                     dispatch(resetProfile())
                                     dispatch(reset())
-                                    
+
                                     setCount_3(null);
                                     setCount_4(78);
                                     setSelectedIndex_4(78)
+                                    dispatch(resetSummary())
 
                                     setSelectedIndex_2(null)
                                     setSelectedIndex_3(null)
                                     setSelectedIndex(null)
-                                      setMobileOpen(false);
+                                    setMobileOpen(false);
 
                                 }}
                                 sx={{
@@ -379,6 +398,7 @@ const ResponsiveDrawer = (props) => {
                                             setSelectedIndex_4(null)
                                             dispatch(resetProfile())
                                             dispatch(reset())
+                                            dispatch(resetSummary())
 
                                             setCount(null)
                                             setSelectedIndex(null)
@@ -424,11 +444,12 @@ const ResponsiveDrawer = (props) => {
                             setCount(null)
                             dispatch(resetProfile())
                             dispatch(reset())
+                            dispatch(resetSummary())
 
                             setSelectedIndex(null)
                             setCount_3(null)
                             setSelectedIndex_3(null)
-                              setMobileOpen(false);
+                            setMobileOpen(false);
                         }}
                             sx={{
                                 backgroundColor: selectedIndex_2 === 10 ? '#1976d2' : 'transparent',
@@ -460,9 +481,7 @@ const ResponsiveDrawer = (props) => {
 
 
     const renderForm = () => {
-        console.log('count 4 ', count_4)
-        console.log('count 2 ', count_2)
-        console.log('profile form type ', profileFormType)
+       
 
 
 
@@ -499,7 +518,7 @@ const ResponsiveDrawer = (props) => {
                 case 11: return <OverView />;
                 case 12: return <Summary />;
                 case 13: return <OverviewIndex />;
-                case 14: return <SummaryIndex />;
+                case 14: return <SummaryDetailPage />;
 
 
 

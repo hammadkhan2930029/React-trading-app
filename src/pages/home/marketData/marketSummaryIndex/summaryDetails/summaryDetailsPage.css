@@ -1,4 +1,4 @@
-.overview_index_page {
+.summary_details_page {
     width: 100%;
     margin: 20px auto;
     padding: 15px;
@@ -6,7 +6,31 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-x: auto;
-    margin-top: 20px;
+    margin-top: 80px;
+}
+/* ------------------------------------- */
+.search_main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.search_div{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #848181;
+    border-radius: 5px;
+    margin: 5px;
+}
+.search_input{
+    outline: none;
+    border: none;
+    padding: 18px;
+    width: 90%;
+    font-size: 16px;
+    background-color: transparent;
 }
 
 .overview_heading_index_div {
@@ -86,7 +110,10 @@
     background: #ddd;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+    .search_div{
+        width: 65%;
+    }
     .market_table_container_summary {
         width: 100%;
         overflow-x: auto;
@@ -99,7 +126,11 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
+    .search_main{
+        width: 50%;
+        justify-content: left;
+    }
     .market_table_container_summary {
         width: 85%;
     }

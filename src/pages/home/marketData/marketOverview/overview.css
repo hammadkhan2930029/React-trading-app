@@ -89,11 +89,16 @@
     width: 90%;
 
 }
-.index{
+
+.index {
 
     width: 100%;
     padding: 10px;
 }
+
+
+
+
 
 @media screen and (max-width: 600px) {
     .form_highlights {

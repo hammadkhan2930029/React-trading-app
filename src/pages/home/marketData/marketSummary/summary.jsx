@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import "./summary.css"
 import "react-datepicker/dist/react-datepicker.css";
@@ -10,6 +10,8 @@ import { motion, useInView } from "framer-motion";
 import { useDispatch } from "react-redux";
 import MenuItem from '@mui/material/MenuItem';
 import { SummaryIndex } from '../marketSummaryIndex/summaryIndex';
+import * as XLSX from "xlsx";
+import Papa from "papaparse";
 
 
 
@@ -35,6 +37,42 @@ export const Summary = () => {
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
+    // -----------------------------------------------------
+    const fileInputRef = useRef(null);
+
+    const handleButtonClick = () => {
+        fileInputRef.current.click();
+    };
+    const handleFileUpload = (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const fileExtention = file.name.split('.').pop().toLowerCase();
+
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+            const data = e.target.result;
+
+            if (fileExtention === 'csv') {
+                Papa.parse(data, {
+                    header: ture,
+                    complete: (result) => {
+                        console.log("CSV Data :", result.data)
+                    }
+                });
+
+            } else if (fileExtention === 'xlsx') {
+                const workBook = XLSX.read(data, { type: "binary" })
+                const sheetname = workBook.SheetNames[0];
+                const workSheet = workBook.Sheets[sheetname];
+                const jsonData = XLSX.utils.sheet_to_json(workSheet, { defval: '' });
+                console.log("Exel Data :", jsonData)
+            } else {
+                alert("Only CSV and Exel files are supported")
+            }
+        }
+    }
 
 
     return (
@@ -74,6 +112,25 @@ export const Summary = () => {
                         <div className='form_summary'>
                             <div className='summary_heading_div'>
                                 <span className='summary_heading_2'>Market Summary</span>
+                            </div>
+                            <div style={{ width: '100%', display: 'flex', justifyContent: 'end' }}>
+
+                                <div style={{ textAlign: "center", marginTop: "30px" }}>
+                                    <button
+                                        onClick={handleButtonClick}
+                                        className='importBTN'
+                                    >
+                                        📥 Import Excel or CSV
+                                    </button>
+
+                                    <input
+                                        type="file"
+                                        accept=".csv,.xlsx"
+                                        ref={fileInputRef}
+                                        style={{ display: "none" }}
+                                        onChange={handleFileUpload}
+                                    />
+                                </div>
                             </div>
 
 
