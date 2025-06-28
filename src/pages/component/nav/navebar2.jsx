@@ -3,6 +3,8 @@ import './nav.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DrawerBar } from '../drawer/drawer';
 import logo_t from '../../assets/logo-t.png';
+import newLogo from '../../assets/newLogo1.jpg'
+
 import { useDispatch } from 'react-redux';
 import { setScrollToSection } from '../Redux/scrollSlice';
 
@@ -36,7 +38,7 @@ export const Navbar2 = () => {
         <div>
             <div className={`nav ${isSticky ? 'sticky-nav-main' : ''}`}>
                 <div className="left">
-                    <img className="nav_logo" src={logo_t} alt="Logo" />
+                    <img className="nav_logo" src={newLogo} alt="Logo" />
                 </div>
 
                 <div className="right">

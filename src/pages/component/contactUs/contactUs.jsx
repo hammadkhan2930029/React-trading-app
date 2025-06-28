@@ -60,7 +60,9 @@ export const ContactUs = () => {
 
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div>

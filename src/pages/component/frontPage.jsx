@@ -24,6 +24,8 @@ function FrontPage() {
 
   }, [])
   const chooseUsRef = useRef(null);
+  const aboutRef = useRef(null);
+
   const loginRef = useRef(null);
   const blogsRef = useRef(null)
   const faqRef = useRef(null)
@@ -34,6 +36,10 @@ function FrontPage() {
   useEffect(() => {
     if (scrollToSection === 'chooseUs' && chooseUsRef.current) {
       chooseUsRef.current.scrollIntoView({ behavior: 'smooth' });
+      dispatch(setScrollToSection(null));
+    }
+     if (scrollToSection === 'about' && aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
       dispatch(setScrollToSection(null));
     }
 
@@ -67,7 +73,7 @@ function FrontPage() {
         <div style={{ overflow: 'hidden' }}>
           <Nav chooseUsRef={chooseUsRef} />
           <Navbar />
-          <Cards />
+          <Cards ref={aboutRef}/>
           <FullCard />
 
             <ChooseUs ref={chooseUsRef} />

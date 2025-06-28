@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import './cards.css';
 import { motion, useInView } from "framer-motion";
 import stock7 from '../../assets/stock-7.jpg'
 
-export const Cards = () => {
+export const Cards =forwardRef((props,ref) => {
     const cardVariants = {
         hidden: { opacity: 0, x: -50 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
@@ -15,7 +15,7 @@ export const Cards = () => {
     const inViewTwo = useInView(refTwo, { triggerOnce: true });
 
     return (
-        <div className='mainCards'>
+        <div className='mainCards' ref={ref}>
 
 
             <div className='section_2'>
@@ -58,5 +58,5 @@ export const Cards = () => {
             </div>
         </div>
     );
-};
+})
 
