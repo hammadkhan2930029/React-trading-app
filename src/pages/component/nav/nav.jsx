@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './nav.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DrawerBar } from '../drawer/drawer';
-// import logo_t from '../../assets/logo-t.png';
-// import newLogo from '../../assets/newLogo1.jpg'
+
 import tradingLogo3 from '../../assets/tradingLogo3.png'
 
 import { useDispatch } from 'react-redux';
@@ -94,16 +93,7 @@ export const Nav = () => {
                                 Blogs
                             </span>
 
-                            <span
-                                style={{ color: location.pathname === '/contactUs' ? 'blue' : '#000' }}
-                                className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
-                                onClick={() => {
-                                    setColor(null)
-                                    navigate('/contactUs')
-                                }}
-                            >
-                                Contact
-                            </span>
+                          
 
                             <span
                                 style={{ color: color == 4 || location.pathname === '/faqMainPage' ? 'blue' : '#000' }}
@@ -115,6 +105,16 @@ export const Nav = () => {
                                 }}
                             >
                                 FAQs
+                            </span>
+                              <span
+                                style={{ color: location.pathname === '/contactUs' ? 'blue' : '#000' }}
+                                className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
+                                onClick={() => {
+                                    setColor(null)
+                                    navigate('/contactUs')
+                                }}
+                            >
+                                Contact
                             </span>
 
                             <span

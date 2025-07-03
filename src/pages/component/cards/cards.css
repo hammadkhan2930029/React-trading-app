@@ -193,11 +193,31 @@
 
 /* 991px to 768px */
 @media (max-width: 991px) {
-   
+     .section_2{
+        flex-direction: column;
+    }
+    .textSection{
+        width: 100%;
+    }
+    .h_phone_div{
+        width: 100%;
+    }
+   .headphone2{
+        width: 100%;
+    }
 }
 
 /* 767px to 576px */
 @media (max-width: 767px) {
+    .section_2{
+        flex-direction: column;
+    }
+    .textSection{
+        width: 100%;
+    }
+    .h_phone_div{
+        width: 100%;
+    }
     .headphone2{
         width: 100%;
     }
@@ -214,35 +234,35 @@
     .section_2{
         flex-direction: column-reverse;
     }
-    .mainCards {
+    /* .mainCards {
         margin-top: 45%;
     
     
-    }
+    } */
     .textSection{
         width: 100%;
-        padding-top: 50px;
+        /* padding-top: 50px; */
     }
     .h_phone_div{
         width: 100%;
     }
-    .mainCards {
+    /* .mainCards {
         margin-top: 70%;
     
     
-    }
+    } */
     
  
 
 }
 
 @media (max-width: 440px) {
-    .mainCards {
+    /* .mainCards {
         margin-top: -21%;
     
         padding: 5px;
     
-    }
+    } */
     .outstanding{
         font-size: 28px;
     }

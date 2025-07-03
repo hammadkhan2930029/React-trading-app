@@ -17,12 +17,12 @@ export const Navbar = () => {
    
       {/* ---------------------------------------------------------- */}
       <div>
-        <div className='shap-container'>
+        {/* <div className='shap-container'>
 
           <div className='shaper'>
 
           </div>
-        </div>
+        </div> */}
 
         {/* ----------------------------- */}
         <div className='container'>
@@ -32,13 +32,7 @@ export const Navbar = () => {
             <h4 className='h4'>The actual financial information source you need for your portfolio.</h4>
 
           </div>
-          {/* <motion.div className="imgDiv" >
-
-
-            <img className='img' src={stockreport} />
-
-
-          </motion.div> */}
+         
         </div>
       </div>
     

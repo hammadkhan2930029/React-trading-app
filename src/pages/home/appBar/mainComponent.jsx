@@ -22,14 +22,13 @@ import { BrokerForm } from '../brokerForm/brokerForm.jsx';
 import { StockName } from '../stockName/stockName.jsx';
 import CrudOperation from '../CrudSystem/crudOperation.jsx';
 import { DashboardView } from '../dashboardView/dashboardView.jsx';
-import logo from '../../../images/logo.png'
 import ProfilePage from '../profile/profile.jsx';
 import SettingsIcon from '@mui/icons-material/Settings';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useDispatch, useSelector } from "react-redux";
 import { setOneTime, setmonthly, setChargesList } from "../Redux/extrachargesSlice.js";
-
+import tradingLogo3 from '../../assets/tradingLogo3.png';
 import { EditeProfile } from '../editeProfile/editeProfile.jsx';
 import { Dividen } from '../Dividen/dividen.jsx';
 import DividenList from '../dividenList/dividenList.jsx';
@@ -214,7 +213,7 @@ const ResponsiveDrawer = (props) => {
     const drawer = (
         <div style={{ backgroundColor: '#FAF9F6', color: '#000', height: '100%' }}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
-                <img src={logo} style={{ width: 100, height: 100 }} />
+                <img src={tradingLogo3} style={{ width: '100%'}} />
             </div>
             <Divider />
             {/* -------------------------------------------------------------------------------------- */}
