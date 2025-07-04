@@ -1,3 +1,4 @@
+import { AboutUs } from "../component/aboutUs/aboutUs";
 import { BlogsCard } from "../component/blogs/blogsCard";
 import { BlogsDetails } from "../component/blogs/blogsDetail/blogsDetails";
 import { BlogsMultiCards } from "../component/blogs/blogsmultiCard/blogsMultiCards";
@@ -22,7 +23,7 @@ export const routes = [
   { path: '/buyForm', element: <BuyForm /> },
   { path: '/sellForm', element: <SellForm /> },
   { path: '/crudOperation', element: <CrudOperation /> },
-  { path: '/landingPage', element: <FrontPage /> },
+  { path: '/frontPage', element: <FrontPage /> },
   { path: '/responsiveDrawer', element: <ResponsiveDrawer /> },
   { path: '/blogsMultiCards', element: <BlogsMultiCards /> },
   { path: '/blogsDetails', element: <BlogsDetails /> },
@@ -33,10 +34,7 @@ export const routes = [
   { path: '/contactUs', element: <ContactUs /> },
   { path: '/onetime', element: <OneTime /> },
   { path: '/monthly', element: <Monthly /> },
-
-
-
-
+  { path: '/aboutUs', element: <AboutUs /> },
 
 
 ];

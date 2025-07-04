@@ -15,8 +15,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 const menuItems = [
-  { id: 1, name: "Home", path: "/landingPage" },
-  { id: 2, name: "About", path: "/about" },
+  { id: 1, name: "Home", path: "/frontPage" },
+  { id: 2, name: "About", path: "/aboutUs" },
   { id: 3, name: "Blogs", path: "/blogsMultiCards" },
   { id: 4, name: "Contact", path: "/contactUs" },
   { id: 5, name: "Faqs", path: "/faqMainPage" },

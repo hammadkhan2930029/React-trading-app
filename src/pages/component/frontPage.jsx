@@ -38,10 +38,10 @@ function FrontPage() {
       chooseUsRef.current.scrollIntoView({ behavior: 'smooth' });
       dispatch(setScrollToSection(null));
     }
-     if (scrollToSection === 'about' && aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-      dispatch(setScrollToSection(null));
-    }
+    //  if (scrollToSection === 'about' && aboutRef.current) {
+    //   aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+    //   dispatch(setScrollToSection(null));
+    // }
 
     if (scrollToSection === 'login' && loginRef.current) {
       loginRef.current.scrollIntoView({ behavior: 'smooth' });

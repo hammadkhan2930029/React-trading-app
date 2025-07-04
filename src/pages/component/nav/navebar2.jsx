@@ -46,9 +46,9 @@ export const Navbar2 = () => {
                     ) : (
                         <div>
                             <span
-                                style={{ color: location.pathname === '/landingPage' ? 'blue' : '#000' }}
+                                style={{ color: location.pathname === '/frontPage' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
-                                onClick={() => navigate('/landingPage')}
+                                onClick={() => navigate('/frontPage')}
                             >
                                 Home
                             </span>
@@ -59,10 +59,8 @@ export const Navbar2 = () => {
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
                                     setColor(1);
-                                    dispatch(setScrollToSection('chooseUs'));
-                                    if (location.pathname !== '/landingPage') {
-                                        navigate('/landingPage');
-                                    }
+                                    navigate('/aboutUs');
+                                    
                                 }}
                             >
                                 About
@@ -111,8 +109,8 @@ export const Navbar2 = () => {
                                 onClick={() => {
                                     setColor(4);
                                     dispatch(setScrollToSection('login'));
-                                    if (location.pathname !== '/landingPage') {
-                                        navigate('/landingPage');
+                                    if (location.pathname !== '/frontPage') {
+                                        navigate('/frontPage');
                                     }
                                 }}
                             >

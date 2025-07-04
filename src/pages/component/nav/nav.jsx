@@ -47,9 +47,9 @@ export const Nav = () => {
                     ) : (
                         <div>
                             <span
-                                style={{ color: location.pathname === '/landingPage' ? 'blue' : '#000' }}
+                                style={{ color: location.pathname === '/frontPage' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
-                                onClick={() => navigate('/landingPage')}
+                                onClick={() => navigate('/frontPage')}
                             >
                                 Home
                             </span>
@@ -61,7 +61,7 @@ export const Nav = () => {
                                 onClick={() => {
                                     // dispatch(setScrollToSection('chooseUs'))
                                     dispatch(setScrollToSection('about'))
-
+                                    navigate('/aboutUs')
                                     setColor(1)
                                 }}
                             >
@@ -93,7 +93,7 @@ export const Nav = () => {
                                 Blogs
                             </span>
 
-                          
+
 
                             <span
                                 style={{ color: color == 4 || location.pathname === '/faqMainPage' ? 'blue' : '#000' }}
@@ -106,7 +106,7 @@ export const Nav = () => {
                             >
                                 FAQs
                             </span>
-                              <span
+                            <span
                                 style={{ color: location.pathname === '/contactUs' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
