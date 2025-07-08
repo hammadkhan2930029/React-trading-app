@@ -14,6 +14,7 @@
     background-image: url('../../assets/cover6.jpg');
     background-size: cover; 
     color: #000;
+    /* margin-top: 230px; */
 }
 
 .textside {
@@ -81,7 +82,9 @@
 
 /* 767px to 576px */
 @media (max-width: 767px) {
-    
+    /* .container{
+        margin-top: 190px;
+    } */
 
     .textside {
         padding: 35px;

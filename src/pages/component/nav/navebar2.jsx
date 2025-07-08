@@ -55,11 +55,12 @@ export const Navbar2 = () => {
 
                             
                             <span
-                                style={{ color: color == 1 ? 'blue' : '#000' }}
+                                style={{color: color == 1 || location.pathname === '/aboutUs' ? 'blue' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
                                     setColor(1);
                                     navigate('/aboutUs');
+                                    setColor(1)
                                     
                                 }}
                             >

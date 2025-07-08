@@ -13,6 +13,7 @@ import { LoginPage } from './login_singup/login_signup'
 import { useSelector, useDispatch } from 'react-redux';
 import { setScrollToSection } from './Redux/scrollSlice';
 import { clearScrollToSection } from './Redux/scrollSlice';
+import { HowWorks } from './How/howWorks';
 
 function FrontPage() {
   const [count, setCount] = useState(true)
@@ -73,10 +74,11 @@ function FrontPage() {
         <div style={{ overflow: 'hidden' }}>
           <Nav chooseUsRef={chooseUsRef} />
           <Navbar />
-          <Cards ref={aboutRef}/>
+          <Cards ref={aboutRef} />
           <FullCard />
 
-            <ChooseUs ref={chooseUsRef} />
+          <ChooseUs  />
+          <HowWorks ref={chooseUsRef}/>
           <LoginPage ref={loginRef} />
           <BlogsCard ref={blogsRef} />
           <Faqs ref={faqRef} />

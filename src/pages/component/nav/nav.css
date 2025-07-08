@@ -4,9 +4,9 @@
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    /* position: absolute; */
-    /* top: 0; */
-    /* z-index: 999; */
+    /* position: fixed; */
+    top: 0;
+    z-index: 999;
     padding: 8px;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;

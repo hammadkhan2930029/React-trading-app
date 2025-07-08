@@ -1,4 +1,7 @@
+import React, { useEffect, useState } from 'react';
+
 import { Footer } from '../footer/footer'
+
 import { Navbar2 } from '../nav/navebar2'
 import './aboutUs.css';
 import team from '../../assets/team.jpg'
@@ -7,13 +10,28 @@ import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import BuildIcon from '@mui/icons-material/Build';
 import demoIcon from '../../assets/demoIcon.png';
 import demoIcon1 from '../../assets/demoIcon1.png';
+import { motion, useInView } from "framer-motion";
 
 export const AboutUs = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+    // ----------------------------------------------------------
+    const refOne = React.useRef(null);
+
+    const inViewOne = useInView(refOne, { triggerOnce: true });
+
     return (
         <div>
             <Navbar2 />
             <div className='aboutMain'>
-                <div className="about-container">
+                <motion.div
+                    className="about-container"
+                    ref={refOne}
+                    initial={{ opacity: 0, y: -100 }}
+                    animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: .8 }}>
+
                     <div className="about-text">
                         <h2>Who We Are</h2>
                         <p>
@@ -39,10 +57,12 @@ export const AboutUs = () => {
                         <div className="blue-block"></div>
                         <img src={team} alt="Team" className="about-image" />
                     </div>
-                </div>
+                </motion.div>
                 {/* ----------------------------------------------------------- */}
-                <div className='mission_vision_main'>
-                    <div className='mission_vision'>
+                <motion.div className='mission_vision_main'>
+                    <motion.div
+                       
+                        className='mission_vision'>
                         <div className='mission_vision_heading'>
                             <TrackChangesIcon sx={{ fontSize: '52px' }} />
                             <span>Mission Statement</span>
@@ -52,8 +72,10 @@ export const AboutUs = () => {
                             years of industry experience to deliver scalable, high-performance
                             solutions – from web and mobile app development to SEO and digital
                             marketing.</span>
-                    </div>
-                    <div className='mission_vision'>
+                    </motion.div>
+                    <motion.div
+                       
+                        className='mission_vision'>
                         <div className='mission_vision_heading'>
                             <RemoveRedEyeIcon sx={{ fontSize: '52px' }} />
                             <span>Vision Statement</span>
@@ -63,10 +85,11 @@ export const AboutUs = () => {
                             years of industry experience to deliver scalable, high-performance
                             solutions – from web and mobile app development to SEO and digital
                             marketing.</span>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
                 {/* ----------------------------------------------------------- */}
-                <div className='tools_div'>
+                <motion.div
+                    className='tools_div'>
                     <div>
                         <span className='tools_Heading'>Our Tools and Widgets <BuildIcon sx={{ fontSize: '42px' }} /></span>
                     </div>
@@ -135,7 +158,7 @@ export const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
             <Footer />
