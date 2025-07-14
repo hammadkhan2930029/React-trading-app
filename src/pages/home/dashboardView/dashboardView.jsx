@@ -14,15 +14,10 @@ import Logout from '@mui/icons-material/Logout';
 
 import SearchIcon from '@mui/icons-material/Search';
 import PaidIcon from '@mui/icons-material/Paid';
-// ---------------------------------------------------
 import Button from '@mui/material/Button';
-// -----------------------------------------------------
 import './dashboardView.css';
-import avatar from '../../../images/avatar.jpg';
-import india from '../../../images/india.png';
-import england from '../../../images/england.png';
 
-import flag from '../../../images/flag.png';
+import holding from '../../assets/holding.jpg'
 import { Card_1 } from './card_1/card_1';
 import { Card_2 } from './card_2/card_2';
 import Card_3 from './card_3/card_3';
@@ -30,6 +25,17 @@ import Card_4 from './card_4/card_4';
 import { OverviewList } from './overviewDataList/overviewList';
 import { useDispatch } from 'react-redux';
 import { holdings_details } from '../Redux/formTypeSlice';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import TrendingDownIcon from '@mui/icons-material/TrendingDown';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoneyBillTrendUp } from '@fortawesome/free-solid-svg-icons';
+import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
+import ScoreIcon from '@mui/icons-material/Score';
+import Filter9PlusIcon from '@mui/icons-material/Filter9Plus';
 
 export const DashboardView = () => {
 
@@ -57,122 +63,125 @@ export const DashboardView = () => {
     }, [])
     return (
         <div className='dashboard_main'>
-            {/* --------------------------top bar------------------------------------ */}
-            {/* <div className='top_bar'>
 
-                <div className='search_bar'>
-                    <input placeholder='Search' className='input' />
-                    <SearchIcon />
-
-                </div>
-
-            </div> */}
             {/* ----------------------------small cards-------------------------------------- */}
             <div className='main_card_view'>
-                {/* -------------------one----------------------- ---------------*/}
+
+                {/* ---------------------2------------------------------------ */}
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <Filter9PlusIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                        </div>
+                        <div className='price'>
+                            <span className='h_6'>Total No. of Trades</span>
+                            <span className='h_1'>350</span>
+                        </div>
+                    </div>
+                </div>
+                {/* ---------------------3------------------------------------ */}
+                <div className="card">
+                    <div className='card_1_data'>
+                        <div className='card_icon'>
+                            <TrendingUpIcon style={{ width: 50, height: 50, textAlign: 'center', color: 'green' }} />
+                        </div>
+                        <div className='price'>
+                            <span className='h_6'>Win Trades (%)</span>
+                            <span className='h_1'>65%</span>
+                        </div>
+                    </div>
+                </div>
+                {/* ---------------------4------------------------------------ */}
+                <div className="card">
+                    <div className='card_1_data'>
+                        <div className='card_icon'>
+                            <TrendingDownIcon style={{ width: 50, height: 50, textAlign: 'center', color: 'red' }} />
+                        </div>
+                        <div className='price'>
+                            <span className='h_6'>Loss Trades (%)</span>
+                            <span className='h_1'>35%</span>
+                        </div>
+                    </div>
+                </div>
+                {/* -------------------5--------------------------------------*/}
+                <div className="card">
+                    <div className='card_1_data'>
+                        <div className='card_icon'>
+                            <FontAwesomeIcon icon={faMoneyBillTrendUp} style={{ width: 50, height: 50, textAlign: 'center' }} />
+
                         </div>
                         <div className='price'>
                             <span className='h_6'>Total Earning</span>
-                            <span className='h_1'>$350.5</span>
+                            <span className='h_1'>350.5</span>
                         </div>
                     </div>
                 </div>
-                {/* ---------------------two------------------------------------ */}
+                {/* ---------------------6------------------------------------ */}
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <CurrencyExchangeIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
                         </div>
                         <div className='price'>
                             <span className='h_6'>Total Investment</span>
-                            <span className='h_1'>$350.5</span>
+                            <span className='h_1'>350.5</span>
                         </div>
                     </div>
                 </div>
-                {/* ---------------------------three------------------------------ */}
+
+
+                {/* ---------------------------7------------------------------ */}
 
                 <div className="card">
-                    <div className='card_data_3'>
-                        <span className="sale_text1">Profit / lose</span>
-                        <span className="sale_text2">$3562.25</span>
-                        <span className="sale_text3">lose : $253</span>
+                    <div className='card_3'>
+
+                        <div className='card_icon'>
+                            <ScoreIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                        </div>
+                        <div className='card_data_3'>
+                            <span className="sale_text1">Profit / lose</span>
+                            <span className="sale_text2">3562.25</span>
+                            <span className="sale_text3">lose : 253</span>
+                        </div>
                     </div>
+
                 </div>
-                {/* ----------------------------four------------------------------ */}
+                {/* ----------------------------8------------------------------ */}
                 <div className="card" onClick={() => dispatch(holdings_details())}>
                     <div className='card_4_data'>
+                        <div className='card_icon'>
+                            <BusinessCenterOutlinedIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                        </div>
                         <div className='card_4_text' >
                             <span className="sale_text1">Holdings</span>
                             <span className="sale_text2">10</span>
 
                         </div>
-                        <div>
-                            <Button
-                                id="basic-button"
-                                aria-controls={open2 ? 'basic-menu' : undefined}
-                                aria-haspopup="true"
-                                aria-expanded={open2 ? 'true' : undefined}
-                                onClick={handleClick2}
-                            >
-                                <img className='flag' src={flag} />
-                            </Button>
-                            <Menu
-                                id="basic-menu"
-                                anchorEl={anchorEl2}
-                                open={open2}
-                                onClose={handleClose2}
-                                MenuListProps={{
-                                    'aria-labelledby': 'basic-button',
-                                }}
-                            >
-                                <MenuItem onClick={handleClose2}>
-                                    <div className='menu_item'>
-                                        <img className='menu_icon' src={flag} />
-                                        <span className='menu_text'>Pakistan</span>
-                                    </div>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose2}>
-                                    <div className='menu_item'>
-                                        <img className='menu_icon' src={india} />
-                                        <span className='menu_text'>India</span>
-                                    </div></MenuItem>
-                                <MenuItem onClick={handleClose2}>
-                                    <div className='menu_item'>
-                                        <img className='menu_icon' src={england} />
-                                        <span className='menu_text'>England</span>
-                                    </div></MenuItem>
-                            </Menu>
 
-
-                        </div>
                     </div>
                 </div>
 
-                {/* ------------------------------five---------------------------- */}
+                {/* ------------------------------9---------------------------- */}
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <AccountBalanceWalletOutlinedIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
                         </div>
                         <div className='price'>
                             <span className='h_6'>Dividend</span>
-                            <span className='h_1'>$350.5</span>
+                            <span className='h_1'>350.5</span>
                         </div>
                     </div>
                 </div>
-                {/* ---------------------------------six-------------------------- */}
+                {/* ---------------------------------10-------------------------- */}
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <PaidIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <WorkspacePremiumIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
                         </div>
                         <div className='price'>
                             <span className='h_6'>Bonus</span>
-                            <span className='h_1'>$350.5</span>
+                            <span className='h_1'>350.5</span>
                         </div>
                     </div>
                 </div>

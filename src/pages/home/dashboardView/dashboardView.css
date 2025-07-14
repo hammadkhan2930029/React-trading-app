@@ -47,13 +47,14 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
 }
 
 .card {
     background-color: #fff;
-    width: 31%;
+    width: 23%;
     height: 110px;
     margin: 10px;
     border-radius: 20px;
@@ -79,12 +80,14 @@
 
 .card_icon {
     background-color: #f4f7fe;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5px;
+
+
 }
 
 .price {
@@ -97,6 +100,10 @@
 .h_1 {
     font-size: 28px;
     font-weight: 700;
+}
+.card_3{
+      display: flex;
+    align-items: center;
 }
 
 .card_data_3 {
@@ -127,8 +134,7 @@
 .card_4_data {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
+    }
 
 .flag {
     width: 55px;
