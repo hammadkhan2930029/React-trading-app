@@ -17,6 +17,19 @@
 
 
 }
+.withdrawl{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+}
 
 .withdrawal_heading-oneTime {
     color: #000;
@@ -245,15 +258,15 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media  (max-width: 600px) {
     .withdrawal_form-oneTime {
         width: 95%;
     }
 }
 
-@media screen and (max-width: 430px) {
+@media  (max-width: 440px) {
     .withdrawal_form-oneTime {
-        width: 90%;
+        width: 100%;
     }
 }
 

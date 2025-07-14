@@ -165,8 +165,8 @@ export const Withdrawal = () => {
                                     sx={{ '& .MuiTextField-root': { m: 2, width: isMobile ? '32ch' : '40ch' } }}
                                     noValidate
                                     autoComplete="off"
-                                    className='withdrawal_form-oneTime'>
-                                    <div>
+                                   >
+                                    <div className='withdrawl'>
                                         <TextField
                                             type='date'
                                             id="outlined-required"

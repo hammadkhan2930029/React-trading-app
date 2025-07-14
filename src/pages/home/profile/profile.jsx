@@ -1,16 +1,32 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./profile.css";
 import avatar from '../../../images/avatar.jpg';
 import EditIcon from '@mui/icons-material/Edit';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setEditeProfile } from "../Redux/profileSlice";
 import { motion, useInView } from "framer-motion";
 import { EditeProfile } from "../editeProfile/editeProfile";
 import { TotalInvestment } from "./totalInvestment/totalInvestmentForm";
 import { Withdrawal } from "./withdraw/withdrawal";
+import { JournalIndex } from "./Trading_journal/index/journal_index";
+import { TradeCard } from "./Trading_journal/view/TradeCardView";
+import { setTradingJournal_from, setTradingJournal_View } from "../Redux/tradingJournalSlice";
+import { reset } from "../Redux/tradingJournalSlice";
+import { JournalForm } from "./Trading_journal/trading_journal_form/journalForm";
+import { Edit_JournalForm } from "./Trading_journal/Edit_journal_form/editJournalForm";
+
 
 const ProfilePage = () => {
+
+
+  const journalTrade = useSelector((state) => state.tradingJournal.formType);
   const [profileComponents, setProfileComponents] = useState(1)
+ useEffect(() => {
+  if (journalTrade !== null) {
+    setProfileComponents(journalTrade);
+  }
+}, [journalTrade]);
+  // -------------------------------------------
   const dispatch = useDispatch()
   const refOne = React.useRef(null);
   const refTwo = React.useRef(null);
@@ -36,11 +52,32 @@ const ProfilePage = () => {
 
           </motion.div>
           <div className="profile_menu">
-            <span className="menu_items" style={{ backgroundColor: profileComponents === 1 && '#1976d2', color: profileComponents === 1 && '#fff' }} onClick={() => setProfileComponents(1)}>Profile Details</span>
-            <span className="menu_items" style={{ backgroundColor: profileComponents === 2 && '#1976d2', color: profileComponents === 2 && '#fff' }} onClick={() => setProfileComponents(2)}>Edit Profile</span>
-            <span className="menu_items" style={{ backgroundColor: profileComponents === 3 && '#1976d2', color: profileComponents === 3 && '#fff' }} onClick={() => setProfileComponents(3)}>Total investemnt</span>
-            <span className="menu_items" style={{ backgroundColor: profileComponents === 4 && '#1976d2', color: profileComponents === 4 && '#fff' }} onClick={() => setProfileComponents(4)}>Withdrawal</span>
-
+            <span className="menu_items" style={{ backgroundColor: profileComponents === 1 && '#1976d2', color: profileComponents === 1 && '#fff' }}
+              onClick={() => {
+                setProfileComponents(1)
+                dispatch(reset())
+              }}
+            >Profile Details</span>
+            <span className="menu_items" style={{ backgroundColor: profileComponents === 2 && '#1976d2', color: profileComponents === 2 && '#fff' }}
+              onClick={() => {
+                setProfileComponents(2)
+                dispatch(reset())
+              }}>Edit Profile</span>
+            <span className="menu_items" style={{ backgroundColor: profileComponents === 3 && '#1976d2', color: profileComponents === 3 && '#fff' }}
+              onClick={() => {
+                setProfileComponents(3)
+                dispatch(reset())
+              }}>Total investemnt</span>
+            <span className="menu_items" style={{ backgroundColor: profileComponents === 4 && '#1976d2', color: profileComponents === 4 && '#fff' }}
+              onClick={() => {
+                setProfileComponents(4)
+                dispatch(reset())
+              }}>Withdrawal</span>
+            <span className="menu_items" style={{ backgroundColor: [5,6,7,8].includes(profileComponents) ? '#1976d2' : '', color: [5,6,7,8].includes(profileComponents) ? "#fff" :'' }}
+              onClick={() => {
+                setProfileComponents(5)
+                dispatch(reset())
+              }}>Trading Journal</span>
 
 
 
@@ -67,6 +104,14 @@ const ProfilePage = () => {
           {profileComponents === 2 && (<EditeProfile />)}
           {profileComponents === 3 && (<TotalInvestment />)}
           {profileComponents === 4 && (<Withdrawal />)}
+          {profileComponents === 5 && (<JournalIndex />)}
+          {profileComponents === 6 && (<JournalForm />)}
+          {profileComponents === 7 && (<TradeCard />)}
+          {profileComponents === 8 && (<Edit_JournalForm />)}
+
+
+
+
 
 
 

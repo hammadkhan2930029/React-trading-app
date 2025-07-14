@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 
-.form-oneTime {
+.investment_form_oneTime{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -187,11 +187,7 @@
         font-size: 14px;
     }
 }
-@media (max-width: 600px) {
-    .form-oneTime {
-        width: 95%;
-    }
-}
+
 
 @media (max-width: 480px) {
     .investment_crud_main_onetime {
@@ -226,20 +222,20 @@
 
 /* ------------------- Form Responsiveness ------------------- */
 
-@media screen and (max-width: 600px) {
-    .form-oneTime {
+@media  (max-width: 600px) {
+    .investment_form_oneTime{
         width: 95%;
     }
 }
 
-@media screen and (max-width: 430px) {
-    .form-oneTime {
-        width: 90%;
+@media  (max-width: 440px) {
+    .investment_form_oneTime {
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 360px) {
-    .form-oneTime {
+@media  (max-width: 360px) {
+    .investment_form_oneTime {
         width: 95%;
     }
 }

@@ -5,6 +5,7 @@ import loginReducer from './loginSlice';
 import scrollReducer from '../../component/Redux/scrollSlice'; // Add this line
 import extrachargesReducer from '../Redux/extrachargesSlice';
 import summaryReducer from './summarySlice';
+import tradingJournalReducer from './tradingJournalSlice'
 
 
 const store = configureStore({
@@ -15,6 +16,7 @@ const store = configureStore({
     scroll: scrollReducer,
     extraCharges: extrachargesReducer,
     summary: summaryReducer,
+    tradingJournal:tradingJournalReducer,
 
     // Add this here too
   },

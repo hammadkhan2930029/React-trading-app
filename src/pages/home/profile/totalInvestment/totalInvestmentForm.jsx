@@ -177,7 +177,7 @@ export const TotalInvestment = () => {
                                     noValidate
                                     autoComplete="off"
                                     >
-                                    <div className='form-oneTime '>
+                                    <div className='investment_form_oneTime '>
                                         <TextField
                                             type='date'
                                             id="outlined-required"

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
 import { Footer } from '../footer/footer'
-
 import { Navbar2 } from '../nav/navebar2'
 import './aboutUs.css';
 import team from '../../assets/team.jpg'
