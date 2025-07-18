@@ -53,6 +53,7 @@ import { Holdings } from '../Holdings/holdings.jsx';
 import { reset } from '../Redux/formTypeSlice.js';
 import { resetSummary } from '../Redux/summarySlice.js';
 import { SummaryDetailPage } from '../marketData/marketSummaryIndex/summaryDetails/summaryDetailsPage.jsx';
+import { RulesView } from '../RulesView/rulesView.jsx';
 
 
 
@@ -438,7 +439,7 @@ const ResponsiveDrawer = (props) => {
                     {/* ------------------------------Developer page------------------------------------- */}
                     <ListItem disablePadding>
                         <ListItemButton onClick={() => {
-                            setSelectedIndex_2(null)
+                            setSelectedIndex_2(10)
                             setCount_2(10)
                             setCount(null)
                             dispatch(resetProfile())
@@ -458,6 +459,36 @@ const ResponsiveDrawer = (props) => {
                                 <ContactPageIcon />
                             </ListItemIcon >
                             <ListItemText primary={"Developer"} sx={{ color: selectedIndex_2 === 10 ? '#fff' : '#000', }} />
+
+
+
+                        </ListItemButton>
+
+
+                    </ListItem>
+                    {/* ------------------------------------------------------------------------------------ */}
+                    <ListItem disablePadding>
+                        <ListItemButton onClick={() => {
+                            setSelectedIndex_2(222)
+                            setCount_2(222)
+                            setCount(null)
+                            dispatch(resetProfile())
+                            dispatch(reset())
+                            dispatch(resetSummary())
+
+                            setSelectedIndex(null)
+                            setCount_3(null)
+                            setSelectedIndex_3(null)
+                            setMobileOpen(false);
+                        }}
+                            sx={{
+                                backgroundColor: selectedIndex_2 === 222 ? '#1976d2' : 'transparent',
+                                '&:hover': { backgroundColor: '#B9D9EB' }
+                            }} >
+                            <ListItemIcon sx={{ color: selectedIndex_2 === 222 ? '#fff' : '#000', }}>
+                                <ContactPageIcon />
+                            </ListItemIcon >
+                            <ListItemText primary={"My Rules Book"} sx={{ color: selectedIndex_2 === 222 ? '#fff' : '#000', }} />
 
 
 
@@ -507,6 +538,8 @@ const ResponsiveDrawer = (props) => {
                 case 8: return <ProfilePage />;
                 case 9: return <EditeProfile />;
                 case 10: return <Developers />;
+                case 222: return <RulesView />;
+
 
                 default: return null;
             }

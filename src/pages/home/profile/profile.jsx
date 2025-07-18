@@ -14,6 +14,7 @@ import { setTradingJournal_from, setTradingJournal_View } from "../Redux/trading
 import { reset } from "../Redux/tradingJournalSlice";
 import { JournalForm } from "./Trading_journal/trading_journal_form/journalForm";
 import { Edit_JournalForm } from "./Trading_journal/Edit_journal_form/editJournalForm";
+import { RuleForm } from "./Rules/rules";
 
 
 const ProfilePage = () => {
@@ -78,6 +79,12 @@ const ProfilePage = () => {
                 setProfileComponents(5)
                 dispatch(reset())
               }}>Trading Journal</span>
+              <span className="menu_items" style={{ backgroundColor: profileComponents === 9 && '#1976d2', color: profileComponents === 9 && '#fff' }}
+              onClick={() => {
+                setProfileComponents(9)
+                dispatch(reset())
+              }}>Rules</span>
+             
 
 
 
@@ -108,6 +115,8 @@ const ProfilePage = () => {
           {profileComponents === 6 && (<JournalForm />)}
           {profileComponents === 7 && (<TradeCard />)}
           {profileComponents === 8 && (<Edit_JournalForm />)}
+          {profileComponents === 9 && (<RuleForm />)}
+
 
 
 

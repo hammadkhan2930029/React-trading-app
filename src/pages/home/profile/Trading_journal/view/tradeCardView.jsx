@@ -81,6 +81,11 @@ export const TradeCard = () => {
                         <td><span className="profit">197,354 (Profit)</span></td>
                         <td></td>
                     </tr>
+                     <tr>
+                        <td>Total Duration :</td>
+                        <td>140 days</td>
+                        <td></td>
+                    </tr>
                     <tr>
                         <td>Scrip Behaviour :</td>
                         <td>Volatile</td>

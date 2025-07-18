@@ -6,10 +6,10 @@ import SendIcon from '@mui/icons-material/Send';
 import Fab from '@mui/material/Fab';
 import TextField from '@mui/material/TextField';
 import { motion, useInView } from "framer-motion";
+import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch } from 'react-redux';
 import { setChargesList } from '../../Redux/extrachargesSlice';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import EditIcon from '@mui/icons-material/Edit';
 import { Box, Button, Typography, Modal, Grid, TablePagination } from '@mui/material';
 
 const style = {

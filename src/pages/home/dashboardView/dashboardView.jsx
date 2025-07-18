@@ -67,11 +67,11 @@ export const DashboardView = () => {
             {/* ----------------------------small cards-------------------------------------- */}
             <div className='main_card_view'>
 
-                {/* ---------------------2------------------------------------ */}
+                {/* ---------------------1------------------------------------ */}
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <Filter9PlusIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <Filter9PlusIcon style={{ width: 50, height: 50, textAlign: 'center',color: 'blue' }} />
                         </div>
                         <div className='price'>
                             <span className='h_6'>Total No. of Trades</span>
@@ -79,7 +79,7 @@ export const DashboardView = () => {
                         </div>
                     </div>
                 </div>
-                {/* ---------------------3------------------------------------ */}
+                {/* ---------------------2------------------------------------ */}
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
@@ -91,7 +91,7 @@ export const DashboardView = () => {
                         </div>
                     </div>
                 </div>
-                {/* ---------------------4------------------------------------ */}
+                {/* ---------------------3------------------------------------ */}
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
@@ -103,11 +103,11 @@ export const DashboardView = () => {
                         </div>
                     </div>
                 </div>
-                {/* -------------------5--------------------------------------*/}
+                {/* -------------------4--------------------------------------*/}
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <FontAwesomeIcon icon={faMoneyBillTrendUp} style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <FontAwesomeIcon icon={faMoneyBillTrendUp} style={{ width: 50, height: 50, textAlign: 'center',color: 'green' }} />
 
                         </div>
                         <div className='price'>
@@ -120,7 +120,7 @@ export const DashboardView = () => {
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <CurrencyExchangeIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <CurrencyExchangeIcon style={{ width: 50, height: 50, textAlign: 'center',color: 'blue' }} />
                         </div>
                         <div className='price'>
                             <span className='h_6'>Total Investment</span>
@@ -136,8 +136,9 @@ export const DashboardView = () => {
                     <div className='card_3'>
 
                         <div className='card_icon'>
-                            <ScoreIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <ScoreIcon style={{ width: 50, height: 50, textAlign: 'center',color: 'green' }} />
                         </div>
+                        
                         <div className='card_data_3'>
                             <span className="sale_text1">Profit / lose</span>
                             <span className="sale_text2">3562.25</span>
@@ -150,7 +151,7 @@ export const DashboardView = () => {
                 <div className="card" onClick={() => dispatch(holdings_details())}>
                     <div className='card_4_data'>
                         <div className='card_icon'>
-                            <BusinessCenterOutlinedIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <BusinessCenterOutlinedIcon style={{ width: 50, height: 50, textAlign: 'center',color: 'blue' }} />
                         </div>
                         <div className='card_4_text' >
                             <span className="sale_text1">Holdings</span>
@@ -165,7 +166,7 @@ export const DashboardView = () => {
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <AccountBalanceWalletOutlinedIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <AccountBalanceWalletOutlinedIcon style={{ width: 50, height: 50, textAlign: 'center',color: 'blue' }} />
                         </div>
                         <div className='price'>
                             <span className='h_6'>Dividend</span>
@@ -177,7 +178,7 @@ export const DashboardView = () => {
                 <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
-                            <WorkspacePremiumIcon style={{ width: 50, height: 50, textAlign: 'center' }} />
+                            <WorkspacePremiumIcon style={{ width: 50, height: 50, textAlign: 'center',color: '#ffbf00' }} />
                         </div>
                         <div className='price'>
                             <span className='h_6'>Bonus</span>

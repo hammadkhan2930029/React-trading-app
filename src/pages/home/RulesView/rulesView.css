@@ -1,0 +1,49 @@
+.rulesView_container{
+    width: 100%;
+}
+.rules-list-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  margin-top: 80px;
+}
+
+.rules-list-heading {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1976d2;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.rule-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.rule-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+
+.rule-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}

@@ -12,6 +12,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
+        pL:'12'
 
     },
     {
@@ -21,6 +22,8 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
+        pL:'12'
+
     },
     {
         Scrip: 'Open',
@@ -29,6 +32,8 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
+        pL:'12'
+
     },
     {
         Scrip: 'Open',
@@ -37,6 +42,8 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
+        pL:'12'
+
     },
     {
         Scrip: 'Open',
@@ -45,6 +52,8 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
+        pL:'12'
+
     },
     {
         Scrip: 'Open',
@@ -53,6 +62,8 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
+        pL:'12'
+
     },
     {
         Scrip: 'Open',
@@ -61,6 +72,8 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
+        pL:'12'
+
     },
     {
         Scrip: 'Open',
@@ -69,6 +82,8 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
+        pL:'12'
+
     },
 ];
 
@@ -112,6 +127,8 @@ export const Holdings = () => {
                             <th>Current Price</th>
                             <th>Change in Rs.</th>
                             <th>Change in %</th>
+                            <th>P / L</th>
+
 
                         </tr>
                     </thead>
@@ -125,6 +142,8 @@ export const Holdings = () => {
                                 <td>{item.current_price}</td>
                                 <td>{item.changes}</td>
                                 <td>{item.changes}%</td>
+                                <td>{item.pL}</td>
+
 
                             </tr>
                         ))}
