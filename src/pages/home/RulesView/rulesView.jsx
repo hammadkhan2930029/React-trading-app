@@ -8,7 +8,7 @@ export const RulesView = () => {
     { id: 3, ruleNo: 3, rule: 'Keep components small and reusable Keep components small and reusable Keep components small and reusable Keep components small and reusable.' },
     { id: 4, ruleNo: 4, rule: 'Write comments where needed.' },
     { id: 5, ruleNo: 5, rule: 'Test your code properly.' },
-    { id: 6, ruleNo: 6, rule: 'Keep components small and reusable Keep components small and reusable Keep components small and reusable Keep components small and reusable.' },
+    { id: 6, ruleNo: 6, rule: 'Keep components small and reusable Keep components small and reusable Keep components small and reusable Keep components small and reusable Keep components small and reusable Keep components small and reusable Keep components small and reusable Keep components small and reusable.' },
   ];
 
   return (
@@ -16,11 +16,14 @@ export const RulesView = () => {
 
     <div className="rules-list-container">
       <h2 className="rules-list-heading">📜 My Rules Book</h2>
-      <div className="rules-grid">
+      <div className="rules_grid">
         {rulesData.map(item => (
-          <div key={item.id} className="rule-card">
-            <h3 className="rule-number">Rule #{item.ruleNo}</h3>
-            <p className="rule-text">{item.rule}</p>
+          <div key={item.id} className="rule_card">
+            <div className="rule_number">
+
+            <span >Rule #{item.ruleNo}</span>
+            </div>
+            <p className="rule_text">{item.rule}</p>
           </div>
         ))}
       </div>
