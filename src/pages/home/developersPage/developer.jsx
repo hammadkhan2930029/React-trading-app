@@ -56,7 +56,7 @@
 //     )
 // }
 import React from 'react';
-import logo from '../../../images/logo.png';
+import logo from '../../assets/company.png';
 import { Email, Phone, Facebook, LinkedIn, YouTube } from '@mui/icons-material';
 import { motion, useInView } from 'framer-motion';
 import './developers.css';

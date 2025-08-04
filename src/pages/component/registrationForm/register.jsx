@@ -54,9 +54,9 @@ export const Register = () => {
                             try {
                                 console.log("📢 Sending Data:", values);
                                 const response = await axios.post('http://127.0.0.1:8000/api/accounts/register/', {
-                                    name: values.name,  
+                                    name: values.name,
                                     email: values.email,
-                                    number: values.number,  
+                                    number: values.number,
                                     password: values.password,
                                     confirmPassword: values.confirmPassword  // 👈 Confirm password added
                                 });
@@ -73,19 +73,117 @@ export const Register = () => {
                         }}>
                         {({ handleBlur, handleChange, handleSubmit, values, isSubmitting }) => (
                             <form onSubmit={handleSubmit} className='form'>
-                                <div className='arrowBack' onClick={()=> dispatch(setLogin())}>
-                                    <ArrowBackIosIcon className='arrow'/>
+                                <div className='arrowBack' onClick={() => dispatch(setLogin())}>
+                                    <ArrowBackIosIcon className='arrow' />
                                     <span>Back</span>
                                 </div>
                                 <span className='h6'>Registration Form</span>
-                                
-                                <TextField label="Full Name" name='name' onChange={handleChange} onBlur={handleBlur} value={values.name} className='r_input' required />
-                                <TextField label="Email" name='email' onChange={handleChange} onBlur={handleBlur} value={values.email} className='r_input' required />
-                                <TextField label="Contact" name='number' onChange={handleChange} onBlur={handleBlur} value={values.number} className='r_input' type='text' required />
-                                <TextField label="Password" name='password' onChange={handleChange} onBlur={handleBlur} value={values.password} className='r_input' type='password' required />
-                                <TextField label="Confirm Password" name='confirmPassword' onChange={handleChange} onBlur={handleBlur} value={values.confirmPassword} className='r_input' type='password' required />
 
-                                <Button variant="contained" disableElevation className='btn' type="submit" disabled={isSubmitting}>
+                                <TextField
+                                    label="Full Name"
+                                    name='name'
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.name}
+                                    className='r_input'
+                                    required
+                                    sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: '#1BA12E', // Focus border color
+                                            },
+                                        },
+                                        '& .MuiInputLabel-root': {
+                                            '&.Mui-focused': {
+                                                color: '#1BA12E', // Focus label color
+                                            },
+                                        },
+                                    }} />
+                                <TextField
+                                    label="Email"
+                                    name='email'
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.email}
+                                    className='r_input'
+                                    required
+                                    sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: '#1BA12E', // Focus border color
+                                            },
+                                        },
+                                        '& .MuiInputLabel-root': {
+                                            '&.Mui-focused': {
+                                                color: '#1BA12E', // Focus label color
+                                            },
+                                        },
+                                    }} />
+                                <TextField
+                                    label="Contact"
+                                    name='number'
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.number}
+                                    className='r_input'
+                                    type='text'
+                                    required
+                                    sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: '#1BA12E', // Focus border color
+                                            },
+                                        },
+                                        '& .MuiInputLabel-root': {
+                                            '&.Mui-focused': {
+                                                color: '#1BA12E', // Focus label color
+                                            },
+                                        },
+                                    }} />
+                                <TextField
+                                    label="Password"
+                                    name='password'
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.password}
+                                    className='r_input'
+                                    type='password'
+                                    required
+                                    sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: '#1BA12E', // Focus border color
+                                            },
+                                        },
+                                        '& .MuiInputLabel-root': {
+                                            '&.Mui-focused': {
+                                                color: '#1BA12E', // Focus label color
+                                            },
+                                        },
+                                    }} />
+                                <TextField
+                                    label="Confirm Password"
+                                    name='confirmPassword'
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.confirmPassword}
+                                    className='r_input'
+                                    type='password'
+                                    required
+                                    sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: '#1BA12E', // Focus border color
+                                            },
+                                        },
+                                        '& .MuiInputLabel-root': {
+                                            '&.Mui-focused': {
+                                                color: '#1BA12E', // Focus label color
+                                            },
+                                        },
+                                    }} />
+
+                                <Button variant="contained" disableElevation className='r_btn' type="submit" disabled={isSubmitting}>
                                     {isSubmitting ? "Registering..." : "Register"}
                                 </Button>
                             </form>

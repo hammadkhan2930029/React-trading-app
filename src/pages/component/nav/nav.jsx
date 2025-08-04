@@ -3,8 +3,8 @@ import './nav.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DrawerBar } from '../drawer/drawer';
 
-import tradingLogo3 from '../../assets/tradingLogo3.png'
-
+// import tradingLogo3 from '../../assets/tradingLogo3.png'
+import newLogo from '../../assets/newLogo.png'
 import { useDispatch } from 'react-redux';
 import { setScrollToSection } from '../Redux/scrollSlice';
 
@@ -38,7 +38,7 @@ export const Nav = () => {
         <div>
             <div className={`nav ${isSticky ? 'sticky-nav-main' : ''}`}>
                 <div className="left">
-                    <img className="nav_logo" src={tradingLogo3} alt="Logo" />
+                    <img className="nav_logo" src={newLogo} alt="Logo" />
                 </div>
 
                 <div className="right">
@@ -47,7 +47,7 @@ export const Nav = () => {
                     ) : (
                         <div>
                             <span
-                                style={{ color: location.pathname === '/frontPage' ? 'blue' : '#000' }}
+                                style={{ color: location.pathname === '/frontPage' ? 'var(--primary-green)' : '#000'}}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => navigate('/frontPage')}
                             >
@@ -55,7 +55,7 @@ export const Nav = () => {
                             </span>
 
                             <span
-                                style={{ color: color == 1 ? 'blue' : '#000' }}
+                                style={{ color: color == 1 ? 'var(--primary-green)' : '#000' }}
 
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
@@ -69,7 +69,7 @@ export const Nav = () => {
                             </span>
 
                             <span
-                                style={{ color: color == 2 ? 'blue' : '#000' }}
+                                style={{ color: color == 2 ? 'var(--primary-green)' : '#000' }}
 
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
@@ -82,7 +82,7 @@ export const Nav = () => {
                             </span>
 
                             <span
-                                style={{ color: color == 3 || location.pathname === '/blogsMultiCards' ? 'blue' : '#000' }}
+                                style={{ color: color == 3 || location.pathname === '/blogsMultiCards' ? 'var(--primary-green)' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
                                     setColor(3)
@@ -96,7 +96,7 @@ export const Nav = () => {
 
 
                             <span
-                                style={{ color: color == 4 || location.pathname === '/faqMainPage' ? 'blue' : '#000' }}
+                                style={{ color: color == 4 || location.pathname === '/faqMainPage' ? 'var(--primary-green)' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
                                     setColor(4)
@@ -107,7 +107,7 @@ export const Nav = () => {
                                 FAQs
                             </span>
                             <span
-                                style={{ color: location.pathname === '/contactUs' ? 'blue' : '#000' }}
+                                style={{ color: location.pathname === '/contactUs' ? '#1BA12E' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
                                     setColor(null)
@@ -118,7 +118,7 @@ export const Nav = () => {
                             </span>
 
                             <span
-                                style={{ color: color == 5 ? 'blue' : '#000' }}
+                                style={{ color: color == 5 ? '#1BA12E' : '#000' }}
                                 className={`nav_main ${isSticky ? 'nav_changeColor' : ''}`}
                                 onClick={() => {
 

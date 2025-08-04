@@ -12,6 +12,7 @@
     font-size: 42px;
     font-weight: bold;
     padding: 10px;
+    color: #1BA12E;
 }
 
 
@@ -25,7 +26,7 @@
     width: 100%;
 }
 .new_card{
-    background-color: #1976d2;
+    background-color: #1BA12E;
     width: 25%;
     display: flex;
     justify-content: center;
@@ -53,15 +54,15 @@
     
 }
 .new_card:hover .new_card_icon {
-    background-color: black;
+    background-color: #085014;
 
 }
 .new_card:hover .new_card_icon .icon{
-    color: #fff;
+    color: #1BA12E;
 }
 .new_card_icon .icon{
     font-size: 38px;
-    color: #1976d2;
+    color: #1BA12E;
 }
 .new_card_span1{
     font-size: 26px;
@@ -74,7 +75,7 @@
     text-align: center;
     padding: 15px;
     font-size: 18px;
-    color: #d7ebff;
+    color: #fff;
 }
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */

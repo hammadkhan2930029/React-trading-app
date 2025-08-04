@@ -62,7 +62,7 @@ const blogData = [
         image: stock7,
         description: "The contest is based on a points system: the more points you earn, the higher your chances of winning weekly ($5,000 for 1st place), monthly ($10,000), or annual super prizes ($50,000). Besides, referral activity not only boosts your points but also presents a chance to earn commissions of up to 70% through LiteFinance's affiliate program. Let's figure out how it works in practice."
     },
-    
+
 ];
 export const PopularBlogs = () => {
     const navigate = useNavigate()
@@ -83,46 +83,45 @@ export const PopularBlogs = () => {
             </div>
 
             <motion.div className='Popular_blogsCards' >
-                {blogData.map((item,index)=>(
-                     <Card className='Popular_CardsBlogs' sx={{ borderRadius: 6 }}>
-                     <CardHeader
- 
-                         title={item.title}
-                     />
-                     <CardMedia
-                         component="img"
-                         height="194"
-                         image={item.image}
-                         alt="Paella dish"
-                     />
-                     <CardContent>
-                         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                         {item.description.length > 100 ? `${item.description.substring(0, 100)}...` : item.description}
-                         </Typography>
-                     </CardContent>
-                     <CardActions disableSpacing>
- 
-                         <ExpandMore
-                            onClick={() => navigate("/blogsDetails", { state: { title: item.title, image: item.image, description: item.description, id: item.id , description2: item.description2,} })}
- 
- 
-                             aria-label="show more"
-                         >
-                             <IconButton aria-label="show more">
- 
-                                 <div className='readMoreBtn' >
-                                     <span className='btnText'>Read More</span>
-                                     {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
-                                 </div>
-                             </IconButton>
- 
-                         </ExpandMore>
-                     </CardActions>
- 
-                 </Card>
+                {blogData.map((item, index) => (
+                    <Card className='Popular_CardsBlogs' sx={{ borderRadius: 6 }}>
+                        <CardHeader
+                            sx={{ color: 'var(--primary-green)' }}
+                            title={item.title}
+                        />
+                        <CardMedia
+                            component="img"
+                            height="194"
+                            image={item.image}
+                            alt="Paella dish"
+                        />
+                        <CardContent>
+                            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                {item.description.length > 100 ? `${item.description.substring(0, 100)}...` : item.description}
+                            </Typography>
+                        </CardContent>
+                        <CardActions disableSpacing>
+
+                            <ExpandMore
+                                onClick={() => navigate("/blogsDetails", { state: { title: item.title, image: item.image, description: item.description, id: item.id, description2: item.description2, } })}
+
+
+                                aria-label="show more"
+                            >
+                                <IconButton aria-label="show more">
+
+                                    <div className='Popular_readMoreBtn' >
+                                        <span className='btnText'>Read More</span>
+                                    </div>
+                                </IconButton>
+
+                            </ExpandMore>
+                        </CardActions>
+
+                    </Card>
 
                 ))}
-               
+
                 {/* ------------------------------------------------------------------------------------ */}
                 {/* <Card className='Popular_CardsBlogs' sx={{ borderRadius: 6 }}>
                     <CardHeader

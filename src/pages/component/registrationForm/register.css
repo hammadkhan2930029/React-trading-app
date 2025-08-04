@@ -56,13 +56,17 @@
 .form .r_input{
     width: 100%;
     margin: 10px;
+    border-color: #1BA12E;
 }
 .form .r_btn{
     width: 30%;
+    background-color: #1BA12E;
+
 }
 .form .r_btn:hover{
-     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(27,2,82,1) 52%, rgba(0,147,176,1) 100%);
+     
+    background-color: #50d664;
+
 }
 .arrowBack{
     width: 100%;

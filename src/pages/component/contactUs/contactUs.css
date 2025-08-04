@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--primary-bg);
 }
 .form-main-contact {
     display: flex;
@@ -11,14 +12,13 @@
     justify-content: start;
     margin-top: 100px;
     width: 80%;
-    /* height: 100vh; */
-    /* overflow: hidden; */
+  
 
 
 }
 .heading_contact{
-    color: #000;
-    font-size: 24px;
+    color: var(--primary-green);
+    font-size: 42px;
     font-weight: bold;
     
 }
@@ -49,7 +49,7 @@
 
 
 .switchBtn_contact {
-    background-color: #1976d2;
+    background-color: var(--primary-green);
     padding: 15px;
     color: #fff;
     border-radius: 5px;
@@ -66,8 +66,7 @@
 }
 
 .switchBtn_contact:hover {
-    background-color: rgb(54, 54, 249);
-    border-color: rgb(54, 54, 249);
+  background-color: var(--primary-green-dark);
     cursor: pointer;
 }
 
@@ -96,7 +95,7 @@
     }
 }
 
-@media screen and (max-width: 412px) {
+@media  (max-width: 412px) {
     .contact_form {
         width: 70%;
     }

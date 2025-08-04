@@ -19,9 +19,9 @@
 
 }
 
-.line {
+.line5{
     width: 50%;
-    border: 2px solid #1976D2;
+    border: 2px solid #1BA12E;
     margin-top: 10px;
 }
 
@@ -43,6 +43,7 @@
 .choseOne .h1 {
     font-size: 38px;
     font-weight: 700;
+    color: #1BA12E;
 
 }
 
@@ -59,14 +60,14 @@
 }
 
 .highQuality:hover {
-    background-color: #1976D2;
+    background-color: #1BA12E;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
 
 }
 
 .highQuality:hover .shap2 {
-    background-color: #ffff;
+    background-color: #dcffe2;
 }
 
 .shap1 {
@@ -79,7 +80,7 @@
 .shap2 {
     width: 80px;
     height: 80px;
-    background-color: #1976D2;
+    background-color: #1BA12E;
     border-radius: 15px;
     transform: rotate(45deg);
     opacity: .8;
@@ -91,7 +92,7 @@
 }
 
 .highQuality:hover .shap2 .icon {
-    color: #1976D2;
+    color: #1BA12E;
     
 }
 
@@ -110,7 +111,7 @@
 }
 
 .textarea .h1 {
-    color: #000;
+    color: #1BA12E;
     font-size: 22px;
 }
 
@@ -241,11 +242,11 @@
     }
 
     .textarea .h1 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .choseOne .h2 {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .shap1 {

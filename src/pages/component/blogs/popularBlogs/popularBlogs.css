@@ -1,5 +1,5 @@
 .Popular_blogsMian {
-    background-color: #F8F8FF;
+    background-color: var(--primary-bg);
 
 }
 
@@ -31,8 +31,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .Popular_readMoreBtn {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(27,2,82,1) 52%, rgba(0,147,176,1) 100%);
+    background-color: var(--primary-green);
     width: 100%;
     display: flex;
     align-items: center;
@@ -40,6 +39,10 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 
 
+}
+.Popular_readMoreBtn:hover{
+
+background-color: var(--primary-green-dark);
 }
 .Popular_btnText{
     color: #fff;

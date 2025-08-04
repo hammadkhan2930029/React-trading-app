@@ -12,6 +12,7 @@ import { motion, useInView } from "framer-motion";
 import { Nav } from '../nav/nav';
 import { Subject } from '@mui/icons-material';
 import { Navbar2 } from '../nav/navebar2';
+import { Footer } from '../footer/footer';
 // import { setDividen_list } from "../Redux/profileSlice";
 // import { useDispatch } from "react-redux";
 
@@ -119,6 +120,18 @@ export const ContactUs = () => {
                                                 selected={values.name}
                                                 onChange={handleChange} // Handle date change
                                                 onBlur={handleBlur}
+                                                 sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                '&.Mui-focused fieldset': {
+                                                    borderColor: '#1BA12E', // Focus border color
+                                                },
+                                            },
+                                            '& .MuiInputLabel-root': {
+                                                '&.Mui-focused': {
+                                                    color: '#1BA12E', // Focus label color
+                                                },
+                                            },
+                                        }}
 
                                             />
                                             <TextField
@@ -130,6 +143,18 @@ export const ContactUs = () => {
                                                 selected={values.email}
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
+                                                 sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                '&.Mui-focused fieldset': {
+                                                    borderColor: '#1BA12E', // Focus border color
+                                                },
+                                            },
+                                            '& .MuiInputLabel-root': {
+                                                '&.Mui-focused': {
+                                                    color: '#1BA12E', // Focus label color
+                                                },
+                                            },
+                                        }}
 
                                             />
 
@@ -142,6 +167,18 @@ export const ContactUs = () => {
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 value={values.contact}
+                                                 sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                '&.Mui-focused fieldset': {
+                                                    borderColor: '#1BA12E', // Focus border color
+                                                },
+                                            },
+                                            '& .MuiInputLabel-root': {
+                                                '&.Mui-focused': {
+                                                    color: '#1BA12E', // Focus label color
+                                                },
+                                            },
+                                        }}
                                             />
                                             <TextField
                                                 id="outlined-required"
@@ -152,6 +189,18 @@ export const ContactUs = () => {
                                                 onChange={handleChange}
                                                 onBlur={handleBlur}
                                                 value={values.subject}
+                                                 sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                '&.Mui-focused fieldset': {
+                                                    borderColor: '#1BA12E', // Focus border color
+                                                },
+                                            },
+                                            '& .MuiInputLabel-root': {
+                                                '&.Mui-focused': {
+                                                    color: '#1BA12E', // Focus label color
+                                                },
+                                            },
+                                        }}
                                             />
                                             <TextField
                                                 id="outlined-required"
@@ -164,6 +213,18 @@ export const ContactUs = () => {
                                                 value={values.msg}
                                                 rows={6}
                                                 multiline
+                                                 sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                '&.Mui-focused fieldset': {
+                                                    borderColor: '#1BA12E', // Focus border color
+                                                },
+                                            },
+                                            '& .MuiInputLabel-root': {
+                                                '&.Mui-focused': {
+                                                    color: '#1BA12E', // Focus label color
+                                                },
+                                            },
+                                        }}
 
                                             />
 
@@ -196,6 +257,9 @@ export const ContactUs = () => {
                     )}
 
                 </Formik>
+                <div>
+                    <Footer/>
+                </div>
             </motion.div>
         </div>
 

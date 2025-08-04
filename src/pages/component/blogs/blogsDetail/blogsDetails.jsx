@@ -22,7 +22,7 @@ export const BlogsDetails = () => {
         window.scrollTo(0, 0)
     }, [])
     return (
-        <div>
+        <div style={{backgroundColor:"var(--primary-bg)"}}>
             <motion.div initial={{ opacity: 0, y: -100 }}
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}>

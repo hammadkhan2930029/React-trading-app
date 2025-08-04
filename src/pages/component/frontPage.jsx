@@ -71,7 +71,7 @@ function FrontPage() {
       {count ? (
         <Loader_f />
       ) : (
-        <div style={{ overflow: 'hidden' }}>
+        <div style={{ overflow: 'hidden',backgroundColor:'#E5F5E8'}}>
           <Nav chooseUsRef={chooseUsRef} />
           <Navbar />
           <Cards ref={aboutRef} />

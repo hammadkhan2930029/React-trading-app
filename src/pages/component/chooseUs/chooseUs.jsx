@@ -64,7 +64,7 @@ export const ChooseUs = forwardRef((props, ref) => {
         transition={{ duration: .8 }}>
 
         <span className='h1'>We Provide the Best & Most Reliable Stock Market Insights</span>
-        <div className='line'></div>
+        <div className='line5'></div>
         {data.map((item, index) => (
           <div key={index} className="card-container" onMouseEnter={() => setCurrentImage(item.url)}>
             <motion.div className="highQuality">

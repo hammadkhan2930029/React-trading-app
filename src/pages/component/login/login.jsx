@@ -32,8 +32,8 @@ export const Login = () => {
             const data = await response.json();
             if (response.ok) {
                 alert("Login Successful!");
-               
-                navigate('/responsiveDrawer');  
+
+                navigate('/responsiveDrawer');
             } else {
                 alert(data.error || "Login Failed. Please check your credentials.");
             }
@@ -82,6 +82,18 @@ export const Login = () => {
                                         value={values.email}
                                         className='r_input'
                                         required
+                                        sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                '&.Mui-focused fieldset': {
+                                                    borderColor: '#1BA12E', // Focus border color
+                                                },
+                                            },
+                                            '& .MuiInputLabel-root': {
+                                                '&.Mui-focused': {
+                                                    color: '#1BA12E', // Focus label color
+                                                },
+                                            },
+                                        }}
                                     />
 
                                     <TextField
@@ -95,10 +107,22 @@ export const Login = () => {
                                         value={values.password}
                                         className='r_input'
                                         required
+                                        sx={{
+                                            '& .MuiOutlinedInput-root': {
+                                                '&.Mui-focused fieldset': {
+                                                    borderColor: '#1BA12E', // Focus border color
+                                                },
+                                            },
+                                            '& .MuiInputLabel-root': {
+                                                '&.Mui-focused': {
+                                                    color: '#1BA12E', // Focus label color
+                                                },
+                                            },
+                                        }}
                                     />
 
                                     <div className='f_div'>
-                                        <button className='forgot' onClick={() => dispatch(setForget())}>Forgot Password</button>
+                                        <button className='forgot' style={{ color: "	#1BA12E", cursor: 'pointer', fontSize: '16px', backgroundColor: 'transparent', border: 'none' }} onClick={() => dispatch(setForget())}>Forgot Password</button>
                                     </div>
 
                                     <Button
@@ -111,10 +135,10 @@ export const Login = () => {
                                         {isSubmitting ? "Logging in..." : "Login"}
                                     </Button>
 
-                                  
-                                    <p style={{color:'#000',padding:8}} className='text1' onClick={() => dispatch(setRegister())}>
+
+                                    <p style={{ color: '#000', padding: 8 }} className='text1' onClick={() => dispatch(setRegister())}>
                                         Don't have an account?
-                                        <span style={{ color: "blue", cursor: 'pointer' }} className='text2'> Sign up now!</span>
+                                        <span style={{ color: "	#1BA12E", cursor: 'pointer' }} className='text2'> Sign up now!</span>
                                     </p>
 
                                 </div>

@@ -64,6 +64,18 @@ export const ForgotPassword = () => {
                                     placeholder='enter email'
                                     name='email'
                                     type='text'
+                                    sx={{
+                                        '& .MuiOutlinedInput-root': {
+                                            '&.Mui-focused fieldset': {
+                                                borderColor: '#1BA12E', // Focus border color
+                                            },
+                                        },
+                                        '& .MuiInputLabel-root': {
+                                            '&.Mui-focused': {
+                                                color: '#1BA12E', // Focus label color
+                                            },
+                                        },
+                                    }}
                                 />
 
 
@@ -72,10 +84,10 @@ export const ForgotPassword = () => {
                                 <Button variant="contained" disableElevation className='btn' onClick={handleSubmit}>
                                     Send
                                 </Button>
-                                <div className='backbtn' onClick={()=> dispatch(setLogin())}>
+                                <div className='backbtn' onClick={() => dispatch(setLogin())}>
 
                                     <ArrowBackIosIcon />
-                                    <span style={{color:'#000',fontSize:16}}>Back</span>
+                                    <span style={{ color: '#000', fontSize: 16 }}>Back</span>
                                 </div>
 
                             </div>

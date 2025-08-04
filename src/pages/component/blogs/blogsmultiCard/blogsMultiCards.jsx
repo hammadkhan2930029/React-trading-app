@@ -222,7 +222,7 @@ export const BlogsMultiCards = () => {
                     <motion.div className='blogsCards_multi'>
                         {currentPosts.map((item, index) => (
                             <Card className='cardsBlogs_multi' sx={{ borderRadius: 6 }} key={index}>
-                                <CardHeader title={item.title} />
+                                <CardHeader title={item.title} sx={{color:'var(--primary-green)'}}/>
                                 <CardMedia component="img" height="194" image={item.image} alt={item.title} />
                                 <CardContent>
                                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -238,7 +238,7 @@ export const BlogsMultiCards = () => {
                                     >
                                         <IconButton aria-label="show more">
 
-                                            <div className='readMoreBtn' >
+                                            <div className='readMoreBtn_div' >
                                                 <span className='btnText'>Read More</span>
                                                 {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
                                             </div>
@@ -258,7 +258,7 @@ export const BlogsMultiCards = () => {
                     <button onClick={nextPage} disabled={currentPage === Math.ceil(blogData.length / postsPerPage)}>Next</button>
                 </div>
             </motion.div>
-            <div>
+            <div className='footerBlogs'>
 
                 <Footer />
             </div>

@@ -62,7 +62,7 @@ export const AboutUs = () => {
                        
                         className='mission_vision'>
                         <div className='mission_vision_heading'>
-                            <TrackChangesIcon sx={{ fontSize: '52px' }} />
+                            <TrackChangesIcon sx={{ fontSize: '52px',color:'var(--primary-green-dark)' }} />
                             <span>Mission Statement</span>
 
                         </div>
@@ -75,7 +75,7 @@ export const AboutUs = () => {
                        
                         className='mission_vision'>
                         <div className='mission_vision_heading'>
-                            <RemoveRedEyeIcon sx={{ fontSize: '52px' }} />
+                            <RemoveRedEyeIcon sx={{ fontSize: '52px',color:'var(--primary-green-dark)' }} />
                             <span>Vision Statement</span>
 
                         </div>
@@ -89,7 +89,7 @@ export const AboutUs = () => {
                 <motion.div
                     className='tools_div'>
                     <div>
-                        <span className='tools_Heading'>Our Tools and Widgets <BuildIcon sx={{ fontSize: '42px' }} /></span>
+                        <span className='tools_Heading'>Our Tools and Widgets <BuildIcon sx={{ fontSize: '42px',color:'var(--primary-green-dark)' }} /></span>
                     </div>
                     <div className='tools_text_div'>
                         <span className='tools_text'>Our talented team of developers, designers, and strategists brings

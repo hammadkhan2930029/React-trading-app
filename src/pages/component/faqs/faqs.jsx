@@ -43,7 +43,7 @@ export const Faqs =forwardRef((props,ref) => {
                             initial={{ opacity: 0, x: -100 }}
                             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: .8 }}>
-                            <motion.div className='drop_style' style={{ backgroundColor: select_drop == 1 ? "#1976D2" : null }}>
+                            <motion.div className='drop_style' style={{ backgroundColor: select_drop == 1 ? "var(--primary-green)" : null }}>
                                 <motion.div className='drop_icon'>
                                     {select_drop == 1 ? (
                                         <RemoveCircleIcon className='icon' />
@@ -67,7 +67,7 @@ export const Faqs =forwardRef((props,ref) => {
                         </motion.div>
 
                         <motion.div className='drop' onClick={() => setSelect_drop(2)}>
-                            <motion.div className='drop_style' style={{ backgroundColor: select_drop == 2 ? "#1976D2" : null }}>
+                            <motion.div className='drop_style' style={{ backgroundColor: select_drop == 2 ? "var(--primary-green)" : null }}>
                                 <motion.div className='drop_icon'>
                                     {select_drop == 2 ? (
                                         <RemoveCircleIcon className='icon' />
@@ -91,7 +91,7 @@ export const Faqs =forwardRef((props,ref) => {
                         </motion.div>
 
                         <motion.div className='drop' onClick={() => setSelect_drop(3)}>
-                            <motion.div className='drop_style' style={{ backgroundColor: select_drop == 3 ? "#1976D2" : null }}>
+                            <motion.div className='drop_style' style={{ backgroundColor: select_drop == 3 ? "var(--primary-green)" : null }}>
                                 <motion.div className='drop_icon'>
                                     {select_drop == 3 ? (
                                         <RemoveCircleIcon className='icon' />
@@ -130,7 +130,7 @@ export const Faqs =forwardRef((props,ref) => {
                             initial={{ opacity: 0, x: 100 }}
                             animate={inViewOne ? { opacity: 1, x: 0 } : {}}
                             transition={{ duration: .8 }}>
-                            <motion.div className='drop_style' style={{ backgroundColor: select_drop_2 == 4 ? "#1976D2" : null }}>
+                            <motion.div className='drop_style' style={{ backgroundColor: select_drop_2 == 4 ? "var(--primary-green)" : null }}>
                                 <motion.div className='drop_icon'>
                                     {select_drop_2 == 4 ? (
                                         <RemoveCircleIcon className='icon' />
@@ -154,7 +154,7 @@ export const Faqs =forwardRef((props,ref) => {
                         </motion.div>
 
                         <motion.div className='drop' onClick={() => setSelect_drop_2(5)}>
-                            <motion.div className='drop_style' style={{ backgroundColor: select_drop_2 == 5 ? "#1976D2" : null }}>
+                            <motion.div className='drop_style' style={{ backgroundColor: select_drop_2 == 5 ? "var(--primary-green)" : null }}>
                                 <motion.div className='drop_icon'>
                                     {select_drop_2 == 5 ? (
                                         <RemoveCircleIcon className='icon' />
@@ -178,7 +178,7 @@ export const Faqs =forwardRef((props,ref) => {
                         </motion.div>
 
                         <motion.div className='drop' onClick={() => setSelect_drop_2(6)}>
-                            <motion.div className='drop_style' style={{ backgroundColor: select_drop_2 == 6 ? "#1976D2" : null }}>
+                            <motion.div className='drop_style' style={{ backgroundColor: select_drop_2 == 6 ? "var(--primary-green)" : null }}>
                                 <motion.div className='drop_icon'>
                                     {select_drop_2 == 6 ? (
                                         <RemoveCircleIcon className='icon' />

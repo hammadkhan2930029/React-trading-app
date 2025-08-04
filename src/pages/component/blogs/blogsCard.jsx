@@ -61,6 +61,7 @@ export const BlogsCard = forwardRef((props,ref) => {
             <motion.div className='blogsCards' >
                 <Card className='CardsBlogs' sx={{ borderRadius: 6 }}>
                     <CardHeader
+                    sx={{color:'var(--primary-green)'}}
 
                         title="Shrimp and Chorizo Paella"
                     />
@@ -87,7 +88,7 @@ export const BlogsCard = forwardRef((props,ref) => {
                         >
                             <IconButton aria-label="show more">
 
-                                <div className='readMoreBtn' >
+                                <div className='readMoreBtnmain' >
                                     <span className='btnText'>Read More</span>
                                     {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
                                 </div>
@@ -100,6 +101,7 @@ export const BlogsCard = forwardRef((props,ref) => {
                 {/* ------------------------------------------------------------------------------------ */}
                 <Card className='CardsBlogs' sx={{ borderRadius: 6 }}>
                     <CardHeader
+                    sx={{color:'var(--primary-green)'}}
 
                         title="Shrimp and Chorizo Paella"
                     />
@@ -126,7 +128,7 @@ export const BlogsCard = forwardRef((props,ref) => {
                         >
                             <IconButton aria-label="show more">
 
-                                <div className='readMoreBtn' >
+                                <div className='readMoreBtnmain' >
                                     <span className='btnText'>Read More</span>
                                     {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
                                 </div>
@@ -139,6 +141,7 @@ export const BlogsCard = forwardRef((props,ref) => {
                 {/* --------------------------------------------------------------------------------------- */}
                 <Card className='CardsBlogs' sx={{ borderRadius: 6 }}>
                     <CardHeader
+                    sx={{color:'var(--primary-green)'}}
 
                         title="Shrimp and Chorizo Paella"
                     />
@@ -165,7 +168,7 @@ export const BlogsCard = forwardRef((props,ref) => {
                         >
                             <IconButton aria-label="show more">
 
-                                <div className='readMoreBtn' >
+                                <div className='readMoreBtnmain' >
                                     <span className='btnText'>Read More</span>
                                     {/* <ExpandMoreIcon style={{ color: 'blue' }} /> */}
                                 </div>

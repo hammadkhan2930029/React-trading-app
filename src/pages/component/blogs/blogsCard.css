@@ -1,5 +1,6 @@
 .blogsMian {
-    background-color: #fff;
+    background-color: #E5F5E8;
+    ;
     margin-top: 50px;
 
 
@@ -23,16 +24,19 @@
     text-align: center;
     font-size: 32px;
     font-weight: bold;
-    color: #000;
+    color: #1BA12E;
 }
 
 .CardsBlogs {
     width: 30%;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-.readMoreBtn {
-     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(27,2,82,1) 52%, rgba(0,147,176,1) 100%);
+
+.readMoreBtnmain {
+
+    /* background: rgb(12, 240, 100);
+background: linear-gradient(90deg, rgba(2,36,15,1) 0%, rgba(27,161,46,1) 52%, rgba(178,255,200,1) 100%); */
+    background-color: var(--primary-green);
     width: 100%;
     display: flex;
     align-items: center;
@@ -41,7 +45,11 @@
 
 
 }
-.btnText{
+.readMoreBtnmain:hover{
+    background-color: var(--primary-green-dark);
+}
+
+.btnText {
     color: #fff;
     font-size: 18px;
     padding: 10px;

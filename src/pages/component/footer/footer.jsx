@@ -131,9 +131,9 @@ export const Footer = () => {
                     <div className='gradient-line'></div>
 
                     <ul>
-                        <li > <LocationOnIcon sx={{color:'#1976d2',margin:'2px',fontSize:'26px'}}/> Mateen Shopping Galaxy, 5th Floor Office # Fi-12, Office Block, Main Rashid Minhas Road, Karachi Pakistan.</li>
-                        <li className='icon'><EmailIcon sx={{color:'#1976d2',margin:'2px',fontSize:'26px'}}/>  info@cogentdevs.com</li>
-                        <li className='icon'><CallIcon sx={{color:'#1976d2',margin:'2px',fontSize:'26px'}}/>  0331 9998780</li>
+                        <li > <LocationOnIcon sx={{color:'var(--primary-green-dark)',margin:'2px',fontSize:'26px'}}/> Mateen Shopping Galaxy, 5th Floor Office # Fi-12, Office Block, Main Rashid Minhas Road, Karachi Pakistan.</li>
+                        <li className='icon'><EmailIcon sx={{color:'var(--primary-green-dark)',margin:'2px',fontSize:'26px'}}/>  info@cogentdevs.com</li>
+                        <li className='icon'><CallIcon sx={{color:'var(--primary-green-dark)',margin:'2px',fontSize:'26px'}}/>  0331 9998780</li>
 
 
 

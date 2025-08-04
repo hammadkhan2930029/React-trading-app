@@ -159,7 +159,7 @@ export const FaqMainPage = () => {
                             <motion.div key={index} className='drop_main_page' onClick={() => setSelect_drop(item.id)}
 
                             >
-                                <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop == item.id ? "#1976D2" : null }}>
+                                <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop == item.id ? "var(--primary-green)" : null }}>
                                     <motion.div className='drop_icon_main_page'>
                                         {select_drop == item.id ? (
                                             <RemoveCircleIcon className='icon_main_page' />
@@ -191,7 +191,7 @@ export const FaqMainPage = () => {
                     >
                         {stockMarketQA2.map((item, index) => (
                             <motion.div className='drop_main_page' onClick={() => setSelect_drop_2(item.id)}>
-                                <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop_2 == item.id ? "#1976D2" : null }}>
+                                <motion.div className='drop_style_main_page' style={{ backgroundColor: select_drop_2 == item.id ? "var(--primary-green)" : null }}>
                                     <motion.div className='drop_icon_main_page'>
                                         {select_drop_2 == item.id ? (
                                             <RemoveCircleIcon className='icon_main_page' />
