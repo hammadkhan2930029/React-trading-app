@@ -113,7 +113,7 @@ export const Summary = () => {
                             <div className='summary_heading_div'>
                                 <span className='summary_heading_2'>Market Summary</span>
                             </div>
-                            <div style={{ width: '100%', display: 'flex', justifyContent: 'end' }}>
+                            <div className='summary_from_import_div'>
 
                                 <div style={{ textAlign: "center", marginTop: "30px" }}>
                                     <button
@@ -280,8 +280,8 @@ export const Summary = () => {
                 )}
 
             </Formik>
-
-            <div className='summary-index'>
+{/* className='summary-index' */}
+            <div >
 
                 <SummaryIndex />
             </div>

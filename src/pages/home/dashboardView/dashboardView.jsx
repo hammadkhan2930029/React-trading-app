@@ -1,31 +1,16 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
 
-import SearchIcon from '@mui/icons-material/Search';
-import PaidIcon from '@mui/icons-material/Paid';
-import Button from '@mui/material/Button';
 import './dashboardView.css';
 
-import holding from '../../assets/holding.jpg'
+
 import { Card_1 } from './card_1/card_1';
 import { Card_2 } from './card_2/card_2';
 import Card_3 from './card_3/card_3';
 import Card_4 from './card_4/card_4';
 import { OverviewList } from './overviewDataList/overviewList';
 import { useDispatch } from 'react-redux';
-import { holdings_details } from '../Redux/formTypeSlice';
-import BarChartIcon from '@mui/icons-material/BarChart';
+import { close_Trades, holdings_details } from '../Redux/formTypeSlice';
+
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
@@ -77,6 +62,32 @@ export const DashboardView = () => {
                             <span className='h_6'>Total No. of Trades</span>
                             <span className='h_1'>350</span>
                         </div>
+                    </div>
+                </div>
+                 {/* ---------------------2------------------------------------ */}
+                <div className="card" onClick={() => dispatch(close_Trades())}>
+                    <div className='card_1_data'>
+                        <div className='card_icon'>
+                            <Filter9PlusIcon style={{ width: 50, height: 50, textAlign: 'center',color: '#FEBE10' }} />
+                        </div>
+                        <div className='price'>
+                            <span className='h_6'>Closed Trades</span>
+                            <span className='h_1'>350</span>
+                        </div>
+                    </div>
+                </div>
+                  {/* ----------------------------8------------------------------ */}
+                <div className="card" onClick={() => dispatch(holdings_details())}>
+                    <div className='card_4_data'>
+                        <div className='card_icon'>
+                            <BusinessCenterOutlinedIcon style={{ width: 50, height: 50, textAlign: 'center',color: 'blue' }} />
+                        </div>
+                        <div className='card_4_text' >
+                            <span className="sale_text1">Holdings</span>
+                            <span className="sale_text2">10</span>
+
+                        </div>
+
                     </div>
                 </div>
                 {/* ---------------------2------------------------------------ */}
@@ -147,20 +158,7 @@ export const DashboardView = () => {
                     </div>
 
                 </div>
-                {/* ----------------------------8------------------------------ */}
-                <div className="card" onClick={() => dispatch(holdings_details())}>
-                    <div className='card_4_data'>
-                        <div className='card_icon'>
-                            <BusinessCenterOutlinedIcon style={{ width: 50, height: 50, textAlign: 'center',color: 'blue' }} />
-                        </div>
-                        <div className='card_4_text' >
-                            <span className="sale_text1">Holdings</span>
-                            <span className="sale_text2">10</span>
-
-                        </div>
-
-                    </div>
-                </div>
+              
 
                 {/* ------------------------------9---------------------------- */}
                 <div className="card">

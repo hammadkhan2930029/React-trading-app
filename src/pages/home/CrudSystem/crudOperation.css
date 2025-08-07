@@ -181,9 +181,15 @@ tbody.t_body tr {
         padding: 10px 12px;
         font-size: 14px;
     }
+    .top_input_fields{
+        flex-direction: column;
+    }
+    .top_input_fields .search_div{
+        width: 95%;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
     .crud_main {
         width: 50%;
     }

@@ -280,4 +280,11 @@
 }
 
 /* Below 360px */
-@media (max-width: 360px) {}
+@media (max-width: 360px) {
+    .textarea .h1{
+        font-size: 18px;
+    }
+    .choseOne .h2{
+        font-size: 14px;
+    }
+}

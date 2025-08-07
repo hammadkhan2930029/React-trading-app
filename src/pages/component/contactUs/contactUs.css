@@ -1,9 +1,11 @@
+.contactUsMain{
+    background-color: var(--primary-bg);
+}
 .main_div{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-bg);
 }
 .form-main-contact {
     display: flex;
@@ -32,7 +34,7 @@
     align-self: center;
     flex-direction: row;
     background-color: #fff;
-    margin: 10px;
+    /* margin: 10px; */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -95,9 +97,9 @@
     }
 }
 
-@media  (max-width: 412px) {
+@media  (max-width: 480px) {
     .contact_form {
-        width: 70%;
+        width: 100%;
     }
 
     
@@ -105,11 +107,15 @@
     .btn {
         width: 60%;
     }
+    .heading_contact{
+    font-size: 32px;
+    
+}
 }
 
 @media screen and (max-width: 360px) {
     .contact_form {
-        width: 90%;
+        width: 100%;
         padding: 5px;
     }
 

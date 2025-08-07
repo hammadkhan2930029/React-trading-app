@@ -20,9 +20,9 @@ export const AboutUs = () => {
     const inViewOne = useInView(refOne, { triggerOnce: true });
 
     return (
-        <div>
+        <div className='aboutMain'>
             <Navbar2 />
-            <div className='aboutMain'>
+            <div >
                 <motion.div
                     className="about-container"
                     ref={refOne}

@@ -1,10 +1,13 @@
+.aboutMain{
+    background-color: var(--primary-bg);
+
+}
 .about-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 60px;
     flex-wrap: wrap;
-    background-color: var(--primary-bg);
 }
 
 .about-text {
@@ -152,7 +155,7 @@
 .widget-item h3 {
     margin: 0 0 8px;
     font-size: 18px;
-    color: #002b45;
+    color: var(--primary-green);
 }
 
 .widget-item p {
@@ -258,8 +261,8 @@
     }
 
     .widget-item img {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         padding: 8px;
     }
 
@@ -269,5 +272,13 @@
 
     .widget-item p {
         font-size: 13px;
+    }
+}
+@media(max-width:360px){
+    .tools_Heading{
+        font-size: 24px;
+    }
+    .tools_text{
+        font-size: 16px;
     }
 }

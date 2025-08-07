@@ -1,4 +1,4 @@
-.holdings_container {
+.closed_container {
   width: 100%;
   max-width: 1200px;
   margin: 80px auto 20px auto;
@@ -9,7 +9,7 @@
   overflow-x: auto;
 }
 
-.holdings_header {
+.closed_header {
   display: flex;
   align-items: center;
   background: #a399ff;
@@ -19,49 +19,49 @@
   flex-wrap: wrap;
 }
 
-.holdings_chart_icon {
+.closed_chart_icon {
   font-size: 30px;
   color: #1d00d8;
 }
 
-.holdings_title {
+.closed_title {
   font-size: 22px;
   font-weight: bold;
   margin-left: 10px;
   color: #fff;
 }
 
-.holdings_table_wrapper {
+.closed_table_wrapper {
   width: 100%;
   overflow-x: auto;
 }
 
-.holdings_table {
+.closed_table {
   width: 100%;
   border-collapse: collapse;
   background: #fff;
-  min-width: 600px;
+  min-width: 800px;
 }
 
-.holdings_table th,
-.holdings_table td {
+.closed_table th,
+.closed_table td {
   border: 1px solid #ddd;
   padding: 12px;
   text-align: center;
   white-space: nowrap;
 }
 
-.holdings_table th {
+.closed_table th {
   background: #1976d2;
   color: #ffffff;
   font-weight: bold;
 }
 
-.holdings_table tr:nth-child(even) {
+.closed_table tr:nth-child(even) {
   background: #f2f2f2;
 }
 
-.holdings_table tr:hover {
+.closed_table tr:hover {
   background: #ddd;
 }
 
@@ -70,60 +70,60 @@
 --------------------------------*/
 
 @media screen and (max-width: 992px) {
-  .holdings_table {
+  .closed_table {
     min-width: 700px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .holdings_header {
+  .closed_header {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .holdings_title {
+  .closed_title {
     margin-left: 0;
     margin-top: 8px;
     font-size: 18px;
   }
 
-  .holdings_chart_icon {
+  .closed_chart_icon {
     font-size: 26px;
   }
 
-  .holdings_table th,
-  .holdings_table td {
+  .closed_table th,
+  .closed_table td {
     padding: 10px;
     font-size: 14px;
   }
 
-  .holdings_table {
+  .closed_table {
     min-width: 600px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .holdings_title {
+  .closed_title {
     font-size: 16px;
   }
 
-  .holdings_chart_icon {
+  .closed_chart_icon {
     font-size: 22px;
   }
 
-  .holdings_table th,
-  .holdings_table td {
+  .closed_table th,
+  .closed_table td {
     padding: 8px;
     font-size: 12px;
   }
 
-  .holdings_table {
+  .closed_table {
     min-width: 386px;
   }
 }
 
 @media screen and (max-width: 360px) {
-  .holdings_table {
+  .closed_table {
     min-width: 400px;
   }
 }

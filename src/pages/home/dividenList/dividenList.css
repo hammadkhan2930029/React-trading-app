@@ -1,11 +1,11 @@
-
 .dividen_crud_main {
     width: 100%;
     margin-top: 80px;
     padding: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
-    overflow-x: auto; /* Ensure horizontal scrolling */
+    overflow-x: auto;
+    /* Ensure horizontal scrolling */
 }
 
 table {
@@ -16,7 +16,8 @@ table {
     background-color: #908b8b;
     border-radius: 8px;
     overflow: hidden;
-    table-layout: fixed; /* Ensure better responsiveness */
+    table-layout: fixed;
+    /* Ensure better responsiveness */
     word-wrap: break-word;
 }
 
@@ -74,9 +75,10 @@ tbody.t_body tr {
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-   
+
 }
- .top_btn_buy {
+
+.top_btn_buy {
     background-color: #1976d2;
     padding: 10px 15px;
     color: #fff;
@@ -90,7 +92,8 @@ tbody.t_body tr {
     align-items: center;
 }
 
-.editebtn:hover, .top_btn_buy:hover {
+.editebtn:hover,
+.top_btn_buy:hover {
     background-color: #145ca6;
 }
 
@@ -101,18 +104,50 @@ tbody.t_body tr {
     flex-wrap: wrap;
 }
 
+.ex_charges_search_div {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.ex_charges_search_icon {
+
+    background-color: #1976d2;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    width: 40%;
+}
+
+.ex_charges_search_icon span {
+    color: #fff;
+    font-size: 18px;
+}
+
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1024px) {
     table {
         font-size: 14px;
     }
 
-    .t_head_row th, .t_body_row td {
+    .t_head_row th,
+    .t_body_row td {
         padding: 10px 12px;
     }
+
     .top_btn {
         width: 20%;
-       
+
     }
 }
 
@@ -125,7 +160,8 @@ tbody.t_body tr {
         font-size: 14px;
     }
 
-    .t_head_row th, .t_body_row td {
+    .t_head_row th,
+    .t_body_row td {
         padding: 8px 10px;
     }
 
@@ -140,9 +176,18 @@ tbody.t_body tr {
         padding: 10px 12px;
         font-size: 14px;
     }
+
+    .searchInput {
+        width: 80%;
+    }
 }
 
 @media (max-width: 480px) {
+    .ex_charges_search_icon {
+        padding: 5px 10px;
+
+    }
+
     .dividen_crud_main {
         /* padding: 10px; */
         width: 80%;
@@ -164,7 +209,8 @@ tbody.t_body tr {
         font-size: 12px;
         display: block;
         overflow-x: auto;
-        white-space: nowrap; /* Prevents breaking on small screens */
+        white-space: nowrap;
+        /* Prevents breaking on small screens */
     }
 
     .t_head_row th {
@@ -175,8 +221,8 @@ tbody.t_body tr {
         font-size: 10px;
     }
 
-    .t_head_row th, .t_body_row td {
+    .t_head_row th,
+    .t_body_row td {
         padding: 6px 8px;
     }
 }
-

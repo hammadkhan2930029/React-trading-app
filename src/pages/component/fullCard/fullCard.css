@@ -191,13 +191,12 @@ box-shadow: 0 0 100px 40px rgba(255, 255, 255, 0.15);
 
 /* Below 360px */
 @media (max-width: 360px) {
-    .back {
-        height: 450px;
+   .fullCard{
+        height: 60vh;
+
     }
 
-    .front {
-        height: 450px;
-    }
+    
 
 
 

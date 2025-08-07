@@ -1,4 +1,6 @@
-
+.blogsMultiCardsMain{
+    background-color: var(--primary-bg);
+}
 
 .blogsMian_multi {
     background-color: var(--primary-bg);
@@ -29,7 +31,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: rgb(2,0,36);
  background-color: var(--primary-green);
   
 
@@ -101,9 +102,7 @@
 .readMoreBtn_div:hover{
     background-color: var(--primary-green-dark);
 }
-/* .footerBlogs{
-    background-color: var(--primary-bg);
-} */
+
 
 /* ------------------------- MEDIA QUERIES ------------------------- */
 /* 1180px to 992px */

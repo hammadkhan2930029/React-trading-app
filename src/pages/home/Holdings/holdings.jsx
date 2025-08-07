@@ -12,7 +12,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
-        pL:'12'
+        pL: '12'
 
     },
     {
@@ -22,7 +22,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
-        pL:'12'
+        pL: '12'
 
     },
     {
@@ -32,7 +32,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
-        pL:'12'
+        pL: '12'
 
     },
     {
@@ -42,7 +42,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
-        pL:'12'
+        pL: '12'
 
     },
     {
@@ -52,7 +52,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
-        pL:'12'
+        pL: '12'
 
     },
     {
@@ -62,7 +62,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
-        pL:'12'
+        pL: '12'
 
     },
     {
@@ -72,7 +72,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
-        pL:'12'
+        pL: '12'
 
     },
     {
@@ -82,7 +82,7 @@ const holdingsDetails = [
         total_investment: '12,1234',
         current_price: '123,214',
         changes: '25',
-        pL:'12'
+        pL: '12'
 
     },
 ];
@@ -149,7 +149,7 @@ export const Holdings = () => {
                         ))}
                     </tbody>
                 </table>
-                <div className='pagination'>
+                <div >
                     <TablePagination
                         component="div"
                         count={holdingsDetails.length}
@@ -158,6 +158,13 @@ export const Holdings = () => {
                         onPageChange={handleChangePage}
                         rowsPerPageOptions={[5, 10, 20]}
                         onRowsPerPageChange={handleChangeRowsPerPage}
+                        //  sx={{
+                        //     '& .MuiTablePagination-actions button': {
+                        //         color: '#fff',
+                        //         backgroundColor:'#1d00d8' 
+                        //     }
+                        // }}
+                       
                     />
                 </div>
 

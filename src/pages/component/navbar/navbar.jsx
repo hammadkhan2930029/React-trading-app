@@ -17,12 +17,7 @@ export const Navbar = () => {
    
       {/* ---------------------------------------------------------- */}
       <div>
-        {/* <div className='shap-container'>
-
-          <div className='shaper'>
-
-          </div>
-        </div> */}
+       
 
         {/* ----------------------------- */}
         <div className='container'>

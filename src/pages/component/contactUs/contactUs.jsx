@@ -66,7 +66,7 @@ export const ContactUs = () => {
     }, [])
 
     return (
-        <div>
+        <div className='contactUsMain'>
             <motion.div
                 ref={refOne}
 

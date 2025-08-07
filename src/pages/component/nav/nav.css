@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    /* position: fixed; */
     top: 0;
     z-index: 999;
     padding: 8px;
@@ -71,5 +70,10 @@
     @media (max-width: 767px) {
     .nav{
         justify-content: space-between;
+    }
+    }
+     @media (max-width: 360px) {
+    .nav{
+        padding: 4px;
     }
     }

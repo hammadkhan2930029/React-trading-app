@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setDividen } from "../Redux/profileSlice";
 import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -93,6 +94,16 @@ const DividenList = () => {
             <div className="dividen_crud_main">
                 <div className="top_btn">
                     <button className="top_btn_buy" onClick={() => dispatch(setDividen())}> <AddIcon /> Add </button>
+                </div>
+                <div className="ex_charges_search_div">
+                    <TextField
+                        placeholder="Search..."
+                        label='Search'
+                        className="searchInput" />
+                    <div className="ex_charges_search_icon">
+                        <span> Search</span>
+                        <SearchIcon sx={{ fontSize: '32px', color: '#fff' }} />
+                    </div>
                 </div>
 
                 <table>

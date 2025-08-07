@@ -1,8 +1,22 @@
+
 import React, { useState } from 'react';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import './overviewIndex.css';
 import { motion, useInView } from "framer-motion";
-import { Box, Button, Typography, Modal, TextField, Grid, TablePagination } from '@mui/material';
+import {
+  Box,
+  Button,
+  Typography,
+  Modal,
+  TextField,
+  Grid,
+  TablePagination,
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select
+} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 const marketIndex = [
     {
@@ -104,75 +118,193 @@ const marketIndex = [
 ];
 
 export const OverviewIndex = () => {
+  const [select, setSelect] = useState('');
+  const [dateRange, setDateRange] = useState({ from: '', to: '' });
+  const [lowAndHigh, setLowAndHigh] = useState({ from: '', to: '' });
+  const [currentIndex, setCurrentIndex] = useState({ from: '', to: '' });
+  const [change, setChange] = useState({ from: '', to: '' });
+  const [percentChange, setPercentChange] = useState({ from: '', to: '' });
+  const [page, setpage] = useState(0);
+  const [rowPerPage, setRowperPage] = useState(5);
+  const refOne = React.useRef(null);
+  const inViewOne = useInView(refOne, { triggerOnce: true });
 
-    const [page, setpage] = useState(0)
-    const [rowPerPage, setRowperPage] = useState(5)
-    const handleChangePage = (event, newPage) => {
-        setpage(newPage);
-    };
+  const handleChange = (event) => setSelect(event.target.value);
+  const handleChangePage = (event, newPage) => setpage(newPage);
+  const handleChangeRowsPerPage = (event) => {
+    setRowperPage(parseInt(event.target.value, 10));
+    setpage(0);
+  };
 
-    const handleChangeRowsPerPage = (event) => {
-        setRowperPage(parseInt(event.target.value, 10));
-        setpage(0);
-    };
-    // ------------------------------
+  return (
+    <motion.div
+      className='overview_container'
+      ref={refOne}
+      initial={{ opacity: 0, y: -100 }}
+      animate={inViewOne ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+    >
+      <div className='overview_header'>
+        <ShowChartIcon className='overview_icon' />
+        <h2 className='overview_title'>Market Overview Index</h2>
+      </div>
 
-    const refOne = React.useRef(null);
+      <div className="overview_filters">
+        <FormControl fullWidth className="filter_field">
+          <InputLabel>Select Field</InputLabel>
+          <Select value={select} label="Select Field" onChange={handleChange}>
+            {['Date', 'Current Index', 'Change', 'Percent Change', 'Low / High'].map((item, i) => (
+              <MenuItem key={i} value={item}>{item}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
 
-    const inViewOne = useInView(refOne, { triggerOnce: true });
-    return (
-        <motion.div className='overview_index_page'
-            ref={refOne}
-            initial={{ opacity: 0, y: -100 }}
-            animate={inViewOne ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: .8 }}>
-            <div className='overview_heading_index_div'>
-                <ShowChartIcon className='chart_icon' />
-                <span className='overview_heading'>Market Overview Index</span>
-            </div>
-            <div className="market_table_container_overview">
-                <table className='market_table'>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Market Status</th>
-                            <th>Current Index</th>
-                            <th>Change</th>
-                            <th>Percent Change</th>
-                            <th>High</th>
-                            <th>Low</th>
-                            <th>Volume</th>
-                            <th>Previous Close</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {marketIndex.slice(page * rowPerPage, (page + 1) * rowPerPage).map((item, index) => (
-                            <tr key={index}>
-                                <td>{item.date}</td>
-                                <td>{item.marketStatus}</td>
-                                <td>{item.currentIndex}</td>
-                                <td>{item.change}</td>
-                                <td>{item.percentChange}</td>
-                                <td>{item.high}</td>
-                                <td>{item.low}</td>
-                                <td>{item.volume}</td>
-                                <td>{item.previousClose}</td>
-                                <td>{item.value}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <TablePagination
-                    component="div"
-                    count={marketIndex.length}
-                    page={page}
-                    rowsPerPage={rowPerPage}
-                    onPageChange={handleChangePage}
-                    rowsPerPageOptions={[5, 10, 20]}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                />
-            </div>
-        </motion.div>
-    );
+        {select === 'Date' && (
+          <>
+            <TextField
+              type="date"
+              label="From Date"
+              InputLabelProps={{ shrink: true }}
+              className="filter_field"
+              value={dateRange.from}
+              onChange={(e) => setDateRange({ ...dateRange, from: e.target.value })}
+            />
+            <TextField
+              type="date"
+              label="To Date"
+              InputLabelProps={{ shrink: true }}
+              className="filter_field"
+              value={dateRange.to}
+              onChange={(e) => setDateRange({ ...dateRange, to: e.target.value })}
+            />
+          </>
+        )}
+
+        {select === 'Current Index' && (
+          <>
+            <TextField
+              label="From Index"
+              type="number"
+              className="filter_field"
+              value={currentIndex.from}
+              onChange={(e) => setCurrentIndex({ ...currentIndex, from: e.target.value })}
+            />
+            <TextField
+              label="To Index"
+              type="number"
+              className="filter_field"
+              value={currentIndex.to}
+              onChange={(e) => setCurrentIndex({ ...currentIndex, to: e.target.value })}
+            />
+          </>
+        )}
+
+        {select === 'Change' && (
+          <>
+            <TextField
+              label="From Change"
+              type="number"
+              className="filter_field"
+              value={change.from}
+              onChange={(e) => setChange({ ...change, from: e.target.value })}
+            />
+            <TextField
+              label="To Change"
+              type="number"
+              className="filter_field"
+              value={change.to}
+              onChange={(e) => setChange({ ...change, to: e.target.value })}
+            />
+          </>
+        )}
+
+        {select === 'Percent Change' && (
+          <>
+            <TextField
+              label="From % Change"
+              type="number"
+              className="filter_field"
+              value={percentChange.from}
+              onChange={(e) => setPercentChange({ ...percentChange, from: e.target.value })}
+            />
+            <TextField
+              label="To % Change"
+              type="number"
+              className="filter_field"
+              value={percentChange.to}
+              onChange={(e) => setPercentChange({ ...percentChange, to: e.target.value })}
+            />
+          </>
+        )}
+
+        {select === 'Low / High' && (
+          <>
+            <TextField
+              label="Low"
+              type="text"
+              className="filter_field"
+              value={lowAndHigh.from}
+              onChange={(e) => setLowAndHigh({ ...lowAndHigh, from: e.target.value })}
+            />
+            <TextField
+              label="High"
+              type="text"
+              className="filter_field"
+              value={lowAndHigh.to}
+              onChange={(e) => setLowAndHigh({ ...lowAndHigh, to: e.target.value })}
+            />
+          </>
+        )}
+
+        <Button variant="contained" color="primary" className='search_btn'>
+            Search
+          <SearchIcon />
+        </Button>
+      </div>
+
+      <div className="overview_table_wrapper">
+        <table className='overview_table'>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Current</th>
+              <th>Change</th>
+              <th>% Change</th>
+              <th>Low</th>
+              <th>High</th>
+              <th>Volume</th>
+              <th>Prev Close</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {marketIndex.slice(page * rowPerPage, (page + 1) * rowPerPage).map((item, i) => (
+              <tr key={i}>
+                <td>{item.date}</td>
+                <td>{item.marketStatus}</td>
+                <td>{item.currentIndex}</td>
+                <td>{item.change}</td>
+                <td>{item.percentChange}</td>
+                <td>{item.low}</td>
+                <td>{item.high}</td>
+                <td>{item.volume}</td>
+                <td>{item.previousClose}</td>
+                <td>{item.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <TablePagination
+          component="div"
+          count={marketIndex.length}
+          page={page}
+          rowsPerPage={rowPerPage}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          rowsPerPageOptions={[5, 10, 20]}
+        />
+      </div>
+    </motion.div>
+  );
 };

@@ -218,7 +218,8 @@ export const OverView = () => {
 
 
                 </Formik>
-                <div className='index'>
+                {/* className='index' */}
+                <div >
                     <OverviewIndex />
 
                 </div>

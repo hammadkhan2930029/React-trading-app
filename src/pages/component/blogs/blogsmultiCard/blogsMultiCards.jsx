@@ -195,7 +195,7 @@ export const BlogsMultiCards = () => {
         window.scrollTo(0, 0);
     },[])
     return (
-        <motion.div>
+        <motion.div className='blogsMultiCardsMain'>
             <motion.div
                 ref={refOne}
 

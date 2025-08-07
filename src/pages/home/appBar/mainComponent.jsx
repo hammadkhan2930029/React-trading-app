@@ -54,7 +54,8 @@ import { reset } from '../Redux/formTypeSlice.js';
 import { resetSummary } from '../Redux/summarySlice.js';
 import { SummaryDetailPage } from '../marketData/marketSummaryIndex/summaryDetails/summaryDetailsPage.jsx';
 import { RulesView } from '../RulesView/rulesView.jsx';
-
+import newLogo from '../../assets/newLogo.png'
+import { ClosedTrades } from '../closedTradesList/closedTradeslist.jsx';
 
 
 
@@ -214,7 +215,7 @@ const ResponsiveDrawer = (props) => {
     const drawer = (
         <div style={{ backgroundColor: '#FAF9F6', color: '#000', height: '100%' }}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
-                <img src={tradingLogo3} style={{ width: '100%'}} />
+                <img src={newLogo} style={{ width: '100%'}} />
             </div>
             <Divider />
             {/* -------------------------------------------------------------------------------------- */}
@@ -524,6 +525,8 @@ const ResponsiveDrawer = (props) => {
                 case 3: return <SellForm />;
                 case 4: return <CrudOperation />;
                 case 99: return <Holdings />
+                case 111: return <ClosedTrades />
+
                 default: return null;
             }
         }

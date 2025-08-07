@@ -11,6 +11,8 @@ import { setChargesList } from '../../Redux/extrachargesSlice';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import EditIcon from '@mui/icons-material/Edit';
 import { Box, Button, Typography, Modal, Grid, TablePagination } from '@mui/material';
+import ExtraChargesList from '../extraChargesList/extraChargesList';
+import { Description } from '@mui/icons-material';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -34,111 +36,111 @@ export const Monthly = () => {
     const [value, setValue] = React.useState(null);
     const [selectedDate, setSelectedDate] = useState(null);
     // -----------------------------------------------------------
-    const [open, setOpen] = useState(false);
-    const [formData, setFormData] = useState({
-        date: '',
-        custodyCharges: '',
-    },);
-    const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(5);
+    // const [open, setOpen] = useState(false);
+    // const [formData, setFormData] = useState({
+    //     date: '',
+    //     custodyCharges: '',
+    // },);
+    // const [page, setPage] = useState(0);
+    // const [rowsPerPage, setRowsPerPage] = useState(5);
 
     // const handleOpen = () => setOpen(true);
-    const handleOpen = (item) => {
-        const [day, month, year] = item.date.split('/');
-        const formattedDate = `${year}-${month}-${day}`; // convert dd/mm/yyyy to yyyy-mm-dd
+    // const handleOpen = (item) => {
+    //     const [day, month, year] = item.date.split('/');
+    //     const formattedDate = `${year}-${month}-${day}`; // convert dd/mm/yyyy to yyyy-mm-dd
 
-        setFormData({
-            date: formattedDate,
-            custodyCharges: item.custodyCharges,
+    //     setFormData({
+    //         date: formattedDate,
+    //         custodyCharges: item.custodyCharges,
             
-        });
-        setOpen(true);
-    };
-    const handleClose = () => setOpen(false);
+    //     });
+    //     setOpen(true);
+    // };
+    // const handleClose = () => setOpen(false);
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    // const handleChange = (e) => {
+    //     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData);
-        handleClose();
-    };
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log(formData);
+    //     handleClose();
+    // };
 
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
+    // const handleChangePage = (event, newPage) => {
+    //     setPage(newPage);
+    // };
 
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
-    };
+    // const handleChangeRowsPerPage = (event) => {
+    //     setRowsPerPage(parseInt(event.target.value, 10));
+    //     setPage(0);
+    // };
 
     // -------------------------------------------------------------
-    const extraChargesMonthlyList = [
-        {
-            id: 1,
-            date: '20/05/2025',
-            custodyCharges: '1100',
+    // const extraChargesMonthlyList = [
+    //     {
+    //         id: 1,
+    //         date: '20/05/2025',
+    //         custodyCharges: '1100',
 
-        },
-        {
-            id: 2,
-            date: '10/01/2025',
-            custodyCharges: '1100',
+    //     },
+    //     {
+    //         id: 2,
+    //         date: '10/01/2025',
+    //         custodyCharges: '1100',
 
-        },
-        {
-            id: 3,
-            date: '05/03/2024',
-            custodyCharges: '1100',
+    //     },
+    //     {
+    //         id: 3,
+    //         date: '05/03/2024',
+    //         custodyCharges: '1100',
 
-        },
-        {
-            id: 1,
-            date: '20/05/2025',
-            custodyCharges: '1100',
+    //     },
+    //     {
+    //         id: 1,
+    //         date: '20/05/2025',
+    //         custodyCharges: '1100',
 
-        },
-        {
-            id: 2,
-            date: '10/01/2025',
-            custodyCharges: '1100',
+    //     },
+    //     {
+    //         id: 2,
+    //         date: '10/01/2025',
+    //         custodyCharges: '1100',
 
-        },
-        {
-            id: 3,
-            date: '05/03/2024',
-
-
-            custodyCharges: '1100',
-
-        },
-        {
-            id: 1,
-            date: '20/05/2025',
-
-            custodyCharges: '1100',
-
-        },
-        {
-            id: 2,
-            date: '10/01/2025',
+    //     },
+    //     {
+    //         id: 3,
+    //         date: '05/03/2024',
 
 
-            custodyCharges: '1100',
+    //         custodyCharges: '1100',
 
-        },
-        {
-            id: 3,
-            date: '05/03/2024',
+    //     },
+    //     {
+    //         id: 1,
+    //         date: '20/05/2025',
 
-            custodyCharges: '1100',
+    //         custodyCharges: '1100',
 
-        },
+    //     },
+    //     {
+    //         id: 2,
+    //         date: '10/01/2025',
 
-    ];
+
+    //         custodyCharges: '1100',
+
+    //     },
+    //     {
+    //         id: 3,
+    //         date: '05/03/2024',
+
+    //         custodyCharges: '1100',
+
+    //     },
+
+    // ];
 
     return (
 
@@ -154,8 +156,10 @@ export const Monthly = () => {
             <Formik
                 initialValues={{
 
-                    custodyCharges: '',
-                    date: ''
+                    amount: '',
+                    date: '',
+                    description: '',
+
 
 
 
@@ -197,15 +201,27 @@ export const Monthly = () => {
                                             InputLabelProps={{ shrink: true }}
 
                                         />
+                                         <TextField
+                                            type="text"
+                                            id="outlined-required"
+                                            label="Description"
+                                            placeholder="Description..."
+                                            name='description'
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.description}
+                                            multiline
+
+                                        />
                                         <TextField
                                             type="number"
                                             id="outlined-required"
-                                            label="Custody Charges"
-                                            placeholder="Custody Charges..."
-                                            name='custodyCharges'
+                                            label="Amount"
+                                            placeholder="Amount..."
+                                            name='amount'
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            value={values.custodyCharges}
+                                            value={values.amount}
 
                                         />
                                     </div>
@@ -228,7 +244,8 @@ export const Monthly = () => {
 
             </Formik>
             {/* ============================================================================================== */}
-            <motion.div className="ex_charges_crud_onetime"
+           
+            {/* <motion.div className="ex_charges_crud_onetime"
                 ref={refOne}
                 initial={{ opacity: 0, y: -100 }}
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
@@ -303,7 +320,7 @@ export const Monthly = () => {
                         </Box>
                     </Modal>
                 </div>
-            </motion.div>
+            </motion.div> */}
 
         </motion.div>
 

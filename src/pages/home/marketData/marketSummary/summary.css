@@ -92,10 +92,15 @@
 
 
 }
+.summary_from_import_div{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
 
 @media screen and (max-width: 600px) {
     .form_summary{
-        width: 50%;
+        width: 100%;
     }
     .summary_form_main {
         width: 85%;
@@ -106,6 +111,9 @@
 
     .btn {
         width: 60%;
+    }
+    .summary_from_import_div{
+        justify-content: center;
     }
 }
 

@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import AddIcon from '@mui/icons-material/Add';
 import { setOneTime, setmonthly } from "../../Redux/extrachargesSlice";
 import EditIcon from '@mui/icons-material/Edit';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 const style = {
@@ -21,21 +22,21 @@ const style = {
 };
 
 const extraChargesList = [
-    { id: 1, date: '20/05/2025', custodyCharges: '150' },
-    { id: 2, date: '10/01/2025', custodyCharges: '200' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-    { id: 3, date: '05/03/2024', custodyCharges: '175' },
-
+    { id: 1, date: '20/05/2025', custodyCharges: '150', description: 'Monthly custody fee for May 2025' },
+    { id: 2, date: '10/01/2025', custodyCharges: '200', description: 'Annual locker maintenance charge' },
+    { id: 3, date: '05/03/2024', custodyCharges: '175', description: 'Custody charges for Q1 2024' },
+    { id: 4, date: '15/04/2024', custodyCharges: '180', description: 'Late payment penalty' },
+    { id: 5, date: '01/02/2025', custodyCharges: '160', description: 'Custody charges for January 2025' },
+    { id: 6, date: '22/06/2025', custodyCharges: '220', description: 'Extra handling fee for overseas transaction Extra handling fee for overseas transaction' },
+    { id: 7, date: '10/08/2024', custodyCharges: '140', description: 'Monthly custody fee for August 2024' },
+    { id: 8, date: '12/09/2024', custodyCharges: '130', description: 'Security document handling charges' },
+    { id: 9, date: '03/11/2024', custodyCharges: '200', description: 'Annual renewal charges' },
+    { id: 10, date: '28/12/2024', custodyCharges: '150', description: 'Custody charges for December 2024' },
+    { id: 11, date: '07/07/2025', custodyCharges: '210', description: 'Mid-year custody charge' },
+    { id: 12, date: '17/01/2024', custodyCharges: '190', description: 'Penalty for delayed document submission' },
+    { id: 13, date: '29/02/2024', custodyCharges: '165', description: 'Leap year extra custody charge' },
 ];
+
 
 
 const ExtraChargesList = () => {
@@ -43,7 +44,9 @@ const ExtraChargesList = () => {
     const [open, setOpen] = useState(false);
     const [formData, setFormData] = useState({
         date: '',
-        custodyCharges: '',
+        amount: '',
+        description: '',
+
 
     },);
     const [page, setPage] = useState(0);
@@ -101,14 +104,24 @@ const ExtraChargesList = () => {
                         <AddIcon /> Monthly
                     </button>
                 </div>
+                <div className="ex_charges_search_div">
+                    <TextField
+                        placeholder="Search.."
+                        label='Search description'
+                        className="searchInput" />
+                    <div className="ex_charges_search_icon">
+                        <span> Search</span>
+                        <SearchIcon sx={{ fontSize: '32px', color: '#fff' }} />
+                    </div>
+                </div>
 
                 <table className="ex_charges_table">
                     <thead className='ex_charges_t_head'>
                         <tr className='ex_charges_t_head_row'>
                             <th>Date</th>
-                            <th>Custody Charges </th>
-                            {/* <th>Registration Charges (Yearly)</th>
-                            <th>NCCPL Charges(Yearly)</th> */}
+                            <th>Description</th>
+                            <th>Amount</th>
+
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -116,9 +129,9 @@ const ExtraChargesList = () => {
                         {extraChargesList.slice(page * rowsPerPage, (page + 1) * rowsPerPage).map((item, index) => (
                             <tr key={index} className='ex_charges_t_body_row'>
                                 <td>{item.date}</td>
+                                <td>{item.description}</td>
                                 <td>{item.custodyCharges}</td>
-                                {/* <td>{item.registrationCharges} </td>
-                                <td>{item.nccplCharges} </td> */}
+
 
                                 <td>
                                     <button className="ex_charges_editebtn" onClick={() => handleOpen(item)}>
@@ -158,7 +171,26 @@ const ExtraChargesList = () => {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField fullWidth type="number" label="Custody Charges" name="custodyCharges" value={formData.custodyCharges} onChange={handleChange} required />
+                                    <TextField
+                                        fullWidth
+                                        type="text"
+                                        label="Description"
+                                        name="description"
+                                        value={formData.description}
+                                        onChange={handleChange}
+                                        required
+                                        multiline
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        fullWidth
+                                        type="number"
+                                        label="Amount"
+                                        name="amount"
+                                        value={formData.amount}
+                                        onChange={handleChange}
+                                        required />
                                 </Grid>
 
                             </Grid>

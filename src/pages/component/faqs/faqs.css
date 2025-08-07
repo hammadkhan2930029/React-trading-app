@@ -9,7 +9,8 @@
 
 
 }
-.faqs_first_div{
+
+.faqs_first_div {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 50px;
@@ -44,7 +45,7 @@
     font-weight: 400;
     width: 80px;
     text-align: center;
-    
+
 }
 
 .faqs_h2 {
@@ -62,7 +63,7 @@
     flex-direction: column;
     margin-top: 10px;
     cursor: pointer;
-    
+
 }
 
 .drop_style {
@@ -71,7 +72,7 @@
     align-items: center;
     justify-content: start;
     flex-direction: row;
-    background-color:#d5f4da;
+    background-color: #d5f4da;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     transition: background-color 0.3s ease;
@@ -86,7 +87,7 @@
     /* transition: background-color 0.3s ease; */
     /* background: rgb(2,0,36); */
     background: var(--primary-green);
-    
+
 
 
 }
@@ -131,36 +132,41 @@
     color: #000;
 
 }
+
 /* -------------------------------------- */
-.faqs_heading_div{
+.faqs_heading_div {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.h_main{
+
+.h_main {
     font-size: 42px;
     font-weight: bold;
     color: var(--primary-green);
 }
+
 /* ---------------------------------------- */
-.read_more_div{
+.read_more_div {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.read_more_div .read{
+
+.read_more_div .read {
     font-size: 20px;
     color: #ffffff;
-    background-color:var(--primary-green);
+    background-color: var(--primary-green);
     padding: 5px 16px;
 
-    border-radius: 10px ;
+    border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-   font-weight: 500;
+    font-weight: 500;
 
 }
-.read_more_div .read:hover{
+
+.read_more_div .read:hover {
     /* background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(43,9,121,1) 34%, rgba(0,212,255,1) 100%); */
     background-color: var(--primary-green-dark);
@@ -310,6 +316,16 @@
 
     }
 
+    .read_more_div {
+        margin-top: 10px;
+    }
+
+    .read_more_div .read {
+        font-size: 16px;
+
+
+    }
+
 
 
 }
@@ -322,15 +338,19 @@
     }
 
     .drop_icon {
-        padding: 20px;
+        padding: 10px;
     }
 
     .drop_text .text {
         padding: 10px;
-        font-size: 16px;
+        font-size: 15px;
 
 
 
+    }
+
+    .para_text {
+        font-size: 13px;
     }
 
 

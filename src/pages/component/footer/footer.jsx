@@ -9,7 +9,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-
+import newLogo from '../../assets/newLogo.png'
 import './footer.css';
 
 export const Footer = () => {
@@ -33,7 +33,7 @@ export const Footer = () => {
                         initial={{ opacity: 0, y: 100 }}
                         animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: .8 }}>
-                        <img src={tradingLogo4} className='logo' />
+                        <img src={newLogo} className='logo' />
 
                     </motion.div>
 
