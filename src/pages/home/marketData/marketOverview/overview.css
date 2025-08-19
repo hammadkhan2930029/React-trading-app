@@ -141,6 +141,9 @@
 }
 
 @media screen and (max-width: 360px) {
+    .highlights_form_div{
+        width: 100%;
+    }
     .highlights_form_main {
         width: 80%;
     }
@@ -157,4 +160,5 @@
         margin-left: -90px;
 
     }
+    
 }

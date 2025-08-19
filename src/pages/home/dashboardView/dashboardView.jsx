@@ -189,7 +189,7 @@ export const DashboardView = () => {
                     </div>
                 </div>
                 {/* ---------------------------------10-------------------------- */}
-                <div className="card">
+                {/* <div className="card">
                     <div className='card_1_data'>
                         <div className='card_icon'>
                             <WorkspacePremiumIcon style={{ width: 50, height: 50, textAlign: 'center', color: '#ffbf00' }} />
@@ -199,7 +199,7 @@ export const DashboardView = () => {
                             <span className='h_1'>350.5</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             {/* ------------------------------------------Larg card----------------------------------------------- */}

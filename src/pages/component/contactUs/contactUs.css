@@ -118,10 +118,16 @@
         width: 100%;
         padding: 5px;
     }
+    .form-main-contact{
+        margin-top: 30px;
+    }
 
    
 
     .btn {
         width: 60%;
+    }
+    .switchBtn_div_contact{
+        margin-top: 10px;
     }
 }

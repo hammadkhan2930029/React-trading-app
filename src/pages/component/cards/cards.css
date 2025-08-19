@@ -201,6 +201,12 @@
     .textSection{
         width: 100%;
     }
+    .task_text{
+        font-size: 16px;
+    }
+    .task_divs{
+        margin-top: 10px;
+    }
     
    
     

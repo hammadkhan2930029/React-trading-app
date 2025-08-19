@@ -11,6 +11,9 @@ const summarySlice = createSlice({
     setMarketSummaryDetails: (state) => {
       state.formType = 14;
     },
+    setBackToSummary: (state) => {
+      state.formType = 12;
+    },
     resetSummary: (state) => {
       state.formType = null;
     },
@@ -19,5 +22,5 @@ const summarySlice = createSlice({
   },
 });
 
-export const { setMarketSummaryDetails,resetSummary } = summarySlice.actions;
+export const { setMarketSummaryDetails,resetSummary,setBackToSummary } = summarySlice.actions;
 export default summarySlice.reducer;

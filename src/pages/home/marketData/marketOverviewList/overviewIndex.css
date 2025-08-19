@@ -121,3 +121,11 @@
         min-width: 375px;
     }
 }
+@media (max-width: 360px) {
+    .overview_container{
+        width: 344px;
+    }
+    .overview_table{
+        min-width: 300px
+    }
+}

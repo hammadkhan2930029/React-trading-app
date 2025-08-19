@@ -262,4 +262,10 @@
     .larg_cards{
         margin: 5px;
     }
+     .search_bar {
+        width: 80%;
+    }
+     .dashboard_main{
+        width: 92%;
+    }
 }

@@ -60,5 +60,8 @@
     .summary_heading_dashboard{
         font-size: 20px;
     }
+    .summary_main{
+        width: 96%;
+    }
   
 }

@@ -229,8 +229,14 @@ tbody.t_body tr {
     .top_input_fields{
         flex-direction: column;
     }
-    .search_div{
+    .top_input_fields .search_div{
         width: 100%;
     }
+}
+@media (max-width: 360px) {
+    .crud_main{
+        width: 95%;
+    }
+    
 }
 

@@ -225,3 +225,9 @@
 
     }
 }
+@media (max-width: 360px) {
+    .ex_charges_search_div{
+        flex-direction: column;
+    }
+    
+}

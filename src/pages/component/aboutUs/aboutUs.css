@@ -281,4 +281,13 @@
     .tools_text{
         font-size: 16px;
     }
+    .tools_text_div{
+        padding: 5px;
+    }
+    .widgets-container{
+        padding: 10px;
+    }
+    .about-image-section{
+        width: 90%;
+    }
 }

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import './summaryDetailsPage.css';
 import { motion, useInView } from "framer-motion";
 import { TablePagination } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import SearchIcon from '@mui/icons-material/Search';
+import { resetSummary, setBackToSummary } from '../../../Redux/summarySlice';
 
 
 const marketSummaryData = [
@@ -126,13 +127,28 @@ export const SummaryDetailPage = () => {
     const refOne = React.useRef(null);
 
     const inViewOne = useInView(refOne, { triggerOnce: true });
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div className='summary_details_page_main'>
+            
+            <button className='backBtn' onClick={() => {
+                    dispatch(setBackToSummary())
+                }}>
+                    Back
+                </button>
+
             <motion.div className='summary_details_page'
                 ref={refOne}
                 initial={{ opacity: 0, y: -100 }}
                 animate={inViewOne ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: .8 }}>
+                    
+                <div className='overview_heading_index_div'>
+                    <ShowChartIcon className='chart_icon' />
+                    <span className='overview_heading'>Market Summary Details</span>
+                </div>
                 <div className='search_main'>
                     <div className="search_div">
 
@@ -141,10 +157,7 @@ export const SummaryDetailPage = () => {
                     </div>
                 </div>
 
-                <div className='overview_heading_index_div'>
-                    <ShowChartIcon className='chart_icon' />
-                    <span className='overview_heading'>Market Summary Details</span>
-                </div>
+                
                 <div className="market_table_container_summary">
                     <table className='market_table'>
                         <thead>

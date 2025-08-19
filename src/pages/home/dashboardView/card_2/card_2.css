@@ -20,3 +20,9 @@
 .chart_bar_div{
     width: 100%;
 }
+@media (max-width: 360px) {
+    .L_card_2{
+        width: 96%;
+    }
+    
+}

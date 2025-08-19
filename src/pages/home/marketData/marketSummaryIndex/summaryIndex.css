@@ -76,6 +76,19 @@
 .summary_table tr:hover {
   background: #e0e0e0;
 }
+.moreBtn{
+    padding: 5px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #1976d2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.moreBtn:hover{
+    background-color: #1d00d8;
+    font-weight: 600;
+}
 
 /* 📱 Responsive */
 @media (max-width: 768px) {
@@ -117,4 +130,13 @@
   .summary_table {
     min-width: 375px;
   }
+}
+@media (max-width: 360px) {
+    .summary_container{
+        width: 344px;
+    }
+    .summary_table{
+      min-width: 300px
+    }
+    
 }
