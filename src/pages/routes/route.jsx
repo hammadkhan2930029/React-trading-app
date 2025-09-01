@@ -3,6 +3,7 @@ import { BlogsCard } from "../component/blogs/blogsCard";
 import { BlogsDetails } from "../component/blogs/blogsDetail/blogsDetails";
 import { BlogsMultiCards } from "../component/blogs/blogsmultiCard/blogsMultiCards";
 import { ChooseUs } from "../component/chooseUs/chooseUs";
+import { Success } from "../component/confirmationPage/Success";
 import { ContactUs } from "../component/contactUs/contactUs";
 import { DrawerBar } from "../component/drawer/drawer";
 import { FaqMainPage } from "../component/faqs/FaqMian/faqMainPage";
@@ -35,6 +36,8 @@ export const routes = [
   { path: '/onetime', element: <OneTime /> },
   { path: '/monthly', element: <Monthly /> },
   { path: '/aboutUs', element: <AboutUs /> },
+  { path: '/success', element: <Success /> },
+
 
 
 ];

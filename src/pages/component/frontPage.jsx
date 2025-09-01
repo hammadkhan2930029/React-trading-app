@@ -14,6 +14,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setScrollToSection } from './Redux/scrollSlice';
 import { clearScrollToSection } from './Redux/scrollSlice';
 import { HowWorks } from './How/howWorks';
+import { Success } from './confirmationPage/Success';
 
 function FrontPage() {
   const [count, setCount] = useState(true)
@@ -68,7 +69,8 @@ function FrontPage() {
 
   return (
     <>
-      {count ? (
+    <Success/>
+      {/* {count ? (
         <Loader_f />
       ) : (
         <div style={{ overflow: 'hidden',backgroundColor:'#E5F5E8'}}>
@@ -88,7 +90,7 @@ function FrontPage() {
 
 
         </div>
-      )}
+      )} */}
 
     </>
   )
